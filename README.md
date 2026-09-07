@@ -4,9 +4,9 @@ Next.js frontend + Express/TypeScript backend + PostgreSQL, with Stripe Checkout
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 20+
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) — runs Postgres locally via `docker-compose.yml`
-- A [Stripe](https://dashboard.stripe.com/register) account (free) for test-mode API keys
+- [Node.js](https://nodejs.org/) 
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) 
+- A [Stripe](https://dashboard.stripe.com/register) 
 - Optional, for local webhook testing: the [Stripe CLI](https://docs.stripe.com/stripe-cli)
 
 ## First-time setup
