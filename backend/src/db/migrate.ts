@@ -1,3 +1,8 @@
+// A minimal hand-rolled migration runner (no framework, matches the
+// "raw pg, no ORM" choice for this project). Each .sql file under
+// ./migrations is applied at most once, in filename order (hence the
+// 0001_, 0002_, ... prefixes), and recorded in schema_migrations so
+// re-running `npm run migrate` is a safe no-op for anything already applied.
 import fs from "node:fs";
 import path from "node:path";
 import { pool } from "./pool";
@@ -5,6 +10,8 @@ import { pool } from "./pool";
 const MIGRATIONS_DIR = path.join(__dirname, "migrations");
 
 async function main() {
+  // The tracking table itself is created on first run, so a brand-new
+  // database needs no manual setup before `npm run migrate`.
   await pool.query(`
     CREATE TABLE IF NOT EXISTS schema_migrations (
       name TEXT PRIMARY KEY,
@@ -28,6 +35,8 @@ async function main() {
       continue;
     }
 
+    // Each migration file runs in its own transaction: either the whole
+    // file's SQL applies and gets recorded, or none of it does.
     const sql = fs.readFileSync(path.join(MIGRATIONS_DIR, file), "utf8");
     const client = await pool.connect();
     try {

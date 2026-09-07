@@ -5,6 +5,7 @@ export default function SignupPage() {
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-2xl font-semibold">Sign up</h1>
+      {/* See login/page.tsx for why Suspense is needed here. */}
       <Suspense>
         <AuthForm mode="signup" />
       </Suspense>

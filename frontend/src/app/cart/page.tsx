@@ -15,6 +15,8 @@ export default function CartPage() {
   const [error, setError] = useState<string | null>(null);
 
   async function handleCheckout() {
+    // Cart browsing needs no account, but checkout does — bounce to login
+    // and remember to come back here (see AuthForm's use of ?next=).
     if (!user) {
       router.push("/login?next=/cart");
       return;
@@ -23,12 +25,17 @@ export default function CartPage() {
     setError(null);
     setCheckingOut(true);
     try {
+      // Only productId + quantity are sent — the backend looks up current
+      // prices itself rather than trusting whatever this page has cached
+      // in localStorage, so a stale/tampered cart can't under-charge.
       const data = await apiFetch<{ url: string }>("/api/checkout/create-session", {
         method: "POST",
         body: JSON.stringify({
           items: items.map((item) => ({ productId: item.productId, quantity: item.quantity })),
         }),
       });
+      // Full navigation (not client-side routing) to Stripe's hosted
+      // Checkout page, which lives outside this app.
       window.location.href = data.url;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Checkout failed");

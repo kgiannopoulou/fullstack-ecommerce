@@ -14,6 +14,9 @@ export type AdminProduct = {
   stock: number;
 };
 
+// One shared form for both "new product" and "edit product" (admin/products/new
+// and admin/products/[id]/edit) — passing an existing `product` switches it
+// into edit mode (pre-filled fields, PUT instead of POST on submit).
 export function ProductForm({ product }: { product?: AdminProduct }) {
   const router = useRouter();
   const [name, setName] = useState(product?.name ?? "");
@@ -30,6 +33,8 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
     setError(null);
     setSubmitting(true);
 
+    // The form collects a human-friendly dollar amount but the API (and
+    // database) only ever deal in integer cents — convert at the boundary.
     const body = {
       name,
       slug,

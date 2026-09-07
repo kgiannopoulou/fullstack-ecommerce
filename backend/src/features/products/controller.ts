@@ -2,6 +2,11 @@ import { Request, Response } from "express";
 import { pool } from "../../db/pool";
 import { HttpError } from "../../middleware/errorHandler";
 
+// Public catalog endpoints — no auth required, used by the storefront.
+
+// Powers both the homepage grid and the search box: ?q=<term> filters by
+// name (case-insensitive substring match via ILIKE); no query param at all
+// returns everything.
 export async function listProducts(req: Request, res: Response) {
   const search = typeof req.query.q === "string" ? req.query.q.trim() : "";
 

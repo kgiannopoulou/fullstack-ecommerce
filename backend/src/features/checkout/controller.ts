@@ -6,6 +6,9 @@ import { HttpError } from "../../middleware/errorHandler";
 import { stripe } from "../../lib/stripe";
 import Stripe from "stripe";
 
+// The client only ever sends { productId, quantity } pairs — never a price.
+// Prices are always looked up server-side from the database below, so a
+// tampered client request can't check out at an arbitrary price.
 const createSessionSchema = z.object({
   items: z
     .array(
@@ -17,9 +20,14 @@ const createSessionSchema = z.object({
     .min(1),
 });
 
+// Called when a signed-in user clicks "Checkout". Validates the cart against
+// the database, records a 'pending' order, then hands off to Stripe's
+// hosted Checkout page. The order is only marked 'paid' later, by the
+// stripeWebhook handler below, once Stripe confirms payment actually
+// succeeded — never directly from this request.
 export async function createCheckoutSession(req: Request, res: Response) {
   const { items } = createSessionSchema.parse(req.body);
-  const user = req.user!;
+  const user = req.user!; // guaranteed present: this route is behind requireAuth
 
   const productIds = items.map((item) => item.productId);
   const { rows: products } = await pool.query(
@@ -51,12 +59,15 @@ export async function createCheckoutSession(req: Request, res: Response) {
       quantity: item.quantity,
       price_data: {
         currency: "usd",
-        unit_amount: product.price_cents,
+        unit_amount: product.price_cents, // Stripe also expects integer cents
         product_data: { name: product.name },
       },
     });
   }
 
+  // Order + order_items are written in one transaction so we never end up
+  // with an order that has no line items (or vice versa) if something
+  // fails partway through.
   const client = await pool.connect();
   let orderId: number;
   try {
@@ -81,6 +92,8 @@ export async function createCheckoutSession(req: Request, res: Response) {
     client.release();
   }
 
+  // metadata.orderId is how the webhook below maps a Stripe event back to
+  // our own order row — Stripe echoes this metadata back on every event.
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
     payment_method_types: ["card"],
@@ -95,15 +108,28 @@ export async function createCheckoutSession(req: Request, res: Response) {
     orderId,
   ]);
 
+  // Frontend does `window.location.href = data.url` to send the browser to
+  // Stripe's hosted payment page.
   res.json({ url: session.url });
 }
 
+// Stripe calls this endpoint directly (not the browser) once a payment
+// finishes, so the "was this actually paid?" decision never depends on the
+// user's browser successfully redirecting back — someone closing the tab
+// right after paying still gets a fulfilled order.
+//
+// req.body here is the *raw* request buffer, not parsed JSON — see the
+// express.raw() middleware wired up for this exact path in index.ts, which
+// must run instead of the normal express.json() parser because Stripe's
+// signature is computed over the raw bytes.
 export async function stripeWebhook(req: Request, res: Response) {
   const signature = req.headers["stripe-signature"];
   if (!signature || typeof signature !== "string") {
     return res.status(400).send("Missing Stripe signature");
   }
 
+  // Proves the request really came from Stripe (using STRIPE_WEBHOOK_SECRET)
+  // and wasn't forged by a third party hitting this public URL directly.
   let event: Stripe.Event;
   try {
     event = stripe.webhooks.constructEvent(req.body, signature, env.stripeWebhookSecret);
@@ -118,14 +144,21 @@ export async function stripeWebhook(req: Request, res: Response) {
       await fulfillOrder(orderId);
     }
   }
+  // Other event types (e.g. failed payments) are ignored — this app only
+  // needs to react to a completed checkout.
 
   res.json({ received: true });
 }
 
+// Marks the order paid and decrements stock for what was bought.
 async function fulfillOrder(orderId: number) {
   const client = await pool.connect();
   try {
     await client.query("BEGIN");
+    // The `AND status = 'pending'` guard makes this idempotent: if Stripe
+    // ever retries the same webhook event (it does, on a slow/failed
+    // response), the second call updates zero rows and stock is not
+    // double-decremented.
     const { rows } = await client.query(
       `UPDATE orders SET status = 'paid' WHERE id = $1 AND status = 'pending' RETURNING id`,
       [orderId]

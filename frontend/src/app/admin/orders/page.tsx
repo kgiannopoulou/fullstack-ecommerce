@@ -23,6 +23,9 @@ export default function AdminOrdersPage() {
 
   useEffect(load, []);
 
+  // Manual override, e.g. marking an order "shipped". 'paid' is normally
+  // set automatically by the Stripe webhook (see backend
+  // checkout/controller.ts), not from here.
   async function handleStatusChange(id: number, status: string) {
     await apiFetch(`/api/admin/orders/${id}`, {
       method: "PATCH",

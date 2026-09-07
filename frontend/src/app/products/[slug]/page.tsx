@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { API_URL, formatPrice, Product } from "@/lib/api";
 import { AddToCartButton } from "@/components/add-to-cart-button";
 
+// Server Component, same pattern as the homepage: fetched fresh per request.
 async function getProduct(slug: string): Promise<Product | null> {
   const res = await fetch(new URL(`/api/products/${slug}`, API_URL), { cache: "no-store" });
   if (!res.ok) return null;
@@ -12,6 +13,8 @@ async function getProduct(slug: string): Promise<Product | null> {
 export default async function ProductPage(props: PageProps<"/products/[slug]">) {
   const { slug } = await props.params;
   const product = await getProduct(slug);
+  // Renders Next's not-found page for an unknown slug instead of crashing
+  // or showing a blank product.
   if (!product) notFound();
 
   return (

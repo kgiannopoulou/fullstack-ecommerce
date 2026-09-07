@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   description: "A small full-stack e-commerce demo",
 };
 
+// Wraps every page in the app (App Router convention). AuthProvider and
+// CartProvider are mounted here, once, so every page and the NavBar share
+// the same auth/cart state via context instead of each fetching it
+// separately.
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html

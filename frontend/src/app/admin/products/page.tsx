@@ -9,6 +9,9 @@ import { AdminProduct } from "@/components/product-form";
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<AdminProduct[] | null>(null);
 
+  // `load` is reused after both the initial mount and any mutation
+  // (delete) below, so the table always reflects the latest server state
+  // rather than being patched optimistically in local state.
   function load() {
     apiFetch<{ products: AdminProduct[] }>("/api/admin/products").then((data) =>
       setProducts(data.products)

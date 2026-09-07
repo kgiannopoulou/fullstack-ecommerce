@@ -5,6 +5,9 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useCart } from "@/lib/cart-context";
 
+// Top nav shown on every page (mounted once in layout.tsx). Reads both
+// contexts so the cart count and logged-in state stay in sync everywhere
+// without prop drilling.
 export function NavBar() {
   const { user, loading, logout } = useAuth();
   const { totalQuantity } = useCart();

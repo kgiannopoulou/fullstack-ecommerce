@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { apiFetch } from "@/lib/api";
 import { useAuth } from "@/lib/auth-context";
 
+// One shared form for both /login and /signup — the only difference is
+// which API endpoint it posts to, controlled by `mode`.
 export function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +25,12 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
         method: "POST",
         body: JSON.stringify({ email, password }),
       });
+      // Re-fetch /api/auth/me so AuthProvider's cached user updates
+      // immediately, instead of waiting for the next page load.
       await refresh();
+      // ?next=/cart etc. is set by pages that redirected here because the
+      // user wasn't logged in (see AdminGuard and cart/page.tsx) — send
+      // them back to where they came from after a successful login.
       router.push(searchParams.get("next") ?? "/");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");

@@ -1,5 +1,8 @@
 "use client";
 
+// The cart is intentionally client-side only (localStorage), not stored on
+// the backend or tied to a user account: browsing and adding to cart never
+// requires being logged in — only checkout does (see cart/page.tsx).
 import { createContext, useContext, useEffect, useState } from "react";
 import { Product } from "./api";
 
@@ -25,9 +28,17 @@ const CartContext = createContext<CartContextValue | null>(null);
 const STORAGE_KEY = "ecommerce-cart";
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
+  // Cart always starts empty on first render (including during server-side
+  // rendering, which has no localStorage) and is filled in from
+  // localStorage after mount, below.
   const [items, setItems] = useState<CartItem[]>([]);
+  // Guards against the effect below overwriting a real saved cart with an
+  // empty one before the read-from-localStorage effect has had a chance
+  // to run.
   const [hydrated, setHydrated] = useState(false);
 
+  // Runs once on mount (client only) to restore a cart saved in a previous
+  // visit/tab.
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -39,6 +50,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setHydrated(true);
   }, []);
 
+  // Persists on every change so a page refresh or new tab sees the same cart.
   useEffect(() => {
     if (!hydrated) return;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));

@@ -12,6 +12,9 @@ import { listAdminOrders, updateOrderStatus } from "./orders.controller";
 
 export const adminRouter = Router();
 
+// router.use() with no path applies these two middlewares to every route
+// defined below in this file — so every /api/admin/* endpoint requires a
+// signed-in admin, without repeating that on each route.
 adminRouter.use(requireAuth, requireAdmin);
 
 adminRouter.get("/products", listAdminProducts);

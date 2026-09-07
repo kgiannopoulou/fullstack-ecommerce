@@ -1,3 +1,5 @@
+// Inserts a handful of sample products for local development/demos.
+// Not run automatically — invoked explicitly via `npm run db:seed`.
 import { pool } from "./pool";
 
 const products = [
@@ -37,6 +39,9 @@ const products = [
 
 async function main() {
   for (const product of products) {
+    // ON CONFLICT DO NOTHING makes this idempotent: re-running the seed
+    // script after products already exist just skips them instead of
+    // erroring on the unique slug constraint.
     await pool.query(
       `INSERT INTO products (name, slug, description, price_cents, image_url, stock)
        VALUES ($1, $2, $3, $4, $5, $6)

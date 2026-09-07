@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { API_URL, formatPrice, Product } from "@/lib/api";
 
+// This page is a React Server Component (no "use client"), so it fetches
+// products directly on the server on every request — cache: "no-store"
+// opts out of Next's fetch caching so stock/price edits show up immediately.
 async function getProducts(q: string): Promise<Product[]> {
   const url = new URL("/api/products", API_URL);
   if (q) url.searchParams.set("q", q);
@@ -11,6 +14,8 @@ async function getProducts(q: string): Promise<Product[]> {
 }
 
 export default async function HomePage(props: PageProps<"/">) {
+  // The search box below submits as a plain GET form (no JS), landing back
+  // on this same page with ?q=<term> in the URL — searchParams reads it.
   const searchParams = await props.searchParams;
   const q = typeof searchParams.q === "string" ? searchParams.q : "";
   const products = await getProducts(q);

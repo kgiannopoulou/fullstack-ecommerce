@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { AdminGuard } from "@/components/admin-guard";
 
+// Every /admin/* page follows the same shape: wrap the content in
+// AdminGuard, which redirects non-admins away (see admin-guard.tsx for why
+// that's a UX nicety, not the actual security boundary).
 export default function AdminHomePage() {
   return (
     <AdminGuard>

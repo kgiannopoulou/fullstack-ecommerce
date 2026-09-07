@@ -14,17 +14,22 @@ type Order = {
   items: OrderItem[];
 };
 
+// Client Component (not a server fetch like the homepage) because it needs
+// to read the logged-in user from AuthProvider first to decide whether to
+// redirect to login before fetching anything.
 export default function OrdersPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
   const [orders, setOrders] = useState<Order[] | null>(null);
 
   useEffect(() => {
-    if (loading) return;
+    if (loading) return; // wait for the initial session check to finish
     if (!user) {
       router.push("/login?next=/account/orders");
       return;
     }
+    // GET /api/orders is scoped server-side to req.user.id, so this only
+    // ever returns the signed-in user's own orders.
     apiFetch<{ orders: Order[] }>("/api/orders").then((data) => setOrders(data.orders));
   }, [loading, user, router]);
 

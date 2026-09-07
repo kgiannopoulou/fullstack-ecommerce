@@ -3,6 +3,9 @@ import { z } from "zod";
 import { pool } from "../../db/pool";
 import { HttpError } from "../../middleware/errorHandler";
 
+// All handlers in this file sit behind requireAuth + requireAdmin, applied
+// once for the whole router in admin/routes.ts, rather than repeated here
+// per handler.
 const productSchema = z.object({
   name: z.string().min(1),
   slug: z

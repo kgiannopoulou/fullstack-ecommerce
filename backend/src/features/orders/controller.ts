@@ -1,6 +1,9 @@
 import { Request, Response } from "express";
 import { pool } from "../../db/pool";
 
+// Powers /account/orders — a user's own purchase history only (scoped to
+// req.user.id below), never other users' orders. Admins get the unscoped
+// view via admin/orders.controller.ts instead.
 export async function listMyOrders(req: Request, res: Response) {
   const user = req.user!;
 
@@ -10,6 +13,9 @@ export async function listMyOrders(req: Request, res: Response) {
     [user.id]
   );
 
+  // Two queries + an in-memory join, instead of one query with a JOIN,
+  // because an order can have multiple items and joining would duplicate
+  // the order row per item — this keeps the shape one row per order.
   const orderIds = orders.map((o) => o.id);
   const { rows: items } = orderIds.length
     ? await pool.query(

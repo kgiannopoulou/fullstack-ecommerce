@@ -6,6 +6,8 @@ import { useCart } from "@/lib/cart-context";
 
 export function AddToCartButton({ product }: { product: Product }) {
   const { addItem } = useCart();
+  // Purely a UI confirmation flash ("Added!" for 1.5s) — not part of the
+  // actual cart state, which lives in CartProvider/localStorage.
   const [added, setAdded] = useState(false);
 
   function handleClick() {
