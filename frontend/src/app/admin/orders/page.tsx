@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { apiFetch, formatPrice } from "@/lib/api";
+import { ApiError, apiFetch, formatPrice } from "@/lib/api";
 import { AdminGuard } from "@/components/admin-guard";
 
 type AdminOrder = {
@@ -10,12 +10,14 @@ type AdminOrder = {
   total_cents: number;
   created_at: string;
   user_email: string;
+  // Statuses the backend will accept as the next manual change for this
+  // order (see ADMIN_TRANSITIONS in backend checkout/orderLifecycle.ts).
+  next_statuses: string[];
 };
-
-const STATUSES = ["pending", "paid", "shipped", "cancelled"] as const;
 
 export default function AdminOrdersPage() {
   const [orders, setOrders] = useState<AdminOrder[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   function load() {
     apiFetch<{ orders: AdminOrder[] }>("/api/admin/orders").then((data) => setOrders(data.orders));
@@ -23,14 +25,22 @@ export default function AdminOrdersPage() {
 
   useEffect(load, []);
 
-  // Manual override, e.g. marking an order "shipped". 'paid' is normally
-  // set automatically by the Stripe webhook (see backend
-  // checkout/controller.ts), not from here.
+  // Manual change, e.g. marking an order "shipped". 'paid' is only ever set
+  // by the Stripe webhook (see backend checkout/orderLifecycle.ts), so the
+  // dropdown only offers the moves the backend allows for each order.
   async function handleStatusChange(id: number, status: string) {
-    await apiFetch(`/api/admin/orders/${id}`, {
-      method: "PATCH",
-      body: JSON.stringify({ status }),
-    });
+    if (status === "cancelled" && !window.confirm(`Cancel order #${id}? Its stock will be returned.`)) {
+      return;
+    }
+    setError(null);
+    try {
+      await apiFetch(`/api/admin/orders/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify({ status }),
+      });
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Could not update the order.");
+    }
     load();
   }
 
@@ -38,6 +48,10 @@ export default function AdminOrdersPage() {
     <AdminGuard>
       <div className="flex flex-col gap-6">
         <h1 className="text-2xl font-semibold">Orders</h1>
+        {error && <p className="text-sm text-red-600">{error}</p>}
+        <p className="text-sm text-black/60 dark:text-white/60">
+          Cancelling a paid order returns its stock; issue the refund from the Stripe dashboard.
+        </p>
         {orders === null ? (
           <p>Loading...</p>
         ) : orders.length === 0 ? (
@@ -61,10 +75,11 @@ export default function AdminOrdersPage() {
                   <td className="py-2">
                     <select
                       value={order.status}
+                      disabled={order.next_statuses.length === 0}
                       onChange={(e) => handleStatusChange(order.id, e.target.value)}
-                      className="rounded border border-black/20 px-2 py-1 dark:border-white/20"
+                      className="rounded border border-black/20 px-2 py-1 disabled:opacity-60 dark:border-white/20"
                     >
-                      {STATUSES.map((status) => (
+                      {[order.status, ...order.next_statuses].map((status) => (
                         <option key={status} value={status}>
                           {status}
                         </option>

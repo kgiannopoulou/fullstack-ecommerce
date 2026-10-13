@@ -7,6 +7,7 @@ import { adminRouter } from "./features/admin/routes";
 import { authRouter } from "./features/auth/routes";
 import { checkoutRouter } from "./features/checkout/routes";
 import { stripeWebhook } from "./features/checkout/controller";
+import { startReservationSweeper } from "./features/checkout/orderLifecycle";
 import { ordersRouter } from "./features/orders/routes";
 import { productsRouter } from "./features/products/routes";
 
@@ -45,4 +46,7 @@ app.use(errorHandler);
 
 app.listen(env.port, () => {
   console.log(`Backend listening on http://localhost:${env.port}`);
+  // Once a minute, cancel abandoned checkouts and return their reserved
+  // stock (see features/checkout/orderLifecycle.ts).
+  startReservationSweeper();
 });

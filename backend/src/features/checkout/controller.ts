@@ -5,6 +5,17 @@ import { pool } from "../../db/pool";
 import { HttpError } from "../../middleware/errorHandler";
 import { stripe } from "../../lib/stripe";
 import Stripe from "stripe";
+import {
+  CHECKOUT_SESSION_MINUTES,
+  OutOfStockError,
+  RESERVATION_MINUTES,
+  cancelPendingOrder,
+  markOrderPaid,
+  paymentIntentId,
+  reserveStock,
+} from "./orderLifecycle";
+
+const MAX_QUANTITY_PER_PRODUCT = 99;
 
 // The client only ever sends { productId, quantity } pairs — never a price.
 // Prices are always looked up server-side from the database below, so a
@@ -14,74 +25,95 @@ const createSessionSchema = z.object({
     .array(
       z.object({
         productId: z.number().int().positive(),
-        quantity: z.number().int().positive().max(99),
+        quantity: z.number().int().positive().max(MAX_QUANTITY_PER_PRODUCT),
       })
     )
     .min(1),
 });
 
 // Called when a signed-in user clicks "Checkout". Validates the cart against
-// the database, records a 'pending' order, then hands off to Stripe's
-// hosted Checkout page. The order is only marked 'paid' later, by the
-// stripeWebhook handler below, once Stripe confirms payment actually
-// succeeded — never directly from this request.
+// the database, records a 'pending' order *and reserves its stock* in one
+// transaction, then hands off to Stripe's hosted Checkout page. The order is
+// only marked 'paid' later, by the stripeWebhook handler below, once Stripe
+// confirms payment actually succeeded — never directly from this request.
+//
+// Reserving stock up front (instead of decrementing it when the payment
+// webhook arrives) is what stops two customers from both paying for the last
+// unit: the second checkout is rejected here, before Stripe is involved.
+// Unpaid reservations are given back when the Stripe session expires, see
+// orderLifecycle.ts.
 export async function createCheckoutSession(req: Request, res: Response) {
   const { items } = createSessionSchema.parse(req.body);
   const user = req.user!; // guaranteed present: this route is behind requireAuth
 
-  const productIds = items.map((item) => item.productId);
-  const { rows: products } = await pool.query(
-    `SELECT id, name, price_cents, stock FROM products WHERE id = ANY($1::int[])`,
-    [productIds]
-  );
-  const productById = new Map(products.map((p) => [p.id, p]));
-
-  let totalCents = 0;
-  const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
-  const orderItemRows: { productId: number; quantity: number; priceCents: number }[] = [];
-
+  // The same product can appear on several lines of the request. Merge them
+  // first, so stock is checked against the *total* quantity per product
+  // rather than each line on its own.
+  const quantityById = new Map<number, number>();
   for (const item of items) {
-    const product = productById.get(item.productId);
-    if (!product) {
-      throw new HttpError(400, `Product ${item.productId} not found`);
+    quantityById.set(item.productId, (quantityById.get(item.productId) ?? 0) + item.quantity);
+  }
+  const wanted = [...quantityById].map(([productId, quantity]) => ({ productId, quantity }));
+  for (const item of wanted) {
+    if (item.quantity > MAX_QUANTITY_PER_PRODUCT) {
+      throw new HttpError(400, `At most ${MAX_QUANTITY_PER_PRODUCT} of each product per order`);
     }
-    if (product.stock < item.quantity) {
-      throw new HttpError(400, `Not enough stock for ${product.name}`);
-    }
-
-    totalCents += product.price_cents * item.quantity;
-    orderItemRows.push({
-      productId: product.id,
-      quantity: item.quantity,
-      priceCents: product.price_cents,
-    });
-    lineItems.push({
-      quantity: item.quantity,
-      price_data: {
-        currency: "usd",
-        unit_amount: product.price_cents, // Stripe also expects integer cents
-        product_data: { name: product.name },
-      },
-    });
   }
 
-  // Order + order_items are written in one transaction so we never end up
-  // with an order that has no line items (or vice versa) if something
-  // fails partway through.
+  // Order + order_items + the stock reservation are written in one
+  // transaction: either the order exists and holds its stock, or nothing
+  // changed at all.
   const client = await pool.connect();
   let orderId: number;
+  const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
   try {
     await client.query("BEGIN");
+
+    const { rows: products } = await client.query(
+      `SELECT id, name, price_cents FROM products WHERE id = ANY($1::int[])`,
+      [wanted.map((item) => item.productId)]
+    );
+    const productById = new Map(products.map((p) => [p.id, p]));
+
+    let totalCents = 0;
+    for (const item of wanted) {
+      const product = productById.get(item.productId);
+      if (!product) {
+        throw new HttpError(400, `Product ${item.productId} not found`);
+      }
+      totalCents += product.price_cents * item.quantity;
+      lineItems.push({
+        quantity: item.quantity,
+        price_data: {
+          currency: "usd",
+          unit_amount: product.price_cents, // Stripe also expects integer cents
+          product_data: { name: product.name },
+        },
+      });
+    }
+
+    try {
+      await reserveStock(client, wanted);
+    } catch (err) {
+      if (err instanceof OutOfStockError) {
+        const name = productById.get(err.productId)?.name ?? `product ${err.productId}`;
+        throw new HttpError(409, `Not enough stock for ${name}`);
+      }
+      throw err;
+    }
+
     const { rows } = await client.query(
-      `INSERT INTO orders (user_id, status, total_cents) VALUES ($1, 'pending', $2) RETURNING id`,
-      [user.id, totalCents]
+      `INSERT INTO orders (user_id, status, total_cents, stock_reserved, reserved_until)
+       VALUES ($1, 'pending', $2, TRUE, now() + make_interval(mins => $3))
+       RETURNING id`,
+      [user.id, totalCents, RESERVATION_MINUTES]
     );
     orderId = rows[0].id;
 
-    for (const row of orderItemRows) {
+    for (const item of wanted) {
       await client.query(
         `INSERT INTO order_items (order_id, product_id, quantity, price_cents) VALUES ($1, $2, $3, $4)`,
-        [orderId, row.productId, row.quantity, row.priceCents]
+        [orderId, item.productId, item.quantity, productById.get(item.productId).price_cents]
       );
     }
     await client.query("COMMIT");
@@ -94,14 +126,33 @@ export async function createCheckoutSession(req: Request, res: Response) {
 
   // metadata.orderId is how the webhook below maps a Stripe event back to
   // our own order row — Stripe echoes this metadata back on every event.
-  const session = await stripe.checkout.sessions.create({
-    mode: "payment",
-    payment_method_types: ["card"],
-    line_items: lineItems,
-    metadata: { orderId: String(orderId) },
-    success_url: `${env.clientUrl}/account/orders?checkout=success`,
-    cancel_url: `${env.clientUrl}/cart?checkout=cancelled`,
-  });
+  // The idempotency key means a retried call for this order can never
+  // create a second, separately payable session.
+  let session: Stripe.Checkout.Session;
+  try {
+    session = await stripe.checkout.sessions.create(
+      {
+        mode: "payment",
+        payment_method_types: ["card"],
+        line_items: lineItems,
+        metadata: { orderId: String(orderId) },
+        expires_at: Math.floor(Date.now() / 1000) + CHECKOUT_SESSION_MINUTES * 60,
+        success_url: `${env.clientUrl}/account/orders?checkout=success`,
+        cancel_url: `${env.clientUrl}/cart?checkout=cancelled`,
+      },
+      { idempotencyKey: `checkout-order-${orderId}` }
+    );
+  } catch (err) {
+    // Stripe couldn't be reached: don't leave a pending order holding stock
+    // with no way to pay for it. (If this cleanup itself fails, or the
+    // process dies before getting here, the reservation sweeper cancels the
+    // order once reserved_until passes.)
+    console.error(`Stripe session creation failed for order ${orderId}:`, err);
+    await cancelPendingOrder(orderId).catch((cleanupErr) =>
+      console.error(`Could not cancel order ${orderId}:`, cleanupErr)
+    );
+    throw new HttpError(502, "Could not start payment. Please try again.");
+  }
 
   await pool.query(`UPDATE orders SET stripe_session_id = $1 WHERE id = $2`, [
     session.id,
@@ -137,49 +188,35 @@ export async function stripeWebhook(req: Request, res: Response) {
     return res.status(400).send(`Webhook signature verification failed: ${(err as Error).message}`);
   }
 
-  if (event.type === "checkout.session.completed") {
-    const session = event.data.object as Stripe.Checkout.Session;
-    const orderId = Number(session.metadata?.orderId);
-    if (orderId) {
-      await fulfillOrder(orderId);
+  // Every handler below is idempotent (see orderLifecycle.ts), so Stripe
+  // retrying an event, or an event being replayed after an admin changed the
+  // order, can never move stock twice.
+  switch (event.type) {
+    // A completed session is normally already paid (card payments). The
+    // async_payment_* events only matter for delayed payment methods, but
+    // handling them keeps this correct if more methods are enabled later.
+    case "checkout.session.completed":
+    case "checkout.session.async_payment_succeeded": {
+      const session = event.data.object;
+      const orderId = Number(session.metadata?.orderId);
+      if (orderId && session.payment_status === "paid") {
+        await markOrderPaid(orderId, paymentIntentId(session));
+      }
+      break;
     }
+    // The customer never paid: give the reserved stock back right away
+    // instead of waiting for the sweeper.
+    case "checkout.session.expired":
+    case "checkout.session.async_payment_failed": {
+      const session = event.data.object;
+      const orderId = Number(session.metadata?.orderId);
+      if (orderId) {
+        await cancelPendingOrder(orderId);
+      }
+      break;
+    }
+    // Other event types are ignored.
   }
-  // Other event types (e.g. failed payments) are ignored — this app only
-  // needs to react to a completed checkout.
 
   res.json({ received: true });
-}
-
-// Marks the order paid and decrements stock for what was bought.
-async function fulfillOrder(orderId: number) {
-  const client = await pool.connect();
-  try {
-    await client.query("BEGIN");
-    // The `AND status = 'pending'` guard makes this idempotent: if Stripe
-    // ever retries the same webhook event (it does, on a slow/failed
-    // response), the second call updates zero rows and stock is not
-    // double-decremented.
-    const { rows } = await client.query(
-      `UPDATE orders SET status = 'paid' WHERE id = $1 AND status = 'pending' RETURNING id`,
-      [orderId]
-    );
-    if (rows.length > 0) {
-      const { rows: items } = await client.query(
-        `SELECT product_id, quantity FROM order_items WHERE order_id = $1`,
-        [orderId]
-      );
-      for (const item of items) {
-        await client.query(`UPDATE products SET stock = stock - $1 WHERE id = $2`, [
-          item.quantity,
-          item.product_id,
-        ]);
-      }
-    }
-    await client.query("COMMIT");
-  } catch (err) {
-    await client.query("ROLLBACK");
-    throw err;
-  } finally {
-    client.release();
-  }
 }
