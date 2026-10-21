@@ -13,6 +13,13 @@ export default function CartPage() {
   const router = useRouter();
   const [checkingOut, setCheckingOut] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [resent, setResent] = useState(false);
+  const needsVerification = !!user && !user.emailVerified;
+
+  async function resendVerification() {
+    await apiFetch("/api/auth/verify-email/resend", { method: "POST" });
+    setResent(true);
+  }
 
   async function handleCheckout() {
     // Cart browsing needs no account, but checkout does — bounce to login
@@ -83,12 +90,26 @@ export default function CartPage() {
         <span className="text-lg font-semibold">Total: {formatPrice(totalCents)}</span>
         <button
           onClick={handleCheckout}
-          disabled={checkingOut || loading}
+          disabled={checkingOut || loading || needsVerification}
           className="rounded bg-black px-4 py-2 text-white disabled:opacity-40 dark:bg-white dark:text-black"
         >
           {checkingOut ? "Redirecting to Stripe..." : "Checkout"}
         </button>
       </div>
+      {needsVerification && (
+        // Checkout needs a verified email (the backend answers
+        // EMAIL_NOT_VERIFIED otherwise).
+        <p className="text-sm">
+          Verify your email address to check out: we sent a link to {user.email}.{" "}
+          {resent ? (
+            "A new link is on its way."
+          ) : (
+            <button onClick={resendVerification} className="cursor-pointer underline">
+              Send it again
+            </button>
+          )}
+        </p>
+      )}
       {error && <p className="text-sm text-red-600">{error}</p>}
     </div>
   );

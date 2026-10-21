@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import { API_URL, formatPrice, Product } from "@/lib/api";
+import { formatPrice, Product, SERVER_API_URL } from "@/lib/api";
 import { AddToCartButton } from "@/components/add-to-cart-button";
 
 // Server Component, same pattern as the homepage: fetched fresh per request.
 async function getProduct(slug: string): Promise<Product | null> {
-  const res = await fetch(new URL(`/api/products/${slug}`, API_URL), { cache: "no-store" });
+  const res = await fetch(new URL(`/api/products/${slug}`, SERVER_API_URL), { cache: "no-store" });
   if (!res.ok) return null;
   const data = await res.json();
   return data.product;

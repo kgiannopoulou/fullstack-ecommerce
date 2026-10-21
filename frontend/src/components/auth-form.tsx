@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { apiFetch } from "@/lib/api";
 import { useAuth } from "@/lib/auth-context";
@@ -70,6 +71,14 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
       >
         {mode === "login" ? "Log in" : "Sign up"}
       </button>
+      {mode === "login" && (
+        <Link href="/forgot-password" className="text-sm underline">
+          Forgot your password?
+        </Link>
+      )}
+      {mode === "signup" && (
+        <p className="text-sm opacity-70">We&apos;ll email you a link to verify your address before your first order.</p>
+      )}
     </form>
   );
 }

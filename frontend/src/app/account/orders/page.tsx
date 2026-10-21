@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { apiFetch, formatPrice } from "@/lib/api";
 import { useAuth } from "@/lib/auth-context";
+import { OrderEvent, OrderTimeline } from "@/components/order-timeline";
 
 type OrderItem = { name: string; slug: string; quantity: number; price_cents: number };
 type Order = {
@@ -21,6 +22,12 @@ export default function OrdersPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
   const [orders, setOrders] = useState<Order[] | null>(null);
+  const [history, setHistory] = useState<Record<number, OrderEvent[]>>({});
+
+  async function showHistory(id: number) {
+    const data = await apiFetch<{ history: OrderEvent[] }>(`/api/orders/${id}`);
+    setHistory((h) => ({ ...h, [id]: data.history }));
+  }
 
   useEffect(() => {
     if (loading) return; // wait for the initial session check to finish
@@ -55,6 +62,15 @@ export default function OrdersPage() {
             ))}
           </ul>
           <p className="mt-2 font-medium">Total: {formatPrice(order.total_cents)}</p>
+          {history[order.id] ? (
+            <div className="mt-3">
+              <OrderTimeline events={history[order.id]} />
+            </div>
+          ) : (
+            <button onClick={() => showHistory(order.id)} className="mt-2 cursor-pointer text-sm underline">
+              Show history
+            </button>
+          )}
         </div>
       ))}
     </div>

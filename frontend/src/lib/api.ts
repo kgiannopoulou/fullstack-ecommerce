@@ -3,11 +3,26 @@
 // that could be deployed to different hosts.
 export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
 
+// Server Components fetch from the server, which needs an absolute URL even
+// when the browser uses relative /api paths through the Next.js proxy (see
+// next.config.ts and docs/DEPLOY.md).
+export const SERVER_API_URL = process.env.API_INTERNAL_URL || API_URL;
+
+// Mirrors the backend's error body (see docs/API.md):
+// { error: { code, message, details?, requestId } }. `code` lets pages react
+// to specific failures, e.g. EMAIL_NOT_VERIFIED on checkout.
 export class ApiError extends Error {
-  constructor(public status: number, message: string) {
+  constructor(
+    public status: number,
+    message: string,
+    public code: string = "UNKNOWN",
+    public details: { path: string; message: string }[] = []
+  ) {
     super(message);
   }
 }
+
+export type Pagination = { page: number; pageSize: number; total: number; totalPages: number };
 
 // Every API call in the app goes through this wrapper instead of calling
 // fetch() directly, so the two cross-cutting concerns below are handled
@@ -28,10 +43,16 @@ export async function apiFetch<T>(
   });
 
   if (!res.ok) {
-    // Backend error responses are always { error: string } (see
-    // errorHandler.ts) — fall back to statusText if the body isn't JSON.
-    const body = await res.json().catch(() => ({ error: res.statusText }));
-    throw new ApiError(res.status, body.error ?? "Request failed");
+    // Backend error responses are always { error: { code, message, ... } }
+    // (see errorHandler.ts) — fall back to statusText if the body isn't JSON.
+    const body = await res.json().catch(() => null);
+    const error = body?.error;
+    throw new ApiError(
+      res.status,
+      error?.message ?? res.statusText ?? "Request failed",
+      error?.code,
+      error?.details
+    );
   }
 
   // Endpoints like logout/delete return 204 No Content with an empty body,
