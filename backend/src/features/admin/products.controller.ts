@@ -2,17 +2,18 @@ import { Request, Response } from "express";
 import { z } from "zod";
 import { pool } from "../../db/pool";
 import { HttpError } from "../../middleware/errorHandler";
+import { idParamSchema } from "../orders/controller";
 
 // All handlers in this file sit behind requireAuth + requireAdmin, applied
 // once for the whole router in admin/routes.ts, rather than repeated here
 // per handler.
 const productSchema = z.object({
-  name: z.string().min(1),
+  name: z.string().trim().min(1).max(200),
   slug: z
     .string()
     .min(1)
     .regex(/^[a-z0-9-]+$/, "slug must be lowercase letters, numbers, and hyphens"),
-  description: z.string().default(""),
+  description: z.string().max(5000).default(""),
   price_cents: z.number().int().nonnegative(),
   image_url: z.string().url().optional().nullable(),
   stock: z.number().int().nonnegative(),
@@ -30,7 +31,7 @@ export async function getAdminProduct(req: Request, res: Response) {
   const { rows } = await pool.query(
     `SELECT id, name, slug, description, price_cents, image_url, stock, created_at
      FROM products WHERE id = $1`,
-    [req.params.id]
+    [idParamSchema.parse(req.params).id]
   );
   if (rows.length === 0) {
     throw new HttpError(404, "Product not found");
@@ -60,7 +61,7 @@ export async function updateProduct(req: Request, res: Response) {
       data.price_cents,
       data.image_url ?? null,
       data.stock,
-      req.params.id,
+      idParamSchema.parse(req.params).id,
     ]
   );
   if (rows.length === 0) {
@@ -70,7 +71,7 @@ export async function updateProduct(req: Request, res: Response) {
 }
 
 export async function deleteProduct(req: Request, res: Response) {
-  const { rowCount } = await pool.query(`DELETE FROM products WHERE id = $1`, [req.params.id]);
+  const { rowCount } = await pool.query(`DELETE FROM products WHERE id = $1`, [idParamSchema.parse(req.params).id]);
   if (rowCount === 0) {
     throw new HttpError(404, "Product not found");
   }

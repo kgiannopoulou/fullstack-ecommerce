@@ -21,4 +21,12 @@ export const env = {
   clientUrl: required("CLIENT_URL"),
   stripeSecretKey: required("STRIPE_SECRET_KEY"),
   stripeWebhookSecret: required("STRIPE_WEBHOOK_SECRET"),
+  // Optional: without SMTP_URL, verification and password-reset emails are
+  // printed to the console instead of sent (handy for local dev).
+  smtpUrl: process.env.SMTP_URL || null,
+  mailFrom: process.env.MAIL_FROM ?? "Shop <no-reply@localhost>",
+  // How many reverse proxies sit in front of the app (Render/Fly load
+  // balancer, the Next.js /api proxy...). The rate limiter keys on the
+  // client IP, which is only right if this matches the deployment.
+  trustProxy: Number(process.env.TRUST_PROXY ?? 1),
 };

@@ -1,5 +1,10 @@
 import { Request, Response } from "express";
+import { z } from "zod";
 import { pool } from "../../db/pool";
+import { HttpError } from "../../middleware/errorHandler";
+import { orderHistory } from "../checkout/orderLifecycle";
+
+export const idParamSchema = z.object({ id: z.coerce.number().int().positive() });
 
 // Powers /account/orders — a user's own purchase history only (scoped to
 // req.user.id below), never other users' orders. Admins get the unscoped
@@ -39,4 +44,25 @@ export async function listMyOrders(req: Request, res: Response) {
       items: itemsByOrder.get(order.id) ?? [],
     })),
   });
+}
+
+// One of the user's own orders with its status history. Another user's
+// order id answers 404, not 403, so ids can't be probed for existence.
+export async function getMyOrder(req: Request, res: Response) {
+  const { id } = idParamSchema.parse(req.params);
+  const { rows } = await pool.query(
+    `SELECT id, status, total_cents, created_at, paid_at FROM orders WHERE id = $1 AND user_id = $2`,
+    [id, req.user!.id]
+  );
+  if (rows.length === 0) {
+    throw new HttpError(404, "Order not found");
+  }
+  // Customers see what happened, not who did it internally.
+  const history = (await orderHistory(id)).map(({ type, from_status, to_status, created_at }) => ({
+    type,
+    from_status,
+    to_status,
+    created_at,
+  }));
+  res.json({ order: rows[0], history });
 }

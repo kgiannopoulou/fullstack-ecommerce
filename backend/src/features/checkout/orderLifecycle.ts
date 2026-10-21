@@ -12,6 +12,8 @@ import { stripe } from "../../lib/stripe";
 //     taken or returned twice for one order, whatever happens to `status`.
 //   - `paid_at` is set exactly once, the first time a payment for the order
 //     is processed. A replayed webhook sees it and does nothing.
+//   - Every change is written to order_events in the same transaction, so
+//     the audit trail always matches the order row.
 
 // Checkout sessions stay payable for 30 minutes (Stripe's minimum), and the
 // stock is held a few minutes longer so the session is guaranteed to have
@@ -24,6 +26,51 @@ export class OutOfStockError extends Error {
     super(`Not enough stock for product ${productId}`);
   }
 }
+
+// --- Audit trail ----------------------------------------------------------
+
+// Who caused a change: the customer (checkout), Stripe (a webhook), the
+// system (the reservation sweeper, or cleanup after a Stripe error) or an
+// admin (with their user id).
+export type Actor =
+  | { kind: "customer"; userId: number }
+  | { kind: "stripe" }
+  | { kind: "system" }
+  | { kind: "admin"; userId: number };
+
+export type OrderEventType =
+  | "created"
+  | "checkout_session_created"
+  | "paid"
+  | "stock_reacquired"
+  | "stock_released"
+  | "refunded"
+  | "cancelled"
+  | "shipped";
+
+export async function recordOrderEvent(
+  client: PoolClient,
+  orderId: number,
+  type: OrderEventType,
+  actor: Actor,
+  change: { from?: string | null; to?: string | null; data?: Record<string, unknown> } = {}
+) {
+  await client.query(
+    `INSERT INTO order_events (order_id, type, from_status, to_status, actor, actor_user_id, data)
+     VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+    [
+      orderId,
+      type,
+      change.from ?? null,
+      change.to ?? null,
+      actor.kind,
+      "userId" in actor ? actor.userId : null,
+      change.data ?? {},
+    ]
+  );
+}
+
+// --- Stock ----------------------------------------------------------------
 
 // Atomically decrements stock for each item, failing (and leaving the
 // caller's transaction to be rolled back) if any product doesn't have
@@ -57,18 +104,20 @@ async function orderItems(client: PoolClient, orderId: number) {
 }
 
 // Gives an order's stock back, if (and only if) it is currently holding it.
-export async function releaseOrderStock(client: PoolClient, orderId: number) {
+export async function releaseOrderStock(client: PoolClient, orderId: number, actor: Actor) {
   const { rowCount } = await client.query(
     `UPDATE orders SET stock_reserved = FALSE WHERE id = $1 AND stock_reserved`,
     [orderId]
   );
   if (rowCount === 0) return;
-  for (const item of await orderItems(client, orderId)) {
+  const items = await orderItems(client, orderId);
+  for (const item of items) {
     await client.query(`UPDATE products SET stock = stock + $1 WHERE id = $2`, [
       item.quantity,
       item.productId,
     ]);
   }
+  await recordOrderEvent(client, orderId, "stock_released", actor, { data: { items } });
 }
 
 // Re-takes stock for an order whose reservation was already released (e.g.
@@ -88,7 +137,7 @@ async function tryReacquireOrderStock(client: PoolClient, orderId: number) {
   }
 }
 
-async function inTransaction<T>(fn: (client: PoolClient) => Promise<T>): Promise<T> {
+export async function inTransaction<T>(fn: (client: PoolClient) => Promise<T>): Promise<T> {
   const client = await pool.connect();
   try {
     await client.query("BEGIN");
@@ -122,6 +171,8 @@ async function lockOrder(client: PoolClient, orderId: number) {
   return rows[0] as LockedOrder | undefined;
 }
 
+// --- Transitions ----------------------------------------------------------
+
 // Called when Stripe reports a successful payment. Safe to call any number
 // of times for the same order.
 //
@@ -131,16 +182,27 @@ async function lockOrder(client: PoolClient, orderId: number) {
 // if that's no longer possible the customer is refunded automatically and
 // the order is cancelled, so nobody ends up charged for an order stuck in
 // 'pending'.
-export async function markOrderPaid(orderId: number, paymentIntentId: string | null) {
+export async function markOrderPaid(
+  orderId: number,
+  paymentIntentId: string | null,
+  actor: Actor = { kind: "stripe" }
+) {
   await inTransaction(async (client) => {
     const order = await lockOrder(client, orderId);
     if (!order || order.paid_at) return; // unknown order, or payment already processed
 
-    if (order.stock_reserved || (await tryReacquireOrderStock(client, orderId))) {
+    const hadStock = order.stock_reserved;
+    if (hadStock || (await tryReacquireOrderStock(client, orderId))) {
+      if (!hadStock) await recordOrderEvent(client, orderId, "stock_reacquired", actor);
       await client.query(
         `UPDATE orders SET status = 'paid', paid_at = now(), reserved_until = NULL WHERE id = $1`,
         [orderId]
       );
+      await recordOrderEvent(client, orderId, "paid", actor, {
+        from: order.status,
+        to: "paid",
+        data: { paymentIntentId },
+      });
       return;
     }
 
@@ -157,21 +219,31 @@ export async function markOrderPaid(orderId: number, paymentIntentId: string | n
         { idempotencyKey: `refund-order-${orderId}` }
       );
     }
+    await recordOrderEvent(client, orderId, "refunded", actor, {
+      from: order.status,
+      to: "cancelled",
+      data: { paymentIntentId, reason: "stock_unavailable" },
+    });
     console.warn(`Order ${orderId}: paid after its stock was gone; refunded and cancelled.`);
   });
 }
 
 // Cancels an order that is still pending and gives its stock back. Returns
 // false (changing nothing) if the order isn't pending any more.
-export async function cancelPendingOrder(orderId: number) {
+export async function cancelPendingOrder(orderId: number, actor: Actor, reason: string) {
   return inTransaction(async (client) => {
     const order = await lockOrder(client, orderId);
     if (!order || order.status !== "pending") return false;
-    await releaseOrderStock(client, orderId);
+    await releaseOrderStock(client, orderId, actor);
     await client.query(
       `UPDATE orders SET status = 'cancelled', reserved_until = NULL WHERE id = $1`,
       [orderId]
     );
+    await recordOrderEvent(client, orderId, "cancelled", actor, {
+      from: "pending",
+      to: "cancelled",
+      data: { reason },
+    });
     return true;
   });
 }
@@ -182,7 +254,11 @@ export async function cancelPendingOrder(orderId: number) {
 // already paid, the order is marked paid instead.
 // Returns 'cancelled' or 'paid' for what happened, or null if the order was
 // left alone (no longer pending, or still awaiting an asynchronous payment).
-export async function expireAndCancelOrder(orderId: number): Promise<"cancelled" | "paid" | null> {
+export async function expireAndCancelOrder(
+  orderId: number,
+  actor: Actor,
+  reason: string
+): Promise<"cancelled" | "paid" | null> {
   const { rows } = await pool.query<{ stripe_session_id: string | null }>(
     `SELECT stripe_session_id FROM orders WHERE id = $1`,
     [orderId]
@@ -202,12 +278,12 @@ export async function expireAndCancelOrder(orderId: number): Promise<"cancelled"
     }
     if (session.status === "complete") {
       if (session.payment_status !== "paid") return null;
-      await markOrderPaid(orderId, paymentIntentId(session));
+      await markOrderPaid(orderId, paymentIntentId(session), { kind: "system" });
       return "paid";
     }
   }
 
-  return (await cancelPendingOrder(orderId)) ? "cancelled" : null;
+  return (await cancelPendingOrder(orderId, actor, reason)) ? "cancelled" : null;
 }
 
 export function paymentIntentId(session: Stripe.Checkout.Session) {
@@ -227,7 +303,7 @@ export async function sweepExpiredReservations() {
   );
   for (const { id } of rows) {
     try {
-      await expireAndCancelOrder(id);
+      await expireAndCancelOrder(id, { kind: "system" }, "reservation_expired");
     } catch (err) {
       // Leave it for the next sweep rather than aborting the whole batch.
       console.error(`Failed to clean up expired order ${id}:`, err);
@@ -255,7 +331,8 @@ export const ADMIN_TRANSITIONS: Record<string, string[]> = {
 
 export class InvalidTransitionError extends Error {}
 
-export async function adminSetStatus(orderId: number, next: string) {
+export async function adminSetStatus(orderId: number, next: string, adminUserId: number) {
+  const actor: Actor = { kind: "admin", userId: adminUserId };
   const current = await inTransaction(async (client) => {
     const order = await lockOrder(client, orderId);
     if (!order) return null;
@@ -268,8 +345,13 @@ export async function adminSetStatus(orderId: number, next: string) {
       // paid -> shipped, or paid -> cancelled (stock goes back on the
       // shelf; any refund is issued from the Stripe dashboard). paid_at stays
       // set, so a replayed payment webhook can't resurrect this order.
-      if (next === "cancelled") await releaseOrderStock(client, orderId);
+      if (next === "cancelled") await releaseOrderStock(client, orderId, actor);
       await client.query(`UPDATE orders SET status = $1 WHERE id = $2`, [next, orderId]);
+      await recordOrderEvent(client, orderId, next === "shipped" ? "shipped" : "cancelled", actor, {
+        from: "paid",
+        to: next,
+        ...(next === "cancelled" ? { data: { reason: "admin" } } : {}),
+      });
     }
     return order.status;
   });
@@ -278,7 +360,7 @@ export async function adminSetStatus(orderId: number, next: string) {
   // pending -> cancelled has to talk to Stripe (expire the open session), so
   // it's done outside the transaction above.
   if (current === "pending") {
-    const result = await expireAndCancelOrder(orderId);
+    const result = await expireAndCancelOrder(orderId, actor, "admin");
     if (result !== "cancelled") {
       throw new InvalidTransitionError(
         result === "paid"
@@ -290,4 +372,16 @@ export async function adminSetStatus(orderId: number, next: string) {
 
   const { rows } = await pool.query(`SELECT * FROM orders WHERE id = $1`, [orderId]);
   return rows[0];
+}
+
+// Full history of one order, oldest first.
+export async function orderHistory(orderId: number) {
+  const { rows } = await pool.query(
+    `SELECT e.id, e.type, e.from_status, e.to_status, e.actor, e.data, e.created_at,
+            u.email AS actor_email
+     FROM order_events e LEFT JOIN users u ON u.id = e.actor_user_id
+     WHERE e.order_id = $1 ORDER BY e.id`,
+    [orderId]
+  );
+  return rows;
 }

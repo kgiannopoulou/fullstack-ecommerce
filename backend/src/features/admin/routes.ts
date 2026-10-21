@@ -8,7 +8,7 @@ import {
   listAdminProducts,
   updateProduct,
 } from "./products.controller";
-import { listAdminOrders, updateOrderStatus } from "./orders.controller";
+import { getOrderHistory, listAdminOrders, updateOrderStatus } from "./orders.controller";
 
 export const adminRouter = Router();
 
@@ -24,4 +24,5 @@ adminRouter.put("/products/:id", updateProduct);
 adminRouter.delete("/products/:id", deleteProduct);
 
 adminRouter.get("/orders", listAdminOrders);
+adminRouter.get("/orders/:id/history", getOrderHistory);
 adminRouter.patch("/orders/:id", updateOrderStatus);

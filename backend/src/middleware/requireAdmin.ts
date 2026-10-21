@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response } from "express";
+import { HttpError } from "./errorHandler";
 
 // Must run after requireAuth (see admin/routes.ts) so req.user is already
-// populated. Checks the role embedded in the JWT — see the caveat about
-// stale roles in middleware/auth.ts.
-export function requireAdmin(req: Request, res: Response, next: NextFunction) {
+// populated. The role is read from the database on every request, so a
+// promotion or demotion applies immediately.
+export function requireAdmin(req: Request, _res: Response, next: NextFunction) {
   if (req.user?.role !== "admin") {
-    return res.status(403).json({ error: "Admin access required" });
+    throw new HttpError(403, "Admin access required");
   }
   next();
 }

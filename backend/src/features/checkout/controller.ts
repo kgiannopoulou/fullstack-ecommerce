@@ -10,12 +10,14 @@ import {
   OutOfStockError,
   RESERVATION_MINUTES,
   cancelPendingOrder,
+  inTransaction,
   markOrderPaid,
   paymentIntentId,
+  recordOrderEvent,
   reserveStock,
 } from "./orderLifecycle";
 
-const MAX_QUANTITY_PER_PRODUCT = 99;
+export const MAX_QUANTITY_PER_PRODUCT = 99;
 
 // The client only ever sends { productId, quantity } pairs — never a price.
 // Prices are always looked up server-side from the database below, so a
@@ -28,7 +30,8 @@ const createSessionSchema = z.object({
         quantity: z.number().int().positive().max(MAX_QUANTITY_PER_PRODUCT),
       })
     )
-    .min(1),
+    .min(1)
+    .max(50),
 });
 
 // Called when a signed-in user clicks "Checkout". Validates the cart against
@@ -60,9 +63,9 @@ export async function createCheckoutSession(req: Request, res: Response) {
     }
   }
 
-  // Order + order_items + the stock reservation are written in one
-  // transaction: either the order exists and holds its stock, or nothing
-  // changed at all.
+  // Order + order_items + the stock reservation + the audit event are
+  // written in one transaction: either the order exists and holds its
+  // stock, or nothing changed at all.
   const client = await pool.connect();
   let orderId: number;
   const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
@@ -97,7 +100,7 @@ export async function createCheckoutSession(req: Request, res: Response) {
     } catch (err) {
       if (err instanceof OutOfStockError) {
         const name = productById.get(err.productId)?.name ?? `product ${err.productId}`;
-        throw new HttpError(409, `Not enough stock for ${name}`);
+        throw new HttpError(409, `Not enough stock for ${name}`, "OUT_OF_STOCK");
       }
       throw err;
     }
@@ -116,6 +119,10 @@ export async function createCheckoutSession(req: Request, res: Response) {
         [orderId, item.productId, item.quantity, productById.get(item.productId).price_cents]
       );
     }
+    await recordOrderEvent(client, orderId, "created", { kind: "customer", userId: user.id }, {
+      to: "pending",
+      data: { totalCents, items: wanted },
+    });
     await client.query("COMMIT");
   } catch (err) {
     await client.query("ROLLBACK");
@@ -136,6 +143,7 @@ export async function createCheckoutSession(req: Request, res: Response) {
         payment_method_types: ["card"],
         line_items: lineItems,
         metadata: { orderId: String(orderId) },
+        customer_email: user.email,
         expires_at: Math.floor(Date.now() / 1000) + CHECKOUT_SESSION_MINUTES * 60,
         success_url: `${env.clientUrl}/account/orders?checkout=success`,
         cancel_url: `${env.clientUrl}/cart?checkout=cancelled`,
@@ -148,20 +156,22 @@ export async function createCheckoutSession(req: Request, res: Response) {
     // process dies before getting here, the reservation sweeper cancels the
     // order once reserved_until passes.)
     console.error(`Stripe session creation failed for order ${orderId}:`, err);
-    await cancelPendingOrder(orderId).catch((cleanupErr) =>
-      console.error(`Could not cancel order ${orderId}:`, cleanupErr)
+    await cancelPendingOrder(orderId, { kind: "system" }, "payment_provider_error").catch(
+      (cleanupErr) => console.error(`Could not cancel order ${orderId}:`, cleanupErr)
     );
     throw new HttpError(502, "Could not start payment. Please try again.");
   }
 
-  await pool.query(`UPDATE orders SET stripe_session_id = $1 WHERE id = $2`, [
-    session.id,
-    orderId,
-  ]);
+  await inTransaction(async (tx) => {
+    await tx.query(`UPDATE orders SET stripe_session_id = $1 WHERE id = $2`, [session.id, orderId]);
+    await recordOrderEvent(tx, orderId, "checkout_session_created", { kind: "system" }, {
+      data: { sessionId: session.id },
+    });
+  });
 
   // Frontend does `window.location.href = data.url` to send the browser to
   // Stripe's hosted payment page.
-  res.json({ url: session.url });
+  res.json({ url: session.url, orderId });
 }
 
 // Stripe calls this endpoint directly (not the browser) once a payment
@@ -170,13 +180,13 @@ export async function createCheckoutSession(req: Request, res: Response) {
 // right after paying still gets a fulfilled order.
 //
 // req.body here is the *raw* request buffer, not parsed JSON — see the
-// express.raw() middleware wired up for this exact path in index.ts, which
+// express.raw() middleware wired up for this exact path in app.ts, which
 // must run instead of the normal express.json() parser because Stripe's
 // signature is computed over the raw bytes.
 export async function stripeWebhook(req: Request, res: Response) {
   const signature = req.headers["stripe-signature"];
   if (!signature || typeof signature !== "string") {
-    return res.status(400).send("Missing Stripe signature");
+    throw new HttpError(400, "Missing Stripe signature");
   }
 
   // Proves the request really came from Stripe (using STRIPE_WEBHOOK_SECRET)
@@ -185,12 +195,23 @@ export async function stripeWebhook(req: Request, res: Response) {
   try {
     event = stripe.webhooks.constructEvent(req.body, signature, env.stripeWebhookSecret);
   } catch (err) {
-    return res.status(400).send(`Webhook signature verification failed: ${(err as Error).message}`);
+    throw new HttpError(400, `Webhook signature verification failed: ${(err as Error).message}`);
   }
 
-  // Every handler below is idempotent (see orderLifecycle.ts), so Stripe
-  // retrying an event, or an event being replayed after an admin changed the
-  // order, can never move stock twice.
+  // First layer of replay protection: an event id that was already handled
+  // is acknowledged and skipped. Two deliveries racing each other can both
+  // get past this check, which is fine: every handler below is idempotent on
+  // its own (see orderLifecycle.ts), so Stripe retrying an event, or an
+  // event being replayed after an admin changed the order, can never move
+  // stock or take payment twice.
+  const { rowCount: seen } = await pool.query(`SELECT 1 FROM stripe_webhook_events WHERE id = $1`, [
+    event.id,
+  ]);
+  if (seen) {
+    return res.json({ received: true, duplicate: true });
+  }
+
+  let orderId: number | null = null;
   switch (event.type) {
     // A completed session is normally already paid (card payments). The
     // async_payment_* events only matter for delayed payment methods, but
@@ -198,9 +219,9 @@ export async function stripeWebhook(req: Request, res: Response) {
     case "checkout.session.completed":
     case "checkout.session.async_payment_succeeded": {
       const session = event.data.object;
-      const orderId = Number(session.metadata?.orderId);
+      orderId = Number(session.metadata?.orderId) || null;
       if (orderId && session.payment_status === "paid") {
-        await markOrderPaid(orderId, paymentIntentId(session));
+        await markOrderPaid(orderId, paymentIntentId(session), { kind: "stripe" });
       }
       break;
     }
@@ -209,14 +230,23 @@ export async function stripeWebhook(req: Request, res: Response) {
     case "checkout.session.expired":
     case "checkout.session.async_payment_failed": {
       const session = event.data.object;
-      const orderId = Number(session.metadata?.orderId);
+      orderId = Number(session.metadata?.orderId) || null;
       if (orderId) {
-        await cancelPendingOrder(orderId);
+        await cancelPendingOrder(orderId, { kind: "stripe" }, event.type.replace("checkout.session.", ""));
       }
       break;
     }
     // Other event types are ignored.
   }
+
+  // Recorded only after the handler succeeded: if it threw, Stripe gets a
+  // 500 and retries, and the retry must be processed.
+  await pool.query(
+    `INSERT INTO stripe_webhook_events (id, type, order_id)
+     VALUES ($1, $2, (SELECT id FROM orders WHERE id = $3))
+     ON CONFLICT (id) DO NOTHING`,
+    [event.id, event.type, orderId]
+  );
 
   res.json({ received: true });
 }
