@@ -4,6 +4,33 @@
 
 Next.js storefront and admin panel, Express/TypeScript API, PostgreSQL and Stripe Checkout. The interesting part is the order pipeline: **stock can't be oversold, a payment can't be processed twice, and abandoned or late payments clean up after themselves.** An automated test suite proves each of these against a real Postgres, with requests running concurrently.
 
+![Catalog with search, price filters and stock](docs/screenshots/catalog.jpg)
+
+| Admin: products and stock | Admin: an order's audit trail |
+|---|---|
+| ![Admin products](docs/screenshots/admin-products.jpg) | ![Order audit trail](docs/screenshots/order-audit-trail.jpg) |
+
+*Right: Stripe was unreachable at checkout, so the order was cancelled and its reserved stock returned
+immediately — every step recorded in `order_events` with who caused it.*
+
+## Architecture
+
+```mermaid
+flowchart LR
+  B[Browser] -->|HTTPS, httpOnly cookie| FE[Next.js storefront + admin]
+  FE -->|REST /api| API[Express / TypeScript API]
+  API -->|parameterised SQL, row locks| DB[(PostgreSQL<br/>orders · stock · order_events)]
+  API -->|create Checkout Session<br/>idempotency key| ST[Stripe]
+  ST -->|signed webhooks<br/>paid · expired| API
+  SW[Reservation sweeper<br/>every 60 s] --> DB
+  API -->|verification / reset emails| MAIL[SMTP · Mailpit locally]
+```
+
+The API owns every state change. Stock is reserved inside the same PostgreSQL transaction that
+creates the order; Stripe only ever *confirms* a payment through a signed webhook, which is
+de-duplicated by event id and applied idempotently. The sweeper is the safety net for anything
+Stripe or a crashed request never told us about.
+
 ## What the tests prove
 
 `backend/test/` holds 62 tests that run against a real database through the real HTTP stack, with a fake Stripe that uses Stripe's own webhook signing:
@@ -118,6 +145,61 @@ UPDATE users SET role = 'admin' WHERE email = 'you@example.com';
 
 `render.yaml` deploys Postgres, the API (Docker) and the storefront to Render's free tier, with Stripe in test mode. See [docs/DEPLOY.md](docs/DEPLOY.md) for the steps.
 
+## Design decisions
+
+**Why reserve stock at checkout instead of at payment?** Reserving after payment means two people
+can pay for the last unit and one must be refunded. Reserving first (`UPDATE … WHERE stock >= qty`
+in the order's transaction) turns overselling into a clean `OUT_OF_STOCK` before anyone reaches
+Stripe; the cost is releasing abandoned reservations, which the expiry webhook and the sweeper do.
+
+**Why raw SQL with `pg` instead of an ORM?** The correctness lives in the SQL: conditional updates,
+row locks taken in product-id order, flags flipped in the same statement that moves stock. Writing
+it by hand keeps those guarantees visible and reviewable, and the migrations are plain `.sql` files.
+
+**Why trust webhooks, not the redirect?** The browser's return from Stripe can be faked, lost or
+arrive twice. Orders become `paid` only from a signature-verified `checkout.session.completed`
+event, stored by event id so replays are acknowledged but not re-processed.
+
+**Why a sweeper as well as webhooks?** Webhooks can be missed (downtime, misconfiguration). A
+once-a-minute sweeper reconciles with Stripe — expiring stale reservations and catching missed
+payments — and is written to be safe when several instances run it at the same time.
+
+**Why load role and verification from the database on every request?** The JWT carries only the
+user id and a `session_version`. Promotions, demotions and "log out everywhere" after a password
+reset take effect immediately, at the cost of one indexed lookup per request.
+
+**Why test against a real PostgreSQL?** Races, deadlocks and idempotency are database behaviour; a
+mocked repository would pass every one of these tests while the real system oversold.
+
+## Production considerations
+
+Built and tested toward production, deployable as a demo on Render's free tier, but not running a
+real shop. Before taking real payments:
+
+* **Secrets** — Stripe live keys, webhook secret and `JWT_SECRET` in the platform's secret store,
+  rotated, never in `.env` files on servers.
+* **Payments compliance** — Stripe Checkout keeps card data off our servers (PCI SAQ A); add
+  Stripe Tax, receipts, refunds from the admin panel and a terms/privacy flow.
+* **Scaling** — the API is stateless and can run several instances; the in-process sweeper should
+  move to a single scheduled job (or keep running everywhere — it is concurrency-safe — but that
+  wastes queries). Add PgBouncer and a read replica for the catalog.
+* **Data protection** — daily backups with point-in-time recovery, GDPR export/deletion for
+  accounts, retention for `order_events`.
+* **Security hardening** — `helmet` security headers and a CSP on the frontend, CSRF tokens if the
+  cookie ever moves to `SameSite=None`, dependency and secret scanning in CI, and rate limits
+  backed by Redis instead of process memory.
+* **Observability** — structured JSON logs carrying the existing `requestId`, metrics on checkout
+  conversions, webhook failures and sweeper corrections, and alerts on webhook 5xx.
+* **Email** — a real provider (SES / Postmark) with SPF/DKIM instead of Mailpit.
+
+## Limitations
+
+* **Stripe test mode only**; no tax, shipping rates, coupons or partial refunds.
+* **In-memory rate limits** — reset on restart and not shared between instances.
+* **Images are URLs** — no upload pipeline or CDN.
+* **No end-to-end browser tests yet** — the 62 tests cover the API through HTTP; the frontend is
+  type-checked, linted and built in CI.
+
 ## Project layout
 
 - `backend/`: Express API with raw `pg` and hand-written SQL migrations (`backend/src/db/migrations`). `src/app.ts` builds the app (used by the tests), and `src/index.ts` starts it.
@@ -125,3 +207,7 @@ UPDATE users SET role = 'admin' WHERE email = 'you@example.com';
 - `frontend/`: Next.js App Router storefront and admin panel
 - `docs/`: API reference and deployment guide
 - `docker-compose.yml`: local Postgres, test Postgres and Mailpit
+
+## Contributing and license
+
+[CONTRIBUTING.md](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [MIT](LICENSE) © 2026 kgiannopoulou
