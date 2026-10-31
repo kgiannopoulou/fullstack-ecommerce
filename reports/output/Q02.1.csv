@@ -1,0 +1,4 @@
+period,gross_revenue,discounts,refunds,net_revenue,orders_placed,fulfilled_orders,units_sold,avg_order_value,refund_rate_pct,cancellation_rate_pct,gross_margin_pct,active_customers
+2024,10257205,304253,311673,9641279,60240,56994,181620,169.16,4.23,5.39,44.1,41403
+2025,13238949,397488,384149,12457312,84550,79966,256954,155.78,3.78,5.42,45.2,49543
+Total,23496153,701741,695822,22098590,144790,136960,438574,161.35,3.96,5.41,44.7,87654

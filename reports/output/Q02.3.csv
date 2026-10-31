@@ -1,0 +1,4 @@
+order_set,orders,mean_aov,median_order_value
+Bulk orders only,38,4145.36,3017.76
+All fulfilled orders,136960,161.35,123.98
+Excluding bulk orders,136922,160.25,123.98

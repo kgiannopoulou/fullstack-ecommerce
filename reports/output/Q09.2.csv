@@ -1,0 +1,10 @@
+country,courier,orders,avg_days_to_deliver,on_time_pct
+Greece,ELTA Courier,41394,5.36,36.6
+Greece,SwiftCourier,28832,3.89,67.9
+Bulgaria,DHL,7025,6.32,72.1
+Cyprus,DHL,15588,6.69,66.3
+France,DHL,8198,7.56,54.8
+Germany,DHL,12320,7.31,57.5
+Italy,DHL,9555,7.47,56.0
+Netherlands,DHL,7024,7.11,60.9
+Spain,DHL,7024,7.82,51.2

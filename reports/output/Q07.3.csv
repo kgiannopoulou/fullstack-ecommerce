@@ -1,0 +1,7 @@
+period,first_delivery,customers,repeat_90d_pct
+1) before loyalty programme,late,24772,22.5
+1) before loyalty programme,on time,22751,33.5
+"2) loyalty, old courier",late,4677,35.0
+"2) loyalty, old courier",on time,4096,45.2
+3) loyalty + new courier,late,5728,33.2
+3) loyalty + new courier,on time,10551,45.7

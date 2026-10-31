@@ -1,0 +1,7 @@
+stock_status,products,units_on_hand,stock_value_at_cost,pct_of_stock_value
+CRITICAL,20,156,3713,0.4
+HIGH RISK,47,2413,72258,8.8
+DEAD STOCK,11,72,2087,0.3
+OVERSTOCK,32,3519,157726,19.1
+HEALTHY,250,22067,589446,71.4
+INACTIVE,11,0,0,0.0

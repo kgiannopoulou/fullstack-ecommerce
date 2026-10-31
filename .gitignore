@@ -6,3 +6,8 @@ dist/
 build/
 *.log
 .DS_Store
+
+# analytics: generated source data and Python caches
+analytics/data/
+__pycache__/
+.pytest_cache/

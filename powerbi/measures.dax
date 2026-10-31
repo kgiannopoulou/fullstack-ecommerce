@@ -1,0 +1,117 @@
+// =============================================================================
+// DAX measures for the management dashboard.
+// Same definitions as docs/kpi_dictionary.md and the SQL views.
+// Tables (from reporting.* via Power Query, see queries.pq):
+//   fact_orders, fact_sales, dim_date, dim_product, dim_customer,
+//   inventory_status, cohort_retention
+// Relationships: fact_* [order_date] -> dim_date[date]
+//                fact_sales[product_id] -> dim_product[product_id]
+//                fact_* [customer_id] -> dim_customer[customer_id]
+// Mark dim_date as the date table.
+// =============================================================================
+
+// ---- Sales ------------------------------------------------------------------
+Net Revenue = SUM ( fact_orders[net_revenue] )
+
+Gross Revenue =
+CALCULATE ( SUM ( fact_orders[gross_amount] ), fact_orders[is_fulfilled] = TRUE () )
+
+Discounts =
+CALCULATE ( SUM ( fact_orders[discount_amount] ), fact_orders[is_fulfilled] = TRUE () )
+
+Refunds = SUM ( fact_orders[refund_amount] )
+
+Orders Placed = COUNTROWS ( fact_orders )
+
+Fulfilled Orders =
+CALCULATE ( COUNTROWS ( fact_orders ), fact_orders[is_fulfilled] = TRUE () )
+
+Units Sold =
+CALCULATE ( SUM ( fact_orders[units] ), fact_orders[is_fulfilled] = TRUE () )
+
+Average Order Value = DIVIDE ( [Net Revenue], [Fulfilled Orders] )
+
+COGS = CALCULATE ( SUM ( fact_orders[cogs] ), fact_orders[is_fulfilled] = TRUE () )
+
+Gross Margin % = DIVIDE ( [Net Revenue] - [COGS], [Net Revenue] )
+
+Refund Rate % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fact_orders ), fact_orders[status] = "refunded" ),
+    [Fulfilled Orders]
+)
+
+Cancellation Rate % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fact_orders ), fact_orders[status] = "cancelled" ),
+    [Orders Placed]
+)
+
+// ---- Growth ----------------------------------------------------------------
+Net Revenue PM = CALCULATE ( [Net Revenue], DATEADD ( dim_date[date], -1, MONTH ) )
+
+MoM Growth % = DIVIDE ( [Net Revenue] - [Net Revenue PM], [Net Revenue PM] )
+
+Net Revenue PY = CALCULATE ( [Net Revenue], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+YoY Growth % = DIVIDE ( [Net Revenue] - [Net Revenue PY], [Net Revenue PY] )
+
+Rolling 90d Revenue =
+CALCULATE (
+    [Net Revenue],
+    DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -90, DAY )
+)
+
+// ---- Customers -------------------------------------------------------------
+Active Customers =
+CALCULATE (
+    DISTINCTCOUNT ( fact_orders[customer_id] ),
+    fact_orders[is_fulfilled] = TRUE (),
+    NOT ISBLANK ( fact_orders[customer_id] )
+)
+
+Repeat Customer Rate % =
+VAR Buyers =
+    FILTER ( dim_customer, dim_customer[orders] >= 1 )
+RETURN
+    DIVIDE ( COUNTROWS ( FILTER ( Buyers, dim_customer[orders] > 1 ) ), COUNTROWS ( Buyers ) )
+
+Revenue per Customer = DIVIDE ( [Net Revenue], [Active Customers] )
+
+Segment Revenue Share % =
+DIVIDE (
+    SUM ( dim_customer[lifetime_revenue] ),
+    CALCULATE ( SUM ( dim_customer[lifetime_revenue] ), ALL ( dim_customer[rfm_segment] ) )
+)
+
+Segment Customer Share % =
+DIVIDE (
+    COUNTROWS ( dim_customer ),
+    CALCULATE ( COUNTROWS ( dim_customer ), ALL ( dim_customer[rfm_segment] ) )
+)
+
+Value Index = DIVIDE ( [Segment Revenue Share %], [Segment Customer Share %] )
+
+Retention % = AVERAGE ( cohort_retention[retention_pct] ) / 100
+
+// ---- Operations ------------------------------------------------------------
+On-time Delivery % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fact_orders ), fact_orders[is_fulfilled] = TRUE (), fact_orders[is_late] = FALSE () ),
+    [Fulfilled Orders]
+)
+
+Avg Days to Deliver =
+CALCULATE ( AVERAGE ( fact_orders[days_to_deliver] ), fact_orders[is_fulfilled] = TRUE () )
+
+// ---- Inventory -------------------------------------------------------------
+Stock Value at Cost = SUM ( inventory_status[stock_value_at_cost] )
+
+Products at Risk =
+CALCULATE (
+    COUNTROWS ( inventory_status ),
+    inventory_status[stock_status] IN { "CRITICAL", "HIGH RISK" }
+)
+
+Overstock Value =
+CALCULATE ( [Stock Value at Cost], inventory_status[stock_status] = "OVERSTOCK" )

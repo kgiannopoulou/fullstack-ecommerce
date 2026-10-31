@@ -1,0 +1,7 @@
+acquisition_channel,customers,repeat_rate_pct,orders_per_customer,revenue_per_customer
+Email,8847,41.7,1.72,275.28
+Direct,13133,38.4,1.63,263.46
+Organic Search,24585,35.9,1.57,254.01
+Paid Search,19195,32.5,1.49,238.87
+Social,14004,31.0,1.46,237.08
+Marketplace,7890,25.0,1.34,216.90

@@ -1,0 +1,7 @@
+payment_method,orders_placed,cancelled,cancellation_rate_pct,cancelled_value
+Cash on Delivery,23164,2356,10.17,400979
+Apple Pay,4278,220,5.14,37192
+Bank Transfer,7146,355,4.97,62463
+PayPal,27456,1251,4.56,214788
+Card,82370,3634,4.41,621706
+Unknown,376,14,3.72,2515

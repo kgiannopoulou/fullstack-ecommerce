@@ -1,0 +1,11 @@
+segment,pct_customers,pct_revenue,value_index,recommended_action
+Champions,3.0,9.0,2.95,"Protect: loyalty perks, early access"
+Cannot Lose Them,2.7,6.2,2.32,"Win-back now: high past value, going quiet"
+Loyal,6.6,13.3,2.02,"Protect: loyalty perks, early access"
+At Risk,7.7,10.6,1.38,"Win-back now: high past value, going quiet"
+Potential Loyalists,9.6,12.0,1.25,Nurture: third-order incentive
+Need Attention,17.6,14.4,0.82,Nurture: third-order incentive
+Hibernating,14.3,9.7,0.68,Low priority: occasional reactivation campaign
+Lost,15.3,10.4,0.68,Low priority: occasional reactivation campaign
+Promising,11.2,7.0,0.63,Onboard: second-order offer within 30 days
+New Customers,12.0,7.4,0.62,Onboard: second-order offer within 30 days

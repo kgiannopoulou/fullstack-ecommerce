@@ -1,0 +1,21 @@
+rank,product_name,category,net_revenue,units,share_pct,cumulative_share_pct
+1,Laptop Sleeve 2 T125,Bags & Travel,3616645,50743,16.37,16.4
+2,Earbuds Max P729,Audio,1697823,16278,7.68,24.0
+3,Mechanical Keyboard Pro Q322,Computer Accessories,1353734,44133,6.13,30.2
+4,Wireless Mouse Mini T125,Computer Accessories,970123,7953,4.39,34.6
+5,Fitness Band O174,Wearables,955976,3389,4.33,38.9
+6,Webcam Max Y914,Computer Accessories,745151,13336,3.37,42.3
+7,Laptop Stand Lite B655,Computer Accessories,435265,4448,1.97,44.2
+8,Laptop Stand 2 N643,Computer Accessories,432661,6527,1.96,46.2
+9,Security Camera Lite G544,Smart Home,420521,9296,1.90,48.1
+10,Phone Charger Plus T125,Phone Accessories,335596,13704,1.52,49.6
+11,Power Bank Lite G544,Phone Accessories,284990,19748,1.29,50.9
+12,Wireless Headphones A100,Audio,284669,3213,1.29,52.2
+13,Tea Kettle C248,Home & Kitchen,229812,6277,1.04,53.2
+14,Earbuds 2 Q384,Audio,215854,2593,0.98,54.2
+15,Tea Kettle Mini M988,Home & Kitchen,210742,12868,0.95,55.2
+16,Fitness Band Max Z507,Wearables,205639,2304,0.93,56.1
+17,Smartwatch A100,Wearables,199781,3313,0.90,57.0
+18,Bluetooth Speaker Lite Z507,Audio,191449,1301,0.87,57.9
+19,Phone Case X S532,Phone Accessories,160242,3171,0.73,58.6
+20,Duffel Bag Plus F951,Bags & Travel,155770,3428,0.70,59.3

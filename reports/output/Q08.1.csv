@@ -1,0 +1,364 @@
+product_name,category,abc_class,stock,avg_daily_demand,days_cover,lead_time,stock_status,action
+Capture Card Pro X359,Gaming,A,20,4.89,4.1,14,CRITICAL,Reorder immediately (expedite)
+Ceramic Coffee Mug X L495,Home & Kitchen,A,18,1.73,10.4,14,CRITICAL,Reorder immediately (expedite)
+Game Controller Plus R877,Gaming,A,3,0.38,7.9,10,CRITICAL,Reorder immediately (expedite)
+Bluetooth Speaker Lite Z507,Audio,A,0,0.25,0.0,8,CRITICAL,Reorder immediately (expedite)
+Coffee Grinder Lite G544,Home & Kitchen,B,44,6.42,6.9,10,CRITICAL,Reorder immediately
+Wireless Mouse X P791,Computer Accessories,B,0,4.68,0.0,10,CRITICAL,Reorder immediately
+Watch Strap Lite X359,Wearables,B,8,0.83,9.6,13,CRITICAL,Reorder immediately
+Studio Headphones C248,Audio,B,5,0.71,7.0,11,CRITICAL,Reorder immediately
+Gaming Mouse Pad Lite S470,Gaming,B,4,0.48,8.3,9,CRITICAL,Reorder immediately
+Phone Charger Go D865,Phone Accessories,C,20,2.02,9.9,12,CRITICAL,Reorder immediately
+Laptop Stand Pro L433,Computer Accessories,C,11,1.11,9.9,14,CRITICAL,Reorder immediately
+Desk Mat Lite N581,Office,C,6,1.08,5.6,6,CRITICAL,Reorder immediately
+Power Bank O174,Phone Accessories,C,3,0.83,3.6,10,CRITICAL,Reorder immediately
+Pen Set Max D803,Office,C,7,0.78,9.0,11,CRITICAL,Reorder immediately
+Desk Mat Plus O236,Office,C,5,0.68,7.4,8,CRITICAL,Reorder immediately
+Security Camera Pro X359,Smart Home,C,0,0.64,0.0,6,CRITICAL,Reorder immediately
+Laptop Sleeve H137,Bags & Travel,C,2,0.33,6.1,12,CRITICAL,Reorder immediately
+Resistance Bands H137,Fitness,C,0,0.27,0.0,6,CRITICAL,Reorder immediately
+Yoga Mat Pro C248,Fitness,C,0,0.06,0.0,14,CRITICAL,Reorder immediately
+Resistance Bands Plus R877,Fitness,C,0,0.03,0.0,7,CRITICAL,Reorder immediately
+Phone Charger Plus T125,Phone Accessories,A,491,44.11,11.1,6,HIGH RISK,Reorder this week
+Wireless Mouse Mini T125,Computer Accessories,A,342,24.69,13.9,9,HIGH RISK,Reorder this week
+Tea Kettle C248,Home & Kitchen,A,315,15.96,19.7,13,HIGH RISK,Reorder this week
+Webcam Lite I692,Computer Accessories,A,155,14.24,10.9,8,HIGH RISK,Reorder this week
+Earbuds Max P729,Audio,A,141,8.90,15.8,9,HIGH RISK,Reorder this week
+Monitor Arm Mini V273,Computer Accessories,A,82,7.34,11.2,10,HIGH RISK,Reorder this week
+Canvas Backpack 2 M988,Bags & Travel,A,39,3.79,10.3,8,HIGH RISK,Reorder this week
+Wireless Headphones Pro J285,Audio,A,49,2.72,18.0,13,HIGH RISK,Reorder this week
+Studio Headphones Pro L433,Audio,A,47,2.60,18.1,13,HIGH RISK,Reorder this week
+Soundbar V211,Audio,A,32,2.39,13.4,13,HIGH RISK,Reorder this week
+Fitness Band Mini U618,Wearables,A,26,1.61,16.1,11,HIGH RISK,Reorder this week
+Soundbar Pro E396,Audio,A,21,1.58,13.3,9,HIGH RISK,Reorder this week
+Canvas Backpack Plus K840,Bags & Travel,B,60,5.41,11.1,6,HIGH RISK,Reorder this week
+Laptop Stand Max R877,Computer Accessories,B,41,2.93,14.0,10,HIGH RISK,Reorder this week
+Phone Charger Air U680,Phone Accessories,B,41,2.83,14.5,9,HIGH RISK,Reorder this week
+Cable Organizer Pro X359,Office,B,34,2.53,13.4,9,HIGH RISK,Reorder this week
+Ceramic Coffee Mug Pro J285,Home & Kitchen,B,34,2.52,13.5,11,HIGH RISK,Reorder this week
+Mechanical Keyboard 2 S532,Computer Accessories,B,38,2.24,17.0,11,HIGH RISK,Reorder this week
+Coffee Grinder 2 Q384,Home & Kitchen,B,32,2.02,15.8,9,HIGH RISK,Reorder this week
+Travel Organizer Max U618,Bags & Travel,B,33,1.94,17.0,14,HIGH RISK,Reorder this week
+Power Bank Max P729,Phone Accessories,B,35,1.86,18.8,12,HIGH RISK,Reorder this week
+USB-C Hub Max K840,Computer Accessories,B,22,1.58,13.9,8,HIGH RISK,Reorder this week
+Laptop Sleeve Max N581,Bags & Travel,B,23,1.57,14.6,12,HIGH RISK,Reorder this week
+Phone Charger Mini K840,Phone Accessories,B,18,1.44,12.5,12,HIGH RISK,Reorder this week
+Travel Organizer 2 A162,Bags & Travel,B,15,1.40,10.7,9,HIGH RISK,Reorder this week
+Wireless Mouse Pro X359,Computer Accessories,B,11,1.11,9.9,6,HIGH RISK,Reorder this week
+USB-C Hub 2 G606,Computer Accessories,B,14,0.89,15.7,14,HIGH RISK,Reorder this week
+Wireless Headphones Lite S470,Audio,B,9,0.86,10.5,7,HIGH RISK,Reorder this week
+Gaming Mouse Pad Plus Y914,Gaming,B,8,0.60,13.3,12,HIGH RISK,Reorder this week
+Watch Strap Pro C248,Wearables,B,8,0.58,13.8,7,HIGH RISK,Reorder this week
+Gaming Mouse Pad Pro Q322,Gaming,B,10,0.57,17.5,12,HIGH RISK,Reorder this week
+Smart Bulb Max I692,Smart Home,B,6,0.51,11.8,11,HIGH RISK,Reorder this week
+Action Camera Pro C248,Cameras,B,5,0.31,16.1,11,HIGH RISK,Reorder this week
+Desk Lamp Mini R877,Office,C,31,2.00,15.5,10,HIGH RISK,Reorder this week
+Car Mount Plus O236,Phone Accessories,C,25,1.53,16.3,10,HIGH RISK,Reorder this week
+Ceramic Coffee Mug Lite S470,Home & Kitchen,C,22,1.10,20.0,14,HIGH RISK,Reorder this week
+Phone Case Air B717,Phone Accessories,C,17,1.08,15.7,10,HIGH RISK,Reorder this week
+Car Mount Air P791,Phone Accessories,C,13,1.00,13.0,11,HIGH RISK,Reorder this week
+Poster Set Pro X359,Books & Prints,C,15,0.82,18.3,12,HIGH RISK,Reorder this week
+Power Bank Pro X359,Phone Accessories,C,10,0.74,13.5,8,HIGH RISK,Reorder this week
+Desk Lamp Max I692,Office,C,11,0.62,17.7,13,HIGH RISK,Reorder this week
+Art Print A100,Books & Prints,C,10,0.56,17.9,11,HIGH RISK,Reorder this week
+Poster Set Max B655,Books & Prints,C,7,0.44,15.9,9,HIGH RISK,Reorder this week
+Photo Book Pro J285,Books & Prints,C,4,0.33,12.1,8,HIGH RISK,Reorder this week
+Notebook Set 2 C310,Office,C,5,0.32,15.6,9,HIGH RISK,Reorder this week
+Motion Sensor Pro L433,Smart Home,C,4,0.27,14.8,13,HIGH RISK,Reorder this week
+Earbuds O174,Audio,C,2,0.18,11.1,10,HIGH RISK,Reorder this week
+Smart Bulb Plus A162,Smart Home,C,6,0.00,,13,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Desk Lamp Plus A162,Office,C,10,0.00,,11,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Laptop Sleeve Pro J285,Bags & Travel,C,6,0.00,,11,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Gaming Mouse Pad Max U618,Gaming,C,1,0.00,,11,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Photo Book Lite L433,Books & Prints,C,2,0.00,,8,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Webcam X K902,Computer Accessories,C,1,0.00,,12,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Water Bottle Plus A162,Home & Kitchen,C,10,0.00,,14,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Soundbar Max W766,Audio,C,6,0.00,,7,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Bluetooth Speaker Max I692,Audio,C,28,0.00,,13,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Tea Kettle Lite U618,Home & Kitchen,C,1,0.00,,8,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Fitness Tracker Max U618,Fitness,C,1,0.00,,13,DEAD STOCK,"Clear: markdown, bundle or return to supplier"
+Motion Sensor C248,Smart Home,A,210,1.67,125.7,7,OVERSTOCK,Pause purchasing; consider promotion
+Smart Bulb Mini R877,Smart Home,A,375,1.31,286.3,7,OVERSTOCK,Pause purchasing; consider promotion
+Capture Card Plus F951,Gaming,A,129,0.64,201.6,12,OVERSTOCK,Pause purchasing; consider promotion
+Gaming Headset A100,Gaming,B,500,1.92,260.4,13,OVERSTOCK,Pause purchasing; consider promotion
+USB-C Hub X W828,Computer Accessories,B,155,1.07,144.9,6,OVERSTOCK,Pause purchasing; consider promotion
+Resistance Bands Mini P729,Fitness,B,171,1.01,169.3,14,OVERSTOCK,Pause purchasing; consider promotion
+Canvas Backpack A100,Bags & Travel,B,94,0.78,120.5,12,OVERSTOCK,Pause purchasing; consider promotion
+Motion Sensor Mini M988,Smart Home,B,163,0.77,211.7,6,OVERSTOCK,Pause purchasing; consider promotion
+Action Camera Lite E396,Cameras,B,157,0.53,296.2,11,OVERSTOCK,Pause purchasing; consider promotion
+Smartwatch Mini G544,Wearables,B,53,0.38,139.5,11,OVERSTOCK,Pause purchasing; consider promotion
+Smartwatch 2 W766,Wearables,B,50,0.30,166.7,6,OVERSTOCK,Pause purchasing; consider promotion
+Camera Tripod Max U618,Cameras,B,25,0.10,250.0,10,OVERSTOCK,Pause purchasing; consider promotion
+Wireless Headphones Air U680,Audio,B,8,0.03,266.7,14,OVERSTOCK,Pause purchasing; consider promotion
+Studio Headphones Mini M988,Audio,B,13,0.01,1300.0,7,OVERSTOCK,Pause purchasing; consider promotion
+Monitor Arm X R939,Computer Accessories,C,105,0.80,131.3,14,OVERSTOCK,Pause purchasing; consider promotion
+Capture Card 2 H199,Gaming,C,231,0.79,292.4,7,OVERSTOCK,Pause purchasing; consider promotion
+Phone Case 2 J347,Phone Accessories,C,122,0.61,200.0,14,OVERSTOCK,Pause purchasing; consider promotion
+Earbuds X Z569,Audio,C,87,0.54,161.1,14,OVERSTOCK,Pause purchasing; consider promotion
+Cable Organizer O174,Office,C,333,0.51,652.9,7,OVERSTOCK,Pause purchasing; consider promotion
+Desk Mat Max W766,Office,C,104,0.41,253.7,10,OVERSTOCK,Pause purchasing; consider promotion
+Kitchen Scale Max W766,Home & Kitchen,C,75,0.36,208.3,7,OVERSTOCK,Pause purchasing; consider promotion
+Photo Book Max N581,Books & Prints,C,111,0.34,326.5,14,OVERSTOCK,Pause purchasing; consider promotion
+Foam Roller Max B655,Fitness,C,43,0.29,148.3,12,OVERSTOCK,Pause purchasing; consider promotion
+Ring Light Lite Z507,Cameras,C,38,0.21,181.0,8,OVERSTOCK,Pause purchasing; consider promotion
+Photo Book Mini P729,Books & Prints,C,32,0.19,168.4,13,OVERSTOCK,Pause purchasing; consider promotion
+Coffee Grinder Mini Y914,Home & Kitchen,C,24,0.06,400.0,9,OVERSTOCK,Pause purchasing; consider promotion
+Canvas Backpack Pro C248,Bags & Travel,C,16,0.06,266.7,14,OVERSTOCK,Pause purchasing; consider promotion
+Notebook Set Mini K840,Office,C,70,0.06,1166.7,12,OVERSTOCK,Pause purchasing; consider promotion
+Game Controller Max N581,Gaming,C,7,0.04,175.0,14,OVERSTOCK,Pause purchasing; consider promotion
+Action Camera A100,Cameras,C,4,0.03,133.3,14,OVERSTOCK,Pause purchasing; consider promotion
+Duffel Bag Max B655,Bags & Travel,C,5,0.03,166.7,13,OVERSTOCK,Pause purchasing; consider promotion
+Wireless Mouse Lite N581,Computer Accessories,C,9,0.01,900.0,13,OVERSTOCK,Pause purchasing; consider promotion
+Laptop Sleeve 2 T125,Bags & Travel,A,3917,115.39,33.9,13,HEALTHY,Monitor
+Power Bank Lite G544,Phone Accessories,A,1435,45.22,31.7,13,HEALTHY,Monitor
+Webcam Max Y914,Computer Accessories,A,866,29.80,29.1,6,HEALTHY,Monitor
+Tea Kettle Mini M988,Home & Kitchen,A,776,28.66,27.1,11,HEALTHY,Monitor
+Mechanical Keyboard Pro Q322,Computer Accessories,A,465,25.30,18.4,10,HEALTHY,Monitor
+Security Camera Lite G544,Smart Home,A,585,23.03,25.4,12,HEALTHY,Monitor
+Art Print Lite E396,Books & Prints,A,508,20.30,25.0,7,HEALTHY,Monitor
+Laptop Stand 2 N643,Computer Accessories,A,460,14.88,30.9,8,HEALTHY,Monitor
+Notebook Set Plus T125,Office,A,362,14.58,24.8,10,HEALTHY,Monitor
+Limited Edition Print Max U618,Books & Prints,A,561,13.91,40.3,9,HEALTHY,Monitor
+Phone Case X S532,Phone Accessories,A,257,12.35,20.8,11,HEALTHY,Monitor
+USB-C Hub O174,Computer Accessories,A,478,11.83,40.4,11,HEALTHY,Monitor
+Laptop Stand Lite B655,Computer Accessories,A,531,11.68,45.5,9,HEALTHY,Monitor
+Kitchen Scale Plus O236,Home & Kitchen,A,302,8.94,33.8,9,HEALTHY,Monitor
+Fitness Band Max Z507,Wearables,A,250,8.55,29.2,9,HEALTHY,Monitor
+Webcam 2 U680,Computer Accessories,A,184,8.50,21.6,10,HEALTHY,Monitor
+Wireless Headphones A100,Audio,A,337,8.12,41.5,14,HEALTHY,Monitor
+Smartwatch A100,Wearables,A,281,7.81,36.0,8,HEALTHY,Monitor
+Duffel Bag Plus F951,Bags & Travel,A,279,7.78,35.9,9,HEALTHY,Monitor
+Water Bottle 2 J347,Home & Kitchen,A,221,7.38,29.9,14,HEALTHY,Monitor
+Travel Organizer O174,Bags & Travel,A,189,6.37,29.7,13,HEALTHY,Monitor
+Earbuds 2 Q384,Audio,A,165,5.89,28.0,11,HEALTHY,Monitor
+Webcam Pro S470,Computer Accessories,A,205,5.49,37.3,14,HEALTHY,Monitor
+Earbuds Air I754,Audio,A,234,4.82,48.5,13,HEALTHY,Monitor
+Webcam Plus E458,Computer Accessories,A,148,4.60,32.2,9,HEALTHY,Monitor
+Studio Headphones 2 E458,Audio,A,102,4.54,22.5,14,HEALTHY,Monitor
+Power Bank 2 Q384,Phone Accessories,A,159,4.48,35.5,9,HEALTHY,Monitor
+Soundbar 2 X421,Audio,A,126,4.43,28.4,8,HEALTHY,Monitor
+Cable Organizer Plus H199,Office,A,67,4.04,16.6,7,HEALTHY,Monitor
+Bluetooth Speaker X S532,Audio,A,55,3.80,14.5,7,HEALTHY,Monitor
+Monitor Arm J285,Computer Accessories,A,95,3.79,25.1,12,HEALTHY,Monitor
+Laptop Sleeve Mini P729,Bags & Travel,A,113,3.69,30.6,11,HEALTHY,Monitor
+Capture Card Mini D803,Gaming,A,119,3.69,32.2,12,HEALTHY,Monitor
+Phone Case Plus A162,Phone Accessories,A,118,3.12,37.8,12,HEALTHY,Monitor
+Monitor Arm Lite P729,Computer Accessories,A,82,3.00,27.3,6,HEALTHY,Monitor
+Video Doorbell Lite N581,Smart Home,A,47,2.88,16.3,7,HEALTHY,Monitor
+Wireless Headphones Plus T125,Audio,A,46,2.86,16.1,9,HEALTHY,Monitor
+Capture Card Lite Z507,Gaming,A,56,2.80,20.0,9,HEALTHY,Monitor
+Studio Headphones Max D803,Audio,A,94,2.67,35.2,6,HEALTHY,Monitor
+Camera Tripod O174,Cameras,A,47,2.33,20.2,6,HEALTHY,Monitor
+Studio Headphones Lite U618,Audio,A,69,1.83,37.7,8,HEALTHY,Monitor
+Game Controller H137,Gaming,A,52,1.70,30.6,11,HEALTHY,Monitor
+Fitness Band Plus P729,Wearables,A,35,1.33,26.3,7,HEALTHY,Monitor
+Watch Strap Plus I692,Wearables,A,71,1.18,60.2,8,HEALTHY,Monitor
+Smartwatch Pro V211,Wearables,A,71,0.87,81.6,10,HEALTHY,Monitor
+Screen Protector 2 E458,Phone Accessories,A,16,0.61,26.2,11,HEALTHY,Monitor
+Wireless Headphones X L495,Audio,A,16,0.55,29.1,9,HEALTHY,Monitor
+Action Camera Max G544,Cameras,A,11,0.54,20.4,9,HEALTHY,Monitor
+Wireless Headphones Max B655,Audio,A,14,0.31,45.2,8,HEALTHY,Monitor
+Security Camera O174,Smart Home,B,167,5.58,29.9,14,HEALTHY,Monitor
+Capture Card V211,Gaming,B,88,4.68,18.8,7,HEALTHY,Monitor
+Gaming Headset Lite E396,Gaming,B,106,4.03,26.3,10,HEALTHY,Monitor
+Screen Protector Pro L433,Phone Accessories,B,173,4.00,43.3,10,HEALTHY,Monitor
+Phone Charger Pro J285,Phone Accessories,B,58,3.70,15.7,6,HEALTHY,Monitor
+Laptop Stand Mini H199,Computer Accessories,B,81,3.66,22.1,8,HEALTHY,Monitor
+Video Doorbell Mini F951,Smart Home,B,93,3.63,25.6,10,HEALTHY,Monitor
+Webcam Mini O236,Computer Accessories,B,53,3.46,15.3,7,HEALTHY,Monitor
+Phone Charger 2 C310,Phone Accessories,B,93,2.84,32.7,6,HEALTHY,Monitor
+Car Mount 2 X421,Phone Accessories,B,47,2.74,17.2,6,HEALTHY,Monitor
+Tea Kettle Max D803,Home & Kitchen,B,98,2.71,36.2,10,HEALTHY,Monitor
+Game Controller Mini P729,Gaming,B,87,2.70,32.2,9,HEALTHY,Monitor
+Motion Sensor Lite U618,Smart Home,B,86,2.69,32.0,9,HEALTHY,Monitor
+Foam Roller Pro X359,Fitness,B,99,2.66,37.2,9,HEALTHY,Monitor
+Travel Organizer Plus Y914,Bags & Travel,B,58,2.51,23.1,7,HEALTHY,Monitor
+Coffee Grinder Max P729,Home & Kitchen,B,49,2.48,19.8,8,HEALTHY,Monitor
+Phone Case Max I692,Phone Accessories,B,36,2.48,14.5,7,HEALTHY,Monitor
+Earbuds Plus H199,Audio,B,48,2.31,20.8,9,HEALTHY,Monitor
+Car Mount Max W766,Phone Accessories,B,81,2.28,35.5,8,HEALTHY,Monitor
+USB-C Hub Pro E396,Computer Accessories,B,38,2.09,18.2,6,HEALTHY,Monitor
+Canvas Backpack Mini I692,Bags & Travel,B,44,2.08,21.2,6,HEALTHY,Monitor
+Car Mount X G606,Phone Accessories,B,54,2.02,26.7,10,HEALTHY,Monitor
+Earbuds Lite G544,Audio,B,69,1.84,37.5,6,HEALTHY,Monitor
+Earbuds Mini Y914,Audio,B,47,1.83,25.7,10,HEALTHY,Monitor
+Yoga Mat 2 M988,Fitness,B,77,1.72,44.8,13,HEALTHY,Monitor
+Monitor Arm 2 B717,Computer Accessories,B,62,1.72,36.0,10,HEALTHY,Monitor
+Wireless Headphones 2 C310,Audio,B,59,1.72,34.3,9,HEALTHY,Monitor
+Mechanical Keyboard X I754,Computer Accessories,B,67,1.58,42.4,8,HEALTHY,Monitor
+Video Doorbell Pro E396,Smart Home,B,38,1.48,25.7,8,HEALTHY,Monitor
+Yoga Mat Max G544,Fitness,B,157,1.42,110.6,8,HEALTHY,Monitor
+Water Bottle Pro Q322,Home & Kitchen,B,46,1.42,32.4,6,HEALTHY,Monitor
+Bluetooth Speaker 2 J347,Audio,B,34,1.37,24.8,12,HEALTHY,Monitor
+USB-C Hub Mini A162,Computer Accessories,B,29,1.37,21.2,13,HEALTHY,Monitor
+Smart Plug Pro J285,Smart Home,B,35,1.31,26.7,14,HEALTHY,Monitor
+Smart Plug A100,Smart Home,B,44,1.26,34.9,13,HEALTHY,Monitor
+Monitor Arm Pro Z507,Computer Accessories,B,27,1.23,22.0,11,HEALTHY,Monitor
+Wireless Headphones Mini K840,Audio,B,31,1.23,25.2,8,HEALTHY,Monitor
+Mechanical Keyboard Mini M988,Computer Accessories,B,28,1.18,23.7,10,HEALTHY,Monitor
+Desk Lamp H137,Office,B,34,1.14,29.8,11,HEALTHY,Monitor
+Laptop Sleeve Lite L433,Bags & Travel,B,40,1.14,35.1,8,HEALTHY,Monitor
+Laptop Stand X D865,Computer Accessories,B,35,1.11,31.5,11,HEALTHY,Monitor
+Bluetooth Speaker Air B717,Audio,B,26,1.03,25.2,14,HEALTHY,Monitor
+Laptop Stand Plus X421,Computer Accessories,B,32,1.03,31.1,14,HEALTHY,Monitor
+Smartwatch Max L433,Wearables,B,21,1.03,20.4,12,HEALTHY,Monitor
+Soundbar X G606,Audio,B,30,0.99,30.3,14,HEALTHY,Monitor
+Gaming Headset Max G544,Gaming,B,21,0.95,22.1,14,HEALTHY,Monitor
+Bluetooth Speaker H137,Audio,B,27,0.94,28.7,6,HEALTHY,Monitor
+Mechanical Keyboard A100,Computer Accessories,B,23,0.94,24.5,10,HEALTHY,Monitor
+Wireless Mouse Max D803,Computer Accessories,B,25,0.94,26.6,10,HEALTHY,Monitor
+Smart Bulb Lite Z507,Smart Home,B,45,0.93,48.4,6,HEALTHY,Monitor
+Kitchen Scale 2 X421,Home & Kitchen,B,19,0.91,20.9,8,HEALTHY,Monitor
+Video Doorbell Max W766,Smart Home,B,20,0.89,22.5,13,HEALTHY,Monitor
+Bluetooth Speaker Pro Q322,Audio,B,47,0.89,52.8,10,HEALTHY,Monitor
+Water Bottle H137,Home & Kitchen,B,18,0.88,20.5,11,HEALTHY,Monitor
+Water Bottle Max I692,Home & Kitchen,B,15,0.88,17.0,6,HEALTHY,Monitor
+Power Bank Mini Y914,Phone Accessories,B,19,0.87,21.8,8,HEALTHY,Monitor
+Game Controller 2 T125,Gaming,B,31,0.87,35.6,6,HEALTHY,Monitor
+Motion Sensor Max D803,Smart Home,B,35,0.87,40.2,9,HEALTHY,Monitor
+Smart Bulb H137,Smart Home,B,30,0.87,34.5,13,HEALTHY,Monitor
+Studio Headphones X N643,Audio,B,27,0.86,31.4,6,HEALTHY,Monitor
+Wireless Mouse H137,Computer Accessories,B,23,0.84,27.4,11,HEALTHY,Monitor
+Yoga Mat A100,Fitness,B,26,0.82,31.7,12,HEALTHY,Monitor
+Video Doorbell V211,Smart Home,B,70,0.79,88.6,7,HEALTHY,Monitor
+Soundbar Plus O236,Audio,B,19,0.78,24.4,11,HEALTHY,Monitor
+Duffel Bag Mini D803,Bags & Travel,B,24,0.78,30.8,13,HEALTHY,Monitor
+Watch Strap 2 D803,Wearables,B,19,0.71,26.8,11,HEALTHY,Monitor
+Security Camera Plus H199,Smart Home,B,18,0.63,28.6,12,HEALTHY,Monitor
+Security Camera Max P729,Smart Home,B,13,0.62,21.0,10,HEALTHY,Monitor
+Bluetooth Speaker Plus A162,Audio,B,37,0.61,60.7,7,HEALTHY,Monitor
+Vintage Camera Lite L433,Cameras,B,14,0.53,26.4,11,HEALTHY,Monitor
+Fitness Band Pro J285,Wearables,B,15,0.49,30.6,10,HEALTHY,Monitor
+Studio Headphones Plus V273,Audio,B,14,0.48,29.2,13,HEALTHY,Monitor
+Gaming Mouse Pad 2 A162,Gaming,B,8,0.47,17.0,6,HEALTHY,Monitor
+Gaming Headset Plus K840,Gaming,B,9,0.43,20.9,10,HEALTHY,Monitor
+Gaming Mouse Pad Mini W766,Gaming,B,9,0.41,22.0,13,HEALTHY,Monitor
+Camera Tripod Lite S470,Cameras,B,19,0.38,50.0,10,HEALTHY,Monitor
+Smart Plug Max B655,Smart Home,B,20,0.36,55.6,6,HEALTHY,Monitor
+Game Controller Lite L433,Gaming,B,16,0.29,55.2,6,HEALTHY,Monitor
+Watch Strap H137,Wearables,B,15,0.28,53.6,11,HEALTHY,Monitor
+Phone Charger A100,Phone Accessories,B,5,0.25,20.0,8,HEALTHY,Monitor
+Kitchen Scale Pro E396,Home & Kitchen,B,3,0.20,15.0,8,HEALTHY,Monitor
+Security Camera Mini Y914,Smart Home,B,7,0.17,41.2,7,HEALTHY,Monitor
+Soundbar Lite N581,Audio,B,4,0.17,23.5,12,HEALTHY,Monitor
+Smart Bulb Pro Q322,Smart Home,B,5,0.11,45.5,9,HEALTHY,Monitor
+Camera Tripod Pro Q322,Cameras,B,2,0.03,66.7,10,HEALTHY,Monitor
+Smartwatch Lite Q322,Wearables,B,2,0.03,66.7,13,HEALTHY,Monitor
+Notebook Set Pro J285,Office,C,135,6.08,22.2,11,HEALTHY,Monitor
+Screen Protector X N643,Phone Accessories,C,121,4.49,26.9,13,HEALTHY,Monitor
+Kitchen Scale Lite N581,Home & Kitchen,C,101,3.54,28.5,10,HEALTHY,Monitor
+Pen Set C248,Office,C,89,3.47,25.6,12,HEALTHY,Monitor
+Limited Edition Print Pro Q322,Books & Prints,C,60,2.31,26.0,12,HEALTHY,Monitor
+Cable Organizer Lite G544,Office,C,53,2.01,26.4,14,HEALTHY,Monitor
+Phone Charger Lite S470,Phone Accessories,C,55,1.98,27.8,13,HEALTHY,Monitor
+Foam Roller Plus F951,Fitness,C,43,1.93,22.3,11,HEALTHY,Monitor
+Car Mount Mini F951,Phone Accessories,C,63,1.88,33.5,9,HEALTHY,Monitor
+Coffee Grinder Plus H199,Home & Kitchen,C,63,1.82,34.6,14,HEALTHY,Monitor
+Phone Charger X L495,Phone Accessories,C,67,1.79,37.4,11,HEALTHY,Monitor
+Ceramic Coffee Mug 2 C310,Home & Kitchen,C,71,1.71,41.5,14,HEALTHY,Monitor
+Webcam C248,Computer Accessories,C,37,1.43,25.9,10,HEALTHY,Monitor
+Resistance Bands Lite L433,Fitness,C,39,1.37,28.5,10,HEALTHY,Monitor
+Ceramic Coffee Mug Mini K840,Home & Kitchen,C,51,1.36,37.5,8,HEALTHY,Monitor
+Canvas Backpack Max G544,Bags & Travel,C,27,1.36,19.9,9,HEALTHY,Monitor
+Duffel Bag Lite Z507,Bags & Travel,C,28,1.30,21.5,13,HEALTHY,Monitor
+Desk Mat Mini F951,Office,C,51,1.24,41.1,9,HEALTHY,Monitor
+Screen Protector Max D803,Phone Accessories,C,42,1.21,34.7,10,HEALTHY,Monitor
+USB-C Hub Lite U618,Computer Accessories,C,22,1.20,18.3,7,HEALTHY,Monitor
+Screen Protector C248,Phone Accessories,C,42,1.12,37.5,14,HEALTHY,Monitor
+Power Bank X Z569,Phone Accessories,C,29,1.09,26.6,12,HEALTHY,Monitor
+Cable Organizer Mini Y914,Office,C,32,1.06,30.2,7,HEALTHY,Monitor
+Desk Lamp Lite Z507,Office,C,18,0.99,18.2,8,HEALTHY,Monitor
+Foam Roller V211,Fitness,C,32,0.96,33.3,14,HEALTHY,Monitor
+Screen Protector Air W828,Phone Accessories,C,32,0.92,34.8,8,HEALTHY,Monitor
+Laptop Stand V211,Computer Accessories,C,30,0.91,33.0,11,HEALTHY,Monitor
+Screen Protector Mini M988,Phone Accessories,C,25,0.90,27.8,10,HEALTHY,Monitor
+Phone Case Lite Z507,Phone Accessories,C,30,0.90,33.3,6,HEALTHY,Monitor
+Kitchen Scale V211,Home & Kitchen,C,32,0.83,38.6,8,HEALTHY,Monitor
+Water Bottle Lite Z507,Home & Kitchen,C,37,0.83,44.6,13,HEALTHY,Monitor
+Power Bank Air I754,Phone Accessories,C,21,0.81,25.9,7,HEALTHY,Monitor
+Screen Protector Lite U618,Phone Accessories,C,29,0.80,36.3,11,HEALTHY,Monitor
+Notebook Set Lite S470,Office,C,73,0.77,94.8,12,HEALTHY,Monitor
+Phone Case Mini R877,Phone Accessories,C,66,0.77,85.7,11,HEALTHY,Monitor
+Yoga Mat Mini I692,Fitness,C,36,0.75,48.0,9,HEALTHY,Monitor
+Desk Lamp 2 J347,Office,C,27,0.74,36.5,7,HEALTHY,Monitor
+Resistance Bands Pro J285,Fitness,C,25,0.73,34.2,7,HEALTHY,Monitor
+Smart Plug Mini K840,Smart Home,C,24,0.70,34.3,7,HEALTHY,Monitor
+Power Bank Plus H199,Phone Accessories,C,49,0.70,70.0,6,HEALTHY,Monitor
+Notebook Set A100,Office,C,18,0.67,26.9,14,HEALTHY,Monitor
+USB-C Hub Plus Q384,Computer Accessories,C,28,0.64,43.8,6,HEALTHY,Monitor
+Desk Mat Pro E396,Office,C,12,0.64,18.8,6,HEALTHY,Monitor
+Fitness Tracker O174,Fitness,C,20,0.64,31.3,10,HEALTHY,Monitor
+Ceramic Coffee Mug Plus T125,Home & Kitchen,C,21,0.62,33.9,13,HEALTHY,Monitor
+Wireless Mouse Plus J347,Computer Accessories,C,20,0.62,32.3,9,HEALTHY,Monitor
+Water Bottle Mini R877,Home & Kitchen,C,16,0.61,26.2,7,HEALTHY,Monitor
+Monitor Arm Max F951,Computer Accessories,C,22,0.61,36.1,9,HEALTHY,Monitor
+Coffee Grinder Pro X359,Home & Kitchen,C,11,0.61,18.0,9,HEALTHY,Monitor
+Tea Kettle 2 E458,Home & Kitchen,C,21,0.59,35.6,11,HEALTHY,Monitor
+Phone Case Pro Q322,Phone Accessories,C,19,0.59,32.2,8,HEALTHY,Monitor
+Phone Charger Max B655,Phone Accessories,C,18,0.57,31.6,12,HEALTHY,Monitor
+Limited Edition Print Lite S470,Books & Prints,C,21,0.57,36.8,10,HEALTHY,Monitor
+Cable Organizer Max P729,Office,C,11,0.52,21.2,13,HEALTHY,Monitor
+Fitness Tracker Lite S470,Fitness,C,8,0.52,15.4,6,HEALTHY,Monitor
+Kitchen Scale Mini F951,Home & Kitchen,C,23,0.52,44.2,13,HEALTHY,Monitor
+Coffee Grinder O174,Home & Kitchen,C,20,0.49,40.8,13,HEALTHY,Monitor
+Travel Organizer Lite S470,Bags & Travel,C,11,0.48,22.9,13,HEALTHY,Monitor
+Smart Plug Lite S470,Smart Home,C,11,0.47,23.4,9,HEALTHY,Monitor
+Gaming Headset 2 M988,Gaming,C,25,0.47,53.2,10,HEALTHY,Monitor
+Duffel Bag V211,Bags & Travel,C,31,0.46,67.4,12,HEALTHY,Monitor
+Gaming Headset Pro C248,Gaming,C,15,0.46,32.6,13,HEALTHY,Monitor
+Gaming Mouse Pad O174,Gaming,C,31,0.46,67.4,13,HEALTHY,Monitor
+Monitor Arm Plus L495,Computer Accessories,C,12,0.44,27.3,7,HEALTHY,Monitor
+Tea Kettle Plus V273,Home & Kitchen,C,12,0.44,27.3,13,HEALTHY,Monitor
+Phone Case H137,Phone Accessories,C,10,0.44,22.7,8,HEALTHY,Monitor
+Bluetooth Speaker Mini R877,Audio,C,12,0.44,27.3,14,HEALTHY,Monitor
+Fitness Tracker Plus Y914,Fitness,C,11,0.43,25.6,10,HEALTHY,Monitor
+Yoga Mat Lite E396,Fitness,C,13,0.43,30.2,11,HEALTHY,Monitor
+Pen Set Lite U618,Office,C,16,0.42,38.1,11,HEALTHY,Monitor
+Fitness Tracker Pro Q322,Fitness,C,7,0.40,17.5,9,HEALTHY,Monitor
+Ceramic Coffee Mug Max B655,Home & Kitchen,C,22,0.38,57.9,12,HEALTHY,Monitor
+Notebook Set Max B655,Office,C,7,0.37,18.9,10,HEALTHY,Monitor
+Tea Kettle Pro L433,Home & Kitchen,C,16,0.34,47.1,13,HEALTHY,Monitor
+Pen Set Mini M988,Office,C,13,0.33,39.4,8,HEALTHY,Monitor
+Foam Roller Mini D803,Fitness,C,13,0.32,40.6,11,HEALTHY,Monitor
+Art Print Mini I692,Books & Prints,C,14,0.30,46.7,6,HEALTHY,Monitor
+Soundbar Mini F951,Audio,C,14,0.30,46.7,14,HEALTHY,Monitor
+Car Mount V211,Phone Accessories,C,9,0.30,30.0,12,HEALTHY,Monitor
+Duffel Bag Pro X359,Bags & Travel,C,13,0.29,44.8,13,HEALTHY,Monitor
+Art Print Max G544,Books & Prints,C,11,0.26,42.3,7,HEALTHY,Monitor
+Limited Edition Print O174,Books & Prints,C,9,0.26,34.6,13,HEALTHY,Monitor
+Canvas Backpack Lite E396,Bags & Travel,C,12,0.25,48.0,8,HEALTHY,Monitor
+Car Mount Pro E396,Phone Accessories,C,14,0.24,58.3,8,HEALTHY,Monitor
+Art Print Pro C248,Books & Prints,C,6,0.23,26.1,9,HEALTHY,Monitor
+Ring Light Pro X359,Cameras,C,10,0.21,47.6,8,HEALTHY,Monitor
+Vintage Camera Max N581,Cameras,C,7,0.20,35.0,10,HEALTHY,Monitor
+Photo Book H137,Books & Prints,C,14,0.20,70.0,8,HEALTHY,Monitor
+Game Controller Pro J285,Gaming,C,5,0.20,25.0,8,HEALTHY,Monitor
+Mechanical Keyboard Lite G544,Computer Accessories,C,7,0.19,36.8,7,HEALTHY,Monitor
+Yoga Mat Plus K840,Fitness,C,10,0.18,55.6,8,HEALTHY,Monitor
+Vintage Camera H137,Cameras,C,11,0.17,64.7,11,HEALTHY,Monitor
+Poster Set V211,Books & Prints,C,4,0.17,23.5,12,HEALTHY,Monitor
+Soundbar Air P791,Audio,C,10,0.16,62.5,8,HEALTHY,Monitor
+Ring Light V211,Cameras,C,9,0.14,64.3,12,HEALTHY,Monitor
+Vintage Camera Pro J285,Cameras,C,7,0.14,50.0,9,HEALTHY,Monitor
+Watch Strap Max S470,Wearables,C,7,0.13,53.8,6,HEALTHY,Monitor
+Watch Strap Mini N581,Wearables,C,3,0.13,23.1,13,HEALTHY,Monitor
+Mechanical Keyboard Plus C310,Computer Accessories,C,5,0.11,45.5,13,HEALTHY,Monitor
+Laptop Sleeve Plus R877,Bags & Travel,C,6,0.11,54.5,14,HEALTHY,Monitor
+Capture Card Max B655,Gaming,C,6,0.10,60.0,14,HEALTHY,Monitor
+Travel Organizer Mini W766,Bags & Travel,C,5,0.10,50.0,7,HEALTHY,Monitor
+Pen Set Plus V273,Office,C,2,0.09,22.2,13,HEALTHY,Monitor
+Motion Sensor Plus V273,Smart Home,C,4,0.09,44.4,14,HEALTHY,Monitor
+Pen Set Pro L433,Office,C,2,0.08,25.0,8,HEALTHY,Monitor
+Desk Mat V211,Office,C,6,0.08,75.0,9,HEALTHY,Monitor
+Video Doorbell Plus O236,Smart Home,C,6,0.06,100.0,11,HEALTHY,Monitor
+Smart Plug Plus T125,Smart Home,C,1,0.05,20.0,9,HEALTHY,Monitor
+Fitness Band Lite E396,Wearables,C,2,0.04,50.0,12,HEALTHY,Monitor
+Travel Organizer Pro Q322,Bags & Travel,C,3,0.04,75.0,8,HEALTHY,Monitor
+Gaming Headset Mini I692,Gaming,C,4,0.04,100.0,9,HEALTHY,Monitor
+Resistance Bands Max N581,Fitness,C,2,0.04,50.0,8,HEALTHY,Monitor
+Poster Set Lite Z507,Books & Prints,C,1,0.03,33.3,10,HEALTHY,Monitor
+Wireless Mouse 2 Z569,Computer Accessories,C,1,0.02,50.0,8,HEALTHY,Monitor
+Smartwatch Plus B655,Wearables,C,1,0.01,100.0,13,HEALTHY,Monitor
+Earbuds Pro X359,Audio,A,0,,,12,INACTIVE,"No stock, no demand: confirm delisting"
+Fitness Band O174,Wearables,A,0,,,8,INACTIVE,"No stock, no demand: confirm delisting"
+Mechanical Keyboard Max W766,Computer Accessories,B,0,,,13,INACTIVE,"No stock, no demand: confirm delisting"

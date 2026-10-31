@@ -1,0 +1,4 @@
+problem,records,avg_ratio_to_list
+negative price,19,-1.0
+more than 5x list price (entered in cents?),17,100.9
+zero price,8,0.0

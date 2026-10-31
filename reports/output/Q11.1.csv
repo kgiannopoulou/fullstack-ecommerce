@@ -1,0 +1,5 @@
+check_name,left_value,right_value,passes
+fact_sales net revenue = order_summary net revenue,22098590.39,22098590.39,True
+monthly_kpis net revenue = fact_orders net revenue,22098590.39,22098590.39,True
+every product has exactly one ABC class,371,371,True
+every customer appears once in dim_customer,92000,92000,True

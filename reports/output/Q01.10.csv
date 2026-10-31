@@ -1,0 +1,16 @@
+check_name,records,action
+Duplicate transaction records,2435,Removed (kept first copy)
+Negative quantity (legacy return adjustments),134,"Investigated, excluded (refund already on the order)"
+"Invalid unit price (zero, negative or >5x list)",44,Excluded
+Missing customer ID (guest checkout),5469,Retained as guest; excluded from customer metrics
+Missing category,689,Mapped from product master
+Missing payment method,864,Classified as Unknown
+Non-standard country name,40499,Standardised to English country name
+Non-ISO date format,115031,Parsed with explicit format rules
+Non-standard order status spelling,23574,Normalised
+Cancelled order lines,18401,"Kept for cancellation KPIs, excluded from revenue"
+Refunded order lines,12748,Kept; refund deducted in Net Revenue
+Quantity outliers (>= 40 units),41,"Retained (verified bulk orders), flagged is_bulk"
+Duplicate inventory snapshots,513,Removed
+Negative stock on hand,378,"Set to 0, flagged stock_corrected"
+Non-standard country name (customer master),11026,Standardised to English country name

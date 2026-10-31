@@ -31,5 +31,20 @@ services:
       - "1026:1025"
       - "8026:8025"
 
+  # Analytics warehouse for the sales/customer/operations analysis
+  # (analytics/ + sql/). Kept apart from the app database on purpose.
+  analytics-db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: analytics
+      POSTGRES_USER: analyst
+      POSTGRES_PASSWORD: analyst
+    ports:
+      - "5439:5432"
+    volumes:
+      - analyticsdata:/var/lib/postgresql/data
+
 volumes:
   pgdata:
+  analyticsdata:

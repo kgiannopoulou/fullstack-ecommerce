@@ -1,0 +1,6 @@
+time_to_second_order,customers,pct,cumulative_pct
+1) within 30 days,12903,42.9,42.9
+2) 31-60 days,9273,30.8,73.7
+3) 61-90 days,4649,15.4,89.1
+4) 91-180 days,3072,10.2,99.3
+5) over 180 days,200,0.7,100.0

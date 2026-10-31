@@ -1,0 +1,26 @@
+customer_id,country,acquisition_channel,orders,lifetime_revenue,last_order,recency_days
+104083,Greece,Organic Search,3,5838.36,2024-03-10,662
+119868,Greece,Direct,7,3563.21,2025-02-08,327
+124433,Cyprus,Organic Search,3,3395.17,2024-10-20,438
+152190,Greece,Direct,3,2707.93,2025-05-21,225
+115371,France,Organic Search,6,2658.09,2024-09-11,477
+154226,Italy,Paid Search,4,2533.04,2025-06-30,185
+101584,Netherlands,Organic Search,8,2502.77,2025-04-30,246
+123658,Greece,Email,7,2436.01,2025-04-26,250
+135438,Greece,Direct,4,2336.22,2025-01-06,360
+127200,Netherlands,Paid Search,6,2303.41,2025-02-23,312
+100577,Cyprus,Organic Search,3,2240.88,2024-03-30,642
+103840,Greece,Direct,5,2121.82,2024-06-29,551
+155482,Greece,Organic Search,4,2043.18,2025-06-23,192
+102119,Netherlands,Social,5,2022.93,2024-04-18,623
+133236,Greece,Direct,4,1963.41,2025-05-14,232
+100307,Cyprus,Direct,8,1956.09,2024-09-18,470
+135857,Greece,Paid Search,4,1953.89,2025-05-11,235
+133567,Cyprus,Organic Search,8,1945.20,2025-06-23,192
+129290,Spain,Email,4,1933.77,2024-11-15,412
+135485,France,Organic Search,5,1927.15,2025-06-03,212
+114469,Netherlands,Paid Search,3,1910.84,2024-08-20,499
+145117,France,Organic Search,4,1904.40,2025-06-02,213
+100044,Greece,Organic Search,6,1886.54,2024-06-20,560
+112922,Greece,Direct,3,1873.86,2024-06-22,558
+101496,Greece,Organic Search,4,1829.79,2024-04-30,611
