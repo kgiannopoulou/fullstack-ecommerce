@@ -1,87 +1,110 @@
-# E-Commerce Sales, Customer & Operations Analytics
+# E-Commerce Sales, Profitability & Operations Analytics
 
-**Tools:** SQL · PostgreSQL · Python · pandas · Excel · Power Query · Power BI · DAX · Git
+**SQL · PostgreSQL · Python · pandas · Excel (Power Query, Power Pivot) · Power BI · DAX · Statistics · Git**
 
 [![CI](https://github.com/kgiannopoulou/fullstack-ecommerce/actions/workflows/ci.yml/badge.svg)](https://github.com/kgiannopoulou/fullstack-ecommerce/actions/workflows/ci.yml)
 
-End-to-end data analytics project analysing **340,000+ simulated e-commerce transactions** to identify
-revenue trends, customer retention patterns, product performance and inventory risks. Includes SQL
-analysis, Python data cleaning and automation, statistical analysis, Excel reporting and an
-interactive Power BI management dashboard model.
+An end-to-end data analyst project: **340,000+ messy e-commerce transaction records** turned into
+management reporting. It starts with a business question, works through data quality, SQL analysis,
+statistics, anomaly detection and a demand forecast, and ends with an Excel workbook, a Power BI
+dashboard and a written report with recommendations.
+
+![Executive Overview](reports/figures/dashboard_executive_overview.png)
+<sub>Executive Overview page, rendered from the pipeline's data by `src/generate_report.py`. The interactive version is the Power BI project in [`powerbi/`](powerbi/).</sub>
+
+**Start here:** [Executive Analysis Report (PDF, 6 pages)](reports/Executive_Analysis_Report.pdf) ·
+[Excel workbook](excel/Monthly_Business_Performance.xlsx) · [Power BI dashboard](powerbi/) ·
+[Full findings](reports/findings.md) · [SQL](sql/) · [Notebooks](notebooks/)
+
+## Skills demonstrated
+
+| Area | Demonstrated in this project |
+|---|---|
+| **SQL** | 79 business questions in 12 files: CTEs, joins, window functions (`lag`, `lead`, `rank`, `ntile`, running totals, framed windows), `ROLLUP`, `FILTER`, gaps-and-islands, cohort pivots, a reporting star schema |
+| **Python** | pandas, data cleaning, a rule-based validation framework, automated pipeline (`python src/pipeline.py`), 30 pytest tests |
+| **Power BI** | Star-schema data model, 51 DAX measures (time intelligence, `RANKX`, `DIVIDE`), five management pages |
+| **Excel** | Power Query, Power Pivot data model with DAX, PivotTables with slicers, XLOOKUP, SUMIFS, COUNTIFS, INDEX/MATCH, IF/IFERROR |
+| **Data analysis** | Revenue, **profitability**, customers (RFM, cohorts), products, inventory, operations |
+| **Statistics** | Hypothesis tests (z, chi-square, Mann-Whitney, Welch t, Cochran-Mantel-Haenszel), bootstrap CIs, anomaly detection (z-scores), backtested demand forecast |
+| **Business intelligence** | KPI definitions, management alerts, written recommendations for non-technical readers |
+| **Data quality** | 28 validation rules in code, completeness / validity / duplicate scoring, reconciliation checks, a pipeline gate |
+| **Git** | Versioned, documented, reproducible workflow with CI |
+
+## Key findings
 
 | | |
-|---|---:|
-| Raw dataset | **340,795** transaction records (Jan 2024 – Dec 2025) |
-| Valid transactions after cleaning | **338,182** |
-| Records with at least one data-quality defect | **161,918** (47.5%), only 2,613 of them removed |
-| Business questions answered in SQL | **66** across 11 files |
-| Orders · customers · products | 144,790 · 87,654 buyers · 371 SKUs |
+|---|---|
+| 💶 | **€12.46M net revenue in 2025 (+29.2%)** and **€4.92M gross profit (+30.0%)**, from 338,182 valid transaction records. Gross margin held at **39.5%** even though shipping costs rose from 4.9% to 5.7% of revenue. |
+| 📦 | **Revenue overstates what some products are worth.** 72 high-revenue, low-margin products are 25.5% of revenue but only 18.1% of gross profit. Duffel Bag Plus F951 is #20 by revenue but #44 by profit. |
+| 🏷️ | **Discount codes did not pay for themselves.** Discounted baskets hold the same number of items (difference +0.008, 95% CI −0.017 to +0.034), customers are not more loyal, and about **€656k of gross profit** was given away. |
+| 🔁 | **The loyalty programme works.** 90-day repeat purchasing rose from 27.8% to 41.3%: +11.3 pp from the programme, +2.1 pp from faster delivery. |
+| 👥 | **At Risk and Cannot Lose Them customers** are 10.4% of customers but 16.8% of revenue. |
+| ⚠️ | **Stockouts:** 12 A-class products ran out 3+ times in 2025 (~€133k lost sales). On 31 Dec, **47 products must be reordered today**, 9 of them A-class, with €64k of January revenue at risk. |
+| 🔎 | **An automated alert, explained:** Wearables revenue −84% on 6 Jan 2025 was traced in SQL to one best-seller (€956k in 2024) that sold out and was never restocked. |
 
-**Start here:** [Findings & recommendations](reports/findings.md) ·
-[Excel management report](reports/ecommerce_management_report.xlsx) ·
-[Data quality report](docs/data_quality_report.md) · [KPI dictionary](docs/kpi_dictionary.md) ·
-[All query results](reports/output/index.md)
+### Recommendations
+
+1. **Reorder the 47 at-risk products now** and raise safety stock on the 12 A-class products that keep running out.
+2. **Rank products by gross profit, not revenue.** Re-price or re-source the volume traps; add a minimum order value or shipping charge for bulky low-price items.
+3. **Stop blanket discount codes.** Test targeted offers against a hold-out group before rolling them out.
+4. **Keep the loyalty programme** and run a win-back campaign for At Risk / Cannot Lose Them customers.
+5. **Alert on stock, not just on revenue:** a daily check when an A-class product's stock falls below lead-time demand.
+
+> *"Initially I ranked products by revenue. After adding cost, discount, refund and shipping data, the ranking
+> turned out to be misleading, so I changed the KPI used for product decisions to gross profit."*
 
 ---
 
-## The assignment
+## The business brief
 
-The company has grown quickly. Its data sits in PostgreSQL, but there is no reliable reporting
-process. The Head of Operations asks five questions:
+The company has grown quickly. Its data sits in PostgreSQL, but there is no reliable reporting.
+The Head of Operations asks:
 
-1. **How is the business performing?**
-2. **Which products and categories are driving or hurting revenue?**
-3. **Are customers returning after their first purchase?**
-4. **Which products are at risk of stockout or overstock?**
-5. **What should management do next?**
+1. **How is the business performing,** in revenue *and* profit?
+2. **Which products and categories make money,** not just revenue?
+3. **Are customers coming back** after their first purchase?
+4. **Which products will run out of stock,** and which are overstocked?
+5. **Did our discounts work?**
+6. **What should we do next?**
 
-Everything in this repository exists to answer one of them.
+## Deliverables
 
-## What the analysis found
-
-| Question | Finding | Evidence |
+| Deliverable | What it is | For |
 |---|---|---|
-| Performance | Net revenue **+29.2%** (€9.64M → €12.46M). The growth is underlying (rolling 90-day revenue +26–28% YoY in both halves of 2025), not just Black Friday | [`Q02.2`](reports/output/Q02.2.csv), [`Q03.5`](reports/output/Q03.5.csv) |
-| Performance | Average order value **−7.9%**, caused by **product mix**, not discounting: like-for-like prices rose 2.2%, while cheaper categories went from 10.9% to 14.5% of revenue | [`Q03.8`](reports/output/Q03.8.csv) |
-| Products | **18.9% of SKUs produce 80.2% of revenue**. Two former best-sellers lost €678k between H2 2024 and H2 2025 *while in stock every day*, so this is lost demand, not a supply problem | [`Q04.3`](reports/output/Q04.3.csv), [`Q04.5`](reports/output/Q04.5.csv), [`Q08.6`](reports/output/Q08.6.csv) |
-| Customers | 90-day repeat purchasing rose from **27.8% to ~41%** the month the loyalty programme launched. Decomposition: **+11.3 pp loyalty, +2.1 pp faster delivery** | [`Q07.2`](reports/output/Q07.2.csv), [`Q07.5`](reports/output/Q07.5.csv) |
-| Customers | A late first delivery cuts the chance of a second order from 38.2% to 25.9% (odds ratio 1.77). At Risk + Cannot Lose Them customers are **10.4% of customers but 16.8% of revenue** | [tests](reports/statistical_tests.md), [`Q06.2`](reports/output/Q06.2.csv) |
-| Inventory | **12 A-class products** had 3+ stockout episodes in 2025: 8.2% of revenue and ~€133k of estimated lost sales. **€158k** (19% of stock value) sits in 32 overstocked SKUs | [`Q08.4`](reports/output/Q08.4.csv), [`Q08.2`](reports/output/Q08.2.csv) |
-| Operations | The courier switch raised on-time delivery in Greece from **36.6% to 67.9%**. Weekend orders wait a day longer to ship. Cash-on-delivery orders are cancelled **2.3×** as often | [`Q09.2`](reports/output/Q09.2.csv), [`Q09.4`](reports/output/Q09.4.csv), [`Q02.4`](reports/output/Q02.4.csv) |
-
-The full write-up follows **observation → investigation → explanation → recommendation** for each
-question and ends with a ranked action plan: [reports/findings.md](reports/findings.md).
+| [**Executive_Analysis_Report.pdf**](reports/Executive_Analysis_Report.pdf) | 6 pages: summary, performance, products & profitability, customers, inventory, recommendations, methodology | Management |
+| [**Monthly_Business_Performance.xlsx**](excel/Monthly_Business_Performance.xlsx) | Executive Summary, Sales Analysis, Product Performance, Inventory, Customer Analysis, Raw Data, Data Dictionary | Managers who live in Excel |
+| [**Power BI dashboard**](powerbi/) | Executive Overview · Sales & Product · Customer Analytics · Inventory & Operations · Data Quality | Self-service reporting |
+| [findings.md](reports/findings.md) | Observation → investigation → explanation → recommendation, for every question | Analysts, reviewers |
+| [Notebooks](notebooks/) | [Exploratory analysis](notebooks/exploratory_analysis.ipynb) · [Discount investigation](notebooks/statistical_analysis.ipynb) | Analysts |
+| [Reorder list](reports/forecast_report.md) · [Anomaly report](reports/anomaly_report.md) · [Statistical tests](reports/statistical_tests.md) | Generated on every run | Operations |
+| [Data quality](docs/data_quality.md) · [KPI dictionary](docs/kpi_dictionary.md) · [Data dictionary](docs/data_dictionary.md) · [Methodology](docs/methodology.md) | Documentation | Everyone |
 
 ## How it works
 
 ```
-analytics/generate_data.py      two years of orders, customers, stock — with realistic defects
-        │  raw_*.csv
-        ▼
-analytics/load_raw.py           raw.*      every column TEXT, loaded exactly as received
-        │
-        ▼
-sql/01_data_quality_checks.sql  profile every defect in SQL
-analytics/clean.py              apply a documented decision per defect → clean.* + data_quality_log
-        │
-        ▼
-sql/02 … 10                     one file per business area, every answer saved to reports/output/<Q>.csv
-sql/11_reporting_views.sql      reporting.* star schema for Excel / Power BI (+ reconciliation checks)
-        │
-        ├─► analytics/stats_analysis.py     are the differences real? (z-tests, chi-square, Mann-Whitney, bootstrap)
-        ├─► analytics/build_excel_report.py 9-sheet management workbook with native charts
-        └─► powerbi/                        Power Query + DAX measures for the dashboard
+python src/pipeline.py
+
+ 0  generate_data.py      two years of orders, customers, stock: with the defects of a real export
+ 1  load_raw.py           raw.*  (every column TEXT, loaded exactly as received)
+ 2  clean.py              a documented decision per defect -> clean.* + data_quality_log
+ 3  validate.py           28 rules, raw vs clean; a critical failure on clean data STOPS the run
+ 4  transform.py          79 SQL questions -> reports/output/*.csv ; star schema -> data/cleaned/
+ 5  anomaly_detection.py  same-weekday z-scores: revenue by category, orders by country, refund rate
+ 6  forecast.py           30-day demand per SKU vs stock -> reorder list (backtested)
+ 7  stats_analysis.py     significance tests, incl. the discount investigation
+ 8  generate_report.py    management alerts, charts, Executive_Analysis_Report.pdf
+ 9  build_powerbi.py      Power BI project: TMDL model + report pages
+10  build_excel.py        Excel workbook built through Excel: Power Query, Power Pivot, pivots, slicers
 ```
 
-`python analytics/run_pipeline.py` runs every step (about 2 minutes), and
-`pytest analytics/test_pipeline.py` checks the result: SQL and Python agree on every
-data-quality count, no record is lost or invented, the reporting layer reconciles to the cent,
-and the net revenue definition holds.
+`pytest tests` then checks the result: SQL and Python agree on every data-quality count, no record
+is lost or invented, the reporting layer reconciles to the cent, revenue and profit follow their
+definitions, and the validation rules, anomaly maths and forecast behave on hand-made cases.
 
 ## Messy data, on purpose
 
-The source export contains the defects a real legacy system produces. Each one gets a decision,
-because deleting a row can delete real revenue or a real customer:
+Each defect gets a business decision, because deleting a row can delete real revenue or a real customer
+([why each decision](docs/data_quality_report.md)):
 
 | Check | Records | Action |
 |---|---:|---|
@@ -89,83 +112,130 @@ because deleting a row can delete real revenue or a real customer:
 | Negative quantity (legacy return adjustments) | 134 | Investigated, excluded: the refund is already on the order |
 | Invalid unit price (zero, negative, entered in cents) | 44 | Excluded |
 | Missing customer ID | 5,469 | Kept as guest checkout, excluded from customer metrics |
-| Missing category | 689 | Mapped from the product master |
-| Missing payment method | 864 | Classified as Unknown |
+| Missing shipping cost (no matched courier invoice) | 2,862 | Imputed from courier and country, flagged |
+| Missing category / payment method | 689 / 864 | Mapped from product master / labelled Unknown |
 | Inconsistent country names (`GR`, `Hellas`, `Ελλάδα`…) | 40,499 | Standardised |
 | Four different date formats | 115,031 | Parsed with an explicit rule per format |
-| Cancelled orders | 18,401 lines | Kept for cancellation KPIs, excluded from revenue |
-| Quantity outliers (40–160 units) | 41 | Kept as genuine bulk orders, flagged |
 | Duplicate / negative inventory snapshots | 513 / 378 | Removed / set to 0 and flagged |
 
-Why each decision was made: [docs/data_quality_report.md](docs/data_quality_report.md).
+| Data quality | Raw export | Clean warehouse |
+|---|---:|---:|
+| Completeness | 97.9% | 98.1% |
+| Validity | 54.0% | 100.0% |
+| Duplicates | 0.71% | 0.00% |
+| Failed checks | 12 of 13 | 0 of 15 |
 
 ## SQL: one file per business question
 
 | File | Answers | Techniques |
 |---|---|---|
-| [`01_data_quality_checks.sql`](sql/01_data_quality_checks.sql) | Can the export be trusted? | regex profiling, `DISTINCT ON`, correlated checks |
-| [`02_sales_kpis.sql`](sql/02_sales_kpis.sql) | Headline KPIs, 2025 vs 2024, by market and payment method | `ROLLUP`, `FILTER`, `LATERAL VALUES` unpivot, percentiles |
-| [`03_revenue_trends.sql`](sql/03_revenue_trends.sql) | Daily → yearly trends, MoM / YoY, rolling 30/90-day, why AOV fell | `LAG`, framed windows, `generate_series` calendar |
-| [`04_product_performance.sql`](sql/04_product_performance.sql) | Categories, ABC analysis, products declining 3 months in a row, winners/losers | running totals, `LAG` streaks, `rank()` |
-| [`05_customer_analysis.sql`](sql/05_customer_analysis.sql) | Repeat rate, new vs returning, time to 2nd order, channels, late deliveries | `row_number`, `lead`, conditional aggregation |
-| [`06_rfm_segmentation.sql`](sql/06_rfm_segmentation.sql) | RFM segments, value index, win-back list | `NTILE`, rule-based segmentation |
-| [`07_cohort_retention.sql`](sql/07_cohort_retention.sql) | Cohort matrix, did retention improve, loyalty vs courier decomposition | cohort pivots with `age()`, mix decomposition |
-| [`08_inventory_analysis.sql`](sql/08_inventory_analysis.sql) | Days of cover, risk classes, stockout episodes, lost sales, turnover | gaps-and-islands, `array_position` ordering |
-| [`09_operations_analysis.sql`](sql/09_operations_analysis.sql) | Fulfilment speed, on-time delivery by courier, refunds, staffing hours | date arithmetic, percentiles |
-| [`10_anomaly_investigation.sql`](sql/10_anomaly_investigation.sql) | Which days were outliers and why, sudden product drops, refund spikes | same-weekday rolling z-scores |
-| [`11_reporting_views.sql`](sql/11_reporting_views.sql) | Star schema for BI tools + reconciliation | views, `first_value` |
+| [`01_data_quality_checks.sql`](sql/01_data_quality_checks.sql) | Can the export be trusted? | regex profiling, `DISTINCT ON` |
+| [`02_sales_kpis.sql`](sql/02_sales_kpis.sql) | Headline KPIs, 2025 vs 2024, by market and payment method | `ROLLUP`, `FILTER`, `LATERAL VALUES` unpivot |
+| [`03_revenue_trends.sql`](sql/03_revenue_trends.sql) | MoM / YoY, rolling 30/90-day, why AOV fell | `LAG`, framed windows, `generate_series` |
+| [`04_product_performance.sql`](sql/04_product_performance.sql) | Categories, ABC analysis, declining products | running totals, `LAG` streaks, `rank()` |
+| [`05_customer_analysis.sql`](sql/05_customer_analysis.sql) | Repeat rate, new vs returning, time to 2nd order | `row_number`, `lead` |
+| [`06_rfm_segmentation.sql`](sql/06_rfm_segmentation.sql) | RFM segments, win-back list | `NTILE`, rule-based segmentation |
+| [`07_cohort_retention.sql`](sql/07_cohort_retention.sql) | Cohort matrix, loyalty vs courier decomposition | cohort pivots, mix decomposition |
+| [`08_inventory_analysis.sql`](sql/08_inventory_analysis.sql) | Days of cover, stockout episodes, lost sales, turnover | gaps-and-islands |
+| [`09_operations_analysis.sql`](sql/09_operations_analysis.sql) | Fulfilment speed, on-time delivery, refunds | date arithmetic, percentiles |
+| [`10_anomaly_investigation.sql`](sql/10_anomaly_investigation.sql) | Outlier days, and a manual investigation of an automated alert | same-weekday rolling windows |
+| [`11_reporting_views.sql`](sql/11_reporting_views.sql) | Star schema for Excel / Power BI + reconciliation | views, window functions |
+| [`12_profitability.sql`](sql/12_profitability.sql) | Revenue-to-profit bridge, revenue rank vs profit rank, volume traps, cost of discounts and courier | `rank()`, `percentile_cont`, quadrant analysis |
 
-Revenue is defined once, in the views `clean.order_summary` and `clean.sales_lines`
-([`00_schema.sql`](sql/00_schema.sql)), so no two queries can disagree about what "revenue" means.
-The reconciliation in `Q11.1` caught a €4.07 rounding leak in an early version of the refund
-allocation, which is why refunds are no longer rounded per line.
+Revenue and gross profit are defined once, in the views `clean.order_summary` and `clean.sales_lines`
+([`00_schema.sql`](sql/00_schema.sql)), so no two reports can disagree. Every answer is saved as a CSV:
+[reports/output/index.md](reports/output/index.md).
 
-## Reports
+## Excel workbook
 
-- **[findings.md](reports/findings.md)**: the management write-up and ranked action plan.
-- **[ecommerce_management_report.xlsx](reports/ecommerce_management_report.xlsx)**: Summary, Revenue Trend, Products, Customers, Cohorts (colour-scaled matrix), Inventory (action list with status colours), Operations, Data Quality and Statistical Tests. Built by Python with native Excel charts, so it stays editable.
-- **[statistical_tests.md](reports/statistical_tests.md)**: six claims tested, including a control showing the loyalty effect holds with delivery speed held constant.
-- **[powerbi/](powerbi/)**: Power Query (M) for each reporting view, DAX measures and the dashboard layout. The `.pbix` itself is still to be built in Power BI Desktop.
+[`Monthly_Business_Performance.xlsx`](excel/Monthly_Business_Performance.xlsx) is built by
+[`src/build_excel.py`](src/build_excel.py), which drives Excel itself, so the workbook contains the real
+features, refreshable in Excel:
+
+- **Power Query**: one query per pipeline output, typed and renamed, with the folder as a single parameter.
+- **Power Pivot**: a data model (sales + Calendar + Geography), relationships and 10 DAX measures, including prior-year and YoY growth.
+- **PivotTables** on the model, all filtered by five **slicers**: Year, Month, Country, Category, Customer Type.
+- **Formulas**: the Executive Summary follows a month picker with INDEX/MATCH, XLOOKUP (same month last year), SUMIFS (year to date, category revenue), COUNTIFS (stock risk), IF/IFERROR; product ranks with RANK.EQ; a cohort matrix built with SUMIFS and a colour scale.
+
+## Power BI dashboard
+
+[`powerbi/`](powerbi/) holds the dashboard as a Power BI project (PBIP: open it in Power BI Desktop):
+a star schema (FactSales, FactOrders, FactInventoryDaily → DimDate, DimProduct, DimCustomer, DimChannel,
+DimGeography) and **51 DAX measures**, so the report computes KPIs instead of reading pre-calculated
+numbers. Pages: **Executive Overview** (KPIs with YoY, trends, management alerts), **Sales & Product**
+(revenue vs margin scatter, revenue rank vs profit rank), **Customer Analytics** (RFM, cohort heatmap),
+**Inventory & Operations** (the reorder table), **Data Quality**.
+
+## Statistics, anomalies and forecasting
+
+- **[Statistical tests](reports/statistical_tests.md)**: ten claims tested, including controls for the two
+  things that changed in 2025, and the discount investigation stratified by month. Effect sizes and
+  confidence intervals, not just p-values.
+- **[Anomaly detection](reports/anomaly_report.md)**: same-weekday rolling mean and SD; tuned from 691
+  flags to a short list by requiring a full baseline, a material gap and labelling known causes (Black
+  Friday, bulk orders). One alert investigated by hand in SQL.
+- **[30-day stockout forecast](reports/forecast_report.md)**: in-stock-day demand × seasonal index. It beat a
+  naive forecast in all four backtest months (WAPE 12.7–17.7% vs 14.3–23.9%). A trend term was tested and
+  dropped because it made the backtest worse.
+
+## How this maps to a data analyst role
+
+| Requirement | Evidence here |
+|---|---|
+| Work with complex datasets | 340k raw records across orders, customers, products and daily stock |
+| SQL | 79 analytical queries, reporting views, reconciliation |
+| Python, analytical workflows, automation | `src/pipeline.py`: extract, validate, clean, transform, detect, forecast, report |
+| Dashboards and data products | Power BI dashboard, Excel workbook, reporting views |
+| Statistics and advanced analysis | hypothesis tests, anomaly detection, backtested forecast |
+| Communicate findings | executive PDF and findings written for managers |
+| Operational needs | reorder list, stockout and courier analysis |
+| Data governance and documentation | validation rules in code, data / KPI dictionaries, methodology |
+| Excel | Power Query, Power Pivot, PivotTables, slicers, lookup formulas |
+| Clean code, version control | modular Python, 30 tests, CI on every push |
 
 ## Running it
 
-Requirements: Docker, Python 3.11+.
+Requirements: Docker, Python 3.11+. Excel workbook build: Windows with Microsoft Excel.
 
 ```sh
-docker compose up -d analytics-db                 # PostgreSQL 16 on localhost:5439
-pip install -r analytics/requirements.txt
-python analytics/run_pipeline.py                  # ~2 min: data, cleaning, SQL, stats, Excel
-pytest analytics/test_pipeline.py                 # trust checks
-python analytics/run_sql.py 07                    # re-run one SQL file
+docker compose up -d analytics-db          # PostgreSQL 16 on localhost:5439
+pip install -r requirements.txt
+python src/pipeline.py                     # ~4 min: everything above
+python src/pipeline.py --notebooks         # ... and re-execute the notebooks
+pytest tests                               # 30 checks
+python src/run_sql.py 12                   # re-run one SQL file
 ```
 
 Connect any SQL client to `postgresql://analyst:analyst@localhost:5439/analytics` to explore
-`raw`, `clean` and `reporting`. The data is generated with a fixed seed, so every run gives the
-same numbers.
+`raw`, `clean` and `reporting`. The data is generated with a fixed seed, so every run gives the same numbers.
 
 ## About the data
 
-The data is simulated. [`analytics/generate_data.py`](analytics/generate_data.py) models customers as a
-repeat-purchase process, daily inventory with supplier lead times and reorder points, and lost
-sales when shelves are empty. It builds in the events the analysis is meant to uncover (a
-loyalty programme, a courier change, products that rise and fall, under- and over-stocked SKUs),
-then writes everything out with the defects of a real export. The analysis treats the data as
-unknown and finds those events from the data alone.
-
-## The storefront application
-
-The repository started as the shop itself: a Next.js storefront and admin panel, Express/TypeScript API,
-PostgreSQL and Stripe Checkout, with a 62-test suite proving stock can't be oversold and payments
-can't be processed twice. The analytics schema extends its tables (`orders`, `order_items`,
-`products`) with the history an analyst needs. Documentation: **[docs/APP.md](docs/APP.md)**.
+The data is **simulated** ([`src/generate_data.py`](src/generate_data.py)), because real transaction data
+with costs, stock and customer IDs is not public. It models customers as a repeat-purchase process,
+daily inventory with lead times and lost sales, free shipping paid by the shop, and business events
+(a loyalty programme, a courier change, products that rise and fall), then writes it all out with the
+defects of a real export. The analysis treats the data as unknown and finds those events from the data
+alone. The methods carry over to real data; the numbers do not.
 
 ## Repository layout
 
 ```
-sql/                 00 schema · 01 data quality · 02–10 analysis · 11 reporting views
-analytics/           generate · load · clean · run_sql · stats · Excel · pipeline · tests
-reports/             findings.md · statistical_tests.md · management report (.xlsx) · output/ (one CSV per question)
-docs/                kpi_dictionary.md · data_quality_report.md · APP.md · API.md · DEPLOY.md
-powerbi/             Power Query (M) · DAX measures · dashboard layout
-backend/ frontend/   the storefront application
+sql/          00 schema · 01 data quality · 02–10 analysis · 11 reporting views · 12 profitability
+src/          pipeline.py and its steps (extract, clean, validate, transform, anomaly_detection, forecast, ...)
+tests/        test_validation.py (unit) · test_pipeline.py (against the database)
+notebooks/    exploratory_analysis.ipynb · statistical_analysis.ipynb
+reports/      Executive_Analysis_Report.pdf · findings.md · figures/ · output/ (one CSV per SQL question)
+excel/        Monthly_Business_Performance.xlsx
+powerbi/      Power BI project (PBIP: TMDL model + report) · measures.dax
+docs/         data_dictionary · kpi_dictionary · methodology · data_quality · data_quality_report
+data/         raw/ and cleaned/ are generated (git-ignored) · sample/ is committed
+app/          the storefront application the data comes from
 ```
+
+## The source application
+
+The repository started as the shop itself: a Next.js storefront and admin panel, an Express/TypeScript
+API, PostgreSQL and Stripe Checkout, with a 62-test suite proving stock can't be oversold and payments
+can't be processed twice. The analytics schema extends its `orders`, `order_items` and `products` tables
+with the history an analyst needs. App documentation: [docs/APP.md](docs/APP.md).

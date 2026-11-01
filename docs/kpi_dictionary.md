@@ -1,6 +1,7 @@
 # KPI Dictionary
 
-One definition per metric, used by every SQL file, the Excel report and the Power BI measures.
+One definition per metric, used by every SQL file, the Excel workbook and the Power BI measures
+([`powerbi/measures.dax`](../powerbi/measures.dax)).
 Revenue is defined once in the views `clean.order_summary` and `clean.sales_lines`
 ([`sql/00_schema.sql`](../sql/00_schema.sql)) so no query can define it differently.
 
@@ -20,12 +21,25 @@ Revenue is defined once in the views `clean.order_summary` and `clean.sales_line
 | **Average Order Value (AOV)** | Net revenue per fulfilled order | Net Revenue ÷ Fulfilled Orders | `Q02.1`, `Q03.1` |
 | **Median Order Value** | Typical order, robust to bulk orders | 50th percentile of order net revenue | `Q02.3` |
 | **Average Selling Price** | Net revenue per unit | Net Revenue ÷ Units Sold | `Q04.1` |
-| **Gross Margin %** | Share of net revenue left after the cost of goods | (Net Revenue − COGS) ÷ Net Revenue × 100 | `Q02.1`, `Q04.7` |
-| **COGS** | Cost of goods sold | Σ quantity × unit cost, fulfilled orders | `Q04.7`, `Q08.5` |
 | **Revenue Share** | A product's or category's part of the total | Item Net Revenue ÷ Total Net Revenue × 100 | `Q04.1`, `Q04.2` |
 | **Refund Rate** | Share of shipped orders that were (partly) refunded | Refunded Orders ÷ Fulfilled Orders × 100 | `Q02.1` |
 | **Refund Value %** | Share of sold value that was paid back | Refunds ÷ (Gross − Discounts) × 100 | `Q04.1` |
 | **Cancellation Rate** | Share of placed orders that were cancelled | Cancelled Orders ÷ Orders Placed × 100 | `Q02.1`, `Q02.4` |
+
+## Profitability
+
+Revenue is not profit. Delivery is free for customers, so the shop pays the carrier, and that cost
+belongs to the sale. Product decisions are ranked by **gross profit**, not revenue (`Q12.4`).
+
+| KPI | Definition | Formula | Where |
+|---|---|---|---|
+| **COGS** | Cost of goods sold | Σ quantity × unit cost, fulfilled orders | `Q12.1`, `Q08.5` |
+| **Shipping Cost** | Carrier cost paid by the shop per shipped order; 0 for cancelled orders. Missing invoices are imputed (median for the same courier and country, flagged) | order-level; allocated to lines by quantity × parcel weight (S = 1, M = 2.8, L = 8.4) | `Q12.1`, `Q12.9` |
+| **Gross Profit** | What is left of a sale after paying for the goods and their delivery | Net Revenue − COGS − Shipping Cost | `Q12.*`, `Q02.1` |
+| **Gross Margin %** | Share of net revenue kept as gross profit | Gross Profit ÷ Net Revenue × 100 | `Q02.1`, `Q04.7`, `Q12.*` |
+| **Revenue rank vs profit rank** | Position of a product when ranked by net revenue and by gross profit (`rank()`); a large drop means revenue overstates its value | | `Q12.4` |
+| **Volume trap** | Product with above-median revenue but below-median gross margin (2025) | | `Q12.5`, `Q12.6` |
+| **Break-even basket lift** | How much larger a discounted basket must be to earn the same gross profit | m ÷ (m − d) − 1, m = full-price margin, d = discount | `statistical_tests.md` |
 
 ## Growth
 
@@ -96,6 +110,9 @@ Frequency uses fixed bands because 66% of customers have exactly one order, so q
 | **Estimated Lost Sales** | Upper bound: assumes no substitution | Stockout days × Demand on in-stock days × Average net price | `Q08.3`, `Q08.4` |
 | **Inventory Turnover** | How many times stock is sold through per year | COGS ÷ Average inventory value at cost | `Q08.5` |
 | **Days of Inventory** | | 365 ÷ Inventory Turnover | `Q08.5` |
+| **30-day forecast** | Units expected to sell in the next 30 days: in-stock daily average over 8 weeks × category seasonality (same window last year) × 30 | | `src/forecast.py` |
+| **Forecast risk** | **STOCKOUT BEFORE RESTOCK** cover < lead time · **REORDER NOW** cover < lead time + 7 days · **OVERSTOCK** > 120 days | | `reports/forecast_report.md` |
+| **WAPE** | Forecast error: Σ\|forecast − actual\| ÷ Σ actual | | `forecast_backtest.csv` |
 | **Stock status** | **CRITICAL** cover < supplier lead time · **HIGH RISK** cover < lead time + 7 days · **OVERSTOCK** cover > 120 days · **DEAD STOCK** stock > 0 and no sales in 90 days · **HEALTHY** otherwise | | `Q08.1`, `Q08.2` |
 
 ## Operations
@@ -106,3 +123,13 @@ Frequency uses fixed bands because 66% of customers have exactly one order, so q
 | **Days to Deliver** | delivery_date − order_date | `Q09.1` |
 | **On-time Delivery %** | Orders delivered within the promise (4 days Greece, 7 days abroad) ÷ Fulfilled Orders × 100 | `Q09.1`, `Q09.2` |
 | **Late Order** | Days to Deliver > promise | `clean.order_summary.is_late` |
+
+## Data quality
+
+| KPI | Formula | Where |
+|---|---|---|
+| **Completeness** | Records with every required field present ÷ records | [data_quality.md](data_quality.md) |
+| **Validity** | Records passing every validity and consistency rule ÷ records | [data_quality.md](data_quality.md) |
+| **Duplicates** | Repeated transaction IDs ÷ records | [data_quality.md](data_quality.md) |
+| **Missing values** | Empty required cells ÷ required cells | [data_quality.md](data_quality.md) |
+| **Failed checks** | Rules whose failure rate exceeds their tolerated rate | [data_quality.md](data_quality.md) |

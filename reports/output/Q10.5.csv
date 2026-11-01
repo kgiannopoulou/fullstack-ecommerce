@@ -7,11 +7,11 @@ order_id,order_date,is_guest,country,payment_method,product_name,quantity,unit_p
 615518,2025-09-22,False,Greece,Bank Transfer,Duffel Bag Plus F951,140,47.99,1.00,completed
 523984,2024-06-22,False,Germany,Card,Power Bank Lite G544,138,14.99,1.00,completed
 610753,2025-09-03,False,Germany,Card,Laptop Sleeve 2 T125,137,76.95,1.04,completed
-544993,2024-10-28,False,Greece,Card,Mechanical Keyboard Pro Q322,124,31.99,1.00,completed
 589607,2025-05-30,False,Greece,Bank Transfer,Earbuds Max P729,124,110.99,1.00,completed
+544993,2024-10-28,False,Greece,Card,Mechanical Keyboard Pro Q322,124,31.99,1.00,completed
 543942,2024-10-22,False,Cyprus,Cash on Delivery,Duffel Bag Plus F951,118,47.99,1.00,cancelled
-574408,2025-03-18,False,Greece,Card,Power Bank Lite G544,116,15.59,1.04,completed
 580129,2025-04-17,False,Cyprus,Apple Pay,Laptop Sleeve 2 T125,116,76.95,1.04,completed
+574408,2025-03-18,False,Greece,Card,Power Bank Lite G544,116,15.59,1.04,completed
 603363,2025-07-31,False,Bulgaria,PayPal,Webcam 2 U680,115,37.43,1.04,completed
 550091,2024-11-22,False,Greece,Card,Earbuds Max P729,113,110.99,1.00,completed
 583516,2025-05-03,False,Greece,PayPal,Limited Edition Print Max U618,110,18.99,1.00,completed

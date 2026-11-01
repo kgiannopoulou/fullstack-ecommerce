@@ -1,0 +1,124 @@
+table DataQualityScorecard
+	lineageTag: 3b1b72b9-771d-52a5-90ec-60eea6c24922
+
+	measure 'DQ Completeness' = CALCULATE ( MAX ( DataQualityScorecard[completeness_pct] ), DataQualityScorecard[stage] = "clean" ) / 100
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Data quality
+		lineageTag: dc4852f0-993a-5556-8b19-b42a684378e6
+
+	measure 'DQ Validity' = CALCULATE ( MAX ( DataQualityScorecard[validity_pct] ), DataQualityScorecard[stage] = "clean" ) / 100
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Data quality
+		lineageTag: 9b96ea7c-3585-553d-a71d-382284c79f8a
+
+	measure 'DQ Duplicates' = CALCULATE ( MAX ( DataQualityScorecard[duplicates_pct] ), DataQualityScorecard[stage] = "clean" ) / 100
+		formatString: 0.00%
+		displayFolder: Data quality
+		lineageTag: dd8b7418-4869-540d-8c7c-86639372c34a
+
+	measure 'DQ Missing Values' = CALCULATE ( MAX ( DataQualityScorecard[missing_values_pct] ), DataQualityScorecard[stage] = "clean" ) / 100
+		formatString: 0.00%
+		displayFolder: Data quality
+		lineageTag: 6a2c506d-98ff-5a7e-968b-309758ad3462
+
+	measure 'DQ Failed Checks (raw)' = CALCULATE ( MAX ( DataQualityScorecard[failed_checks] ), DataQualityScorecard[stage] = "raw" )
+		formatString: 0
+		displayFolder: Data quality
+		lineageTag: 9c270234-afef-508a-a5b7-77efbe8e382e
+
+	measure 'DQ Failed Checks (clean)' = CALCULATE ( MAX ( DataQualityScorecard[failed_checks] ), DataQualityScorecard[stage] = "clean" )
+		formatString: 0
+		displayFolder: Data quality
+		lineageTag: 70005ab3-5523-592d-ab4b-1830da2df616
+
+	column stage
+		dataType: string
+		lineageTag: eab39b9c-fbf3-5af8-9f33-7bfe8cfb368d
+		summarizeBy: none
+		sourceColumn: stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column records
+		dataType: int64
+		formatString: #,0
+		lineageTag: 5a8fe5f1-6a54-5dbd-9fa3-a97b8d8dbad0
+		summarizeBy: none
+		sourceColumn: records
+
+		annotation SummarizationSetBy = Automatic
+
+	column completeness_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: eeb21795-3ec9-5013-b83b-73b8d9b9645e
+		summarizeBy: none
+		sourceColumn: completeness_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column validity_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: 90e4547c-0fff-5c21-9dc1-d6d7759b3616
+		summarizeBy: none
+		sourceColumn: validity_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column duplicates_pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 15a32957-bcf5-5fd5-bf60-452cea6d24ba
+		summarizeBy: none
+		sourceColumn: duplicates_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column missing_values_pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 54aa0b23-afda-5867-9dd7-a1b0666ea18e
+		summarizeBy: none
+		sourceColumn: missing_values_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column rules_checked
+		dataType: int64
+		formatString: 0
+		lineageTag: 29c42d72-f4a8-5c4c-a16e-b19df62962e6
+		summarizeBy: none
+		sourceColumn: rules_checked
+
+		annotation SummarizationSetBy = Automatic
+
+	column failed_checks
+		dataType: int64
+		formatString: 0
+		lineageTag: 93df1541-5078-5a5a-9263-e126c36e8af1
+		summarizeBy: none
+		sourceColumn: failed_checks
+
+		annotation SummarizationSetBy = Automatic
+
+	column critical_failures
+		dataType: int64
+		formatString: 0
+		lineageTag: f6bd8ef8-398c-5e29-89f6-6a5d855aa6a5
+		summarizeBy: none
+		sourceColumn: critical_failures
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DataQualityScorecard = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "DataQualityScorecard.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"stage", type text}, {"records", Int64.Type}, {"completeness_pct", type number}, {"validity_pct", type number}, {"duplicates_pct", type number}, {"missing_values_pct", type number}, {"rules_checked", Int64.Type}, {"failed_checks", Int64.Type}, {"critical_failures", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -8,6 +8,9 @@ build/
 .DS_Store
 
 # analytics: generated source data and Python caches
-analytics/data/
+data/raw/
+data/cleaned/
+excel/~$*
+*.tmp.xlsx
 __pycache__/
 .pytest_cache/

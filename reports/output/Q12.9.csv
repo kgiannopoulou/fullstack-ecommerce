@@ -1,0 +1,3 @@
+courier,period,shipped_orders,avg_shipping_cost,shipping_pct_of_revenue,on_time_pct,avg_days_to_deliver
+ELTA Courier,before switch,41394,6.27,3.8,36.6,5.36
+SwiftCourier,after switch,28832,7.65,5.0,67.9,3.89

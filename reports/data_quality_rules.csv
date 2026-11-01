@@ -1,0 +1,29 @@
+stage,rule_id,dimension,table,column,rule,records_checked,failures,failure_rate_pct,threshold_pct,critical,status
+raw,R01,Uniqueness,transactions,transaction_id,Each transaction ID appears once,340795,2435,0.715,0.0,True,FAIL
+raw,R02,Completeness,transactions,customer_id,Customer ID present (guest checkout allowed up to 3%),340795,5513,1.618,3.0,False,PASS
+raw,R03,Completeness,transactions,category,Category present,340795,696,0.204,0.0,True,FAIL
+raw,R04,Completeness,transactions,payment_method,Payment method present,340795,871,0.256,0.0,True,FAIL
+raw,R05,Completeness,transactions,shipping_cost,Shipping cost present on shipped orders,340795,2885,0.847,0.0,True,FAIL
+raw,R06,Validity,transactions,quantity,Quantity is a positive integer,340795,134,0.039,0.0,True,FAIL
+raw,R07,Validity,transactions,unit_price,Unit price > 0 and at most 5x the list price,340795,44,0.013,0.0,True,FAIL
+raw,R08,Validity,transactions,order_date,Order date in ISO format (YYYY-MM-DD hh:mm:ss),340795,115937,34.02,0.0,True,FAIL
+raw,R09,Consistency,transactions,customer_country,Country uses the standard English name,340795,40825,11.979,0.0,True,FAIL
+raw,R10,Consistency,transactions,order_status,Order status uses the standard lower-case code,340795,23731,6.963,0.0,True,FAIL
+raw,R11,Uniqueness,inventory,"product_id, snapshot_date",One stock count per product per day,257070,513,0.2,0.0,True,FAIL
+raw,R12,Validity,inventory,stock_on_hand,Stock on hand is not negative,257070,380,0.148,0.0,True,FAIL
+raw,R13,Consistency,customers,country,Customer country uses the standard English name,92000,11026,11.985,0.0,True,FAIL
+clean,C01,Uniqueness,order_items,transaction_id,Each transaction ID appears once,338182,0,0.0,0.0,True,PASS
+clean,C02,Uniqueness,orders,order_id,Each order appears once,144790,0,0.0,0.0,True,PASS
+clean,C03,Completeness,orders,customer_id,Customer ID present (guest checkout allowed up to 3%),144790,2316,1.6,3.0,False,PASS
+clean,C04,Completeness,orders,payment_method,Payment method known (Unknown allowed up to 1%),144790,376,0.26,1.0,False,PASS
+clean,C05,Validity,order_items,quantity,Quantity > 0,338182,0,0.0,0.0,True,PASS
+clean,C06,Validity,order_items,unit_price,Unit price > 0,338182,0,0.0,0.0,True,PASS
+clean,C07,Validity,orders,status,"Status is completed, refunded or cancelled",144790,0,0.0,0.0,True,PASS
+clean,C08,Validity,orders,country,Country is one of the 8 markets,144790,0,0.0,0.0,True,PASS
+clean,C09,Validity,orders,shipping_cost,Shipped orders have a shipping cost > 0,144790,0,0.0,0.0,True,PASS
+clean,C10,Validity,inventory_daily,stock_on_hand,Stock on hand >= 0,256557,0,0.0,0.0,True,PASS
+clean,C11,Consistency,order_items,product_id,Every line points to a known product,338182,0,0.0,0.0,True,PASS
+clean,C12,Consistency,order_items,order_id,Every line belongs to a known order,338182,0,0.0,0.0,True,PASS
+clean,C13,Consistency,orders,delivery_date,Delivery is not before the order,144790,0,0.0,0.0,True,PASS
+clean,C14,Consistency,orders,refund_amount,Only refunded orders carry a refund,144790,0,0.0,0.0,True,PASS
+clean,C15,Consistency,order_items,net_amount,Net amount = gross - discount,338182,0,0.0,0.0,True,PASS

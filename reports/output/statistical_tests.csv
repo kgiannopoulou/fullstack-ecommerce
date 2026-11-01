@@ -3,5 +3,9 @@ Repeat purchasing rose after the loyalty launch,"Two-proportion z-test, 90-day r
 The loyalty effect holds with delivery held constant (on-time first orders only),Two-proportion z-test,33.5% -> 45.5% (+12.0 pp),z = 23.3,< 0.001,37398
 A late first delivery lowers the chance of a second order,Chi-square test of independence (2x2) and odds ratio,repeat 38.2% on time vs 25.9% late; on-time buyers have 1.77x the odds of returning,chi2 = 1256,< 0.001,72575
 The new courier delivers faster in Greece,"Mann-Whitney U (one-sided; delivery days are skewed, so no t-test)","median 5 -> 4 days, mean 5.36 -> 3.89",U = 8.47e+08,< 0.001,70226
-Average order value fell in 2025 (bulk orders excluded),"Welch t-test + bootstrap 95% CI (1,000 resamples)","EUR 168.25 -> 154.54 (diff -13.70, 95% CI -15.23 to -12.11)",t = -17.0,< 0.001,136922
+Average order value fell in 2025 (bulk orders excluded),"Welch t-test + bootstrap 95% CI (1,000 resamples)","EUR 168.25 -> 154.54 (diff -13.70, 95% CI -15.37 to -11.94)",t = -17.0,< 0.001,136922
 Cash-on-delivery orders are cancelled more often,Two-proportion z-test,4.5% other methods vs 10.2% COD,z = 35.0,< 0.001,144790
+Discount codes do not make customers buy more units,Mann-Whitney U + within-month difference (bootstrap CI),3.17 vs 3.18 units/order; within-month diff +0.008 (95% CI -0.017 to +0.034),,0.687,136922
+Discount codes do not raise the basket value before discount,Welch t-test + within-month difference (bootstrap CI),EUR 170.22 vs 170.95; within-month diff EUR +0.97 (95% CI -0.67 to +2.78),t = 0.74,0.457,136922
+Discounted orders earn less gross profit,Welch t-test + within-month difference (bootstrap CI),"EUR 67.79 vs 44.56 per order; within-month diff EUR -23.27 (95% CI -24.09 to -22.48), lower in 24 of 24 months",t = -56.3,< 0.001,136922
+First orders with a discount do not create more loyal customers,"Cochran-Mantel-Haenszel test, stratified by first-order month",90-day repeat 32.6% full price vs 31.0% discounted; common odds ratio 0.96 (95% CI 0.92 to 1.00),chi2 = 3.1,0.076,72575

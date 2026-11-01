@@ -1,0 +1,4 @@
+period,gross_sales,discounts,refunds,net_revenue,cogs,shipping_cost,gross_profit,gross_margin_pct,discount_pct_of_sales,refund_pct_of_sales,cogs_pct_of_revenue,shipping_pct_of_revenue
+2024,10257205,304253,311673,9641279,5386447,475131,3779701,39.2,3.0,3.0,55.9,4.9
+2025,13238949,397488,384149,12457312,6831096,710889,4915327,39.5,3.0,2.9,54.8,5.7
+Total,23496153,701741,695822,22098590,12217543,1186020,8695028,39.3,3.0,3.0,55.3,5.4

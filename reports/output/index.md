@@ -1,7 +1,7 @@
 # Query results
 
 Every business question in `sql/`, with its answer saved as CSV in this folder.
-Regenerate with `python analytics/run_sql.py`.
+Regenerate with `python src/run_sql.py`.
 
 
 ## [01_data_quality_checks.sql](../../sql/01_data_quality_checks.sql)
@@ -17,7 +17,7 @@ Regenerate with `python analytics/run_sql.py`.
 | [Q01.7](Q01.7.csv) | Do negative quantities mirror an existing sale (legacy return adjustments)? | 1 |
 | [Q01.8](Q01.8.csv) | How large are the quantity outliers (median, P99, max)? | 1 |
 | [Q01.9](Q01.9.csv) | Inventory snapshots: duplicated uploads and impossible stock counts. | 1 |
-| [Q01.10](Q01.10.csv) | Data-quality summary: one row per check (records affected and decision). | 15 |
+| [Q01.10](Q01.10.csv) | Data-quality summary: one row per check (records affected and decision). | 16 |
 | [Q01.11](Q01.11.csv) | How many transaction records have at least one defect (counted once)? | 1 |
 
 ## [02_sales_kpis.sql](../../sql/02_sales_kpis.sql)
@@ -53,7 +53,7 @@ Regenerate with `python analytics/run_sql.py`.
 | [Q04.4](Q04.4.csv) | Which products had declining sales for three consecutive months in 2025? | 5 |
 | [Q04.5](Q04.5.csv) | Which products grew fastest, and which collapsed (H2 2025 vs H2 2024, min EUR 5k base)? | 20 |
 | [Q04.6](Q04.6.csv) | Which products are refunded unusually often (min 100 orders)? | 15 |
-| [Q04.7](Q04.7.csv) | Where does the margin come from? Revenue vs gross profit by category. | 12 |
+| [Q04.7](Q04.7.csv) | Where does the margin come from? Revenue vs gross profit (after COGS and shipping) by category. | 12 |
 
 ## [05_customer_analysis.sql](../../sql/05_customer_analysis.sql)
 
@@ -116,11 +116,29 @@ Regenerate with `python analytics/run_sql.py`.
 | [Q10.3](Q10.3.csv) | Which products' sales fell sharply while still in stock (last 12 weeks vs prior 12)? | 4 |
 | [Q10.4](Q10.4.csv) | Were there weeks with unusually many refunds? | 1 |
 | [Q10.5](Q10.5.csv) | Bulk orders: who places them and are they legitimate? | 20 |
+| [Q10.6](Q10.6.csv) | Re-check the alert: Wearables daily revenue vs the same weekday over the previous 8 weeks. | 29 |
+| [Q10.7](Q10.7.csv) | Which Wearables products explain the drop? Revenue 4 weeks before vs 4 weeks after 1 Jan 2025. | 8 |
+| [Q10.8](Q10.8.csv) | The top SKU's stock story: when did it run out, and was anything reordered? | 1 |
 
 ## [11_reporting_views.sql](../../sql/11_reporting_views.sql)
 
 | ID | Question | Rows |
 |---|---|---:|
-| [Q11.1](Q11.1.csv) | Do the reporting views reconcile with the source tables? | 4 |
+| [Q11.1](Q11.1.csv) | Do the reporting views reconcile with the source tables? | 6 |
 | [Q11.2](Q11.2.csv) | Monthly KPI table that feeds the dashboard's first page. | 24 |
 | [Q11.3](Q11.3.csv) | Inventory status table that feeds the operations page. | 16 |
+
+## [12_profitability.sql](../../sql/12_profitability.sql)
+
+| ID | Question | Rows |
+|---|---|---:|
+| [Q12.1](Q12.1.csv) | Revenue-to-profit bridge: where does each euro of list-price sales go? | 3 |
+| [Q12.2](Q12.2.csv) | Quarterly gross margin and what moved it (each component as % of net revenue). | 8 |
+| [Q12.3](Q12.3.csv) | Category profitability in 2025: revenue rank vs gross-profit rank. | 12 |
+| [Q12.4](Q12.4.csv) | Products whose revenue rank overstates their contribution (2025, top 50 by revenue). | 16 |
+| [Q12.5](Q12.5.csv) | Revenue vs margin quadrant for every active product in 2025 (feeds the scatter plot). | 361 |
+| [Q12.6](Q12.6.csv) | How much revenue and profit sits in each quadrant? | 4 |
+| [Q12.7](Q12.7.csv) | Which products lose money on every sale (2025)? | 5 |
+| [Q12.8](Q12.8.csv) | What does each discount level cost? (fulfilled orders, bulk excluded) | 5 |
+| [Q12.9](Q12.9.csv) | The courier switch in Greece: what did faster delivery cost per order? | 2 |
+| [Q12.10](Q12.10.csv) | Margin by market: does selling abroad pay once shipping is counted? | 8 |

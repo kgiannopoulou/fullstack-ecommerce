@@ -1,13 +1,13 @@
 category,net_revenue,gross_profit,share_of_profit_pct,share_of_revenue_pct
-Computer Accessories,5335027,2219663,22.5,24.1
-Bags & Travel,4374007,2154863,21.8,19.8
-Audio,4440871,1992785,20.2,20.1
-Wearables,1974890,932951,9.4,8.9
-Phone Accessories,1469075,648059,6.6,6.6
-Home & Kitchen,1000336,486239,4.9,4.5
-Smart Home,1157207,485119,4.9,5.2
-Gaming,990709,395679,4.0,4.5
-Cameras,454891,190440,1.9,2.1
-Office,396270,168650,1.7,1.8
-Books & Prints,275209,122321,1.2,1.2
-Fitness,230098,84280,0.9,1.0
+Computer Accessories,5335027,1935543,22.3,24.1
+Audio,4440871,1875483,21.6,20.1
+Bags & Travel,4374007,1836580,21.1,19.8
+Wearables,1974890,915013,10.5,8.9
+Phone Accessories,1469075,559249,6.4,6.6
+Smart Home,1157207,436918,5.0,5.2
+Gaming,990709,359285,4.1,4.5
+Home & Kitchen,1000336,300095,3.5,4.5
+Cameras,454891,185192,2.1,2.1
+Office,396270,142480,1.6,1.8
+Books & Prints,275209,97500,1.1,1.2
+Fitness,230098,51689,0.6,1.0

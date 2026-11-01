@@ -9,7 +9,7 @@ SELECT category,
        round(100.0 * sum(net_revenue) / sum(sum(net_revenue)) OVER (), 1)         AS revenue_share_pct,
        sum(quantity)                                                              AS units_sold,
        round(sum(net_revenue) / sum(quantity), 2)                                 AS avg_selling_price,
-       round(100.0 * (sum(net_revenue) - sum(cogs)) / sum(net_revenue), 1)        AS gross_margin_pct,
+       round(100.0 * sum(gross_profit) / sum(net_revenue), 1)                     AS gross_margin_pct,
        round(100.0 * sum(refund_amount) / sum(net_amount), 2)                     AS refund_value_pct,
        round(100 * (sum(net_revenue) FILTER (WHERE order_date >= '2025-01-01')
                   / sum(net_revenue) FILTER (WHERE order_date <  '2025-01-01') - 1), 1) AS yoy_growth_pct
@@ -146,11 +146,11 @@ FROM p
 ORDER BY refund_rate_pct DESC
 LIMIT 15;
 
--- Q04.7 | Where does the margin come from? Revenue vs gross profit by category.
+-- Q04.7 | Where does the margin come from? Revenue vs gross profit (after COGS and shipping) by category.
 SELECT category,
        round(sum(net_revenue), 0)                                           AS net_revenue,
-       round(sum(net_revenue) - sum(cogs), 0)                               AS gross_profit,
-       round(100 * (sum(net_revenue) - sum(cogs)) / sum(sum(net_revenue) - sum(cogs)) OVER (), 1) AS share_of_profit_pct,
+       round(sum(gross_profit), 0)                                          AS gross_profit,
+       round(100 * sum(gross_profit) / sum(sum(gross_profit)) OVER (), 1)   AS share_of_profit_pct,
        round(100 * sum(net_revenue) / sum(sum(net_revenue)) OVER (), 1)     AS share_of_revenue_pct
 FROM clean.sales_lines
 GROUP BY category

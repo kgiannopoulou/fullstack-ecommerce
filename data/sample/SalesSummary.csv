@@ -1,0 +1,501 @@
+month,year,month_name,country,category,customer_type,channel,orders,units,gross_sales,discounts,refunds,net_revenue,cogs,shipping_cost,gross_profit
+2024-01-01,2024,01-Jan,France,Books & Prints,New,Direct,1,1,11.99,0.00,0.00,11.99,6.23,1.05,4.71
+2024-01-01,2024,01-Jan,France,Home & Kitchen,Returning,Email,1,1,37.99,0.00,0.00,37.99,17.01,9.82,11.16
+2024-01-01,2024,01-Jan,Germany,Phone Accessories,New,Social,14,21,436.79,9.30,0.00,427.49,240.75,47.18,139.56
+2024-01-01,2024,01-Jan,Germany,Phone Accessories,Returning,Organic Search,3,4,179.96,0.00,25.99,153.97,84.92,3.26,65.79
+2024-01-01,2024,01-Jan,Greece,Phone Accessories,Returning,Paid Search,5,7,137.93,0.00,14.99,122.94,84.12,3.71,35.11
+2024-01-01,2024,01-Jan,Italy,Bags & Travel,Returning,Organic Search,3,5,388.95,11.10,0.00,377.85,187.59,22.24,168.02
+2024-01-01,2024,01-Jan,Netherlands,Computer Accessories,New,Paid Search,19,23,1003.77,16.45,0.00,987.32,534.02,66.93,386.37
+2024-01-01,2024,01-Jan,Netherlands,Phone Accessories,New,Direct,11,18,323.82,3.45,0.00,320.37,189.97,31.20,99.20
+2024-01-01,2024,01-Jan,Spain,Computer Accessories,Returning,Social,1,2,100.98,0.00,0.00,100.98,55.69,6.59,38.70
+2024-01-01,2024,01-Jan,Spain,Office,New,Organic Search,6,9,179.91,3.60,0.00,176.31,96.46,8.92,70.93
+2024-02-01,2024,02-Feb,Bulgaria,Phone Accessories,New,Social,6,10,174.90,12.55,0.00,162.35,104.86,18.91,38.58
+2024-02-01,2024,02-Feb,Cyprus,Audio,New,Marketplace,7,13,1503.87,25.70,0.00,1478.17,795.92,38.18,644.07
+2024-02-01,2024,02-Feb,Cyprus,Home & Kitchen,New,Direct,9,17,587.83,6.05,0.00,581.78,288.97,95.35,197.46
+2024-02-01,2024,02-Feb,Cyprus,Wearables,Returning,Email,1,1,63.99,0.00,0.00,63.99,36.78,0.66,26.55
+2024-02-01,2024,02-Feb,France,Gaming,New,Email,1,1,29.99,0.00,0.00,29.99,13.34,4.23,12.42
+2024-02-01,2024,02-Feb,Germany,Books & Prints,New,Direct,5,5,66.95,8.35,0.00,58.60,35.31,4.39,18.90
+2024-02-01,2024,02-Feb,Germany,Books & Prints,Returning,Social,1,1,11.99,0.00,0.00,11.99,6.23,0.86,4.90
+2024-02-01,2024,02-Feb,Greece,Bags & Travel,Returning,Email,13,23,1701.77,51.79,37.00,1612.99,799.48,77.88,735.63
+2024-02-01,2024,02-Feb,Greece,Phone Accessories,Returning,Direct,13,27,468.63,15.79,30.34,422.50,269.49,20.85,132.16
+2024-02-01,2024,02-Feb,Greece,Smart Home,New,Paid Search,33,43,2976.57,82.45,141.99,2752.13,1659.51,77.88,1014.74
+2024-02-01,2024,02-Feb,Italy,Gaming,Returning,Paid Search,1,1,96.99,0.00,0.00,96.99,60.79,2.05,34.15
+2024-02-01,2024,02-Feb,Italy,Phone Accessories,New,Email,5,9,178.91,1.60,0.00,177.31,93.84,15.73,67.74
+2024-02-01,2024,02-Feb,Netherlands,Gaming,Guest,Email,1,1,37.99,0.00,0.00,37.99,23.66,2.58,11.75
+2024-02-01,2024,02-Feb,Spain,Bags & Travel,Returning,Organic Search,5,13,820.87,0.00,0.00,820.87,385.55,55.75,379.57
+2024-02-01,2024,02-Feb,Spain,Computer Accessories,Guest,Paid Search,1,1,44.99,0.00,0.00,44.99,24.67,3.67,16.65
+2024-02-01,2024,02-Feb,Spain,Wearables,New,Organic Search,5,5,904.95,0.00,0.00,904.95,450.93,5.38,448.64
+2024-03-01,2024,03-Mar,Bulgaria,Audio,Guest,Email,1,1,110.99,0.00,0.00,110.99,52.08,3.21,55.70
+2024-03-01,2024,03-Mar,Bulgaria,Bags & Travel,New,Organic Search,9,12,817.88,6.90,0.00,810.98,396.60,63.66,350.72
+2024-03-01,2024,03-Mar,Bulgaria,Computer Accessories,Returning,Marketplace,2,7,233.93,0.00,0.00,233.93,126.80,11.49,95.64
+2024-03-01,2024,03-Mar,Cyprus,Wearables,Returning,Direct,2,3,691.97,60.00,0.00,631.97,329.35,13.82,288.80
+2024-03-01,2024,03-Mar,France,Wearables,Returning,Email,2,2,363.98,0.00,0.00,363.98,173.26,9.49,181.23
+2024-03-01,2024,03-Mar,Greece,Audio,New,Marketplace,46,78,7748.22,178.09,610.26,6959.87,3900.77,115.10,2943.99
+2024-03-01,2024,03-Mar,Greece,Audio,Returning,Email,15,20,2210.80,38.85,20.40,2151.55,1167.32,35.71,948.52
+2024-03-01,2024,03-Mar,Greece,Computer Accessories,New,Social,134,230,9872.70,231.85,251.55,9389.30,5515.86,390.30,3483.14
+2024-03-01,2024,03-Mar,Greece,Fitness,Returning,Paid Search,2,2,69.98,0.00,52.99,16.99,40.76,8.58,-32.35
+2024-03-01,2024,03-Mar,Greece,Gaming,New,Paid Search,26,32,2011.68,68.65,19.00,1924.03,1142.67,65.67,715.69
+2024-03-01,2024,03-Mar,Greece,Gaming,Returning,Social,4,6,260.94,0.00,0.00,260.94,135.66,8.04,117.24
+2024-03-01,2024,03-Mar,Greece,Home & Kitchen,Guest,Marketplace,2,2,47.98,0.00,0.00,47.98,29.14,6.37,12.47
+2024-03-01,2024,03-Mar,Greece,Wearables,New,Paid Search,32,41,8970.59,65.40,363.98,8541.21,4244.19,35.21,4261.81
+2024-03-01,2024,03-Mar,Italy,Audio,New,Direct,9,15,1505.85,0.00,154.99,1350.86,871.73,48.52,430.61
+2024-03-01,2024,03-Mar,Netherlands,Audio,New,Marketplace,4,8,869.92,0.00,0.00,869.92,455.33,23.08,391.51
+2024-03-01,2024,03-Mar,Netherlands,Phone Accessories,Returning,Organic Search,5,9,215.91,8.40,0.00,207.51,118.77,10.69,78.05
+2024-03-01,2024,03-Mar,Netherlands,Smart Home,New,Social,3,3,205.97,0.00,0.00,205.97,113.26,11.75,80.96
+2024-03-01,2024,03-Mar,Spain,Gaming,Returning,Email,1,4,335.96,0.00,0.00,335.96,184.08,8.05,143.83
+2024-03-01,2024,03-Mar,Spain,Phone Accessories,New,Direct,9,10,258.90,7.25,0.00,251.65,135.71,34.12,81.82
+2024-03-01,2024,03-Mar,Spain,Smart Home,New,Social,3,4,298.96,0.00,0.00,298.96,185.27,8.36,105.33
+2024-04-01,2024,04-Apr,Bulgaria,Gaming,New,Organic Search,4,6,382.94,0.00,0.00,382.94,208.41,16.78,157.75
+2024-04-01,2024,04-Apr,Bulgaria,Wearables,New,Email,1,3,899.97,179.99,0.00,719.98,409.44,1.83,308.71
+2024-04-01,2024,04-Apr,Cyprus,Books & Prints,New,Organic Search,12,16,209.74,4.65,0.00,205.09,110.30,37.43,57.36
+2024-04-01,2024,04-Apr,Cyprus,Home & Kitchen,New,Organic Search,11,13,330.87,3.40,0.00,327.47,150.28,87.22,89.97
+2024-04-01,2024,04-Apr,France,Office,New,Paid Search,2,7,59.98,0.00,0.00,59.98,39.76,5.81,14.41
+2024-04-01,2024,04-Apr,Greece,Fitness,New,Email,4,5,216.95,0.00,0.00,216.95,124.87,19.47,72.61
+2024-04-01,2024,04-Apr,Greece,Wearables,New,Social,13,17,2610.83,73.80,54.30,2482.73,1294.75,8.67,1179.31
+2024-04-01,2024,04-Apr,Italy,Audio,New,Social,13,22,2160.78,104.40,0.00,2056.38,1084.56,50.97,920.85
+2024-04-01,2024,04-Apr,Italy,Cameras,Returning,Social,1,1,219.99,0.00,0.00,219.99,131.13,4.36,84.51
+2024-04-01,2024,04-Apr,Italy,Gaming,Guest,Organic Search,1,2,335.98,0.00,0.00,335.98,198.58,5.56,131.84
+2024-04-01,2024,04-Apr,Italy,Gaming,Returning,Paid Search,1,1,96.99,9.70,0.00,87.29,60.79,3.33,23.17
+2024-04-01,2024,04-Apr,Netherlands,Bags & Travel,Returning,Organic Search,8,15,1031.85,32.90,0.00,998.95,511.92,66.01,421.02
+2024-04-01,2024,04-Apr,Netherlands,Computer Accessories,New,Email,8,13,421.87,0.00,0.00,421.87,281.14,32.71,108.02
+2024-04-01,2024,04-Apr,Netherlands,Gaming,New,Email,1,1,110.99,0.00,0.00,110.99,68.96,3.31,38.72
+2024-04-01,2024,04-Apr,Spain,Books & Prints,Returning,Social,1,3,50.97,0.00,0.00,50.97,34.08,2.97,13.92
+2024-04-01,2024,04-Apr,Spain,Phone Accessories,New,Organic Search,15,24,517.76,0.00,37.48,480.28,304.65,52.88,122.75
+2024-05-01,2024,05-May,Bulgaria,Computer Accessories,Returning,Direct,4,4,154.96,5.50,0.00,149.46,88.80,18.71,41.95
+2024-05-01,2024,05-May,Bulgaria,Home & Kitchen,New,Organic Search,6,8,173.92,2.25,0.00,171.67,89.23,43.02,39.42
+2024-05-01,2024,05-May,Cyprus,Audio,Guest,Organic Search,1,1,50.99,7.65,0.00,43.34,30.30,2.62,10.42
+2024-05-01,2024,05-May,Cyprus,Audio,Returning,Direct,6,7,932.93,26.55,0.00,906.38,532.32,35.80,338.26
+2024-05-01,2024,05-May,Cyprus,Gaming,Returning,Marketplace,3,3,311.97,25.20,71.40,215.37,180.81,12.62,21.94
+2024-05-01,2024,05-May,Cyprus,Wearables,New,Social,3,9,2227.91,0.00,0.00,2227.91,1028.92,17.45,1181.54
+2024-05-01,2024,05-May,Cyprus,Wearables,Returning,Organic Search,3,3,529.97,0.00,114.99,414.98,247.12,3.43,164.43
+2024-05-01,2024,05-May,France,Audio,New,Organic Search,19,33,3294.67,11.10,66.59,3216.98,1702.59,90.37,1424.02
+2024-05-01,2024,05-May,France,Bags & Travel,New,Marketplace,8,12,714.88,14.80,0.00,700.08,362.19,77.49,260.40
+2024-05-01,2024,05-May,France,Computer Accessories,Returning,Social,8,10,417.90,16.00,31.99,369.91,230.01,49.60,90.30
+2024-05-01,2024,05-May,France,Wearables,New,Direct,2,2,363.98,0.00,0.00,363.98,173.26,3.63,187.09
+2024-05-01,2024,05-May,France,Wearables,Returning,Direct,2,3,659.97,75.00,0.00,584.97,332.24,2.70,250.03
+2024-05-01,2024,05-May,Germany,Smart Home,Returning,Direct,3,4,222.96,11.85,0.00,211.11,127.47,7.08,76.56
+2024-05-01,2024,05-May,Germany,Wearables,New,Email,3,5,1023.95,0.00,0.00,1023.95,505.50,4.84,513.61
+2024-05-01,2024,05-May,Greece,Phone Accessories,Returning,Direct,30,45,856.61,16.69,0.00,839.92,505.84,43.66,290.42
+2024-05-01,2024,05-May,Italy,Books & Prints,New,Email,1,2,23.98,2.40,0.00,21.58,12.46,1.01,8.11
+2024-05-01,2024,05-May,Italy,Computer Accessories,New,Marketplace,10,20,774.80,36.50,9.30,729.00,437.32,52.50,239.18
+2024-05-01,2024,05-May,Italy,Wearables,New,Organic Search,3,4,491.96,32.00,0.00,459.96,246.82,8.32,204.82
+2024-05-01,2024,05-May,Netherlands,Audio,Guest,Paid Search,1,1,110.99,0.00,0.00,110.99,52.08,1.62,57.29
+2024-05-01,2024,05-May,Netherlands,Gaming,Guest,Paid Search,1,2,59.98,0.00,0.00,59.98,26.68,8.52,24.78
+2024-05-01,2024,05-May,Netherlands,Wearables,Returning,Marketplace,1,1,299.99,0.00,0.00,299.99,136.48,1.00,162.51
+2024-05-01,2024,05-May,Spain,Computer Accessories,New,Organic Search,29,45,1855.55,58.29,52.50,1744.76,1047.56,133.33,563.87
+2024-05-01,2024,05-May,Spain,Phone Accessories,New,Direct,6,9,288.91,5.20,0.00,283.71,153.61,12.45,117.65
+2024-06-01,2024,06-Jun,Bulgaria,Audio,Returning,Organic Search,11,14,1369.86,0.00,33.30,1336.56,738.41,32.27,565.87
+2024-06-01,2024,06-Jun,Bulgaria,Bags & Travel,Returning,Paid Search,2,2,112.98,0.00,0.00,112.98,57.08,11.71,44.19
+2024-06-01,2024,06-Jun,Bulgaria,Home & Kitchen,Returning,Marketplace,3,8,269.92,0.00,0.00,269.92,120.49,34.78,114.65
+2024-06-01,2024,06-Jun,Bulgaria,Wearables,Returning,Organic Search,2,2,363.98,0.00,0.00,363.98,173.26,2.22,188.50
+2024-06-01,2024,06-Jun,France,Audio,Returning,Email,6,9,756.91,22.20,0.00,734.71,410.74,28.25,295.72
+2024-06-01,2024,06-Jun,Germany,Books & Prints,Returning,Direct,2,4,63.96,0.00,0.00,63.96,35.18,4.71,24.07
+2024-06-01,2024,06-Jun,Greece,Bags & Travel,Returning,Paid Search,43,55,3679.45,126.29,129.98,3423.18,1784.02,214.70,1424.46
+2024-06-01,2024,06-Jun,Greece,Cameras,Returning,Paid Search,1,2,531.98,0.00,0.00,531.98,361.42,2.51,168.05
+2024-06-01,2024,06-Jun,Greece,Gaming,Returning,Email,12,20,1415.80,11.40,48.00,1356.40,832.72,33.38,490.30
+2024-06-01,2024,06-Jun,Greece,Office,Returning,Direct,6,7,161.88,0.00,0.00,161.88,94.04,5.84,62.00
+2024-06-01,2024,06-Jun,Greece,Wearables,Guest,Direct,1,2,127.98,0.00,0.00,127.98,73.56,1.59,52.83
+2024-06-01,2024,06-Jun,Italy,Smart Home,New,Paid Search,4,5,239.95,14.40,81.58,143.97,139.13,19.83,-14.99
+2024-06-01,2024,06-Jun,Netherlands,Bags & Travel,Returning,Paid Search,3,6,388.94,0.00,0.00,388.94,185.97,25.20,177.77
+2024-06-01,2024,06-Jun,Spain,Audio,New,Paid Search,6,7,585.93,3.60,0.00,582.33,289.81,21.62,270.90
+2024-06-01,2024,06-Jun,Spain,Audio,Returning,Organic Search,12,21,2342.79,28.40,0.00,2314.39,1341.60,52.05,920.74
+2024-06-01,2024,06-Jun,Spain,Books & Prints,New,Paid Search,5,7,132.93,0.00,12.99,119.94,70.82,11.81,37.31
+2024-06-01,2024,06-Jun,Spain,Books & Prints,Returning,Direct,1,1,11.99,0.00,0.00,11.99,6.23,1.05,4.71
+2024-06-01,2024,06-Jun,Spain,Gaming,New,Social,2,2,34.98,0.00,0.00,34.98,21.56,10.23,3.19
+2024-07-01,2024,07-Jul,Bulgaria,Gaming,New,Organic Search,2,2,88.98,0.00,0.00,88.98,40.53,2.90,45.55
+2024-07-01,2024,07-Jul,Cyprus,Books & Prints,Returning,Direct,5,5,59.95,3.00,0.00,56.95,31.15,19.14,6.66
+2024-07-01,2024,07-Jul,France,Computer Accessories,Returning,Marketplace,2,2,63.98,0.00,0.00,63.98,43.00,5.17,15.81
+2024-07-01,2024,07-Jul,France,Fitness,New,Social,1,1,16.99,0.00,0.00,16.99,9.58,4.11,3.30
+2024-07-01,2024,07-Jul,France,Smart Home,New,Social,3,3,187.97,0.00,0.00,187.97,91.23,8.84,87.90
+2024-07-01,2024,07-Jul,Germany,Audio,Returning,Email,3,4,432.96,11.10,0.00,421.86,239.37,15.87,166.62
+2024-07-01,2024,07-Jul,Germany,Computer Accessories,New,Email,16,24,964.76,0.00,0.00,964.76,525.34,51.18,388.24
+2024-07-01,2024,07-Jul,Germany,Home & Kitchen,New,Email,6,7,176.93,4.20,0.00,172.73,80.56,34.13,58.04
+2024-07-01,2024,07-Jul,Germany,Phone Accessories,New,Marketplace,5,8,119.45,0.00,0.00,119.45,70.02,16.60,32.83
+2024-07-01,2024,07-Jul,Germany,Smart Home,Returning,Direct,1,1,47.99,0.00,0.00,47.99,28.14,7.85,12.00
+2024-07-01,2024,07-Jul,Greece,Books & Prints,Guest,Organic Search,1,1,11.99,0.00,0.00,11.99,6.23,0.78,4.98
+2024-07-01,2024,07-Jul,Greece,Phone Accessories,Returning,Paid Search,35,46,995.44,21.20,0.00,974.24,550.60,50.24,373.40
+2024-07-01,2024,07-Jul,Greece,Smart Home,New,Paid Search,30,37,2070.63,43.35,0.00,2027.28,1167.31,69.73,790.24
+2024-07-01,2024,07-Jul,Greece,Smart Home,New,Social,28,33,1785.67,21.60,0.00,1764.07,1013.31,61.12,689.64
+2024-07-01,2024,07-Jul,Italy,Computer Accessories,New,Paid Search,25,40,1774.60,21.80,38.18,1714.62,1063.71,116.91,534.00
+2024-07-01,2024,07-Jul,Italy,Computer Accessories,Returning,Marketplace,3,5,181.95,3.20,0.00,178.75,103.02,13.44,62.29
+2024-07-01,2024,07-Jul,Italy,Computer Accessories,Returning,Organic Search,28,51,1884.49,118.38,0.00,1766.11,1048.56,143.60,573.95
+2024-07-01,2024,07-Jul,Italy,Fitness,Returning,Paid Search,1,1,20.99,0.00,0.00,20.99,12.85,8.03,0.12
+2024-07-01,2024,07-Jul,Italy,Home & Kitchen,New,Paid Search,7,7,256.93,0.00,0.00,256.93,138.66,48.00,70.27
+2024-07-01,2024,07-Jul,Netherlands,Audio,New,Email,5,12,1308.88,183.19,0.00,1125.69,652.86,29.40,443.43
+2024-07-01,2024,07-Jul,Netherlands,Home & Kitchen,New,Organic Search,7,11,233.89,13.80,0.00,220.09,121.37,48.95,49.77
+2024-07-01,2024,07-Jul,Netherlands,Smart Home,Returning,Organic Search,3,3,115.97,12.00,0.00,103.97,66.84,8.99,28.15
+2024-07-01,2024,07-Jul,Spain,Fitness,New,Social,1,1,28.99,0.00,0.00,28.99,18.71,10.35,-0.07
+2024-08-01,2024,08-Aug,Cyprus,Smart Home,New,Email,2,4,268.96,0.00,0.00,268.96,171.43,11.49,86.04
+2024-08-01,2024,08-Aug,France,Books & Prints,New,Organic Search,6,6,86.94,0.00,18.99,67.95,45.48,12.08,10.39
+2024-08-01,2024,08-Aug,France,Books & Prints,Returning,Paid Search,3,5,80.95,3.00,0.00,77.95,43.63,5.91,28.41
+2024-08-01,2024,08-Aug,France,Books & Prints,Returning,Social,1,1,18.99,0.00,0.00,18.99,10.39,2.19,6.41
+2024-08-01,2024,08-Aug,Germany,Gaming,New,Paid Search,5,5,202.95,0.00,5.10,197.85,104.41,23.70,69.74
+2024-08-01,2024,08-Aug,Germany,Smart Home,Returning,Organic Search,3,3,187.97,0.00,0.00,187.97,110.00,17.15,60.82
+2024-08-01,2024,08-Aug,Greece,Bags & Travel,Returning,Marketplace,10,12,827.88,25.90,0.00,801.98,406.80,43.34,351.84
+2024-08-01,2024,08-Aug,Greece,Wearables,Returning,Direct,7,15,2961.85,18.40,0.00,2943.45,1378.21,7.82,1557.42
+2024-08-01,2024,08-Aug,Italy,Computer Accessories,Guest,Direct,1,2,100.98,0.00,0.00,100.98,55.69,9.11,36.18
+2024-08-01,2024,08-Aug,Italy,Home & Kitchen,New,Email,3,5,98.95,4.65,0.00,94.30,49.15,25.92,19.23
+2024-08-01,2024,08-Aug,Italy,Office,New,Social,1,1,18.99,0.00,0.00,18.99,9.76,0.89,8.34
+2024-08-01,2024,08-Aug,Italy,Smart Home,New,Direct,4,5,357.95,0.00,0.00,357.95,198.88,18.09,140.98
+2024-08-01,2024,08-Aug,Netherlands,Computer Accessories,New,Paid Search,16,34,1908.66,25.20,0.00,1883.46,1020.09,78.82,784.55
+2024-08-01,2024,08-Aug,Netherlands,Computer Accessories,Returning,Social,6,7,328.93,17.40,0.00,311.53,171.36,30.85,109.32
+2024-08-01,2024,08-Aug,Spain,Bags & Travel,New,Email,5,10,720.90,7.40,0.00,713.50,345.22,49.55,318.73
+2024-08-01,2024,08-Aug,Spain,Bags & Travel,Returning,Paid Search,4,8,591.92,44.39,0.00,547.53,278.08,42.08,227.37
+2024-08-01,2024,08-Aug,Spain,Computer Accessories,Returning,Direct,4,6,273.94,0.00,0.00,273.94,139.77,21.37,112.80
+2024-08-01,2024,08-Aug,Spain,Office,New,Social,2,3,100.97,0.00,0.00,100.97,58.61,3.28,39.08
+2024-08-01,2024,08-Aug,Spain,Smart Home,New,Direct,5,6,401.94,7.20,0.00,394.74,208.04,26.02,160.68
+2024-09-01,2024,09-Sep,Bulgaria,Bags & Travel,Returning,Paid Search,3,3,221.97,7.40,0.00,214.57,104.28,17.01,93.28
+2024-09-01,2024,09-Sep,Bulgaria,Gaming,Returning,Marketplace,1,1,110.99,0.00,0.00,110.99,68.96,3.32,38.71
+2024-09-01,2024,09-Sep,Bulgaria,Phone Accessories,Returning,Marketplace,3,3,45.97,1.65,0.00,44.32,26.98,9.35,7.99
+2024-09-01,2024,09-Sep,Bulgaria,Wearables,Returning,Organic Search,2,2,391.98,84.20,0.00,307.78,192.87,4.78,110.13
+2024-09-01,2024,09-Sep,Cyprus,Audio,Returning,Marketplace,1,4,515.96,0.00,0.00,515.96,301.44,7.82,206.70
+2024-09-01,2024,09-Sep,Cyprus,Smart Home,New,Direct,8,10,466.90,11.20,0.00,455.70,252.33,46.42,156.95
+2024-09-01,2024,09-Sep,France,Books & Prints,New,Email,1,1,11.99,0.00,0.00,11.99,6.23,1.03,4.73
+2024-09-01,2024,09-Sep,Germany,Books & Prints,Guest,Email,1,1,11.99,3.00,0.00,8.99,6.23,2.14,0.62
+2024-09-01,2024,09-Sep,Germany,Computer Accessories,New,Paid Search,33,63,2438.37,100.68,19.50,2318.19,1465.66,163.11,689.42
+2024-09-01,2024,09-Sep,Germany,Gaming,Returning,Paid Search,1,1,93.99,0.00,0.00,93.99,42.34,2.21,49.44
+2024-09-01,2024,09-Sep,Greece,Bags & Travel,New,Direct,72,97,6492.03,58.40,107.69,6325.94,3178.60,367.43,2779.91
+2024-09-01,2024,09-Sep,Greece,Bags & Travel,Returning,Email,18,34,2242.66,101.30,0.00,2141.36,1078.64,118.94,943.78
+2024-09-01,2024,09-Sep,Greece,Books & Prints,Returning,Organic Search,24,32,532.58,14.08,0.00,518.50,277.44,33.87,207.19
+2024-09-01,2024,09-Sep,Greece,Computer Accessories,Returning,Email,44,78,3287.22,136.28,0.00,3150.94,1810.77,148.33,1191.84
+2024-09-01,2024,09-Sep,Greece,Fitness,New,Marketplace,6,7,255.93,0.00,41.98,213.95,154.91,27.18,31.86
+2024-09-01,2024,09-Sep,Greece,Office,New,Paid Search,30,41,1039.39,9.85,4.16,1025.38,589.34,27.73,408.31
+2024-09-01,2024,09-Sep,Italy,Wearables,New,Organic Search,10,11,2174.89,0.00,144.99,2029.90,1061.91,19.15,948.84
+2024-09-01,2024,09-Sep,Netherlands,Computer Accessories,Returning,Marketplace,1,1,31.99,0.00,0.00,31.99,21.50,2.56,7.93
+2024-09-01,2024,09-Sep,Spain,Office,Guest,Social,1,1,11.99,0.00,0.00,11.99,5.41,8.12,-1.54
+2024-10-01,2024,10-Oct,Bulgaria,Bags & Travel,New,Organic Search,16,21,1448.79,29.60,24.99,1394.20,696.87,124.99,572.34
+2024-10-01,2024,10-Oct,Bulgaria,Gaming,Guest,Direct,1,1,151.99,0.00,0.00,151.99,92.20,7.13,52.66
+2024-10-01,2024,10-Oct,Bulgaria,Office,Returning,Marketplace,1,1,34.99,0.00,0.00,34.99,15.20,1.81,17.98
+2024-10-01,2024,10-Oct,Bulgaria,Phone Accessories,New,Organic Search,16,20,529.80,11.35,0.00,518.45,270.24,23.07,225.14
+2024-10-01,2024,10-Oct,Cyprus,Books & Prints,New,Marketplace,4,4,82.96,1.95,0.00,81.01,40.71,15.49,24.81
+2024-10-01,2024,10-Oct,Cyprus,Home & Kitchen,New,Email,9,12,261.88,10.10,0.00,251.78,130.30,77.81,43.67
+2024-10-01,2024,10-Oct,France,Computer Accessories,Returning,Direct,13,21,769.79,18.10,0.00,751.69,435.22,61.44,255.03
+2024-10-01,2024,10-Oct,France,Phone Accessories,Returning,Paid Search,3,6,149.94,0.00,0.00,149.94,80.63,3.68,65.63
+2024-10-01,2024,10-Oct,Germany,Audio,Returning,Paid Search,10,12,1055.88,53.90,54.99,946.99,530.25,43.41,373.32
+2024-10-01,2024,10-Oct,Germany,Phone Accessories,New,Direct,17,28,695.72,7.65,43.33,644.74,358.83,60.70,225.21
+2024-10-01,2024,10-Oct,Greece,Cameras,Returning,Direct,1,1,170.99,0.00,0.00,170.99,80.16,1.58,89.25
+2024-10-01,2024,10-Oct,Greece,Computer Accessories,Guest,Paid Search,2,4,148.96,10.60,0.00,138.36,96.35,6.53,35.48
+2024-10-01,2024,10-Oct,Greece,Gaming,Guest,Social,1,1,32.99,0.00,0.00,32.99,17.14,0.94,14.91
+2024-10-01,2024,10-Oct,Greece,Wearables,New,Organic Search,45,65,12047.35,248.50,1111.96,10686.89,5787.10,59.72,4840.06
+2024-10-01,2024,10-Oct,Italy,Books & Prints,Returning,Direct,1,1,11.99,0.00,0.00,11.99,6.23,4.13,1.63
+2024-10-01,2024,10-Oct,Italy,Home & Kitchen,Returning,Direct,4,8,220.92,0.00,37.99,182.93,101.50,37.22,44.21
+2024-10-01,2024,10-Oct,Italy,Office,New,Direct,1,1,11.99,0.00,0.00,11.99,5.41,2.25,4.33
+2024-10-01,2024,10-Oct,Italy,Office,Returning,Social,2,4,59.96,2.20,0.00,57.76,30.76,2.46,24.54
+2024-10-01,2024,10-Oct,Italy,Phone Accessories,Returning,Email,2,3,63.97,0.00,0.00,63.97,32.43,1.97,29.57
+2024-10-01,2024,10-Oct,Italy,Phone Accessories,Returning,Organic Search,11,16,486.84,7.70,0.00,479.14,263.08,17.54,198.52
+2024-10-01,2024,10-Oct,Netherlands,Phone Accessories,Returning,Paid Search,3,3,55.97,1.50,0.00,54.47,30.51,3.48,20.48
+2024-10-01,2024,10-Oct,Netherlands,Smart Home,New,Email,1,1,86.99,0.00,0.00,86.99,52.95,3.86,30.19
+2024-10-01,2024,10-Oct,Spain,Bags & Travel,New,Social,9,12,786.88,59.19,0.00,727.69,388.43,68.27,270.99
+2024-10-01,2024,10-Oct,Spain,Computer Accessories,Returning,Marketplace,3,6,299.94,0.00,0.00,299.94,165.48,13.12,121.34
+2024-11-01,2024,11-Nov,Bulgaria,Office,New,Organic Search,4,4,43.81,1.73,11.50,30.58,25.79,10.09,-5.29
+2024-11-01,2024,11-Nov,Cyprus,Phone Accessories,Returning,Social,4,6,184.94,23.50,0.00,161.44,94.29,17.40,49.75
+2024-11-01,2024,11-Nov,France,Wearables,Returning,Marketplace,1,2,599.98,60.00,0.00,539.98,272.96,1.97,265.05
+2024-11-01,2024,11-Nov,Germany,Gaming,Guest,Organic Search,1,2,33.98,0.00,0.00,33.98,22.50,4.05,7.43
+2024-11-01,2024,11-Nov,Greece,Books & Prints,Returning,Email,9,10,149.90,15.35,0.00,134.55,80.88,8.61,45.06
+2024-11-01,2024,11-Nov,Greece,Books & Prints,Returning,Marketplace,4,6,106.94,5.70,0.00,101.24,58.18,6.52,36.54
+2024-11-01,2024,11-Nov,Greece,Computer Accessories,Guest,Email,1,1,64.99,0.00,0.00,64.99,30.72,2.24,32.03
+2024-11-01,2024,11-Nov,Greece,Computer Accessories,Returning,Marketplace,26,46,2160.54,205.44,0.00,1955.10,1235.53,81.84,637.73
+2024-11-01,2024,11-Nov,Italy,Fitness,Returning,Email,1,1,20.99,5.25,0.00,15.74,12.85,7.46,-4.57
+2024-11-01,2024,11-Nov,Italy,Home & Kitchen,Returning,Social,6,9,192.99,2.55,0.00,190.44,98.56,48.79,43.09
+2024-11-01,2024,11-Nov,Italy,Phone Accessories,Guest,Social,1,1,21.99,3.30,0.00,18.69,10.06,0.99,7.64
+2024-11-01,2024,11-Nov,Italy,Smart Home,New,Marketplace,4,4,222.96,12.00,0.00,210.96,127.47,11.71,71.78
+2024-11-01,2024,11-Nov,Netherlands,Audio,New,Direct,15,25,2419.75,237.79,0.00,2181.96,1214.65,68.79,898.52
+2024-11-01,2024,11-Nov,Netherlands,Audio,Returning,Email,2,2,197.98,11.10,0.00,186.88,101.14,5.14,80.60
+2024-11-01,2024,11-Nov,Netherlands,Computer Accessories,Returning,Paid Search,8,12,533.88,35.40,0.00,498.48,317.35,29.93,151.20
+2024-11-01,2024,11-Nov,Netherlands,Gaming,New,Organic Search,5,8,637.92,63.45,0.00,574.47,361.44,19.03,194.00
+2024-11-01,2024,11-Nov,Spain,Phone Accessories,New,Email,11,11,378.79,12.89,0.00,365.90,193.30,34.21,138.39
+2024-12-01,2024,12-Dec,Bulgaria,Fitness,New,Direct,2,3,142.97,9.60,0.00,133.37,77.41,14.16,41.80
+2024-12-01,2024,12-Dec,Bulgaria,Home & Kitchen,New,Email,3,3,71.97,2.55,0.00,69.42,31.65,17.92,19.85
+2024-12-01,2024,12-Dec,Bulgaria,Office,Returning,Email,2,4,59.96,11.99,0.00,47.97,33.70,8.22,6.05
+2024-12-01,2024,12-Dec,Cyprus,Fitness,New,Marketplace,1,2,29.98,0.00,0.00,29.98,18.62,9.43,1.93
+2024-12-01,2024,12-Dec,Cyprus,Wearables,Guest,Direct,1,1,299.99,0.00,0.00,299.99,136.48,8.87,154.64
+2024-12-01,2024,12-Dec,France,Audio,Guest,Marketplace,1,1,110.99,0.00,0.00,110.99,52.08,2.56,56.35
+2024-12-01,2024,12-Dec,France,Computer Accessories,New,Organic Search,51,112,4747.88,164.08,356.13,4227.67,2754.81,292.58,1180.28
+2024-12-01,2024,12-Dec,France,Fitness,Returning,Social,1,3,44.97,0.00,0.00,44.97,27.93,9.39,7.65
+2024-12-01,2024,12-Dec,France,Phone Accessories,Returning,Paid Search,15,21,416.79,14.95,0.00,401.84,227.26,21.36,153.22
+2024-12-01,2024,12-Dec,Germany,Books & Prints,Returning,Paid Search,1,1,18.99,0.00,0.00,18.99,10.39,0.80,7.80
+2024-12-01,2024,12-Dec,Germany,Wearables,Returning,Email,2,2,599.98,45.00,0.00,554.98,272.96,2.28,279.74
+2024-12-01,2024,12-Dec,Greece,Audio,New,Organic Search,213,321,31638.79,1342.68,804.33,29491.78,16009.74,546.54,12935.51
+2024-12-01,2024,12-Dec,Greece,Phone Accessories,Returning,Social,30,42,936.58,27.30,45.28,864.00,514.55,44.31,305.14
+2024-12-01,2024,12-Dec,Netherlands,Computer Accessories,Returning,Email,13,24,1261.76,129.49,57.99,1074.28,718.56,70.04,285.68
+2024-12-01,2024,12-Dec,Spain,Books & Prints,New,Paid Search,3,3,33.87,0.00,11.99,21.88,18.16,2.81,0.91
+2024-12-01,2024,12-Dec,Spain,Fitness,New,Social,2,3,127.97,0.00,0.00,127.97,77.91,16.22,33.84
+2024-12-01,2024,12-Dec,Spain,Home & Kitchen,Returning,Marketplace,2,2,75.98,7.60,0.00,68.38,34.02,12.30,22.06
+2024-12-01,2024,12-Dec,Spain,Phone Accessories,New,Social,13,22,591.78,19.40,0.00,572.38,299.59,44.91,227.88
+2025-01-01,2025,01-Jan,Bulgaria,Audio,Returning,Organic Search,8,10,1065.22,60.95,0.00,1004.27,577.90,32.89,393.48
+2025-01-01,2025,01-Jan,Bulgaria,Smart Home,Guest,Paid Search,1,1,163.27,0.00,0.00,163.27,92.57,1.51,69.19
+2025-01-01,2025,01-Jan,Bulgaria,Wearables,Returning,Direct,1,1,95.67,9.57,0.00,86.10,56.39,0.77,28.94
+2025-01-01,2025,01-Jan,Cyprus,Audio,Returning,Social,10,18,1883.50,151.61,0.00,1731.89,1009.63,53.83,668.43
+2025-01-01,2025,01-Jan,Cyprus,Fitness,New,Organic Search,3,3,251.97,0.00,0.00,251.97,149.43,20.53,82.01
+2025-01-01,2025,01-Jan,Cyprus,Fitness,Returning,Direct,1,1,30.15,7.54,0.00,22.61,18.71,8.51,-4.61
+2025-01-01,2025,01-Jan,Cyprus,Wearables,Returning,Marketplace,3,4,287.64,0.00,63.99,223.65,166.73,4.03,52.89
+2025-01-01,2025,01-Jan,France,Bags & Travel,Returning,Social,7,14,971.70,32.77,342.83,596.10,470.20,57.43,68.47
+2025-01-01,2025,01-Jan,France,Home & Kitchen,New,Paid Search,10,11,342.57,2.18,0.00,340.39,172.41,66.59,101.39
+2025-01-01,2025,01-Jan,Germany,Books & Prints,Returning,Social,3,7,87.29,1.25,0.00,86.04,43.61,5.37,37.06
+2025-01-01,2025,01-Jan,Germany,Home & Kitchen,New,Direct,6,7,162.45,9.52,0.00,152.93,80.92,49.01,23.00
+2025-01-01,2025,01-Jan,Germany,Wearables,New,Email,1,2,301.58,0.00,0.00,301.58,180.88,0.94,119.76
+2025-01-01,2025,01-Jan,Greece,Cameras,Returning,Paid Search,2,2,261.94,0.00,0.00,261.94,131.41,3.55,126.98
+2025-01-01,2025,01-Jan,Greece,Home & Kitchen,New,Direct,59,72,2055.84,44.24,73.84,1937.76,1007.14,277.80,652.82
+2025-01-01,2025,01-Jan,Greece,Home & Kitchen,New,Email,34,44,997.04,34.76,24.22,938.06,480.70,162.78,294.58
+2025-01-01,2025,01-Jan,Greece,Smart Home,New,Marketplace,15,18,1324.06,21.39,0.00,1302.67,716.36,28.45,557.86
+2025-01-01,2025,01-Jan,Greece,Smart Home,Returning,Email,23,32,2503.56,132.96,0.00,2370.60,1296.05,52.13,1022.42
+2025-01-01,2025,01-Jan,Italy,Cameras,Returning,Paid Search,1,1,276.63,0.00,0.00,276.63,180.71,2.11,93.81
+2025-01-01,2025,01-Jan,Italy,Gaming,New,Social,3,3,376.97,0.00,0.00,376.97,214.39,14.34,148.24
+2025-01-01,2025,01-Jan,Italy,Gaming,Returning,Paid Search,1,1,167.99,0.00,0.00,167.99,99.29,2.42,66.28
+2025-01-01,2025,01-Jan,Italy,Office,New,Organic Search,6,6,150.35,12.01,0.00,138.34,83.42,10.44,44.48
+2025-01-01,2025,01-Jan,Italy,Office,Returning,Organic Search,2,2,103.06,0.00,11.50,91.56,61.64,2.98,26.94
+2025-01-01,2025,01-Jan,Italy,Wearables,New,Paid Search,1,1,188.23,37.65,0.00,150.58,83.33,0.57,66.68
+2025-01-01,2025,01-Jan,Netherlands,Home & Kitchen,Returning,Email,3,4,99.80,4.68,0.00,95.12,44.12,20.35,30.65
+2025-01-01,2025,01-Jan,Netherlands,Office,New,Organic Search,8,12,237.96,3.50,31.49,202.97,119.81,7.81,75.35
+2025-01-01,2025,01-Jan,Spain,Bags & Travel,Returning,Marketplace,2,3,230.85,0.00,0.00,230.85,104.28,18.64,107.93
+2025-01-01,2025,01-Jan,Spain,Gaming,Returning,Direct,1,1,151.99,0.00,0.00,151.99,92.20,6.38,53.41
+2025-01-01,2025,01-Jan,Spain,Home & Kitchen,New,Social,4,5,120.31,0.00,0.00,120.31,51.52,24.07,44.72
+2025-01-01,2025,01-Jan,Spain,Phone Accessories,Returning,Social,7,8,144.32,6.50,0.00,137.82,82.92,9.82,45.08
+2025-02-01,2025,02-Feb,Bulgaria,Gaming,Returning,Direct,2,2,35.34,2.65,17.67,15.02,22.50,8.69,-16.17
+2025-02-01,2025,02-Feb,Cyprus,Books & Prints,New,Marketplace,4,5,75.39,1.25,11.22,62.92,39.47,15.95,7.50
+2025-02-01,2025,02-Feb,Cyprus,Computer Accessories,New,Paid Search,37,59,2202.45,101.87,16.28,2084.30,1241.07,221.08,622.14
+2025-02-01,2025,02-Feb,Cyprus,Smart Home,New,Paid Search,4,5,378.79,9.60,0.00,369.19,206.63,13.74,148.82
+2025-02-01,2025,02-Feb,France,Office,Returning,Organic Search,6,7,115.01,8.36,0.00,106.65,60.97,5.73,39.95
+2025-02-01,2025,02-Feb,France,Phone Accessories,Returning,Direct,2,2,41.58,0.00,0.00,41.58,20.21,2.19,19.18
+2025-02-01,2025,02-Feb,France,Smart Home,New,Email,1,1,47.99,0.00,0.00,47.99,28.14,8.07,11.78
+2025-02-01,2025,02-Feb,Greece,Books & Prints,Returning,Email,12,17,245.11,15.10,25.46,204.55,127.68,15.82,61.05
+2025-02-01,2025,02-Feb,Greece,Fitness,New,Marketplace,5,6,178.98,6.08,0.00,172.90,102.63,20.97,49.30
+2025-02-01,2025,02-Feb,Italy,Audio,Returning,Marketplace,3,5,558.95,0.00,193.98,364.97,270.42,10.43,84.12
+2025-02-01,2025,02-Feb,Italy,Computer Accessories,Returning,Email,7,15,856.97,0.00,0.00,856.97,455.93,34.42,366.62
+2025-02-01,2025,02-Feb,Netherlands,Audio,Returning,Paid Search,7,13,1266.87,0.00,0.00,1266.87,652.83,26.91,587.13
+2025-02-01,2025,02-Feb,Netherlands,Books & Prints,New,Organic Search,2,2,54.98,5.40,0.00,49.58,34.49,2.01,13.08
+2025-02-01,2025,02-Feb,Netherlands,Gaming,New,Direct,3,5,407.15,29.32,193.98,183.85,217.51,14.53,-48.19
+2025-02-01,2025,02-Feb,Spain,Books & Prints,Returning,Social,1,2,24.94,2.49,0.00,22.45,12.46,7.70,2.29
+2025-03-01,2025,03-Mar,Bulgaria,Audio,New,Social,8,16,1476.84,0.00,253.97,1222.87,728.82,39.26,454.79
+2025-03-01,2025,03-Mar,Bulgaria,Audio,Returning,Marketplace,1,1,90.47,22.62,0.00,67.85,49.06,5.07,13.72
+2025-03-01,2025,03-Mar,Bulgaria,Smart Home,Returning,Email,1,1,47.99,0.00,0.00,47.99,28.14,1.19,18.66
+2025-03-01,2025,03-Mar,Cyprus,Audio,Guest,Social,1,1,110.99,0.00,0.00,110.99,52.08,9.88,49.03
+2025-03-01,2025,03-Mar,Cyprus,Office,Guest,Social,1,1,19.99,0.00,0.00,19.99,13.18,1.60,5.21
+2025-03-01,2025,03-Mar,Cyprus,Office,Returning,Email,2,2,48.38,0.00,0.00,48.38,25.31,9.55,13.52
+2025-03-01,2025,03-Mar,Cyprus,Wearables,Returning,Organic Search,2,3,223.65,0.00,0.00,223.65,129.95,3.22,90.48
+2025-03-01,2025,03-Mar,France,Audio,New,Direct,6,8,841.92,16.25,0.00,825.67,393.38,29.55,402.74
+2025-03-01,2025,03-Mar,France,Audio,Returning,Social,6,8,743.72,31.25,0.00,712.47,369.21,27.42,315.84
+2025-03-01,2025,03-Mar,France,Phone Accessories,Guest,Social,1,1,14.99,2.25,0.00,12.74,9.43,2.17,1.14
+2025-03-01,2025,03-Mar,Germany,Audio,New,Marketplace,7,8,866.48,9.05,114.99,742.44,405.24,18.23,318.97
+2025-03-01,2025,03-Mar,Germany,Books & Prints,New,Paid Search,10,15,219.65,1.90,0.00,217.75,114.25,26.58,76.92
+2025-03-01,2025,03-Mar,Germany,Books & Prints,Returning,Organic Search,5,9,114.63,2.78,46.83,65.02,59.78,17.91,-12.68
+2025-03-01,2025,03-Mar,Germany,Computer Accessories,New,Paid Search,40,74,3098.82,37.59,21.52,3039.71,1709.28,210.45,1119.98
+2025-03-01,2025,03-Mar,Germany,Fitness,New,Social,1,1,41.59,0.00,0.00,41.59,26.88,7.47,7.24
+2025-03-01,2025,03-Mar,Greece,Computer Accessories,New,Marketplace,104,214,9999.58,268.34,1034.73,8696.51,5571.44,335.63,2789.44
+2025-03-01,2025,03-Mar,Italy,Books & Prints,Returning,Marketplace,3,4,56.40,1.25,0.00,55.15,29.08,6.26,19.81
+2025-03-01,2025,03-Mar,Italy,Books & Prints,Returning,Paid Search,1,1,18.99,1.90,0.00,17.09,10.39,1.40,5.30
+2025-03-01,2025,03-Mar,Italy,Smart Home,New,Paid Search,3,6,203.94,7.20,0.00,196.74,116.10,11.42,69.22
+2025-03-01,2025,03-Mar,Netherlands,Audio,Returning,Social,3,4,391.96,5.10,118.99,267.87,210.20,14.68,42.99
+2025-03-01,2025,03-Mar,Netherlands,Books & Prints,New,Paid Search,2,2,24.94,0.00,0.00,24.94,12.46,3.69,8.79
+2025-03-01,2025,03-Mar,Netherlands,Computer Accessories,New,Email,5,87,3033.85,0.00,0.00,3033.85,1928.88,90.63,1014.34
+2025-03-01,2025,03-Mar,Netherlands,Smart Home,Returning,Marketplace,2,2,126.98,0.00,0.00,126.98,71.19,7.08,48.71
+2025-03-01,2025,03-Mar,Netherlands,Wearables,Returning,Organic Search,4,4,502.36,6.40,0.00,495.96,269.32,5.11,221.53
+2025-03-01,2025,03-Mar,Spain,Audio,New,Direct,6,9,771.51,0.00,0.00,771.51,386.62,28.37,356.52
+2025-03-01,2025,03-Mar,Spain,Audio,Returning,Paid Search,6,13,1330.87,0.00,33.30,1297.57,642.08,27.05,628.44
+2025-03-01,2025,03-Mar,Spain,Bags & Travel,New,Marketplace,6,9,511.27,0.00,0.00,511.27,252.93,50.40,207.94
+2025-03-01,2025,03-Mar,Spain,Office,New,Marketplace,4,6,165.03,0.00,0.00,165.03,89.09,7.68,68.26
+2025-03-01,2025,03-Mar,Spain,Phone Accessories,Returning,Paid Search,5,9,199.63,1.56,0.00,198.07,111.08,13.74,73.25
+2025-04-01,2025,04-Apr,Bulgaria,Audio,Guest,Paid Search,1,1,119.99,0.00,0.00,119.99,72.15,2.69,45.15
+2025-04-01,2025,04-Apr,Bulgaria,Bags & Travel,Returning,Marketplace,5,6,361.82,4.80,0.00,357.02,180.06,38.18,138.78
+2025-04-01,2025,04-Apr,Bulgaria,Computer Accessories,New,Direct,13,21,735.55,48.96,0.00,686.59,398.82,53.19,234.58
+2025-04-01,2025,04-Apr,Bulgaria,Computer Accessories,Returning,Organic Search,15,27,1298.85,31.82,389.97,877.06,750.47,59.00,67.59
+2025-04-01,2025,04-Apr,Cyprus,Bags & Travel,New,Organic Search,26,31,2254.05,51.94,0.00,2202.11,1064.94,216.13,921.04
+2025-04-01,2025,04-Apr,Cyprus,Phone Accessories,Returning,Direct,6,14,402.86,11.70,15.59,375.57,211.61,18.23,145.72
+2025-04-01,2025,04-Apr,France,Audio,New,Organic Search,21,33,2932.43,58.20,28.20,2846.03,1567.62,103.07,1175.34
+2025-04-01,2025,04-Apr,France,Bags & Travel,Returning,Email,10,20,1484.08,88.50,284.71,1110.87,681.05,88.72,341.10
+2025-04-01,2025,04-Apr,France,Computer Accessories,New,Direct,17,31,1417.69,70.49,57.18,1290.02,766.50,102.45,421.07
+2025-04-01,2025,04-Apr,France,Home & Kitchen,New,Direct,8,12,367.48,1.40,0.00,366.08,171.20,60.98,133.90
+2025-04-01,2025,04-Apr,France,Office,Returning,Email,1,2,160.14,0.00,0.00,160.14,95.58,1.25,63.31
+2025-04-01,2025,04-Apr,Germany,Books & Prints,Returning,Paid Search,3,3,50.17,0.00,0.00,50.17,28.11,1.90,20.16
+2025-04-01,2025,04-Apr,Germany,Cameras,New,Social,1,1,177.83,0.00,0.00,177.83,80.16,1.85,95.82
+2025-04-01,2025,04-Apr,Germany,Smart Home,New,Social,7,8,461.56,0.00,94.63,366.93,272.15,21.29,73.49
+2025-04-01,2025,04-Apr,Greece,Audio,New,Email,33,44,4426.96,105.55,332.97,3988.44,2374.11,79.97,1534.36
+2025-04-01,2025,04-Apr,Greece,Gaming,Guest,Email,1,3,113.97,17.10,0.00,96.87,70.98,3.04,22.85
+2025-04-01,2025,04-Apr,Greece,Home & Kitchen,Returning,Direct,52,78,2488.02,52.34,260.77,2174.91,1144.38,280.82,749.71
+2025-04-01,2025,04-Apr,Greece,Office,Returning,Social,17,22,396.99,3.18,0.00,393.81,205.66,19.35,168.80
+2025-04-01,2025,04-Apr,Greece,Wearables,New,Email,11,15,1485.21,12.80,32.00,1440.41,773.17,18.99,648.25
+2025-04-01,2025,04-Apr,Italy,Bags & Travel,New,Paid Search,17,33,2153.67,42.33,0.00,2111.34,1007.79,159.74,943.81
+2025-04-01,2025,04-Apr,Italy,Computer Accessories,Returning,Direct,10,12,538.76,0.00,0.00,538.76,271.57,60.72,206.47
+2025-04-01,2025,04-Apr,Italy,Gaming,New,Social,4,7,334.93,0.00,0.00,334.93,203.78,15.67,115.48
+2025-04-01,2025,04-Apr,Italy,Smart Home,Returning,Direct,2,2,95.98,4.80,0.00,91.18,56.28,2.88,32.02
+2025-04-01,2025,04-Apr,Netherlands,Books & Prints,Returning,Marketplace,1,1,13.99,0.00,0.00,13.99,6.03,0.76,7.20
+2025-04-01,2025,04-Apr,Spain,Wearables,New,Paid Search,2,2,191.34,9.57,0.00,181.77,112.78,8.48,60.51
+2025-05-01,2025,05-May,Bulgaria,Phone Accessories,Returning,Email,9,15,256.80,2.34,0.00,254.46,135.71,16.68,102.07
+2025-05-01,2025,05-May,Bulgaria,Smart Home,New,Social,1,1,19.99,0.00,0.00,19.99,10.56,2.08,7.35
+2025-05-01,2025,05-May,Cyprus,Bags & Travel,New,Email,14,22,1540.82,53.86,0.00,1486.96,713.09,141.66,632.21
+2025-05-01,2025,05-May,Cyprus,Books & Prints,Returning,Organic Search,6,7,87.81,0.00,0.00,87.81,44.58,21.03,22.20
+2025-05-01,2025,05-May,Cyprus,Fitness,Returning,Social,1,1,30.15,0.00,0.00,30.15,18.71,10.95,0.49
+2025-05-01,2025,05-May,Cyprus,Home & Kitchen,Returning,Social,7,10,244.02,2.65,0.00,241.37,104.21,65.69,71.47
+2025-05-01,2025,05-May,Cyprus,Wearables,Guest,Organic Search,2,4,311.56,19.20,0.00,292.36,165.66,4.52,122.18
+2025-05-01,2025,05-May,France,Audio,Guest,Organic Search,1,1,89.43,0.00,0.00,89.43,50.91,4.61,33.91
+2025-05-01,2025,05-May,France,Computer Accessories,Returning,Marketplace,4,9,596.87,26.51,0.00,570.36,321.44,24.55,224.37
+2025-05-01,2025,05-May,Germany,Audio,Guest,Paid Search,1,1,116.99,0.00,0.00,116.99,58.38,2.53,56.08
+2025-05-01,2025,05-May,Germany,Fitness,New,Direct,6,11,213.11,22.09,0.00,191.02,124.55,46.83,19.64
+2025-05-01,2025,05-May,Germany,Phone Accessories,New,Email,10,11,239.61,0.00,57.17,182.44,132.54,33.13,16.77
+2025-05-01,2025,05-May,Greece,Audio,New,Marketplace,36,60,6018.32,159.85,103.19,5755.28,3215.22,102.43,2437.63
+2025-05-01,2025,05-May,Italy,Fitness,New,Email,1,1,41.59,0.00,0.00,41.59,26.96,3.44,11.19
+2025-05-01,2025,05-May,Italy,Fitness,Returning,Organic Search,4,5,149.71,6.03,0.00,143.68,92.97,20.34,30.37
+2025-05-01,2025,05-May,Netherlands,Bags & Travel,New,Marketplace,10,16,1100.32,16.74,153.90,929.68,508.26,81.03,340.39
+2025-05-01,2025,05-May,Netherlands,Computer Accessories,New,Email,7,7,355.61,5.30,0.00,350.31,195.22,28.31,126.78
+2025-05-01,2025,05-May,Netherlands,Wearables,New,Direct,1,1,99.83,0.00,0.00,99.83,44.94,0.66,54.23
+2025-05-01,2025,05-May,Spain,Books & Prints,Returning,Paid Search,5,6,94.38,0.00,0.00,94.38,49.86,19.16,25.36
+2025-05-01,2025,05-May,Spain,Computer Accessories,Returning,Email,8,13,576.03,0.00,162.21,413.82,309.31,43.26,61.25
+2025-05-01,2025,05-May,Spain,Computer Accessories,Returning,Social,12,26,1417.74,3.33,0.00,1414.41,788.46,78.05,547.90
+2025-06-01,2025,06-Jun,Bulgaria,Audio,New,Marketplace,3,4,442.96,41.00,99.89,302.07,221.18,13.76,67.12
+2025-06-01,2025,06-Jun,Bulgaria,Books & Prints,Returning,Social,3,3,44.45,3.12,0.00,41.33,23.10,13.67,4.56
+2025-06-01,2025,06-Jun,Bulgaria,Home & Kitchen,Guest,Social,1,1,17.67,0.00,0.00,17.67,7.32,5.60,4.76
+2025-06-01,2025,06-Jun,Cyprus,Cameras,New,Direct,3,3,544.93,0.00,0.00,544.93,315.17,12.73,217.03
+2025-06-01,2025,06-Jun,Cyprus,Cameras,New,Marketplace,2,2,316.14,0.00,0.00,316.14,184.04,8.87,123.23
+2025-06-01,2025,06-Jun,France,Wearables,Guest,Paid Search,1,1,187.19,0.00,0.00,187.19,97.88,1.02,88.29
+2025-06-01,2025,06-Jun,France,Wearables,New,Paid Search,3,4,531.96,0.00,0.00,531.96,290.54,10.67,230.75
+2025-06-01,2025,06-Jun,Germany,Gaming,Returning,Social,1,2,75.98,7.60,0.00,68.38,47.32,7.74,13.32
+2025-06-01,2025,06-Jun,Germany,Phone Accessories,New,Paid Search,15,22,540.06,9.15,21.59,509.32,286.06,32.94,190.32
+2025-06-01,2025,06-Jun,Germany,Phone Accessories,New,Social,24,29,683.59,4.94,7.80,670.85,347.60,58.98,264.27
+2025-06-01,2025,06-Jun,Germany,Phone Accessories,Returning,Email,8,11,253.41,3.90,55.11,194.40,136.48,15.66,42.26
+2025-06-01,2025,06-Jun,Germany,Phone Accessories,Returning,Marketplace,3,8,145.52,1.56,0.00,143.96,79.88,5.39,58.69
+2025-06-01,2025,06-Jun,Greece,Home & Kitchen,New,Social,42,62,1424.54,21.87,0.00,1402.67,688.91,249.81,463.95
+2025-06-01,2025,06-Jun,Greece,Phone Accessories,New,Direct,83,122,2877.14,75.67,80.04,2721.43,1460.55,141.94,1118.94
+2025-06-01,2025,06-Jun,Greece,Smart Home,Returning,Marketplace,2,3,141.57,0.00,0.00,141.57,88.12,3.58,49.87
+2025-06-01,2025,06-Jun,Italy,Gaming,New,Marketplace,1,2,128.94,32.24,0.00,96.70,55.68,7.89,33.13
+2025-06-01,2025,06-Jun,Italy,Phone Accessories,Returning,Social,5,9,213.15,7.79,0.00,205.36,100.80,24.29,80.27
+2025-06-01,2025,06-Jun,Netherlands,Audio,New,Social,3,9,752.19,35.89,110.99,605.31,362.23,14.29,228.79
+2025-06-01,2025,06-Jun,Netherlands,Bags & Travel,Returning,Organic Search,19,30,2154.10,38.48,230.85,1884.77,997.77,132.19,754.81
+2025-06-01,2025,06-Jun,Netherlands,Gaming,Guest,Organic Search,1,1,82.15,0.00,82.15,0.00,48.86,2.03,-50.89
+2025-06-01,2025,06-Jun,Netherlands,Gaming,New,Social,3,3,242.29,14.55,0.00,227.74,146.89,8.38,72.47
+2025-06-01,2025,06-Jun,Netherlands,Home & Kitchen,New,Paid Search,4,12,207.40,5.80,0.00,201.60,94.04,43.93,63.63
+2025-06-01,2025,06-Jun,Netherlands,Smart Home,New,Marketplace,1,1,36.39,0.00,0.00,36.39,18.09,3.31,14.99
+2025-06-01,2025,06-Jun,Netherlands,Smart Home,New,Organic Search,5,10,429.10,0.00,0.00,429.10,224.88,21.64,182.58
+2025-07-01,2025,07-Jul,Bulgaria,Phone Accessories,Returning,Email,4,6,87.74,1.60,0.00,86.14,51.95,9.15,25.04
+2025-07-01,2025,07-Jul,Cyprus,Audio,Returning,Direct,8,9,700.07,14.10,0.00,685.97,415.68,34.77,235.52
+2025-07-01,2025,07-Jul,Cyprus,Audio,Returning,Social,7,10,869.06,0.00,103.99,765.07,447.67,31.07,286.33
+2025-07-01,2025,07-Jul,Cyprus,Fitness,Returning,Organic Search,3,3,99.97,0.00,21.83,78.14,55.55,26.79,-4.20
+2025-07-01,2025,07-Jul,Cyprus,Gaming,New,Marketplace,3,3,229.29,0.00,0.00,229.29,113.19,9.47,106.63
+2025-07-01,2025,07-Jul,Cyprus,Phone Accessories,New,Paid Search,23,31,693.45,30.51,27.29,635.65,368.61,67.52,199.52
+2025-07-01,2025,07-Jul,France,Computer Accessories,Returning,Email,13,23,1007.85,2.20,0.00,1005.65,590.36,65.71,349.58
+2025-07-01,2025,07-Jul,France,Phone Accessories,Returning,Organic Search,18,28,602.88,13.88,5.70,583.30,318.00,45.96,219.34
+2025-07-01,2025,07-Jul,Germany,Bags & Travel,New,Direct,13,19,1432.93,69.27,76.95,1286.71,656.09,94.72,535.90
+2025-07-01,2025,07-Jul,Germany,Bags & Travel,New,Marketplace,18,35,2588.53,61.56,115.43,2411.54,1195.61,161.67,1054.25
+2025-07-01,2025,07-Jul,Germany,Computer Accessories,Returning,Direct,20,33,1487.59,58.97,0.00,1428.62,803.53,105.94,519.15
+2025-07-01,2025,07-Jul,Germany,Fitness,New,Email,1,1,15.59,0.00,0.00,15.59,9.31,7.07,-0.79
+2025-07-01,2025,07-Jul,Germany,Home & Kitchen,Returning,Paid Search,12,13,298.39,1.80,39.51,257.08,135.55,73.44,48.09
+2025-07-01,2025,07-Jul,Germany,Smart Home,New,Paid Search,7,9,469.55,2.00,9.00,458.55,256.48,25.26,176.81
+2025-07-01,2025,07-Jul,Germany,Smart Home,Returning,Direct,2,2,67.98,0.00,0.00,67.98,38.70,5.74,23.54
+2025-07-01,2025,07-Jul,Greece,Computer Accessories,New,Direct,131,227,11220.93,233.08,238.78,10749.07,6042.70,443.92,4262.44
+2025-07-01,2025,07-Jul,Greece,Gaming,New,Email,17,25,1432.47,51.97,134.99,1245.51,773.85,56.79,414.87
+2025-07-01,2025,07-Jul,Greece,Phone Accessories,Guest,Paid Search,8,17,563.39,34.41,15.59,513.39,266.73,21.86,224.80
+2025-07-01,2025,07-Jul,Italy,Computer Accessories,New,Organic Search,38,69,4203.07,80.73,0.00,4122.34,2251.85,197.12,1673.37
+2025-07-01,2025,07-Jul,Italy,Fitness,Returning,Social,1,1,101.99,0.00,0.00,101.99,62.72,2.96,36.31
+2025-07-01,2025,07-Jul,Italy,Gaming,New,Paid Search,6,7,358.77,0.00,0.00,358.77,195.16,24.77,138.84
+2025-07-01,2025,07-Jul,Netherlands,Computer Accessories,Guest,Organic Search,3,3,99.81,0.00,0.00,99.81,50.92,16.80,32.09
+2025-07-01,2025,07-Jul,Netherlands,Home & Kitchen,New,Direct,9,14,348.02,11.25,15.59,321.18,169.21,68.62,83.35
+2025-07-01,2025,07-Jul,Spain,Computer Accessories,Returning,Paid Search,11,16,768.56,12.48,129.99,626.09,417.01,64.07,145.01
+2025-07-01,2025,07-Jul,Spain,Home & Kitchen,New,Marketplace,4,5,154.15,0.00,0.00,154.15,82.12,25.06,46.97
+2025-08-01,2025,08-Aug,Bulgaria,Smart Home,Returning,Social,3,3,147.97,0.00,0.00,147.97,79.92,6.71,61.34
+2025-08-01,2025,08-Aug,Cyprus,Gaming,Returning,Marketplace,3,4,242.96,12.60,0.00,230.36,148.39,17.21,64.76
+2025-08-01,2025,08-Aug,France,Audio,New,Direct,4,4,335.08,0.00,0.00,335.08,165.17,21.61,148.30
+2025-08-01,2025,08-Aug,France,Computer Accessories,New,Social,7,10,394.30,7.18,0.00,387.12,208.83,32.06,146.23
+2025-08-01,2025,08-Aug,Germany,Audio,New,Organic Search,13,17,1479.31,34.32,428.96,1016.03,782.22,48.11,185.70
+2025-08-01,2025,08-Aug,Germany,Bags & Travel,Returning,Direct,18,32,2278.80,42.32,17.16,2219.32,1063.73,157.10,998.49
+2025-08-01,2025,08-Aug,Greece,Gaming,New,Direct,23,32,2748.64,63.73,0.00,2684.91,1547.70,72.80,1064.41
+2025-08-01,2025,08-Aug,Greece,Smart Home,Returning,Paid Search,31,48,2718.36,24.60,33.99,2659.77,1446.75,97.27,1115.75
+2025-08-01,2025,08-Aug,Italy,Audio,Returning,Social,4,5,543.95,23.40,0.00,520.55,294.60,17.79,208.16
+2025-08-01,2025,08-Aug,Netherlands,Gaming,Returning,Social,1,1,34.31,0.00,0.00,34.31,17.14,2.16,15.01
+2025-08-01,2025,08-Aug,Spain,Phone Accessories,New,Marketplace,4,5,117.47,0.00,31.18,86.29,63.38,5.46,17.45
+2025-09-01,2025,09-Sep,Bulgaria,Bags & Travel,New,Social,5,8,372.80,15.40,0.00,357.40,182.27,37.43,137.70
+2025-09-01,2025,09-Sep,Bulgaria,Books & Prints,Returning,Social,6,7,87.72,0.00,0.00,87.72,44.35,25.04,18.33
+2025-09-01,2025,09-Sep,Bulgaria,Home & Kitchen,New,Social,5,11,220.45,3.95,0.00,216.50,102.29,41.82,72.39
+2025-09-01,2025,09-Sep,Cyprus,Audio,Returning,Marketplace,6,7,569.09,0.00,0.00,569.09,279.69,26.70,262.70
+2025-09-01,2025,09-Sep,Cyprus,Books & Prints,Returning,Organic Search,10,12,182.76,0.00,0.00,182.76,96.53,36.97,49.26
+2025-09-01,2025,09-Sep,Cyprus,Office,New,Direct,6,14,227.25,3.12,0.00,224.13,122.73,15.19,86.21
+2025-09-01,2025,09-Sep,France,Home & Kitchen,New,Social,7,9,340.79,0.00,22.87,317.92,165.70,48.20,104.02
+2025-09-01,2025,09-Sep,France,Smart Home,Guest,Marketplace,1,2,95.98,0.00,0.00,95.98,56.28,3.26,36.44
+2025-09-01,2025,09-Sep,Germany,Computer Accessories,New,Organic Search,36,49,3017.87,106.43,52.71,2858.73,1641.94,158.92,1057.87
+2025-09-01,2025,09-Sep,Germany,Phone Accessories,New,Social,13,24,568.72,7.80,54.57,506.35,299.93,24.28,182.14
+2025-09-01,2025,09-Sep,Greece,Cameras,Guest,Organic Search,1,1,259.99,0.00,0.00,259.99,132.31,2.60,125.08
+2025-09-01,2025,09-Sep,Greece,Cameras,New,Paid Search,6,9,3711.35,76.28,0.00,3635.07,1886.05,16.48,1732.54
+2025-09-01,2025,09-Sep,Greece,Gaming,New,Social,30,36,2861.16,156.11,117.29,2587.76,1609.03,83.60,895.13
+2025-09-01,2025,09-Sep,Greece,Home & Kitchen,New,Direct,62,91,2372.21,67.53,67.47,2237.21,1143.44,366.65,727.12
+2025-09-01,2025,09-Sep,Italy,Fitness,Returning,Paid Search,3,7,318.13,0.00,0.00,318.13,198.22,32.35,87.56
+2025-09-01,2025,09-Sep,Italy,Home & Kitchen,Returning,Email,9,12,223.68,4.21,5.30,214.17,107.84,59.88,46.45
+2025-09-01,2025,09-Sep,Netherlands,Books & Prints,Returning,Direct,4,6,81.16,1.90,0.00,79.26,42.52,4.68,32.06
+2025-09-01,2025,09-Sep,Netherlands,Gaming,Returning,Direct,1,1,37.99,0.00,0.00,37.99,23.66,1.47,12.86
+2025-09-01,2025,09-Sep,Netherlands,Phone Accessories,Returning,Paid Search,10,18,354.86,16.12,0.00,338.74,185.79,26.40,126.55
+2025-09-01,2025,09-Sep,Spain,Audio,Returning,Social,9,13,793.79,35.07,0.00,758.72,407.46,48.80,302.46
+2025-09-01,2025,09-Sep,Spain,Phone Accessories,Returning,Organic Search,7,10,267.22,2.60,25.99,238.63,139.51,16.20,82.92
+2025-10-01,2025,10-Oct,Bulgaria,Audio,Returning,Email,2,7,691.93,0.00,0.00,691.93,355.16,12.56,324.21
+2025-10-01,2025,10-Oct,Bulgaria,Bags & Travel,New,Email,7,9,663.59,23.08,0.00,640.51,309.68,45.00,285.83
+2025-10-01,2025,10-Oct,Bulgaria,Gaming,Returning,Organic Search,6,11,1055.33,47.06,0.00,1008.27,583.34,26.35,398.58
+2025-10-01,2025,10-Oct,Bulgaria,Smart Home,Returning,Direct,6,6,376.90,7.20,10.92,358.78,198.89,18.49,141.40
+2025-10-01,2025,10-Oct,Bulgaria,Wearables,New,Direct,1,1,63.99,0.00,0.00,63.99,36.78,0.78,26.43
+2025-10-01,2025,10-Oct,Cyprus,Fitness,Returning,Paid Search,3,4,144.52,3.12,15.08,126.32,92.27,28.59,5.46
+2025-10-01,2025,10-Oct,Cyprus,Home & Kitchen,New,Social,11,18,418.06,1.56,95.85,320.65,201.66,114.79,4.20
+2025-10-01,2025,10-Oct,Cyprus,Phone Accessories,New,Email,12,14,405.58,23.30,0.00,382.28,201.22,31.20,149.86
+2025-10-01,2025,10-Oct,France,Bags & Travel,Guest,Organic Search,3,8,518.88,70.93,0.00,447.95,250.84,38.82,158.29
+2025-10-01,2025,10-Oct,France,Fitness,New,Email,1,3,305.97,0.00,0.00,305.97,188.16,12.36,105.45
+2025-10-01,2025,10-Oct,France,Gaming,New,Social,6,6,423.02,43.65,0.00,379.37,243.92,25.23,110.22
+2025-10-01,2025,10-Oct,Germany,Audio,Guest,Email,1,1,96.99,0.00,0.00,96.99,42.35,2.64,52.00
+2025-10-01,2025,10-Oct,Germany,Audio,New,Paid Search,9,11,1067.93,17.55,0.00,1050.38,539.23,38.14,473.01
+2025-10-01,2025,10-Oct,Germany,Audio,Returning,Paid Search,9,15,1502.97,0.00,0.00,1502.97,803.79,37.62,661.56
+2025-10-01,2025,10-Oct,Greece,Cameras,Returning,Marketplace,1,1,154.95,0.00,0.00,154.95,62.75,2.25,89.95
+2025-10-01,2025,10-Oct,Greece,Fitness,Returning,Social,13,13,464.07,10.15,0.00,453.92,268.05,64.17,121.70
+2025-10-01,2025,10-Oct,Greece,Gaming,Guest,Paid Search,2,2,128.18,0.00,0.00,128.18,74.13,7.13,46.92
+2025-10-01,2025,10-Oct,Greece,Home & Kitchen,Returning,Marketplace,16,22,718.82,13.77,37.80,667.25,349.45,98.76,219.04
+2025-10-01,2025,10-Oct,Greece,Office,New,Social,49,70,1818.36,35.44,7.50,1775.42,989.58,70.45,715.39
+2025-10-01,2025,10-Oct,Greece,Office,Returning,Direct,36,52,906.41,8.14,0.00,898.27,457.77,58.37,382.13
+2025-10-01,2025,10-Oct,Greece,Phone Accessories,Guest,Organic Search,6,12,210.48,0.00,0.00,210.48,113.92,12.87,83.69
+2025-10-01,2025,10-Oct,Greece,Phone Accessories,Returning,Organic Search,155,235,5550.65,142.37,242.02,5166.26,2873.07,303.85,1989.34
+2025-10-01,2025,10-Oct,Italy,Bags & Travel,New,Paid Search,22,42,3102.82,136.49,161.04,2805.29,1427.72,200.22,1177.35
+2025-10-01,2025,10-Oct,Italy,Fitness,Returning,Social,1,1,30.15,0.00,0.00,30.15,18.71,6.61,4.83
+2025-10-01,2025,10-Oct,Italy,Home & Kitchen,Returning,Direct,7,10,234.46,0.00,0.00,234.46,116.56,54.40,63.50
+2025-10-01,2025,10-Oct,Netherlands,Phone Accessories,Returning,Social,13,20,471.88,15.60,0.00,456.28,233.02,17.29,205.97
+2025-10-01,2025,10-Oct,Netherlands,Smart Home,Returning,Direct,3,3,142.77,0.00,0.00,142.77,86.27,11.11,45.39
+2025-10-01,2025,10-Oct,Spain,Bags & Travel,New,Email,7,10,680.58,11.54,0.00,669.04,312.79,58.57,297.68
+2025-10-01,2025,10-Oct,Spain,Fitness,Returning,Organic Search,1,3,24.99,0.00,0.00,24.99,16.11,10.98,-2.10
+2025-11-01,2025,11-Nov,Bulgaria,Books & Prints,Returning,Email,2,3,56.97,8.55,32.28,16.14,31.17,3.12,-18.15
+2025-11-01,2025,11-Nov,Bulgaria,Gaming,New,Marketplace,2,2,101.66,1.77,0.00,99.89,57.27,10.97,31.65
+2025-11-01,2025,11-Nov,Bulgaria,Gaming,Returning,Social,2,6,611.94,0.00,0.00,611.94,367.88,7.72,236.34
+2025-11-01,2025,11-Nov,Bulgaria,Office,Returning,Organic Search,4,4,48.21,2.87,0.00,45.34,22.99,6.69,15.66
+2025-11-01,2025,11-Nov,Bulgaria,Phone Accessories,Returning,Direct,8,13,270.47,10.14,83.16,177.17,132.90,22.96,21.31
+2025-11-01,2025,11-Nov,Bulgaria,Smart Home,New,Organic Search,14,22,1036.50,64.64,0.00,971.86,553.23,53.54,365.09
+2025-11-01,2025,11-Nov,Bulgaria,Smart Home,Returning,Organic Search,11,11,655.29,34.54,0.00,620.75,360.12,31.71,228.92
+2025-11-01,2025,11-Nov,Cyprus,Computer Accessories,Returning,Social,30,45,2690.15,158.46,117.81,2413.88,1409.65,129.24,874.99
+2025-11-01,2025,11-Nov,Cyprus,Office,Returning,Organic Search,15,28,423.80,17.28,0.00,406.52,228.90,38.32,139.30
+2025-11-01,2025,11-Nov,Cyprus,Phone Accessories,Returning,Marketplace,9,20,620.72,13.81,0.00,606.91,308.18,42.00,256.73
+2025-11-01,2025,11-Nov,Cyprus,Smart Home,Guest,Email,1,1,47.99,0.00,0.00,47.99,28.14,2.86,16.99
+2025-11-01,2025,11-Nov,France,Audio,New,Marketplace,2,2,179.62,0.00,0.00,179.62,87.29,5.56,86.77
+2025-11-01,2025,11-Nov,France,Books & Prints,New,Social,3,5,75.39,1.90,0.00,73.49,39.47,6.77,27.25
+2025-11-01,2025,11-Nov,France,Computer Accessories,New,Email,11,15,835.29,23.95,0.00,811.34,429.16,57.60,324.58
+2025-11-01,2025,11-Nov,France,Computer Accessories,Returning,Organic Search,23,35,1904.49,138.68,0.00,1765.81,959.39,111.32,695.10
+2025-11-01,2025,11-Nov,Germany,Phone Accessories,Returning,Social,18,22,524.72,32.69,0.00,492.03,273.23,47.30,171.50
+2025-11-01,2025,11-Nov,Greece,Cameras,New,Social,8,13,3621.07,411.89,0.00,3209.18,1879.76,25.69,1303.73
+2025-11-01,2025,11-Nov,Greece,Computer Accessories,Guest,Paid Search,7,8,373.84,19.58,0.00,354.26,213.51,21.78,118.97
+2025-11-01,2025,11-Nov,Greece,Fitness,New,Social,20,30,882.30,53.87,24.95,803.48,516.29,119.61,167.58
+2025-11-01,2025,11-Nov,Greece,Home & Kitchen,Guest,Organic Search,7,10,288.78,9.10,0.00,279.68,147.78,39.33,92.57
+2025-11-01,2025,11-Nov,Greece,Wearables,Returning,Direct,16,20,1970.36,141.40,0.00,1828.96,1069.23,16.29,743.44
+2025-11-01,2025,11-Nov,Italy,Cameras,New,Email,1,1,244.99,0.00,0.00,244.99,128.46,2.45,114.08
+2025-11-01,2025,11-Nov,Italy,Phone Accessories,New,Paid Search,28,47,1141.65,62.15,25.99,1053.51,587.77,81.86,383.88
+2025-11-01,2025,11-Nov,Netherlands,Audio,Returning,Paid Search,7,13,1351.95,30.22,0.00,1321.73,737.16,32.87,551.70
+2025-11-01,2025,11-Nov,Netherlands,Books & Prints,New,Email,2,2,31.46,0.00,0.00,31.46,16.62,1.42,13.42
+2025-11-01,2025,11-Nov,Netherlands,Books & Prints,Returning,Paid Search,3,3,37.41,1.25,0.00,36.16,18.69,2.21,15.26
+2025-11-01,2025,11-Nov,Spain,Computer Accessories,Guest,Email,1,2,93.58,0.00,0.00,93.58,46.20,4.34,43.04
+2025-11-01,2025,11-Nov,Spain,Computer Accessories,New,Marketplace,15,29,1617.23,83.74,0.00,1533.49,845.77,80.91,606.81
+2025-12-01,2025,12-Dec,Bulgaria,Phone Accessories,New,Direct,17,32,834.06,31.46,0.00,802.60,413.11,47.47,342.02
+2025-12-01,2025,12-Dec,Bulgaria,Phone Accessories,New,Organic Search,30,43,1105.25,69.37,0.00,1035.88,533.83,66.73,435.32
+2025-12-01,2025,12-Dec,Bulgaria,Smart Home,New,Paid Search,9,14,839.86,34.84,0.00,805.02,463.75,40.62,300.65
+2025-12-01,2025,12-Dec,Cyprus,Home & Kitchen,Returning,Marketplace,6,7,226.69,12.64,0.00,214.05,107.85,47.53,58.67
+2025-12-01,2025,12-Dec,France,Books & Prints,Returning,Direct,3,3,44.45,0.00,0.00,44.45,23.82,3.98,16.65
+2025-12-01,2025,12-Dec,France,Computer Accessories,Returning,Social,19,37,2633.15,62.52,165.27,2405.36,1420.76,118.48,866.12
+2025-12-01,2025,12-Dec,France,Gaming,Returning,Direct,6,7,295.77,3.43,0.00,292.34,151.73,22.58,118.03
+2025-12-01,2025,12-Dec,France,Home & Kitchen,Returning,Direct,8,9,239.19,3.53,0.00,235.66,108.81,54.47,72.38
+2025-12-01,2025,12-Dec,Germany,Home & Kitchen,Returning,Email,9,11,294.21,14.40,0.00,279.81,147.59,56.45,75.77
+2025-12-01,2025,12-Dec,Greece,Books & Prints,Returning,Social,34,47,688.93,22.67,12.47,653.79,349.39,53.01,251.39
+2025-12-01,2025,12-Dec,Greece,Fitness,New,Organic Search,39,52,1950.32,66.56,107.17,1776.59,1175.81,216.50,384.28
+2025-12-01,2025,12-Dec,Greece,Office,New,Paid Search,83,121,2681.20,48.76,40.99,2591.45,1445.21,125.28,1020.96
+2025-12-01,2025,12-Dec,Greece,Smart Home,Returning,Marketplace,8,8,355.20,3.00,0.00,352.20,191.29,25.31,135.60
+2025-12-01,2025,12-Dec,Italy,Audio,Guest,Organic Search,1,1,39.99,0.00,0.00,39.99,19.23,2.97,17.79
+2025-12-01,2025,12-Dec,Italy,Bags & Travel,Returning,Organic Search,23,34,2356.18,57.72,76.95,2221.51,1105.45,188.89,927.17
+2025-12-01,2025,12-Dec,Italy,Wearables,Returning,Organic Search,8,9,877.75,12.80,188.23,676.72,457.99,10.04,208.69
+2025-12-01,2025,12-Dec,Netherlands,Wearables,Guest,Paid Search,1,1,63.99,0.00,0.00,63.99,36.78,7.16,20.05
+2025-12-01,2025,12-Dec,Spain,Books & Prints,Guest,Email,1,1,12.47,0.00,0.00,12.47,6.23,1.48,4.76
+2025-12-01,2025,12-Dec,Spain,Cameras,New,Paid Search,1,2,457.58,0.00,0.00,457.58,262.26,2.73,192.59
+2025-12-01,2025,12-Dec,Spain,Smart Home,Returning,Social,2,2,84.38,3.64,0.00,80.74,46.23,6.36,28.15

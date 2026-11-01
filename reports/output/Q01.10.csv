@@ -11,6 +11,7 @@ Non-standard order status spelling,23574,Normalised
 Cancelled order lines,18401,"Kept for cancellation KPIs, excluded from revenue"
 Refunded order lines,12748,Kept; refund deducted in Net Revenue
 Quantity outliers (>= 40 units),41,"Retained (verified bulk orders), flagged is_bulk"
+Missing shipping cost (no matched courier invoice),2862,Imputed: median cost for the same courier and country
 Duplicate inventory snapshots,513,Removed
 Negative stock on hand,378,"Set to 0, flagged stock_corrected"
 Non-standard country name (customer master),11026,Standardised to English country name

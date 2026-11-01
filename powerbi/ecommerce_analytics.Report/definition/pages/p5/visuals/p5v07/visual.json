@@ -1,0 +1,185 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "p5v07",
+  "position": {
+    "x": 20,
+    "y": 140,
+    "z": 7000,
+    "width": 1240,
+    "height": 330,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQualityRules"
+                    }
+                  },
+                  "Property": "stage"
+                }
+              },
+              "queryRef": "DataQualityRules.stage",
+              "nativeQueryRef": "stage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQualityRules"
+                    }
+                  },
+                  "Property": "rule_id"
+                }
+              },
+              "queryRef": "DataQualityRules.rule_id",
+              "nativeQueryRef": "rule_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQualityRules"
+                    }
+                  },
+                  "Property": "dimension"
+                }
+              },
+              "queryRef": "DataQualityRules.dimension",
+              "nativeQueryRef": "dimension"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQualityRules"
+                    }
+                  },
+                  "Property": "rule"
+                }
+              },
+              "queryRef": "DataQualityRules.rule",
+              "nativeQueryRef": "rule"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DataQualityRules"
+                        }
+                      },
+                      "Property": "failures"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(DataQualityRules.failures)",
+              "nativeQueryRef": "Sum of failures"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DataQualityRules"
+                        }
+                      },
+                      "Property": "failure_rate_pct"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(DataQualityRules.failure_rate_pct)",
+              "nativeQueryRef": "Sum of failure_rate_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQualityRules"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "DataQualityRules.status",
+              "nativeQueryRef": "status"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Validation rules (src/validate.py): raw export vs clean warehouse'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E4E3DF'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

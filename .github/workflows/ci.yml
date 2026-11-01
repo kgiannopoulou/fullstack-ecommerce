@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: backend
+        working-directory: app/backend
     services:
       postgres:
         image: postgres:16-alpine
@@ -36,7 +36,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: backend/package-lock.json
+          cache-dependency-path: app/backend/package-lock.json
       - run: npm ci
       - run: npm run typecheck
       - name: Tests (race conditions, webhook replay, auth, API) against Postgres
@@ -47,14 +47,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend
+        working-directory: app/frontend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: app/frontend/package-lock.json
       - run: npm ci
       - run: npm run lint
       - run: npm run build
@@ -64,7 +64,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build the API image
-        run: docker build -t ecommerce-api backend
+        run: docker build -t ecommerce-api app/backend
 
   analytics:
     runs-on: ubuntu-latest
@@ -88,11 +88,11 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: analytics/requirements.txt
-      - run: pip install -r analytics/requirements.txt
+          cache-dependency-path: requirements.txt
+      - run: pip install -r requirements.txt
       - name: Pipeline on a 10% sample (generate, clean, every SQL question, stats, Excel)
-        run: python analytics/run_pipeline.py --scale 0.1
+        run: python src/pipeline.py --scale 0.1
       - name: Trust checks (SQL vs Python counts, reconciliation, KPI definitions)
-        working-directory: analytics
-        run: pytest test_pipeline.py -q
+        working-directory: .
+        run: pytest tests -q
 

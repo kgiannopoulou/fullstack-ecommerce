@@ -1,5 +1,7 @@
 check_name,left_value,right_value,passes
 fact_sales net revenue = order_summary net revenue,22098590.39,22098590.39,True
 monthly_kpis net revenue = fact_orders net revenue,22098590.39,22098590.39,True
+fact_sales gross profit = order_summary gross profit,8695028.32,8695028.32,True
+fact_sales shipping cost = order shipping cost,1186019.55,1186019.55,True
 every product has exactly one ABC class,371,371,True
 every customer appears once in dim_customer,92000,92000,True

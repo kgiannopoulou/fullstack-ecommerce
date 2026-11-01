@@ -6,6 +6,7 @@
 --
 --   fact_sales  (one row per sold line)   fact_orders (one row per order)
 --   dim_date    dim_product (ABC class)   dim_customer (cohort, RFM segment)
+--   dim_channel dim_geography
 --   monthly_kpis   inventory_status   cohort_retention   data_quality
 -- =============================================================================
 
@@ -31,7 +32,7 @@ WITH rev AS (
     FROM clean.sales_lines GROUP BY 1
 )
 SELECT p.product_id, p.sku, p.product_name, p.category, p.list_price, p.unit_cost,
-       p.supplier_lead_time_days,
+       p.supplier_lead_time_days, p.parcel_size,
        COALESCE(r.net_revenue, 0) AS lifetime_net_revenue,
        CASE WHEN sum(r.net_revenue) OVER (ORDER BY r.net_revenue DESC NULLS LAST, p.product_id) - COALESCE(r.net_revenue, 0)
                  < 0.80 * sum(r.net_revenue) OVER () THEN 'A'
@@ -76,19 +77,39 @@ SELECT cu.customer_id, cu.country, cu.acquisition_channel, cu.signup_date,
 FROM clean.customers cu
 LEFT JOIN scored s USING (customer_id);
 
-CREATE VIEW reporting.fact_sales AS
-SELECT transaction_id, order_id, customer_id, order_date, product_id, country, channel, status,
-       quantity, unit_price, gross_amount, discount_amount, refund_amount, net_revenue, cogs,
-       net_revenue - cogs AS gross_profit, is_bulk
-FROM clean.sales_lines;
+CREATE VIEW reporting.dim_channel AS
+SELECT row_number() OVER (ORDER BY channel)::int AS channel_id, channel,
+       CASE WHEN channel IN ('Paid Search', 'Social', 'Marketplace') THEN 'Paid' ELSE 'Owned / organic' END AS channel_group
+FROM (SELECT DISTINCT channel FROM clean.orders) c;
 
+CREATE VIEW reporting.dim_geography AS
+SELECT country, CASE WHEN country = 'Greece' THEN 'Domestic' ELSE 'EU export' END AS market,
+       CASE WHEN country = 'Greece' THEN 4 ELSE 7 END AS delivery_promise_days
+FROM (SELECT DISTINCT country FROM clean.orders) c;
+
+-- New = the customer's first fulfilled order; Returning = they had bought before.
 CREATE VIEW reporting.fact_orders AS
-SELECT order_id, customer_id, is_guest, order_date, status, payment_method, channel, country, courier,
-       units, gross_amount, discount_amount, refund_amount, net_revenue, cogs,
-       ship_date - order_date      AS days_to_ship,
-       delivery_date - order_date  AS days_to_deliver,
-       is_late, is_fulfilled, has_bulk
-FROM clean.order_summary;
+SELECT o.order_id, o.customer_id, o.is_guest, o.order_date, o.status, o.payment_method,
+       ch.channel_id, o.channel, o.country, o.courier, o.discount_pct,
+       CASE WHEN o.is_guest THEN 'Guest'
+            WHEN COALESCE(sum(o.is_fulfilled::int) OVER (PARTITION BY o.customer_id ORDER BY o.order_ts, o.order_id
+                          ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING), 0) = 0 THEN 'New'
+            ELSE 'Returning' END   AS customer_type,
+       o.units, o.gross_amount, o.discount_amount, o.refund_amount, o.net_revenue, o.cogs,
+       o.shipping_cost, o.gross_profit,
+       o.ship_date - o.order_date      AS days_to_ship,
+       o.delivery_date - o.order_date  AS days_to_deliver,
+       o.is_late, o.is_fulfilled, o.has_bulk
+FROM clean.order_summary o
+JOIN reporting.dim_channel ch USING (channel);
+
+CREATE VIEW reporting.fact_sales AS
+SELECT s.transaction_id, s.order_id, s.customer_id, s.order_date, s.product_id, s.country,
+       o.channel_id, s.channel, s.status, o.customer_type, o.discount_pct > 0 AS is_discounted,
+       s.quantity, s.unit_price, s.gross_amount, s.discount_amount, s.refund_amount, s.net_revenue,
+       s.cogs, s.shipping_cost, s.gross_profit, s.is_bulk
+FROM clean.sales_lines s
+JOIN reporting.fact_orders o USING (order_id);
 
 CREATE VIEW reporting.monthly_kpis AS
 WITH m AS (
@@ -102,16 +123,19 @@ WITH m AS (
            count(*) FILTER (WHERE status = 'refunded')                   AS refunded_orders,
            count(*) FILTER (WHERE status = 'cancelled')                  AS cancelled_orders,
            count(*) FILTER (WHERE is_fulfilled AND NOT is_late)          AS on_time_orders,
-           sum(cogs) FILTER (WHERE is_fulfilled)                         AS cogs
+           sum(cogs) FILTER (WHERE is_fulfilled)                         AS cogs,
+           sum(shipping_cost)                                            AS shipping_cost,
+           sum(gross_profit)                                             AS gross_profit
     FROM clean.order_summary
     GROUP BY 1
 )
-SELECT month, net_revenue, gross_revenue, orders_placed, fulfilled_orders, units_sold, active_customers,
+SELECT month, net_revenue, gross_revenue, gross_profit, cogs, shipping_cost,
+       orders_placed, fulfilled_orders, units_sold, active_customers,
        round(net_revenue / fulfilled_orders, 2)                                  AS avg_order_value,
        round(100.0 * refunded_orders / fulfilled_orders, 2)                      AS refund_rate_pct,
        round(100.0 * cancelled_orders / orders_placed, 2)                        AS cancellation_rate_pct,
        round(100.0 * on_time_orders / fulfilled_orders, 1)                       AS on_time_delivery_pct,
-       round(100 * (net_revenue - cogs) / net_revenue, 1)                        AS gross_margin_pct,
+       round(100 * gross_profit / net_revenue, 1)                                AS gross_margin_pct,
        round(100 * (net_revenue / lag(net_revenue) OVER (ORDER BY month) - 1), 1)     AS mom_growth_pct,
        round(100 * (net_revenue / lag(net_revenue, 12) OVER (ORDER BY month) - 1), 1) AS yoy_growth_pct
 FROM m;
@@ -174,6 +198,18 @@ SELECT 'monthly_kpis net revenue = fact_orders net revenue',
        (SELECT round(sum(net_revenue), 2) FROM reporting.monthly_kpis),
        (SELECT round(sum(net_revenue), 2) FROM reporting.fact_orders),
        abs((SELECT sum(net_revenue) FROM reporting.monthly_kpis) - (SELECT sum(net_revenue) FROM reporting.fact_orders)) < 1
+UNION ALL
+SELECT 'fact_sales gross profit = order_summary gross profit',
+       round((SELECT sum(gross_profit) FROM reporting.fact_sales), 2),
+       round((SELECT sum(gross_profit) FROM clean.order_summary), 2),
+       abs((SELECT sum(gross_profit) FROM reporting.fact_sales)
+         - (SELECT sum(gross_profit) FROM clean.order_summary)) < 1
+UNION ALL
+SELECT 'fact_sales shipping cost = order shipping cost',
+       round((SELECT sum(shipping_cost) FROM reporting.fact_sales), 2),
+       round((SELECT sum(shipping_cost) FROM clean.order_summary), 2),
+       abs((SELECT sum(shipping_cost) FROM reporting.fact_sales)
+         - (SELECT sum(shipping_cost) FROM clean.order_summary)) < 1
 UNION ALL
 SELECT 'every product has exactly one ABC class',
        (SELECT count(*) FROM reporting.dim_product), (SELECT count(*) FROM clean.products),

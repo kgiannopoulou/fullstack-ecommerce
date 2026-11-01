@@ -1,0 +1,159 @@
+date,metric,dimension,segment,actual,expected,deviation_pct,z_score,event,direction,severity
+2024-03-04,Net revenue,category,Computer Accessories,5856.99,3612.68,62.1,6.2,,spike,high
+2024-03-04,Orders,country,Greece,84.0,57.62,45.8,4.6,,spike,medium
+2024-03-07,Orders,country,Greece,74.0,53.12,39.3,3.6,,spike,low
+2024-03-10,Net revenue,category,Computer Accessories,5112.64,3288.21,55.5,4.1,,spike,medium
+2024-03-12,Net revenue,category,Wearables,6005.76,2605.8,130.5,4.5,,spike,medium
+2024-03-13,Net revenue,category,Audio,7047.42,3807.57,85.1,4.9,,spike,medium
+2024-03-13,Net revenue,category,Computer Accessories,5764.88,3867.44,49.1,4.0,,spike,medium
+2024-03-16,Net revenue,category,Audio,6570.38,3739.83,75.7,5.5,,spike,high
+2024-03-30,Net revenue,category,Computer Accessories,4836.35,3495.96,38.3,3.8,,spike,low
+2024-04-04,Net revenue,category,Bags & Travel,5240.81,3204.78,63.5,4.4,,spike,medium
+2024-04-08,Net revenue,category,Bags & Travel,6095.61,3697.91,64.8,3.9,,spike,low
+2024-04-10,Net revenue,category,Bags & Travel,6216.12,3469.93,79.1,4.0,,spike,medium
+2024-04-13,Orders,country,Greece,77.0,52.62,46.3,3.7,,spike,low
+2024-04-21,Net revenue,category,Bags & Travel,6058.37,3822.19,58.5,4.2,,spike,medium
+2024-04-22,Refund rate (weekly),category,Home & Kitchen,8.88,3.87,129.5,3.8,,spike,low
+2024-05-11,Net revenue,category,Bags & Travel,5088.42,3286.74,54.8,3.9,,spike,low
+2024-06-15,Net revenue,category,Wearables,4891.18,2981.47,64.1,3.7,,spike,low
+2024-06-22,Net revenue,category,Wearables,6650.57,3183.27,108.9,4.1,,spike,medium
+2024-07-28,Net revenue,category,Computer Accessories,6764.66,4800.25,40.9,4.1,,spike,medium
+2024-08-01,Net revenue,category,Computer Accessories,7158.77,5053.89,41.6,4.2,,spike,medium
+2024-08-02,Net revenue,category,Audio,4100.9,6566.91,-37.6,-3.8,,drop,low
+2024-08-14,Net revenue,category,Computer Accessories,11638.81,5285.36,120.2,5.3,Bulk (B2B) order,spike,high
+2024-08-28,Net revenue,category,Bags & Travel,6015.12,4135.33,45.5,4.5,,spike,medium
+2024-09-02,Refund rate (weekly),category,Home & Kitchen,9.55,3.97,140.3,4.0,,spike,medium
+2024-09-06,Orders,country,Greece,98.0,67.12,46.0,4.2,,spike,medium
+2024-09-22,Net revenue,category,Bags & Travel,6604.73,4037.33,63.6,3.8,,spike,low
+2024-10-01,Net revenue,category,Bags & Travel,6559.79,4134.79,58.6,4.9,,spike,medium
+2024-10-03,Net revenue,category,Bags & Travel,6295.4,4317.17,45.8,4.6,,spike,medium
+2024-10-28,Net revenue,category,Computer Accessories,11060.61,6981.02,58.4,4.2,Bulk (B2B) order,spike,medium
+2024-11-01,Net revenue,category,Computer Accessories,14878.85,6667.27,123.2,9.5,Bulk (B2B) order,spike,high
+2024-11-02,Orders,country,Greece,107.0,71.0,50.7,5.0,,spike,high
+2024-11-07,Net revenue,category,Phone Accessories,2627.28,1557.58,68.7,6.9,,spike,high
+2024-11-10,Net revenue,category,Audio,10394.01,6205.64,67.5,4.7,,spike,medium
+2024-11-12,Net revenue,category,Computer Accessories,9910.82,6913.87,43.3,4.3,,spike,medium
+2024-11-22,Net revenue,category,Audio,15968.15,6572.95,142.9,6.1,Bulk (B2B) order,spike,high
+2024-11-28,Net revenue,category,Audio,13602.92,6783.67,100.5,7.9,Black Friday weekend,spike,high
+2024-11-28,Net revenue,category,Bags & Travel,10791.4,5479.67,96.9,9.1,Black Friday weekend,spike,high
+2024-11-28,Net revenue,category,Computer Accessories,14028.83,7412.28,89.3,8.9,Black Friday weekend,spike,high
+2024-11-28,Net revenue,category,Phone Accessories,4530.35,1815.51,149.5,6.5,Black Friday weekend,spike,high
+2024-11-28,Net revenue,category,Smart Home,2862.16,1511.81,89.3,3.6,Black Friday weekend,spike,low
+2024-11-28,Net revenue,category,Wearables,10518.95,3779.81,178.3,4.7,Black Friday weekend,spike,medium
+2024-11-28,Orders,country,Greece,216.0,93.75,130.4,13.0,Black Friday weekend,spike,high
+2024-11-29,Net revenue,category,Bags & Travel,11074.82,4698.62,135.7,9.2,Black Friday weekend,spike,high
+2024-11-29,Net revenue,category,Phone Accessories,4627.39,1750.65,164.3,6.5,Black Friday weekend,spike,high
+2024-11-29,Net revenue,category,Smart Home,2984.04,1567.43,90.4,4.9,Black Friday weekend,spike,medium
+2024-11-29,Net revenue,category,Wearables,9430.44,3362.84,180.4,4.9,Black Friday weekend,spike,medium
+2024-11-29,Orders,country,Greece,202.0,94.5,113.8,7.5,Black Friday weekend,spike,high
+2024-11-30,Net revenue,category,Audio,13055.94,5980.82,118.3,6.1,Black Friday weekend,spike,high
+2024-11-30,Net revenue,category,Bags & Travel,12340.13,4332.78,184.8,11.2,Black Friday weekend,spike,high
+2024-11-30,Net revenue,category,Computer Accessories,16020.41,6849.97,133.9,8.0,Black Friday weekend,spike,high
+2024-11-30,Net revenue,category,Phone Accessories,4335.16,1620.37,167.5,8.7,Black Friday weekend,spike,high
+2024-11-30,Net revenue,category,Wearables,9105.63,3479.54,161.7,4.3,Black Friday weekend,spike,medium
+2024-11-30,Orders,country,Greece,218.0,82.88,163.0,9.2,Black Friday weekend,spike,high
+2024-12-01,Net revenue,category,Audio,18895.77,6897.23,174.0,7.0,Black Friday weekend,spike,high
+2024-12-01,Net revenue,category,Bags & Travel,12001.31,5179.35,131.7,9.6,Black Friday weekend,spike,high
+2024-12-01,Net revenue,category,Computer Accessories,18876.7,7020.34,168.9,14.7,Black Friday weekend,spike,high
+2024-12-01,Net revenue,category,Phone Accessories,4633.73,1610.29,187.8,8.7,Black Friday weekend,spike,high
+2024-12-01,Orders,country,Greece,249.0,91.62,171.8,15.6,Black Friday weekend,spike,high
+2024-12-02,Net revenue,category,Audio,18802.35,7493.96,150.9,10.9,Black Friday weekend,spike,high
+2024-12-02,Net revenue,category,Bags & Travel,15236.53,5193.9,193.4,10.4,Black Friday weekend,spike,high
+2024-12-02,Net revenue,category,Computer Accessories,17646.06,8365.45,110.9,6.4,Black Friday weekend,spike,high
+2024-12-02,Net revenue,category,Phone Accessories,5797.95,1991.57,191.1,14.3,Black Friday weekend,spike,high
+2024-12-02,Orders,country,Greece,267.0,96.62,176.3,11.5,Black Friday weekend,spike,high
+2024-12-03,Net revenue,category,Audio,10482.44,6879.15,52.4,4.2,December peak,spike,medium
+2024-12-10,Net revenue,category,Phone Accessories,2906.61,2086.85,39.3,3.6,December peak,spike,low
+2024-12-11,Net revenue,category,Computer Accessories,10778.11,7069.91,52.5,4.6,December peak,spike,medium
+2025-01-06,Net revenue,category,Wearables,834.03,5165.28,-83.9,-5.7,,drop,high
+2025-01-06,Refund rate (weekly),category,Smart Home,10.26,3.81,169.3,3.6,,spike,low
+2025-01-31,Net revenue,category,Phone Accessories,765.74,2141.35,-64.2,-3.7,,drop,low
+2025-03-07,Net revenue,category,Computer Accessories,10625.34,7003.81,51.7,3.8,Bulk (B2B) order,spike,low
+2025-03-11,Net revenue,category,Computer Accessories,15337.23,7937.08,93.2,5.1,Bulk (B2B) order,spike,high
+2025-03-17,Net revenue,category,Phone Accessories,3126.65,1738.9,79.8,4.4,,spike,medium
+2025-03-18,Net revenue,category,Phone Accessories,3482.74,1901.81,83.1,4.1,Bulk (B2B) order,spike,medium
+2025-03-26,Net revenue,category,Phone Accessories,2749.3,1732.21,58.7,3.6,,spike,low
+2025-04-03,Net revenue,category,Phone Accessories,2217.39,1563.2,41.8,3.7,,spike,low
+2025-04-09,Net revenue,category,Computer Accessories,9872.89,7236.25,36.4,3.6,,spike,low
+2025-04-13,Net revenue,category,Audio,7663.31,5279.95,45.1,4.5,,spike,medium
+2025-04-17,Net revenue,category,Bags & Travel,15201.49,5673.05,168.0,6.9,Bulk (B2B) order,spike,high
+2025-04-20,Net revenue,category,Computer Accessories,10449.64,7300.79,43.1,4.2,,spike,medium
+2025-05-30,Net revenue,category,Audio,17252.61,5890.0,192.9,7.4,Bulk (B2B) order,spike,high
+2025-06-05,Net revenue,category,Phone Accessories,3142.08,2183.51,43.9,4.1,,spike,medium
+2025-06-07,Net revenue,category,Phone Accessories,3512.54,1877.46,87.1,8.1,,spike,high
+2025-06-23,Net revenue,category,Bags & Travel,13442.3,7361.85,82.6,7.4,Bulk (B2B) order,spike,high
+2025-07-06,Net revenue,category,Phone Accessories,3316.62,2293.97,44.6,4.5,,spike,medium
+2025-07-10,Net revenue,category,Bags & Travel,4466.33,7327.93,-39.1,-3.8,,drop,low
+2025-07-15,Net revenue,category,Phone Accessories,2859.96,2042.74,40.0,4.0,,spike,medium
+2025-07-18,Net revenue,category,Home & Kitchen,2173.8,1530.09,42.1,4.2,,spike,medium
+2025-07-23,Net revenue,category,Bags & Travel,14739.75,7297.4,102.0,7.4,Bulk (B2B) order,spike,high
+2025-07-28,Net revenue,category,Smart Home,2589.72,1711.98,51.3,5.1,,spike,high
+2025-08-02,Net revenue,category,Smart Home,580.21,1947.63,-70.2,-3.6,,drop,low
+2025-08-02,Net revenue,category,Wearables,2678.33,1620.43,65.3,3.6,,spike,low
+2025-08-15,Net revenue,category,Gaming,3599.75,1578.47,128.1,5.3,,spike,high
+2025-08-20,Net revenue,category,Phone Accessories,3351.81,2397.36,39.8,4.0,,spike,medium
+2025-08-21,Net revenue,category,Wearables,3237.78,1563.68,107.1,5.8,,spike,high
+2025-08-27,Net revenue,category,Smart Home,2748.07,1682.73,63.3,3.9,,spike,low
+2025-09-03,Net revenue,category,Bags & Travel,18440.04,8091.62,127.9,3.7,Bulk (B2B) order,spike,low
+2025-09-12,Net revenue,category,Phone Accessories,5216.3,2391.55,118.1,8.4,Bulk (B2B) order,spike,high
+2025-09-14,Net revenue,category,Wearables,4563.11,1980.6,130.4,4.4,,spike,medium
+2025-09-21,Net revenue,category,Computer Accessories,10180.32,6917.7,47.2,4.2,,spike,medium
+2025-09-22,Net revenue,category,Bags & Travel,13517.57,7893.31,71.3,5.4,Bulk (B2B) order,spike,high
+2025-09-30,Net revenue,category,Wearables,2858.97,1763.56,62.1,3.6,,spike,low
+2025-10-07,Net revenue,category,Home & Kitchen,6183.17,1785.66,246.3,11.5,Bulk (B2B) order,spike,high
+2025-10-07,Net revenue,category,Phone Accessories,3981.37,2510.54,58.6,5.9,,spike,high
+2025-10-19,Net revenue,category,Audio,7508.97,4984.36,50.7,4.3,,spike,medium
+2025-10-24,Net revenue,category,Computer Accessories,12731.26,8863.73,43.6,4.1,,spike,medium
+2025-10-29,Orders,country,Cyprus,43.0,25.12,71.1,3.9,,spike,low
+2025-11-08,Net revenue,category,Audio,7656.11,4441.28,72.4,7.2,,spike,high
+2025-11-11,Net revenue,category,Bags & Travel,11595.65,8214.86,41.2,4.1,,spike,medium
+2025-11-13,Net revenue,category,Home & Kitchen,3163.36,1910.72,65.6,3.6,,spike,low
+2025-11-18,Net revenue,category,Smart Home,4209.88,2609.61,61.3,4.5,,spike,medium
+2025-11-21,Net revenue,category,Gaming,3416.01,1550.55,120.3,3.9,,spike,low
+2025-11-26,Net revenue,category,Smart Home,10086.17,2658.89,279.3,13.4,Bulk (B2B) order,spike,high
+2025-11-27,Net revenue,category,Audio,11310.85,5626.78,101.0,5.9,Black Friday weekend,spike,high
+2025-11-27,Net revenue,category,Bags & Travel,20493.72,8724.72,134.9,8.9,Black Friday weekend,spike,high
+2025-11-27,Net revenue,category,Computer Accessories,19009.79,10031.16,89.5,7.9,Black Friday weekend,spike,high
+2025-11-27,Net revenue,category,Home & Kitchen,4008.92,2132.77,88.0,4.0,Black Friday weekend,spike,medium
+2025-11-27,Net revenue,category,Smart Home,5880.03,2426.93,142.3,5.7,Black Friday weekend,spike,high
+2025-11-27,Orders,country,Cyprus,65.0,27.25,138.5,7.2,Black Friday weekend,spike,high
+2025-11-27,Orders,country,Greece,284.0,131.0,116.8,8.0,Black Friday weekend,spike,high
+2025-11-28,Net revenue,category,Audio,10988.94,5512.13,99.4,4.5,Black Friday weekend,spike,medium
+2025-11-28,Net revenue,category,Bags & Travel,18780.78,9322.87,101.4,9.4,Black Friday weekend,spike,high
+2025-11-28,Net revenue,category,Computer Accessories,18810.26,9926.1,89.5,5.4,Black Friday weekend,spike,high
+2025-11-28,Net revenue,category,Home & Kitchen,4823.61,2142.95,125.1,11.8,Black Friday weekend,spike,high
+2025-11-28,Net revenue,category,Phone Accessories,6376.26,3087.3,106.5,5.1,Black Friday weekend,spike,high
+2025-11-28,Net revenue,category,Smart Home,6452.92,3132.13,106.0,4.8,Black Friday weekend,spike,medium
+2025-11-28,Net revenue,category,Wearables,4323.73,1773.26,143.8,4.0,Black Friday weekend,spike,medium
+2025-11-28,Orders,country,Cyprus,72.0,27.62,160.6,6.7,Black Friday weekend,spike,high
+2025-11-28,Orders,country,Greece,313.0,134.12,133.4,10.8,Black Friday weekend,spike,high
+2025-11-29,Net revenue,category,Audio,12919.39,5159.74,150.4,6.7,Black Friday weekend,spike,high
+2025-11-29,Net revenue,category,Bags & Travel,15966.5,8312.31,92.1,7.3,Black Friday weekend,spike,high
+2025-11-29,Net revenue,category,Computer Accessories,15911.63,9256.29,71.9,7.1,Black Friday weekend,spike,high
+2025-11-29,Net revenue,category,Home & Kitchen,4238.15,1892.83,123.9,6.5,Black Friday weekend,spike,high
+2025-11-29,Net revenue,category,Phone Accessories,6815.23,2825.97,141.2,8.2,Black Friday weekend,spike,high
+2025-11-29,Net revenue,category,Smart Home,4943.0,2143.56,130.6,5.5,Black Friday weekend,spike,high
+2025-11-29,Net revenue,category,Wearables,6939.38,2253.34,208.0,4.7,Black Friday weekend,spike,medium
+2025-11-29,Orders,country,Cyprus,57.0,26.75,113.1,6.2,Black Friday weekend,spike,high
+2025-11-29,Orders,country,Greece,284.0,129.38,119.5,10.6,Black Friday weekend,spike,high
+2025-11-30,Net revenue,category,Audio,11821.48,5376.27,119.9,6.6,Black Friday weekend,spike,high
+2025-11-30,Net revenue,category,Bags & Travel,15683.9,7902.08,98.5,9.8,Black Friday weekend,spike,high
+2025-11-30,Net revenue,category,Computer Accessories,18365.1,9425.12,94.9,6.9,Black Friday weekend,spike,high
+2025-11-30,Net revenue,category,Home & Kitchen,3840.33,1869.35,105.4,7.3,Black Friday weekend,spike,high
+2025-11-30,Net revenue,category,Phone Accessories,5749.97,2922.62,96.7,7.6,Black Friday weekend,spike,high
+2025-11-30,Net revenue,category,Smart Home,4440.28,2455.24,80.8,4.6,Black Friday weekend,spike,medium
+2025-11-30,Orders,country,Cyprus,50.0,29.12,71.7,3.8,Black Friday weekend,spike,low
+2025-11-30,Orders,country,Greece,240.0,124.88,92.2,8.3,Black Friday weekend,spike,high
+2025-12-01,Net revenue,category,Audio,12569.24,5754.77,118.4,7.2,Black Friday weekend,spike,high
+2025-12-01,Net revenue,category,Bags & Travel,21156.07,8532.53,147.9,14.1,Black Friday weekend,spike,high
+2025-12-01,Net revenue,category,Computer Accessories,22039.52,8883.51,148.1,14.6,Black Friday weekend,spike,high
+2025-12-01,Net revenue,category,Gaming,3721.12,2022.55,84.0,4.3,Black Friday weekend,spike,medium
+2025-12-01,Net revenue,category,Home & Kitchen,5305.82,2066.89,156.7,4.9,Black Friday weekend,spike,medium
+2025-12-01,Net revenue,category,Phone Accessories,8227.99,3025.45,172.0,10.3,Black Friday weekend,spike,high
+2025-12-01,Net revenue,category,Smart Home,6129.7,2625.02,133.5,4.7,Black Friday weekend,spike,medium
+2025-12-01,Net revenue,category,Wearables,4394.71,1891.82,132.3,4.9,Black Friday weekend,spike,medium
+2025-12-01,Orders,country,Cyprus,68.0,28.38,139.6,14.0,Black Friday weekend,spike,high
+2025-12-01,Orders,country,Greece,318.0,130.38,143.9,11.5,Black Friday weekend,spike,high
+2025-12-02,Net revenue,category,Computer Accessories,13028.25,9095.66,43.2,3.8,December peak,spike,low
+2025-12-03,Net revenue,category,Wearables,4553.17,2379.91,91.3,4.6,December peak,spike,medium
+2025-12-20,Net revenue,category,Home & Kitchen,5405.22,2351.82,129.8,3.6,December peak,spike,low

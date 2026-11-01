@@ -18,7 +18,8 @@ CREATE SCHEMA reporting;
 -- ---------------------------------------------------------------- raw layer --
 CREATE TABLE raw.products (
     product_id TEXT, sku TEXT, product_name TEXT, category TEXT,
-    list_price TEXT, unit_cost TEXT, launch_date TEXT, supplier_lead_time_days TEXT
+    list_price TEXT, unit_cost TEXT, launch_date TEXT, supplier_lead_time_days TEXT,
+    parcel_size TEXT
 );
 
 CREATE TABLE raw.customers (
@@ -31,7 +32,7 @@ CREATE TABLE raw.transactions (
     customer_country TEXT, product_id TEXT, sku TEXT, product_name TEXT,
     category TEXT, quantity TEXT, unit_price TEXT, discount_pct TEXT,
     payment_method TEXT, order_status TEXT, refund_amount TEXT, channel TEXT,
-    courier TEXT, ship_date TEXT, delivery_date TEXT
+    courier TEXT, ship_date TEXT, delivery_date TEXT, shipping_cost TEXT
 );
 
 CREATE TABLE raw.inventory (
@@ -48,7 +49,8 @@ CREATE TABLE clean.products (
     list_price      NUMERIC(10,2) NOT NULL CHECK (list_price > 0),
     unit_cost       NUMERIC(10,2) NOT NULL CHECK (unit_cost >= 0),
     launch_date     DATE NOT NULL,
-    supplier_lead_time_days INTEGER NOT NULL
+    supplier_lead_time_days INTEGER NOT NULL,
+    parcel_size     TEXT NOT NULL CHECK (parcel_size IN ('S', 'M', 'L'))
 );
 
 CREATE TABLE clean.customers (
@@ -72,7 +74,9 @@ CREATE TABLE clean.orders (
     courier         TEXT,
     ship_date       DATE,
     delivery_date   DATE,
-    refund_amount   NUMERIC(12,2) NOT NULL DEFAULT 0
+    refund_amount   NUMERIC(12,2) NOT NULL DEFAULT 0,
+    shipping_cost   NUMERIC(8,2) NOT NULL DEFAULT 0,   -- carrier cost paid by the shop (0 if never shipped)
+    shipping_cost_imputed BOOLEAN NOT NULL DEFAULT false
 );
 
 CREATE TABLE clean.order_items (
@@ -108,6 +112,13 @@ CREATE TABLE clean.data_quality_log (
 );
 
 -- ---------------------------------------------------- analysis base views --
+-- Relative carrier space per unit, from the courier's per-unit tariff
+-- (S 0.25, M 0.70, L 2.10 EUR): used to allocate an order's shipping cost.
+CREATE VIEW clean.parcel_weights AS
+SELECT product_id,
+       CASE parcel_size WHEN 'S' THEN 1.0 WHEN 'M' THEN 2.8 ELSE 8.4 END AS parcel_weight
+FROM clean.products;
+
 -- Every analysis file builds on these two views so revenue is defined in
 -- exactly one place (see docs/kpi_dictionary.md).
 
@@ -124,6 +135,10 @@ SELECT o.*,
        i.has_bulk,
        CASE WHEN o.status = 'cancelled' THEN 0
             ELSE i.net_before_refund - o.refund_amount END                 AS net_revenue,
+       -- Gross profit = net revenue - cost of goods - outbound shipping
+       -- (delivery is free for the customer, so the shop pays the carrier).
+       CASE WHEN o.status = 'cancelled' THEN 0
+            ELSE i.net_before_refund - o.refund_amount - i.cogs - o.shipping_cost END AS gross_profit,
        o.status <> 'cancelled'                                             AS is_fulfilled,
        -- Promise shown at checkout: 4 days in Greece, 7 days abroad.
        CASE WHEN o.delivery_date IS NULL THEN NULL
@@ -138,8 +153,10 @@ JOIN (
            sum(discount_amount)        AS discount_amount,
            sum(net_amount)             AS net_before_refund,
            sum(quantity * unit_cost)   AS cogs,
+           sum(quantity * parcel_weight) AS parcel_weight,
            bool_or(is_bulk)            AS has_bulk
     FROM clean.order_items
+    JOIN clean.parcel_weights USING (product_id)
     GROUP BY order_id
 ) i USING (order_id);
 
@@ -169,8 +186,18 @@ SELECT i.transaction_id,
        i.net_amount - COALESCE(o.refund_amount * i.net_amount
              / NULLIF(sum(i.net_amount) OVER (PARTITION BY i.order_id), 0), 0)  AS net_revenue,
        i.quantity * i.unit_cost                                                AS cogs,
+       -- The order's carrier cost is spread over its lines by parcel weight
+       -- (an L item takes ~8x the space of an S item).
+       o.shipping_cost * i.quantity * w.parcel_weight
+           / sum(i.quantity * w.parcel_weight) OVER (PARTITION BY i.order_id)  AS shipping_cost,
+       i.net_amount - COALESCE(o.refund_amount * i.net_amount
+             / NULLIF(sum(i.net_amount) OVER (PARTITION BY i.order_id), 0), 0)
+         - i.quantity * i.unit_cost
+         - o.shipping_cost * i.quantity * w.parcel_weight
+           / sum(i.quantity * w.parcel_weight) OVER (PARTITION BY i.order_id)  AS gross_profit,
        i.is_bulk
 FROM clean.order_items i
 JOIN clean.orders o   USING (order_id)
 JOIN clean.products p USING (product_id)
+JOIN clean.parcel_weights w USING (product_id)
 WHERE o.status <> 'cancelled';

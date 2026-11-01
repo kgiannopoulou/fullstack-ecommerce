@@ -1,0 +1,39 @@
+table DimGeography
+	lineageTag: 1f8416e6-0cc1-5ae6-93b5-39195ef933f8
+
+	column country
+		dataType: string
+		lineageTag: 191a2ea9-b564-5c98-aa4c-b8364373df9b
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column market
+		dataType: string
+		lineageTag: 5ce6baaa-c991-5e1f-a6b8-50526b8a0b45
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_promise_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 0754a741-206c-55a0-a15f-8fc921588466
+		summarizeBy: none
+		sourceColumn: delivery_promise_days
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimGeography = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "DimGeography.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"country", type text}, {"market", type text}, {"delivery_promise_days", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

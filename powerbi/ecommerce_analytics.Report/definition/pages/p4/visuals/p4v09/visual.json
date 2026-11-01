@@ -1,0 +1,226 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "p4v09",
+  "position": {
+    "x": 20,
+    "y": 195,
+    "z": 9000,
+    "width": 1240,
+    "height": 300,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InventoryForecast"
+                    }
+                  },
+                  "Property": "sku"
+                }
+              },
+              "queryRef": "InventoryForecast.sku",
+              "nativeQueryRef": "sku"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InventoryForecast"
+                    }
+                  },
+                  "Property": "product_name"
+                }
+              },
+              "queryRef": "InventoryForecast.product_name",
+              "nativeQueryRef": "product_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InventoryForecast"
+                    }
+                  },
+                  "Property": "abc_class"
+                }
+              },
+              "queryRef": "InventoryForecast.abc_class",
+              "nativeQueryRef": "abc_class"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "InventoryForecast"
+                        }
+                      },
+                      "Property": "stock"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(InventoryForecast.stock)",
+              "nativeQueryRef": "Sum of stock"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "InventoryForecast"
+                        }
+                      },
+                      "Property": "forecast_30d"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(InventoryForecast.forecast_30d)",
+              "nativeQueryRef": "Sum of forecast_30d"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "InventoryForecast"
+                        }
+                      },
+                      "Property": "days_cover"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(InventoryForecast.days_cover)",
+              "nativeQueryRef": "Sum of days_cover"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InventoryForecast"
+                    }
+                  },
+                  "Property": "risk"
+                }
+              },
+              "queryRef": "InventoryForecast.risk",
+              "nativeQueryRef": "risk"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InventoryForecast"
+                    }
+                  },
+                  "Property": "recommended_action"
+                }
+              },
+              "queryRef": "InventoryForecast.recommended_action",
+              "nativeQueryRef": "recommended_action"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "InventoryForecast"
+                      }
+                    },
+                    "Property": "days_cover"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stock vs 30-day forecast: SKU | Product | Stock | Demand | Days cover | Risk | Recommended action'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E4E3DF'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

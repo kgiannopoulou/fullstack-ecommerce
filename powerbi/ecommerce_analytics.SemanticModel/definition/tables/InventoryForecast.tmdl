@@ -1,0 +1,168 @@
+table InventoryForecast
+	lineageTag: 90df6af7-946a-5401-bb12-ba656b84bbb5
+
+	/// Will run out before (or within 7 days of) a delivery ordered today
+	measure 'Products At Risk' = CALCULATE ( COUNTROWS ( InventoryForecast ), InventoryForecast[risk] IN { "STOCKOUT BEFORE RESTOCK", "REORDER NOW" } )
+		formatString: #,0
+		displayFolder: Inventory
+		lineageTag: fddf9311-5c01-5919-a7d9-817d2d48bb69
+
+	measure 'A-class At Risk' = CALCULATE ( [Products At Risk], InventoryForecast[abc_class] = "A" )
+		formatString: #,0
+		displayFolder: Inventory
+		lineageTag: 6e593f4d-5627-535e-b739-1661d073f92f
+
+	measure 'Revenue At Risk 30d' = CALCULATE ( SUM ( InventoryForecast[revenue_at_risk_30d] ), InventoryForecast[risk] IN { "STOCKOUT BEFORE RESTOCK", "REORDER NOW" } )
+		formatString: \€#,0
+		displayFolder: Inventory
+		lineageTag: d9e3e3c4-2fb2-511a-b4c3-541114c25f3e
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c7f222f-6e42-5128-9887-75a987aac981
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		lineageTag: 9ecb2036-4478-5541-8d16-e5fad5557bf1
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: fc06d516-b86a-5ef1-8634-663ada3c9921
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 445f4c52-f85d-5089-9fae-d5b7bb37cb4f
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column abc_class
+		dataType: string
+		lineageTag: 30ac4468-a134-5178-89b4-7cbbd59beb28
+		summarizeBy: none
+		sourceColumn: abc_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock
+		dataType: int64
+		formatString: #,0
+		lineageTag: 88dd2283-bfee-5e62-9c9e-050a6b57f4e7
+		summarizeBy: sum
+		sourceColumn: stock
+
+		annotation SummarizationSetBy = Automatic
+
+	column forecast_30d
+		dataType: double
+		formatString: #,0
+		lineageTag: df7dae23-8a32-59c7-8d52-7edf15ba7740
+		summarizeBy: sum
+		sourceColumn: forecast_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column difference
+		dataType: double
+		formatString: +#,0;-#,0;0
+		lineageTag: 549fc6ca-0fbb-5253-8ea8-60ffbb704030
+		summarizeBy: sum
+		sourceColumn: difference
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_cover
+		dataType: double
+		formatString: 0.0
+		lineageTag: 573bd502-8983-5b17-a2bd-e03d074d5ff8
+		summarizeBy: none
+		sourceColumn: days_cover
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: e59d4d94-78ad-57d9-8595-64534d921d5e
+		summarizeBy: none
+		sourceColumn: lead_time_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk
+		dataType: string
+		lineageTag: eda47e86-f1aa-53f7-8708-e82b00631f85
+		summarizeBy: none
+		sourceColumn: risk
+
+		annotation SummarizationSetBy = Automatic
+
+	column reorder_qty
+		dataType: double
+		formatString: #,0
+		lineageTag: 2f3bba3b-3cd2-5731-a0a6-732d789f8823
+		summarizeBy: sum
+		sourceColumn: reorder_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_lost_units
+		dataType: double
+		formatString: #,0
+		lineageTag: 8856fe80-d8e1-5c4a-8c9b-651a13c1b1d9
+		summarizeBy: sum
+		sourceColumn: expected_lost_units
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_net_price
+		dataType: double
+		formatString: \€#,0.00
+		lineageTag: 7b11879e-2a1c-5feb-a23b-213459dc6fc2
+		summarizeBy: none
+		sourceColumn: avg_net_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue_at_risk_30d
+		dataType: double
+		formatString: \€#,0
+		lineageTag: 1db62b6d-14fd-5eed-9120-61f6782818e1
+		summarizeBy: sum
+		sourceColumn: revenue_at_risk_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommended_action
+		dataType: string
+		lineageTag: 2062b500-413e-511d-ae52-09fd8e48e373
+		summarizeBy: none
+		sourceColumn: recommended_action
+
+		annotation SummarizationSetBy = Automatic
+
+	partition InventoryForecast = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "InventoryForecast.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"product_id", Int64.Type}, {"sku", type text}, {"product_name", type text}, {"category", type text}, {"abc_class", type text}, {"stock", Int64.Type}, {"forecast_30d", type number}, {"difference", type number}, {"days_cover", type number}, {"lead_time_days", Int64.Type}, {"risk", type text}, {"reorder_qty", type number}, {"expected_lost_units", type number}, {"avg_net_price", type number}, {"revenue_at_risk_30d", type number}, {"recommended_action", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

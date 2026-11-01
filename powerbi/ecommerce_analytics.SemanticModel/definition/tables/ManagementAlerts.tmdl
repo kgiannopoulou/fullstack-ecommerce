@@ -1,0 +1,73 @@
+table ManagementAlerts
+	lineageTag: d791d30a-5ec0-570a-8b85-dea056fda633
+
+	column alert_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1cdd9d76-83f3-5793-9913-bcdef2fed126
+		summarizeBy: none
+		sourceColumn: alert_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: 50309ed0-0112-5e9f-8923-2cd33684ff17
+		summarizeBy: none
+		sourceColumn: severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column icon
+		dataType: string
+		lineageTag: 96210c46-5c91-5ec8-b81f-3c0019609249
+		summarizeBy: none
+		sourceColumn: icon
+
+		annotation SummarizationSetBy = Automatic
+
+	column area
+		dataType: string
+		lineageTag: 0a4cf811-4250-52e6-85c2-1f435068fbcf
+		summarizeBy: none
+		sourceColumn: area
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert
+		dataType: string
+		lineageTag: cd4d63d6-0be8-5f79-b4c1-4b181eec6b11
+		summarizeBy: none
+		sourceColumn: alert
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: double
+		formatString: 0.0
+		lineageTag: 4cbac3bb-deb9-5c61-a550-84a6e6d7d0fe
+		summarizeBy: none
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+	column as_of
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 1159fbf1-84c0-5381-be80-77662656f757
+		summarizeBy: none
+		sourceColumn: as_of
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ManagementAlerts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "ManagementAlerts.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"alert_id", Int64.Type}, {"severity", type text}, {"icon", type text}, {"area", type text}, {"alert", type text}, {"value", type number}, {"as_of", type date}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

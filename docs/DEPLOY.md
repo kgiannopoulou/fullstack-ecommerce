@@ -50,7 +50,7 @@ Pay with `4242 4242 4242 4242`, any future expiry date and any CVC. "Limited Edi
 
 ## Why the storefront proxies `/api`
 
-Render gives each service its own `onrender.com` subdomain. `onrender.com` is on the Public Suffix List, so browsers treat the two services as different *sites*, and a `SameSite=Lax` session cookie set by the API wouldn't be sent on the storefront's fetches. With `API_PROXY_TARGET` set, the browser calls `/api/*` on the storefront's own origin, Next.js forwards the request to the API (`frontend/next.config.ts`), and the cookie stays first-party. That's also why `TRUST_PROXY=2` is set on the API: requests pass through Render's load balancer and the Next.js proxy, and the rate limiter needs the real client IP.
+Render gives each service its own `onrender.com` subdomain. `onrender.com` is on the Public Suffix List, so browsers treat the two services as different *sites*, and a `SameSite=Lax` session cookie set by the API wouldn't be sent on the storefront's fetches. With `API_PROXY_TARGET` set, the browser calls `/api/*` on the storefront's own origin, Next.js forwards the request to the API (`app/frontend/next.config.ts`), and the cookie stays first-party. That's also why `TRUST_PROXY=2` is set on the API: requests pass through Render's load balancer and the Next.js proxy, and the rate limiter needs the real client IP.
 
 ## Email
 

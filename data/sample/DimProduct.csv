@@ -1,0 +1,372 @@
+product_id,sku,product_name,category,list_price,unit_cost,parcel_size,supplier_lead_time_days,abc_class
+291,SKU-00291,Laptop Sleeve 2 T125,Bags & Travel,73.99,34.76,L,13,A
+18,SKU-00018,Earbuds Max P729,Audio,110.99,52.08,M,9,A
+52,SKU-00052,Mechanical Keyboard Pro Q322,Computer Accessories,31.99,21.50,M,10,A
+71,SKU-00071,Wireless Mouse Mini T125,Computer Accessories,129.99,71.18,M,9,A
+336,SKU-00336,Fitness Band O174,Wearables,299.99,136.48,S,8,A
+68,SKU-00068,Webcam Max Y914,Computer Accessories,57.99,24.70,M,6,A
+61,SKU-00061,Laptop Stand Lite B655,Computer Accessories,101.99,60.07,M,9,A
+85,SKU-00085,Laptop Stand 2 N643,Computer Accessories,68.99,34.19,M,8,A
+152,SKU-00152,Security Camera Lite G544,Smart Home,47.99,28.14,M,12,A
+119,SKU-00119,Phone Charger Plus T125,Phone Accessories,25.99,11.65,S,6,A
+106,SKU-00106,Power Bank Lite G544,Phone Accessories,14.99,9.43,S,13,A
+1,SKU-00001,Wireless Headphones A100,Audio,93.99,50.20,M,14,A
+202,SKU-00202,Tea Kettle C248,Home & Kitchen,37.99,17.01,L,13,A
+33,SKU-00033,Earbuds 2 Q384,Audio,86.99,49.06,M,11,A
+222,SKU-00222,Tea Kettle Mini M988,Home & Kitchen,16.99,7.32,L,11,A
+345,SKU-00345,Fitness Band Max Z507,Wearables,91.99,56.39,S,9,A
+334,SKU-00334,Smartwatch A100,Wearables,63.99,36.78,S,8,A
+12,SKU-00012,Bluetooth Speaker Lite Z507,Audio,154.99,101.09,M,8,A
+130,SKU-00130,Phone Case X S532,Phone Accessories,52.99,26.53,S,11,A
+289,SKU-00289,Duffel Bag Plus F951,Bags & Travel,47.99,31.60,L,9,A
+34,SKU-00034,Soundbar 2 X421,Audio,116.99,58.38,M,8,A
+177,SKU-00177,Capture Card Pro X359,Gaming,83.99,46.02,M,14,A
+321,SKU-00321,Camera Tripod O174,Cameras,219.99,131.13,M,6,A
+6,SKU-00006,Wireless Headphones Pro J285,Audio,128.99,85.26,M,13,A
+10,SKU-00010,Studio Headphones Pro L433,Audio,128.99,75.36,M,13,A
+8,SKU-00008,Earbuds Pro X359,Audio,102.99,49.34,M,12,A
+48,SKU-00048,USB-C Hub O174,Computer Accessories,30.99,18.09,M,11,A
+62,SKU-00062,Webcam Lite I692,Computer Accessories,21.99,11.61,M,8,A
+43,SKU-00043,Earbuds Air I754,Audio,64.99,28.82,M,13,A
+86,SKU-00086,Webcam 2 U680,Computer Accessories,35.99,17.51,M,10,A
+16,SKU-00016,Wireless Headphones Max B655,Audio,256.99,172.58,M,8,A
+261,SKU-00261,Cable Organizer Plus H199,Office,76.99,47.79,S,7,A
+181,SKU-00181,Capture Card Lite Z507,Gaming,110.99,68.96,M,9,A
+348,SKU-00348,Fitness Band Mini U618,Wearables,180.99,83.33,S,11,A
+368,SKU-00368,Limited Edition Print Max U618,Books & Prints,18.99,10.39,S,9,A
+351,SKU-00351,Fitness Band Plus P729,Wearables,179.99,97.88,S,7,A
+56,SKU-00056,Webcam Pro S470,Computer Accessories,64.99,30.72,M,14,A
+337,SKU-00337,Smartwatch Pro V211,Wearables,273.99,119.86,S,10,A
+35,SKU-00035,Studio Headphones 2 E458,Audio,65.99,35.21,M,14,A
+126,SKU-00126,Power Bank 2 Q384,Phone Accessories,63.99,30.81,S,9,A
+362,SKU-00362,Art Print Lite E396,Books & Prints,11.99,6.23,S,7,A
+4,SKU-00004,Soundbar V211,Audio,84.99,53.07,M,13,A
+283,SKU-00283,Laptop Sleeve Mini P729,Bags & Travel,58.99,32.18,L,11,A
+26,SKU-00026,Wireless Headphones Plus T125,Audio,114.99,48.52,M,9,A
+80,SKU-00080,Webcam Plus E458,Computer Accessories,42.99,19.26,M,9,A
+171,SKU-00171,Game Controller H137,Gaming,96.99,60.79,M,11,A
+331,SKU-00331,Action Camera Max G544,Cameras,584.99,290.77,M,9,A
+191,SKU-00191,Game Controller Plus R877,Gaming,151.99,92.20,M,10,A
+51,SKU-00051,Monitor Arm J285,Computer Accessories,49.99,30.09,M,12,A
+75,SKU-00075,Monitor Arm Mini V273,Computer Accessories,27.99,11.91,M,10,A
+290,SKU-00290,Canvas Backpack 2 M988,Bags & Travel,50.99,23.77,L,8,A
+259,SKU-00259,Notebook Set Plus T125,Office,11.99,5.41,S,10,A
+193,SKU-00193,Capture Card Plus F951,Gaming,290.99,170.42,M,12,A
+15,SKU-00015,Studio Headphones Lite U618,Audio,99.99,59.75,M,8,A
+128,SKU-00128,Screen Protector 2 E458,Phone Accessories,94.99,41.54,S,11,A
+120,SKU-00120,Phone Case Plus A162,Phone Accessories,15.99,10.03,S,12,A
+229,SKU-00229,Water Bottle 2 J347,Home & Kitchen,24.99,14.25,L,14,A
+36,SKU-00036,Wireless Headphones X L495,Audio,126.99,66.82,M,9,A
+350,SKU-00350,Watch Strap Plus I692,Wearables,144.99,90.44,S,8,A
+226,SKU-00226,Kitchen Scale Plus O236,Home & Kitchen,20.99,13.09,L,9,A
+63,SKU-00063,Monitor Arm Lite P729,Computer Accessories,44.99,24.67,M,6,A
+37,SKU-00037,Bluetooth Speaker X S532,Audio,39.99,19.23,M,7,A
+268,SKU-00268,Travel Organizer O174,Bags & Travel,31.99,20.41,L,13,A
+161,SKU-00161,Smart Bulb Mini R877,Smart Home,156.99,92.57,M,7,A
+153,SKU-00153,Video Doorbell Lite N581,Smart Home,65.99,30.11,M,7,A
+189,SKU-00189,Capture Card Mini D803,Gaming,37.99,23.66,M,12,A
+233,SKU-00233,Ceramic Coffee Mug X L495,Home & Kitchen,84.99,38.33,L,14,A
+20,SKU-00020,Studio Headphones Max D803,Audio,50.99,30.30,M,6,A
+9,SKU-00009,Soundbar Pro E396,Audio,96.99,42.35,M,9,A
+144,SKU-00144,Motion Sensor C248,Smart Home,112.99,48.98,M,7,A
+329,SKU-00329,Camera Tripod Lite S470,Cameras,259.99,132.31,M,10,B
+141,SKU-00141,Smart Bulb H137,Smart Home,141.99,75.00,M,13,B
+151,SKU-00151,Smart Bulb Lite Z507,Smart Home,132.99,71.86,M,6,B
+275,SKU-00275,Laptop Sleeve Lite L433,Bags & Travel,24.99,12.39,L,8,B
+173,SKU-00173,Capture Card V211,Gaming,29.99,13.34,M,7,B
+343,SKU-00343,Smartwatch Max L433,Wearables,114.99,55.32,S,12,B
+282,SKU-00282,Canvas Backpack Mini I692,Bags & Travel,67.99,34.54,L,6,B
+2,SKU-00002,Bluetooth Speaker H137,Audio,119.99,72.15,M,6,B
+14,SKU-00014,Soundbar Lite N581,Audio,105.99,45.72,M,12,B
+42,SKU-00042,Bluetooth Speaker Air B717,Audio,101.99,47.26,M,14,B
+13,SKU-00013,Earbuds Lite G544,Audio,62.99,29.64,M,6,B
+142,SKU-00142,Security Camera O174,Smart Home,34.99,18.09,M,14,B
+21,SKU-00021,Wireless Headphones Mini K840,Audio,118.99,75.74,M,8,B
+103,SKU-00103,Screen Protector Pro L433,Phone Accessories,23.99,14.30,S,10,B
+148,SKU-00148,Video Doorbell Pro E396,Smart Home,64.99,38.15,M,8,B
+23,SKU-00023,Earbuds Mini Y914,Audio,54.99,34.60,M,10,B
+230,SKU-00230,Coffee Grinder 2 Q384,Home & Kitchen,52.99,31.20,L,9,B
+279,SKU-00279,Laptop Sleeve Max N581,Bags & Travel,54.99,32.38,L,12,B
+67,SKU-00067,Laptop Stand Max R877,Computer Accessories,30.99,15.81,M,10,B
+241,SKU-00241,Cable Organizer Pro X359,Office,34.99,19.90,S,9,B
+305,SKU-00305,Yoga Mat Max G544,Fitness,101.99,62.72,L,8,B
+65,SKU-00065,Wireless Mouse Max D803,Computer Accessories,93.99,53.84,M,10,B
+187,SKU-00187,Game Controller Mini P729,Gaming,32.99,17.14,M,9,B
+182,SKU-00182,Gaming Headset Max G544,Gaming,108.99,55.23,M,14,B
+28,SKU-00028,Earbuds Plus H199,Audio,35.99,22.42,M,9,B
+286,SKU-00286,Canvas Backpack Plus K840,Bags & Travel,34.99,22.43,L,6,B
+179,SKU-00179,Game Controller Lite L433,Gaming,93.99,42.34,M,6,B
+90,SKU-00090,USB-C Hub X W828,Computer Accessories,100.99,65.81,M,6,B
+39,SKU-00039,Soundbar X G606,Audio,85.99,50.91,M,14,B
+300,SKU-00300,Foam Roller Pro X359,Fitness,28.99,18.71,L,9,B
+210,SKU-00210,Coffee Grinder Lite G544,Home & Kitchen,14.99,7.23,L,10,B
+288,SKU-00288,Travel Organizer Plus Y914,Bags & Travel,38.99,17.44,L,7,B
+31,SKU-00031,Wireless Headphones 2 C310,Audio,49.99,27.12,M,9,B
+159,SKU-00159,Motion Sensor Max D803,Smart Home,78.99,43.05,M,9,B
+196,SKU-00196,Gaming Mouse Pad 2 A162,Gaming,149.99,95.18,M,6,B
+203,SKU-00203,Ceramic Coffee Mug Pro J285,Home & Kitchen,31.99,14.19,L,11,B
+89,SKU-00089,Wireless Mouse X P791,Computer Accessories,18.99,12.38,M,10,B
+164,SKU-00164,Motion Sensor Mini M988,Smart Home,99.99,47.26,M,6,B
+72,SKU-00072,USB-C Hub Mini A162,Computer Accessories,50.99,29.00,M,13,B
+145,SKU-00145,Smart Plug Pro J285,Smart Home,73.99,32.98,M,14,B
+327,SKU-00327,Action Camera Lite E396,Cameras,159.99,78.63,M,11,B
+7,SKU-00007,Bluetooth Speaker Pro Q322,Audio,81.99,51.97,M,10,B
+178,SKU-00178,Gaming Headset Lite E396,Gaming,16.99,11.25,M,10,B
+41,SKU-00041,Wireless Headphones Air U680,Audio,111.99,58.87,M,14,B
+180,SKU-00180,Gaming Mouse Pad Lite S470,Gaming,167.99,99.29,M,9,B
+280,SKU-00280,Travel Organizer Max U618,Bags & Travel,43.99,27.20,L,14,B
+116,SKU-00116,Power Bank Mini Y914,Phone Accessories,77.99,44.84,S,8,B
+328,SKU-00328,Vintage Camera Lite L433,Cameras,170.99,80.16,M,11,B
+292,SKU-00292,Travel Organizer 2 A162,Bags & Travel,45.99,30.41,L,9,B
+163,SKU-00163,Video Doorbell Mini F951,Smart Home,57.99,28.70,M,10,B
+5,SKU-00005,Studio Headphones C248,Audio,78.99,42.43,M,11,B
+140,SKU-00140,Smart Plug A100,Smart Home,51.99,25.21,M,13,B
+155,SKU-00155,Smart Plug Max B655,Smart Home,155.99,80.42,M,6,B
+46,SKU-00046,Mechanical Keyboard A100,Computer Accessories,52.99,31.85,M,10,B
+27,SKU-00027,Bluetooth Speaker Plus A162,Audio,92.99,55.13,M,7,B
+74,SKU-00074,Webcam Mini O236,Computer Accessories,23.99,13.32,M,7,B
+333,SKU-00333,Camera Tripod Max U618,Cameras,265.99,180.71,M,10,B
+346,SKU-00346,Smartwatch Mini G544,Wearables,176.99,104.41,S,11,B
+64,SKU-00064,Mechanical Keyboard Max W766,Computer Accessories,64.99,29.74,M,13,B
+214,SKU-00214,Water Bottle Max I692,Home & Kitchen,60.99,26.25,L,6,B
+57,SKU-00057,Monitor Arm Pro Z507,Computer Accessories,50.99,29.09,M,11,B
+25,SKU-00025,Studio Headphones Mini M988,Audio,127.99,58.41,M,7,B
+132,SKU-00132,Car Mount X G606,Phone Accessories,27.99,13.83,S,10,B
+217,SKU-00217,Tea Kettle Max D803,Home & Kitchen,30.99,19.87,L,10,B
+111,SKU-00111,Power Bank Max P729,Phone Accessories,28.99,19.38,S,12,B
+188,SKU-00188,Gaming Mouse Pad Mini W766,Gaming,167.99,94.71,M,13,B
+162,SKU-00162,Security Camera Mini Y914,Smart Home,90.99,50.82,M,7,B
+325,SKU-00325,Camera Tripod Pro Q322,Cameras,458.99,294.61,M,10,B
+40,SKU-00040,Studio Headphones X N643,Audio,62.99,39.29,M,6,B
+338,SKU-00338,Watch Strap Pro C248,Wearables,159.99,67.93,S,7,B
+54,SKU-00054,USB-C Hub Pro E396,Computer Accessories,22.99,11.28,M,6,B
+11,SKU-00011,Wireless Headphones Lite S470,Audio,71.99,36.87,M,7,B
+88,SKU-00088,Mechanical Keyboard X I754,Computer Accessories,29.99,15.99,M,8,B
+84,SKU-00084,USB-C Hub 2 G606,Computer Accessories,64.99,32.65,M,14,B
+215,SKU-00215,Coffee Grinder Max P729,Home & Kitchen,18.99,8.59,L,8,B
+167,SKU-00167,Security Camera Plus H199,Smart Home,86.99,52.95,M,12,B
+353,SKU-00353,Watch Strap 2 D803,Wearables,95.99,44.94,S,11,B
+156,SKU-00156,Smart Bulb Max I692,Smart Home,92.99,46.97,M,11,B
+154,SKU-00154,Motion Sensor Lite U618,Smart Home,19.99,10.56,M,9,B
+352,SKU-00352,Smartwatch 2 W766,Wearables,222.99,132.77,S,6,B
+231,SKU-00231,Kitchen Scale 2 X421,Home & Kitchen,53.99,24.76,L,8,B
+82,SKU-00082,Mechanical Keyboard 2 S532,Computer Accessories,21.99,12.41,M,11,B
+124,SKU-00124,Phone Charger 2 C310,Phone Accessories,14.99,8.84,S,6,B
+30,SKU-00030,Studio Headphones Plus V273,Audio,67.99,30.58,M,13,B
+266,SKU-00266,Canvas Backpack A100,Bags & Travel,66.99,31.03,L,12,B
+190,SKU-00190,Gaming Headset Plus K840,Gaming,110.99,57.48,M,10,B
+158,SKU-00158,Video Doorbell Max W766,Smart Home,44.99,29.99,M,13,B
+235,SKU-00235,Desk Lamp H137,Office,34.99,18.59,S,11,B
+29,SKU-00029,Soundbar Plus O236,Audio,60.99,34.63,M,11,B
+146,SKU-00146,Smart Bulb Pro Q322,Smart Home,95.99,62.84,M,9,B
+32,SKU-00032,Bluetooth Speaker 2 J347,Audio,31.99,19.80,M,12,B
+114,SKU-00114,Phone Charger Mini K840,Phone Accessories,24.99,11.18,S,12,B
+310,SKU-00310,Resistance Bands Mini P729,Fitness,46.99,29.43,L,14,B
+87,SKU-00087,Monitor Arm 2 B717,Computer Accessories,26.99,12.49,M,10,B
+47,SKU-00047,Wireless Mouse H137,Computer Accessories,58.99,30.62,M,11,B
+79,SKU-00079,Laptop Stand Plus X421,Computer Accessories,37.99,23.14,M,14,B
+70,SKU-00070,Mechanical Keyboard Mini M988,Computer Accessories,47.99,21.19,M,10,B
+53,SKU-00053,Wireless Mouse Pro X359,Computer Accessories,31.99,19.40,M,6,B
+176,SKU-00176,Gaming Mouse Pad Pro Q322,Gaming,78.99,48.86,M,12,B
+323,SKU-00323,Action Camera Pro C248,Cameras,150.99,89.78,M,11,B
+134,SKU-00134,Phone Charger Air U680,Phone Accessories,19.99,8.68,S,9,B
+91,SKU-00091,Laptop Stand X D865,Computer Accessories,36.99,20.53,M,11,B
+170,SKU-00170,Gaming Headset A100,Gaming,45.99,26.41,M,13,B
+293,SKU-00293,Yoga Mat A100,Fitness,47.99,23.99,L,12,B
+195,SKU-00195,Game Controller 2 T125,Gaming,47.99,20.31,M,6,B
+339,SKU-00339,Fitness Band Pro J285,Wearables,77.99,45.62,S,10,B
+340,SKU-00340,Smartwatch Lite Q322,Wearables,218.99,115.91,S,13,B
+143,SKU-00143,Video Doorbell V211,Smart Home,64.99,29.01,M,7,B
+192,SKU-00192,Gaming Mouse Pad Plus Y914,Gaming,110.99,50.03,M,12,B
+66,SKU-00066,USB-C Hub Max K840,Computer Accessories,26.99,17.83,M,8,B
+285,SKU-00285,Duffel Bag Mini D803,Bags & Travel,47.99,31.50,L,13,B
+127,SKU-00127,Car Mount 2 X421,Phone Accessories,12.99,8.21,S,6,B
+335,SKU-00335,Watch Strap H137,Wearables,129.99,85.53,S,11,B
+112,SKU-00112,Car Mount Max W766,Phone Accessories,20.99,13.86,S,8,B
+317,SKU-00317,Yoga Mat 2 M988,Fitness,20.99,12.85,L,13,B
+110,SKU-00110,Phone Case Max I692,Phone Accessories,18.99,10.39,S,7,B
+99,SKU-00099,Phone Charger Pro J285,Phone Accessories,12.99,6.50,S,6,B
+204,SKU-00204,Water Bottle Pro Q322,Home & Kitchen,32.99,14.10,L,6,B
+73,SKU-00073,Laptop Stand Mini H199,Computer Accessories,10.99,5.38,M,8,B
+199,SKU-00199,Water Bottle H137,Home & Kitchen,38.99,24.30,L,11,B
+206,SKU-00206,Kitchen Scale Pro E396,Home & Kitchen,32.99,15.56,L,8,B
+341,SKU-00341,Watch Strap Lite X359,Wearables,51.99,32.00,S,13,B
+94,SKU-00094,Phone Charger A100,Phone Accessories,27.99,17.19,S,8,B
+157,SKU-00157,Security Camera Max P729,Smart Home,53.99,32.30,M,10,B
+97,SKU-00097,Car Mount V211,Phone Accessories,52.99,24.37,S,12,C
+225,SKU-00225,Coffee Grinder Plus H199,Home & Kitchen,21.99,14.84,L,14,C
+322,SKU-00322,Ring Light V211,Cameras,244.99,128.46,M,12,C
+326,SKU-00326,Ring Light Pro X359,Cameras,151.99,87.16,M,8,C
+133,SKU-00133,Screen Protector X N643,Phone Accessories,20.99,9.45,S,13,C
+360,SKU-00360,Limited Edition Print Pro Q322,Books & Prints,12.99,7.20,S,12,C
+174,SKU-00174,Gaming Headset Pro C248,Gaming,78.99,44.78,M,13,C
+361,SKU-00361,Poster Set Pro X359,Books & Prints,38.99,16.89,S,12,C
+38,SKU-00038,Earbuds X Z569,Audio,47.99,23.67,M,14,C
+186,SKU-00186,Gaming Headset Mini I692,Gaming,82.99,55.05,M,9,C
+238,SKU-00238,Pen Set C248,Office,6.94,3.98,S,12,C
+209,SKU-00209,Water Bottle Lite Z507,Home & Kitchen,45.99,26.56,L,13,C
+211,SKU-00211,Kitchen Scale Lite N581,Home & Kitchen,8.03,3.49,L,10,C
+83,SKU-00083,Wireless Mouse 2 Z569,Computer Accessories,139.99,89.00,M,8,C
+239,SKU-00239,Notebook Set Pro J285,Office,9.21,3.95,S,11,C
+123,SKU-00123,Screen Protector Plus V273,Phone Accessories,66.99,35.32,S,11,C
+246,SKU-00246,Cable Organizer Lite G544,Office,18.99,9.76,S,14,C
+228,SKU-00228,Ceramic Coffee Mug 2 C310,Home & Kitchen,35.99,23.97,L,14,C
+150,SKU-00150,Smart Plug Lite S470,Smart Home,47.99,26.57,M,9,C
+55,SKU-00055,Laptop Stand Pro L433,Computer Accessories,22.99,15.05,M,14,C
+117,SKU-00117,Car Mount Mini F951,Phone Accessories,14.99,9.43,S,9,C
+267,SKU-00267,Laptop Sleeve H137,Bags & Travel,73.99,50.10,L,12,C
+135,SKU-00135,Phone Case Air B717,Phone Accessories,24.99,10.84,S,10,C
+208,SKU-00208,Ceramic Coffee Mug Lite S470,Home & Kitchen,25.99,10.95,L,14,C
+245,SKU-00245,Desk Lamp Lite Z507,Office,34.99,18.62,S,8,C
+175,SKU-00175,Game Controller Pro J285,Gaming,95.99,51.95,M,8,C
+302,SKU-00302,Resistance Bands Lite L433,Fitness,16.99,9.58,L,10,C
+76,SKU-00076,Mechanical Keyboard Plus C310,Computer Accessories,73.99,48.32,M,13,C
+309,SKU-00309,Yoga Mat Mini I692,Fitness,39.99,26.96,L,9,C
+295,SKU-00295,Fitness Tracker O174,Fitness,39.99,24.11,L,10,C
+93,SKU-00093,Monitor Arm X R939,Computer Accessories,30.99,16.03,M,14,C
+50,SKU-00050,Webcam C248,Computer Accessories,17.99,12.05,M,10,C
+3,SKU-00003,Earbuds O174,Audio,27.99,18.86,M,10,C
+185,SKU-00185,Capture Card Max B655,Gaming,58.99,27.19,M,14,C
+296,SKU-00296,Foam Roller V211,Fitness,38.99,26.33,L,14,C
+113,SKU-00113,Screen Protector Max D803,Phone Accessories,19.99,11.28,S,10,C
+255,SKU-00255,Desk Lamp Mini R877,Office,14.99,7.52,S,10,C
+129,SKU-00129,Phone Charger X L495,Phone Accessories,18.99,8.70,S,11,C
+278,SKU-00278,Canvas Backpack Max G544,Bags & Travel,22.99,14.70,L,9,C
+269,SKU-00269,Duffel Bag V211,Bags & Travel,89.99,41.11,L,12,C
+160,SKU-00160,Smart Plug Mini K840,Smart Home,111.99,62.63,M,7,C
+139,SKU-00139,Phone Charger Go D865,Phone Accessories,15.99,6.90,S,12,C
+165,SKU-00165,Smart Plug Plus T125,Smart Home,87.99,56.65,M,9,C
+98,SKU-00098,Screen Protector C248,Phone Accessories,18.99,10.94,S,14,C
+320,SKU-00320,Vintage Camera H137,Cameras,148.99,62.75,M,11,C
+100,SKU-00100,Phone Case Pro Q322,Phone Accessories,30.99,20.85,S,8,C
+271,SKU-00271,Laptop Sleeve Pro J285,Bags & Travel,94.99,58.55,L,11,C
+24,SKU-00024,Soundbar Mini F951,Audio,84.99,42.07,M,14,C
+197,SKU-00197,Capture Card 2 H199,Gaming,28.99,15.63,M,7,C
+218,SKU-00218,Ceramic Coffee Mug Mini K840,Home & Kitchen,20.99,12.82,L,8,C
+301,SKU-00301,Yoga Mat Lite E396,Fitness,52.99,32.35,L,11,C
+22,SKU-00022,Bluetooth Speaker Mini R877,Audio,41.99,21.05,M,14,C
+354,SKU-00354,Art Print A100,Books & Prints,32.99,14.73,S,11,C
+108,SKU-00108,Screen Protector Lite U618,Phone Accessories,22.99,10.40,S,11,C
+137,SKU-00137,Car Mount Air P791,Phone Accessories,23.99,12.06,S,11,C
+258,SKU-00258,Pen Set Mini M988,Office,40.99,18.85,S,8,C
+138,SKU-00138,Screen Protector Air W828,Phone Accessories,22.99,14.89,S,8,C
+247,SKU-00247,Desk Mat Lite N581,Office,20.99,12.84,S,6,C
+277,SKU-00277,Duffel Bag Lite Z507,Bags & Travel,16.99,7.51,L,13,C
+131,SKU-00131,Power Bank X Z569,Phone Accessories,19.99,13.18,S,12,C
+244,SKU-00244,Notebook Set Lite S470,Office,26.99,16.86,S,12,C
+77,SKU-00077,Wireless Mouse Plus J347,Computer Accessories,35.99,20.30,M,9,C
+236,SKU-00236,Cable Organizer O174,Office,21.99,12.86,S,7,C
+332,SKU-00332,Vintage Camera Max N581,Cameras,156.99,71.52,M,10,C
+316,SKU-00316,Foam Roller Plus F951,Fitness,14.99,9.31,L,11,C
+232,SKU-00232,Tea Kettle 2 E458,Home & Kitchen,26.99,14.17,L,11,C
+136,SKU-00136,Power Bank Air I754,Phone Accessories,27.99,16.71,S,7,C
+183,SKU-00183,Game Controller Max N581,Gaming,74.99,46.36,M,14,C
+122,SKU-00122,Car Mount Plus O236,Phone Accessories,12.99,8.39,S,10,C
+318,SKU-00318,Resistance Bands 2 T125,Fitness,52.99,22.93,L,9,C
+220,SKU-00220,Coffee Grinder Mini Y914,Home & Kitchen,45.99,31.04,L,9,C
+201,SKU-00201,Kitchen Scale V211,Home & Kitchen,29.99,14.81,L,8,C
+253,SKU-00253,Pen Set Max D803,Office,34.99,15.20,S,11,C
+169,SKU-00169,Motion Sensor Plus V273,Smart Home,52.99,35.47,M,14,C
+330,SKU-00330,Ring Light Lite Z507,Cameras,83.99,52.91,M,8,C
+60,SKU-00060,USB-C Hub Lite U618,Computer Accessories,44.99,26.23,M,7,C
+303,SKU-00303,Fitness Tracker Lite S470,Fitness,39.99,26.88,L,6,C
+58,SKU-00058,Mechanical Keyboard Lite G544,Computer Accessories,27.99,17.99,M,7,C
+284,SKU-00284,Travel Organizer Mini W766,Bags & Travel,55.99,35.92,L,7,C
+95,SKU-00095,Phone Case H137,Phone Accessories,24.99,16.58,S,8,C
+168,SKU-00168,Video Doorbell Plus O236,Smart Home,85.99,57.04,M,11,C
+270,SKU-00270,Canvas Backpack Pro C248,Bags & Travel,92.99,48.55,L,14,C
+81,SKU-00081,Monitor Arm Plus L495,Computer Accessories,28.99,13.91,M,7,C
+172,SKU-00172,Gaming Mouse Pad O174,Gaming,33.99,16.52,M,13,C
+149,SKU-00149,Motion Sensor Pro L433,Smart Home,46.99,21.38,M,13,C
+115,SKU-00115,Phone Case Mini R877,Phone Accessories,23.99,12.69,S,11,C
+213,SKU-00213,Ceramic Coffee Mug Max B655,Home & Kitchen,32.99,19.84,L,12,C
+102,SKU-00102,Car Mount Pro E396,Phone Accessories,26.99,12.95,S,8,C
+216,SKU-00216,Kitchen Scale Max W766,Home & Kitchen,27.99,17.18,L,7,C
+104,SKU-00104,Phone Charger Lite S470,Phone Accessories,7.89,4.35,S,13,C
+205,SKU-00205,Coffee Grinder Pro X359,Home & Kitchen,19.99,9.14,L,9,C
+101,SKU-00101,Power Bank Pro X359,Phone Accessories,21.99,10.06,S,8,C
+105,SKU-00105,Phone Case Lite Z507,Phone Accessories,14.99,8.56,S,6,C
+212,SKU-00212,Tea Kettle Lite U618,Home & Kitchen,43.99,29.09,L,8,C
+297,SKU-00297,Yoga Mat Pro C248,Fitness,75.99,41.35,L,14,C
+319,SKU-00319,Action Camera A100,Cameras,134.99,78.52,M,14,C
+227,SKU-00227,Tea Kettle Plus V273,Home & Kitchen,26.99,15.35,L,13,C
+276,SKU-00276,Travel Organizer Lite S470,Bags & Travel,38.99,22.32,L,13,C
+324,SKU-00324,Vintage Camera Pro J285,Cameras,106.99,68.66,M,9,C
+298,SKU-00298,Resistance Bands Pro J285,Fitness,29.99,19.64,L,7,C
+223,SKU-00223,Ceramic Coffee Mug Plus T125,Home & Kitchen,26.99,16.32,L,13,C
+109,SKU-00109,Phone Charger Max B655,Phone Accessories,28.99,15.17,S,12,C
+342,SKU-00342,Fitness Band Lite E396,Wearables,75.99,37.54,S,12,C
+49,SKU-00049,Laptop Stand V211,Computer Accessories,14.99,6.64,M,11,C
+147,SKU-00147,Security Camera Pro X359,Smart Home,28.99,18.22,M,6,C
+242,SKU-00242,Desk Mat Pro E396,Office,22.99,13.85,S,6,C
+273,SKU-00273,Duffel Bag Pro X359,Bags & Travel,41.99,19.61,L,13,C
+17,SKU-00017,Bluetooth Speaker Max I692,Audio,59.99,30.97,M,13,C
+234,SKU-00234,Notebook Set A100,Office,18.99,9.35,S,14,C
+166,SKU-00166,Smart Bulb Plus A162,Smart Home,57.99,33.62,M,13,C
+184,SKU-00184,Gaming Mouse Pad Max U618,Gaming,76.99,39.63,M,11,C
+311,SKU-00311,Fitness Tracker Mini W766,Fitness,73.99,41.76,L,9,C
+92,SKU-00092,Webcam X K902,Computer Accessories,85.99,53.38,M,12,C
+313,SKU-00313,Yoga Mat Plus K840,Fitness,53.99,23.19,L,8,C
+96,SKU-00096,Power Bank O174,Phone Accessories,11.99,5.42,S,10,C
+59,SKU-00059,Wireless Mouse Lite N581,Computer Accessories,40.99,24.88,M,13,C
+281,SKU-00281,Duffel Bag Max B655,Bags & Travel,53.99,27.82,L,13,C
+265,SKU-00265,Desk Lamp 2 J347,Office,28.99,16.13,S,7,C
+78,SKU-00078,USB-C Hub Plus Q384,Computer Accessories,14.99,8.92,M,6,C
+19,SKU-00019,Soundbar Max W766,Audio,74.99,40.77,M,7,C
+312,SKU-00312,Foam Roller Mini D803,Fitness,23.99,15.84,L,11,C
+358,SKU-00358,Art Print Pro C248,Books & Prints,13.99,6.03,S,9,C
+347,SKU-00347,Watch Strap Mini N581,Wearables,83.99,40.55,S,13,C
+118,SKU-00118,Screen Protector Mini M988,Phone Accessories,10.99,6.86,S,10,C
+274,SKU-00274,Canvas Backpack Lite E396,Bags & Travel,40.99,17.69,L,8,C
+219,SKU-00219,Water Bottle Mini R877,Home & Kitchen,17.99,8.82,L,7,C
+207,SKU-00207,Tea Kettle Pro L433,Home & Kitchen,23.99,14.17,L,13,C
+69,SKU-00069,Monitor Arm Max F951,Computer Accessories,16.99,9.27,M,9,C
+248,SKU-00248,Pen Set Lite U618,Office,19.99,13.18,S,11,C
+357,SKU-00357,Poster Set V211,Books & Prints,35.99,24.10,S,12,C
+224,SKU-00224,Water Bottle Plus A162,Home & Kitchen,48.99,21.74,L,14,C
+344,SKU-00344,Watch Strap Max S470,Wearables,53.99,35.44,S,6,C
+315,SKU-00315,Fitness Tracker Plus Y914,Fitness,18.99,11.31,L,10,C
+308,SKU-00308,Foam Roller Max B655,Fitness,24.99,16.90,L,12,C
+262,SKU-00262,Desk Mat Plus O236,Office,12.99,7.78,S,8,C
+249,SKU-00249,Notebook Set Max B655,Office,17.99,9.99,S,10,C
+221,SKU-00221,Kitchen Scale Mini F951,Home & Kitchen,13.99,6.07,L,13,C
+194,SKU-00194,Gaming Headset 2 M988,Gaming,17.99,10.31,M,10,C
+364,SKU-00364,Limited Edition Print Lite S470,Books & Prints,12.99,6.48,S,10,C
+264,SKU-00264,Notebook Set 2 C310,Office,19.99,8.45,S,9,C
+121,SKU-00121,Power Bank Plus H199,Phone Accessories,7.52,4.20,S,6,C
+200,SKU-00200,Coffee Grinder O174,Home & Kitchen,13.99,9.50,L,13,C
+125,SKU-00125,Phone Case 2 J347,Phone Accessories,9.14,4.92,S,14,C
+250,SKU-00250,Desk Lamp Max I692,Office,11.99,6.02,S,13,C
+251,SKU-00251,Cable Organizer Max P729,Office,10.99,6.03,S,13,C
+256,SKU-00256,Cable Organizer Mini Y914,Office,6.00,2.54,S,7,C
+304,SKU-00304,Foam Roller Lite Z507,Fitness,16.99,8.41,L,12,C
+287,SKU-00287,Laptop Sleeve Plus R877,Bags & Travel,27.99,15.39,L,14,C
+371,SKU-00371,Photo Book Mini P729,Books & Prints,19.99,10.07,S,13,C
+366,SKU-00366,Art Print Max G544,Books & Prints,20.99,9.43,S,7,C
+367,SKU-00367,Photo Book Max N581,Books & Prints,11.99,5.04,S,14,C
+252,SKU-00252,Desk Mat Max W766,Office,25.99,11.40,S,10,C
+107,SKU-00107,Car Mount Lite N581,Phone Accessories,34.99,21.42,S,11,C
+307,SKU-00307,Fitness Tracker Max U618,Fitness,15.99,9.95,L,13,C
+257,SKU-00257,Desk Mat Mini F951,Office,5.45,3.50,S,9,C
+306,SKU-00306,Resistance Bands Max N581,Fitness,26.99,12.21,L,8,C
+254,SKU-00254,Notebook Set Mini K840,Office,15.99,8.10,S,12,C
+365,SKU-00365,Poster Set Lite Z507,Books & Prints,18.99,10.03,S,10,C
+355,SKU-00355,Photo Book H137,Books & Prints,16.99,11.36,S,8,C
+243,SKU-00243,Pen Set Pro L433,Office,15.99,9.43,S,8,C
+45,SKU-00045,Studio Headphones Air W828,Audio,61.99,34.11,M,11,C
+370,SKU-00370,Art Print Mini I692,Books & Prints,17.99,11.49,S,6,C
+237,SKU-00237,Desk Mat V211,Office,21.99,11.57,S,9,C
+369,SKU-00369,Poster Set Max B655,Books & Prints,8.89,4.73,S,9,C
+198,SKU-00198,Ceramic Coffee Mug A100,Home & Kitchen,18.99,9.47,L,10,C
+356,SKU-00356,Limited Edition Print O174,Books & Prints,24.99,13.31,S,13,C
+299,SKU-00299,Fitness Tracker Pro Q322,Fitness,8.01,5.37,L,9,C
+263,SKU-00263,Pen Set Plus V273,Office,7.06,3.68,S,13,C
+349,SKU-00349,Smartwatch Plus B655,Wearables,391.99,221.86,S,13,C
+294,SKU-00294,Resistance Bands H137,Fitness,14.99,6.32,L,6,C
+272,SKU-00272,Travel Organizer Pro Q322,Bags & Travel,55.99,30.35,L,8,C
+44,SKU-00044,Soundbar Air P791,Audio,40.99,22.14,M,8,C
+359,SKU-00359,Photo Book Pro J285,Books & Prints,5.86,2.56,S,8,C
+240,SKU-00240,Desk Lamp Pro Q322,Office,15.99,8.69,S,9,C
+314,SKU-00314,Resistance Bands Plus R877,Fitness,12.99,5.62,L,7,C
+260,SKU-00260,Desk Lamp Plus A162,Office,4.00,2.68,S,11,C
+363,SKU-00363,Photo Book Lite L433,Books & Prints,37.99,22.85,S,8,C

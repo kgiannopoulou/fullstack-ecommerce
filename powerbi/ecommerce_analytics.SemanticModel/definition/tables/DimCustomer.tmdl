@@ -1,0 +1,119 @@
+table DimCustomer
+	lineageTag: 297c8f58-3758-51a8-813d-070f0315609d
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 74090a78-1604-5648-87d3-a74aa552b693
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 15c873db-32b8-5a6b-b7e1-d12d9e1b0f59
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column acquisition_channel
+		dataType: string
+		lineageTag: 38685e21-6e81-5d19-ba25-42bb0424a766
+		summarizeBy: none
+		sourceColumn: acquisition_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column signup_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 27a83e77-1359-52ea-acc8-21806cf6ab58
+		summarizeBy: none
+		sourceColumn: signup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_order_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 03ebe633-b53b-5737-8a70-bc6864e53f2b
+		summarizeBy: none
+		sourceColumn: first_order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cohort_month
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: 1c8eda5f-58bd-59ae-b922-bfc6892b3f3b
+		summarizeBy: none
+		sourceColumn: cohort_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column orders
+		dataType: int64
+		formatString: 0
+		lineageTag: febe04e5-4961-5b63-b87c-f3a354713619
+		summarizeBy: sum
+		sourceColumn: orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifetime_revenue
+		dataType: double
+		formatString: \€#,0
+		lineageTag: f9aa980e-a07d-580f-a233-0cf00ede4494
+		summarizeBy: sum
+		sourceColumn: lifetime_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column recency_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 1915f9bc-4d8b-5b97-abcb-0e3334e83255
+		summarizeBy: none
+		sourceColumn: recency_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column r_score
+		dataType: int64
+		formatString: 0
+		lineageTag: ed294f64-c099-5fba-89d0-693b4a7e8bf3
+		summarizeBy: none
+		sourceColumn: r_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column f_score
+		dataType: int64
+		formatString: 0
+		lineageTag: a14e9fda-bc38-5bf4-bf59-f9530e1bce74
+		summarizeBy: none
+		sourceColumn: f_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column rfm_segment
+		dataType: string
+		lineageTag: e6aea96a-64de-5af2-ab33-1cb80bd1b04a
+		summarizeBy: none
+		sourceColumn: rfm_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCustomer = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "DimCustomer.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"customer_id", Int64.Type}, {"country", type text}, {"acquisition_channel", type text}, {"signup_date", type date}, {"first_order_date", type date}, {"cohort_month", type date}, {"orders", Int64.Type}, {"lifetime_revenue", type number}, {"recency_days", Int64.Type}, {"r_score", Int64.Type}, {"f_score", Int64.Type}, {"rfm_segment", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

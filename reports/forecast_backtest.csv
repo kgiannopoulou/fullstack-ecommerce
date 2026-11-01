@@ -1,0 +1,5 @@
+forecast_from,products_scored,actual_units,wape_method_pct,wape_naive_pct,bias_method_pct
+2025-09-01,325,20733,17.7,22.2,1.3
+2025-10-01,321,20672,15.2,15.4,2.2
+2025-11-01,314,26016,15.8,23.9,5.8
+2025-12-01,293,26624,12.7,14.3,-1.5

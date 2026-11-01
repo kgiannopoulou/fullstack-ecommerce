@@ -100,3 +100,70 @@ JOIN clean.products p USING (product_id)
 WHERE i.is_bulk
 ORDER BY i.quantity DESC
 LIMIT 20;
+
+-- -----------------------------------------------------------------------------
+-- Manual follow-up of an automated alert (src/anomaly_detection.py):
+--   2025-01-06  Net revenue | Wearables | -83.9% vs expected (z = -5.7)
+-- An alert is a question. These three queries answer it.
+-- -----------------------------------------------------------------------------
+
+-- Q10.6 | Re-check the alert: Wearables daily revenue vs the same weekday over the previous 8 weeks.
+WITH d AS (
+    SELECT g.day::date AS day, COALESCE(sum(s.net_revenue), 0) AS revenue
+    FROM generate_series('2024-11-01'::date, '2025-01-31'::date, '1 day') g(day)
+    LEFT JOIN clean.sales_lines s ON s.order_date = g.day AND s.category = 'Wearables'
+    GROUP BY 1
+),
+w AS (
+    SELECT day, revenue,
+           avg(revenue) OVER (PARTITION BY extract(isodow FROM day) ORDER BY day
+                              ROWS BETWEEN 8 PRECEDING AND 1 PRECEDING) AS expected
+    FROM d
+)
+SELECT day, to_char(day, 'Dy') AS weekday, round(revenue, 0) AS revenue, round(expected, 0) AS expected,
+       round(100 * (revenue / NULLIF(expected, 0) - 1), 1) AS deviation_pct
+FROM w
+WHERE day BETWEEN '2024-12-22' AND '2025-01-19'
+ORDER BY day;
+
+-- Q10.7 | Which Wearables products explain the drop? Revenue 4 weeks before vs 4 weeks after 1 Jan 2025.
+WITH r AS (
+    SELECT product_id, product_name,
+           sum(net_revenue) FILTER (WHERE order_date BETWEEN '2024-12-04' AND '2024-12-31') AS rev_before,
+           sum(net_revenue) FILTER (WHERE order_date BETWEEN '2025-01-01' AND '2025-01-28') AS rev_after
+    FROM clean.sales_lines
+    WHERE category = 'Wearables'
+    GROUP BY 1, 2
+),
+s AS (
+    SELECT product_id,
+           count(*) FILTER (WHERE stock_on_hand = 0 AND snapshot_date BETWEEN '2025-01-01' AND '2025-01-28') AS days_out_of_stock_after
+    FROM clean.inventory_daily GROUP BY 1
+)
+SELECT r.product_name,
+       round(COALESCE(rev_before, 0), 0)                              AS revenue_4w_before,
+       round(COALESCE(rev_after, 0), 0)                               AS revenue_4w_after,
+       round(COALESCE(rev_after, 0) - COALESCE(rev_before, 0), 0)     AS change,
+       round(100 * (COALESCE(rev_after, 0) - COALESCE(rev_before, 0))
+             / sum(COALESCE(rev_after, 0) - COALESCE(rev_before, 0)) OVER (), 1) AS share_of_category_change_pct,
+       s.days_out_of_stock_after
+FROM r JOIN s USING (product_id)
+WHERE COALESCE(rev_before, 0) + COALESCE(rev_after, 0) > 0
+ORDER BY change
+LIMIT 8;
+
+-- Q10.8 | The top SKU's stock story: when did it run out, and was anything reordered?
+WITH p AS (
+    SELECT product_id FROM clean.products WHERE product_name = 'Fitness Band O174'
+),
+inv AS (
+    SELECT i.* FROM clean.inventory_daily i JOIN p USING (product_id)
+)
+SELECT (SELECT max(snapshot_date) FROM inv WHERE units_received > 0)                       AS last_delivery,
+       (SELECT min(snapshot_date) FROM inv WHERE stock_on_hand = 0 AND snapshot_date >= '2024-12-01') AS sold_out_on,
+       (SELECT round(avg(units_sold), 1) FROM inv
+         WHERE snapshot_date BETWEEN '2024-12-01' AND '2024-12-31')                         AS units_per_day_in_december,
+       (SELECT count(*) FROM inv WHERE snapshot_date >= '2025-01-01' AND stock_on_hand = 0)  AS days_at_zero_in_2025,
+       (SELECT COALESCE(sum(units_received), 0) FROM inv WHERE snapshot_date >= '2025-01-01') AS units_received_in_2025,
+       (SELECT round(sum(net_revenue), 0) FROM clean.sales_lines JOIN p USING (product_id)
+         WHERE order_date BETWEEN '2024-01-01' AND '2024-12-31')                            AS revenue_2024;

@@ -1,0 +1,114 @@
+table DataQualityRules
+	lineageTag: 36968b50-4096-5847-b66a-6ad1494c72b6
+
+	column stage
+		dataType: string
+		lineageTag: 65de80d4-90e1-52b4-94f0-a336a85f3e22
+		summarizeBy: none
+		sourceColumn: stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column rule_id
+		dataType: string
+		lineageTag: 35bbf81f-e242-5d54-8c8d-30e54d5e65b5
+		summarizeBy: none
+		sourceColumn: rule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimension
+		dataType: string
+		lineageTag: 2df1ce47-a5be-52c0-9b41-3aa07001f38d
+		summarizeBy: none
+		sourceColumn: dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column table
+		dataType: string
+		lineageTag: d43b080d-1750-5238-b2e3-170af39a8613
+		summarizeBy: none
+		sourceColumn: table
+
+		annotation SummarizationSetBy = Automatic
+
+	column column
+		dataType: string
+		lineageTag: 9c307b1d-6b20-534d-bb4d-0eac60c7b44f
+		summarizeBy: none
+		sourceColumn: column
+
+		annotation SummarizationSetBy = Automatic
+
+	column rule
+		dataType: string
+		lineageTag: 13fe9f1d-227c-5eba-a478-632b4fa142ba
+		summarizeBy: none
+		sourceColumn: rule
+
+		annotation SummarizationSetBy = Automatic
+
+	column records_checked
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4de42042-b111-51e3-ba95-081db0aca26d
+		summarizeBy: sum
+		sourceColumn: records_checked
+
+		annotation SummarizationSetBy = Automatic
+
+	column failures
+		dataType: int64
+		formatString: #,0
+		lineageTag: 2bb732b0-3420-5c70-bb25-dff3b207ef55
+		summarizeBy: sum
+		sourceColumn: failures
+
+		annotation SummarizationSetBy = Automatic
+
+	column failure_rate_pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 9cd64210-1143-5e2b-8191-5414596bd6f0
+		summarizeBy: none
+		sourceColumn: failure_rate_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column threshold_pct
+		dataType: double
+		formatString: 0
+		lineageTag: 5189cb22-2296-503c-ba3c-086b9dcf7472
+		summarizeBy: none
+		sourceColumn: threshold_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column critical
+		dataType: boolean
+		lineageTag: 89802569-3c6b-5ce6-a692-f4dc1ec2f650
+		summarizeBy: none
+		sourceColumn: critical
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 4d509117-612b-5fa0-b381-ecf471ced23a
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DataQualityRules = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "DataQualityRules.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"stage", type text}, {"rule_id", type text}, {"dimension", type text}, {"table", type text}, {"column", type text}, {"rule", type text}, {"records_checked", Int64.Type}, {"failures", Int64.Type}, {"failure_rate_pct", type number}, {"threshold_pct", type number}, {"critical", type logical}, {"status", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

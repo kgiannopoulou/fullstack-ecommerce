@@ -1,0 +1,16 @@
+pandas>=2.2
+numpy>=1.26
+scipy>=1.13
+statsmodels>=0.14
+psycopg[binary]>=3.2
+matplotlib>=3.8
+reportlab>=4.0
+pillow>=10.0
+openpyxl>=3.1
+pytest>=8
+# notebooks (python src/pipeline.py --notebooks)
+nbformat>=5.9
+nbconvert>=7.0
+ipykernel>=6.0
+# Excel workbook build (Windows with Microsoft Excel only)
+pywin32>=306; sys_platform == "win32"

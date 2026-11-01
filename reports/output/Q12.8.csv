@@ -1,0 +1,6 @@
+discount_code,orders,units_per_order,avg_basket_before_discount,avg_net_order_value,avg_gross_profit_per_order,gross_margin_pct
+0%,108668,3.17,170.22,164.98,67.79,41.1
+10%,12824,3.20,171.84,150.09,52.06,34.7
+15%,8411,3.19,170.92,141.12,43.58,30.9
+20%,4820,3.14,168.68,130.63,34.54,26.4
+25%,2199,3.15,170.84,123.72,26.47,21.4

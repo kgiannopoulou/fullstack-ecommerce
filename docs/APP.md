@@ -6,7 +6,7 @@ Next.js storefront and admin panel, Express/TypeScript API, PostgreSQL and Strip
 
 ## What the tests prove
 
-[`backend/test/`](../backend/test/) holds 62 tests that run against a real database through the real HTTP stack, with a fake Stripe that uses Stripe's own webhook signing:
+[`app/backend/test/`](../app/backend/test/) holds 62 tests that run against a real database through the real HTTP stack, with a fake Stripe that uses Stripe's own webhook signing:
 
 | Guarantee | Test |
 |---|---|
@@ -49,7 +49,7 @@ Prerequisites: Node.js 20+, Docker, and a [Stripe](https://dashboard.stripe.com/
 docker compose up -d
 
 # 2. Backend
-cd backend
+cd app/backend
 cp .env.example .env      # fill in STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, JWT_SECRET
 npm install
 npm run migrate
@@ -57,14 +57,14 @@ npm run db:seed            # sample catalog + demo accounts
 npm run dev                # http://localhost:4000
 
 # 3. Frontend (separate terminal)
-cd frontend
+cd app/frontend
 cp .env.local.example .env.local
 npm install
 npm run dev                # http://localhost:3000
 
 # 4. Stripe webhooks (separate terminal)
 stripe listen --forward-to localhost:4000/api/webhooks/stripe
-# copy the whsec_... it prints into backend/.env as STRIPE_WEBHOOK_SECRET
+# copy the whsec_... it prints into app/backend/.env as STRIPE_WEBHOOK_SECRET
 ```
 
 Verification and password-reset emails land in Mailpit at http://localhost:8026.
@@ -83,7 +83,7 @@ Pay with `4242 4242 4242 4242`, any future expiry and any CVC. "Limited Edition 
 ### Tests
 
 ```sh
-cd backend
+cd app/backend
 npm test        # needs the postgres-test container from docker compose (port 5437)
 ```
 
@@ -91,7 +91,7 @@ The test database is rebuilt from the real migrations on every run. Set `TEST_DA
 
 ## Orders, stock and payments
 
-All order/stock transitions live in [`backend/src/features/checkout/orderLifecycle.ts`](../backend/src/features/checkout/orderLifecycle.ts):
+All order/stock transitions live in [`app/backend/src/features/checkout/orderLifecycle.ts`](../app/backend/src/features/checkout/orderLifecycle.ts):
 
 - **Stock is reserved at checkout**, not when payment arrives. Creating the checkout session decrements stock atomically (`... WHERE stock >= qty`) in the same transaction as the order, so two customers can't both pay for the last unit. The second gets a "not enough stock" error before reaching Stripe. Rows are locked in product-id order, so overlapping carts can't deadlock.
 - **Quantities are merged per product** before validation, so the same product on several cart lines can't exceed stock.
@@ -120,8 +120,8 @@ UPDATE users SET role = 'admin' WHERE email = 'you@example.com';
 
 ## Project layout
 
-- `backend/`: Express API with raw `pg` and hand-written SQL migrations ([`backend/src/db/migrations`](../backend/src/db/migrations)). `src/app.ts` builds the app (used by the tests), and `src/index.ts` starts it.
-- [`backend/test/`](../backend/test/): Vitest + supertest suite against Postgres
-- `frontend/`: Next.js App Router storefront and admin panel
+- `app/backend/`: Express API with raw `pg` and hand-written SQL migrations ([`app/backend/src/db/migrations`](../app/backend/src/db/migrations)). `src/app.ts` builds the app (used by the tests), and `src/index.ts` starts it.
+- [`app/backend/test/`](../app/backend/test/): Vitest + supertest suite against Postgres
+- `app/frontend/`: Next.js App Router storefront and admin panel
 - `docs/`: API reference and deployment guide
 - `docker-compose.yml`: local Postgres, test Postgres and Mailpit

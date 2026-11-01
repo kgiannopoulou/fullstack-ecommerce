@@ -1,0 +1,7 @@
+alert_id,severity,icon,area,alert,value,as_of
+1,positive,↑,Profitability,"Gross margin 39.0% in 2025-Q4: +0.5pp vs 2024-Q4 (-0.8pp vs 2025-Q3, the usual Q4 discount dip)",0.51,2025-12-31
+2,warning,⚠,Inventory,"9 A-class products at stockout risk in the next 30 days (EUR 40,518 of revenue at risk)",9.0,2025-12-31
+3,positive,↑,Operations,Refund rate 4.3% -> 3.6% (2024-Q4 vs 2025-Q4),-0.73,2025-12-31
+4,positive,↑,Customers,Returning-customer revenue up 95% year on year (2025-Q4),94.76,2025-12-31
+5,warning,⚠,Profitability,"72 high-revenue, low-margin products: 26% of revenue but 18% of gross profit",7.4,2025-12-31
+6,info,ℹ,Monitoring,0 unexplained anomalies in the last 30 days,0.0,2025-12-31

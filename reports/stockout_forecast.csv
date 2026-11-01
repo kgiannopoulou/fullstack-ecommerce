@@ -1,0 +1,342 @@
+product_id,sku,product_name,category,abc_class,stock,forecast_30d,difference,days_cover,lead_time_days,risk,reorder_qty,expected_lost_units,avg_net_price,revenue_at_risk_30d,recommended_action
+177,SKU-00177,Capture Card Pro X359,Gaming,A,20,115.0,-95.0,5.2,14,STOCKOUT BEFORE RESTOCK,176.0,34.0,78.82547859322179,7494.0,Order 176 units today and expedite (~34 units of demand will go unserved)
+233,SKU-00233,Ceramic Coffee Mug X L495,Home & Kitchen,A,18,50.0,-32.0,10.8,14,STOCKOUT BEFORE RESTOCK,67.0,5.0,79.59593942314065,2539.0,Order 67 units today and expedite (~5 units of demand will go unserved)
+210,SKU-00210,Coffee Grinder Lite G544,Home & Kitchen,B,44,195.0,-151.0,6.8,10,STOCKOUT BEFORE RESTOCK,262.0,21.0,14.500573366057841,2189.0,Order 262 units today and expedite (~21 units of demand will go unserved)
+89,SKU-00089,Wireless Mouse X P791,Computer Accessories,B,0,113.0,-113.0,0.0,10,STOCKOUT BEFORE RESTOCK,178.0,38.0,18.09510724710985,2051.0,Order 178 units today and expedite (~38 units of demand will go unserved)
+180,SKU-00180,Gaming Mouse Pad Lite S470,Gaming,B,4,15.0,-11.0,7.8,9,STOCKOUT BEFORE RESTOCK,20.0,1.0,155.28780487804877,1761.0,Order 20 units today and expedite (~1 units of demand will go unserved)
+12,SKU-00012,Bluetooth Speaker Lite Z507,Audio,A,0,8.0,-8.0,0.0,8,STOCKOUT BEFORE RESTOCK,13.0,2.0,148.79,1257.0,Order 13 units today and expedite (~2 units of demand will go unserved)
+191,SKU-00191,Game Controller Plus R877,Gaming,A,3,9.0,-6.0,9.8,10,STOCKOUT BEFORE RESTOCK,12.0,0.0,143.2723625511699,885.0,Order 12 units today and expedite
+5,SKU-00005,Studio Headphones C248,Audio,B,5,16.0,-11.0,9.7,11,STOCKOUT BEFORE RESTOCK,20.0,1.0,77.079463190823,810.0,Order 20 units today and expedite (~1 units of demand will go unserved)
+267,SKU-00267,Laptop Sleeve H137,Bags & Travel,C,2,10.0,-8.0,6.1,12,STOCKOUT BEFORE RESTOCK,14.0,2.0,70.76642857142858,551.0,Order 14 units today and expedite (~2 units of demand will go unserved)
+147,SKU-00147,Security Camera Pro X359,Smart Home,C,0,18.0,-18.0,0.0,6,STOCKOUT BEFORE RESTOCK,27.0,4.0,27.565892857142856,507.0,Order 27 units today and expedite (~4 units of demand will go unserved)
+139,SKU-00139,Phone Charger Go D865,Phone Accessories,C,20,54.0,-34.0,11.1,12,STOCKOUT BEFORE RESTOCK,69.0,2.0,14.706748973030047,501.0,Order 69 units today and expedite (~2 units of demand will go unserved)
+55,SKU-00055,Laptop Stand Pro L433,Computer Accessories,C,11,29.0,-18.0,11.3,14,STOCKOUT BEFORE RESTOCK,39.0,3.0,21.943708295606836,401.0,Order 39 units today and expedite (~3 units of demand will go unserved)
+96,SKU-00096,Power Bank O174,Phone Accessories,C,3,17.0,-14.0,5.2,10,STOCKOUT BEFORE RESTOCK,25.0,3.0,11.582,166.0,Order 25 units today and expedite (~3 units of demand will go unserved)
+297,SKU-00297,Yoga Mat Pro C248,Fitness,C,0,2.0,-2.0,0.0,14,STOCKOUT BEFORE RESTOCK,4.0,1.0,79.03,143.0,Order 4 units today and expedite (~1 units of demand will go unserved)
+294,SKU-00294,Resistance Bands H137,Fitness,C,0,7.0,-7.0,0.0,6,STOCKOUT BEFORE RESTOCK,10.0,1.0,13.334583333333333,90.0,Order 10 units today and expedite (~1 units of demand will go unserved)
+314,SKU-00314,Resistance Bands Plus R877,Fitness,C,0,1.0,-1.0,0.0,7,STOCKOUT BEFORE RESTOCK,2.0,0.0,13.51,18.0,Order 2 units today and expedite
+119,SKU-00119,Phone Charger Plus T125,Phone Accessories,A,491,1177.0,-686.0,12.5,6,REORDER NOW,1197.0,0.0,24.318553514274633,16694.0,Order 1197 units today
+62,SKU-00062,Webcam Lite I692,Computer Accessories,A,155,358.0,-203.0,13.0,8,REORDER NOW,382.0,0.0,20.60621963803187,4176.0,Order 382 units today
+75,SKU-00075,Monitor Arm Mini V273,Computer Accessories,A,82,195.0,-113.0,12.6,10,REORDER NOW,223.0,0.0,26.86216682748057,3022.0,Order 223 units today
+286,SKU-00286,Canvas Backpack Plus K840,Bags & Travel,B,60,141.0,-81.0,12.8,6,REORDER NOW,143.0,0.0,34.388924794200925,2786.0,Order 143 units today
+290,SKU-00290,Canvas Backpack 2 M988,Bags & Travel,A,39,90.0,-51.0,13.1,8,REORDER NOW,96.0,0.0,47.438247292327254,2398.0,Order 96 units today
+4,SKU-00004,Soundbar V211,Audio,A,32,57.0,-25.0,16.7,13,REORDER NOW,64.0,0.0,80.80440211341215,2053.0,Order 64 units today
+241,SKU-00241,Cable Organizer Pro X359,Office,B,34,68.0,-34.0,14.9,9,REORDER NOW,71.0,0.0,33.85181810311938,1160.0,Order 71 units today
+67,SKU-00067,Laptop Stand Max R877,Computer Accessories,B,41,76.0,-35.0,16.2,10,REORDER NOW,79.0,0.0,29.648122829147137,1041.0,Order 79 units today
+292,SKU-00292,Travel Organizer 2 A162,Bags & Travel,B,15,34.0,-19.0,13.1,9,REORDER NOW,38.0,0.0,45.85637081656331,892.0,Order 38 units today
+203,SKU-00203,Ceramic Coffee Mug Pro J285,Home & Kitchen,B,34,61.0,-27.0,16.6,11,REORDER NOW,65.0,0.0,31.59907488986784,863.0,Order 65 units today
+134,SKU-00134,Phone Charger Air U680,Phone Accessories,B,41,79.0,-38.0,15.6,9,REORDER NOW,81.0,0.0,18.731217279447794,711.0,Order 81 units today
+11,SKU-00011,Wireless Headphones Lite S470,Audio,B,9,19.0,-10.0,13.9,7,REORDER NOW,20.0,0.0,68.01623376623377,707.0,Order 20 units today
+156,SKU-00156,Smart Bulb Max I692,Smart Home,B,6,13.0,-7.0,13.8,11,REORDER NOW,15.0,0.0,81.265,576.0,Order 15 units today
+53,SKU-00053,Wireless Mouse Pro X359,Computer Accessories,B,11,27.0,-16.0,12.1,6,REORDER NOW,28.0,0.0,31.805892945898883,515.0,Order 28 units today
+84,SKU-00084,USB-C Hub 2 G606,Computer Accessories,B,14,22.0,-8.0,19.3,14,REORDER NOW,23.0,0.0,64.9705625,504.0,Order 23 units today
+192,SKU-00192,Gaming Mouse Pad Plus Y914,Gaming,B,8,13.0,-5.0,18.2,12,REORDER NOW,14.0,0.0,95.98536518440993,496.0,Order 14 units today
+247,SKU-00247,Desk Mat Lite N581,Office,C,6,29.0,-23.0,6.1,6,REORDER NOW,37.0,0.0,19.87520884083528,467.0,Order 37 units today
+176,SKU-00176,Gaming Mouse Pad Pro Q322,Gaming,B,10,16.0,-6.0,18.8,12,REORDER NOW,17.0,0.0,74.01522968120223,441.0,Order 17 units today
+137,SKU-00137,Car Mount Air P791,Phone Accessories,C,13,31.0,-18.0,12.6,11,REORDER NOW,37.0,0.0,23.893014480977392,431.0,Order 37 units today
+114,SKU-00114,Phone Charger Mini K840,Phone Accessories,B,18,35.0,-17.0,15.2,12,REORDER NOW,40.0,0.0,24.210153846153847,423.0,Order 40 units today
+253,SKU-00253,Pen Set Max D803,Office,C,7,19.0,-12.0,11.1,11,REORDER NOW,24.0,0.0,32.59027093029623,391.0,Order 24 units today
+361,SKU-00361,Poster Set Pro X359,Books & Prints,C,15,25.0,-10.0,17.8,12,REORDER NOW,27.0,0.0,36.850945945945945,378.0,Order 27 units today
+341,SKU-00341,Watch Strap Lite X359,Wearables,B,8,14.0,-6.0,17.2,13,REORDER NOW,16.0,0.0,51.07814075877235,303.0,Order 16 units today
+354,SKU-00354,Art Print A100,Books & Prints,C,10,17.0,-7.0,17.8,11,REORDER NOW,17.0,0.0,31.441020408163265,214.0,Order 17 units today
+262,SKU-00262,Desk Mat Plus O236,Office,C,5,17.0,-12.0,8.8,8,REORDER NOW,21.0,0.0,12.446615667275452,149.0,Order 21 units today
+357,SKU-00357,Poster Set V211,Books & Prints,C,4,7.0,-3.0,17.4,12,REORDER NOW,8.0,0.0,35.39,102.0,Order 8 units today
+264,SKU-00264,Notebook Set 2 C310,Office,C,5,10.0,-5.0,14.9,9,REORDER NOW,11.0,0.0,19.965172413793102,102.0,Order 11 units today
+149,SKU-00149,Motion Sensor Pro L433,Smart Home,C,4,6.0,-2.0,19.6,13,REORDER NOW,7.0,0.0,46.83375,100.0,Order 7 units today
+3,SKU-00003,Earbuds O174,Audio,C,2,4.0,-2.0,14.6,10,REORDER NOW,5.0,0.0,28.29125,59.0,Order 5 units today
+359,SKU-00359,Photo Book Pro J285,Books & Prints,C,4,10.0,-6.0,11.7,8,REORDER NOW,12.0,0.0,5.732666666666667,36.0,Order 12 units today
+263,SKU-00263,Pen Set Plus V273,Office,C,2,3.0,-1.0,19.5,13,REORDER NOW,4.0,0.0,7.077142857142857,8.0,Order 4 units today
+38,SKU-00038,Earbuds X Z569,Audio,C,87,15.0,72.0,176.9,14,OVERSTOCK,0.0,0.0,44.46748475364007,0.0,Pause reorders; review price or promote
+90,SKU-00090,USB-C Hub X W828,Computer Accessories,B,155,26.0,129.0,182.2,6,OVERSTOCK,0.0,0.0,95.99277237213235,0.0,Pause reorders; review price or promote
+93,SKU-00093,Monitor Arm X R939,Computer Accessories,C,105,24.0,81.0,129.8,14,OVERSTOCK,0.0,0.0,30.305416666666666,0.0,Pause reorders; review price or promote
+125,SKU-00125,Phone Case 2 J347,Phone Accessories,C,122,18.0,104.0,201.6,14,OVERSTOCK,0.0,0.0,8.930746266776172,0.0,Pause reorders; review price or promote
+144,SKU-00144,Motion Sensor C248,Smart Home,A,210,46.0,164.0,135.7,7,OVERSTOCK,0.0,0.0,111.3996,0.0,Pause reorders; review price or promote
+146,SKU-00146,Smart Bulb Pro Q322,Smart Home,B,5,1.0,4.0,177.6,9,OVERSTOCK,0.0,0.0,95.99,0.0,Pause reorders; review price or promote
+161,SKU-00161,Smart Bulb Mini R877,Smart Home,A,375,38.0,337.0,296.1,7,OVERSTOCK,0.0,0.0,147.2888368810115,0.0,Pause reorders; review price or promote
+164,SKU-00164,Motion Sensor Mini M988,Smart Home,B,163,19.0,144.0,257.4,6,OVERSTOCK,0.0,0.0,90.35266577782396,0.0,Pause reorders; review price or promote
+168,SKU-00168,Video Doorbell Plus O236,Smart Home,C,6,1.0,5.0,142.1,11,OVERSTOCK,0.0,0.0,86.748,0.0,Pause reorders; review price or promote
+170,SKU-00170,Gaming Headset A100,Gaming,B,500,47.0,453.0,318.5,13,OVERSTOCK,0.0,0.0,46.102152082088594,0.0,Pause reorders; review price or promote
+193,SKU-00193,Capture Card Plus F951,Gaming,A,129,18.0,111.0,215.5,12,OVERSTOCK,0.0,0.0,266.155,0.0,Pause reorders; review price or promote
+197,SKU-00197,Capture Card 2 H199,Gaming,C,231,20.0,211.0,347.3,7,OVERSTOCK,0.0,0.0,28.727390836279323,0.0,Pause reorders; review price or promote
+216,SKU-00216,Kitchen Scale Max W766,Home & Kitchen,C,75,9.0,66.0,241.8,7,OVERSTOCK,0.0,0.0,27.199656246932967,0.0,Pause reorders; review price or promote
+220,SKU-00220,Coffee Grinder Mini Y914,Home & Kitchen,C,24,1.0,23.0,567.5,9,OVERSTOCK,0.0,0.0,44.15,0.0,Pause reorders; review price or promote
+236,SKU-00236,Cable Organizer O174,Office,C,333,11.0,322.0,951.2,7,OVERSTOCK,0.0,0.0,20.746739130434783,0.0,Pause reorders; review price or promote
+252,SKU-00252,Desk Mat Max W766,Office,C,104,8.0,96.0,386.2,10,OVERSTOCK,0.0,0.0,25.287297297297297,0.0,Pause reorders; review price or promote
+254,SKU-00254,Notebook Set Mini K840,Office,C,70,1.0,69.0,1733.0,12,OVERSTOCK,0.0,0.0,14.55,0.0,Pause reorders; review price or promote
+266,SKU-00266,Canvas Backpack A100,Bags & Travel,B,94,21.0,73.0,133.8,12,OVERSTOCK,0.0,0.0,64.69285714285714,0.0,Pause reorders; review price or promote
+270,SKU-00270,Canvas Backpack Pro C248,Bags & Travel,C,16,2.0,14.0,236.9,14,OVERSTOCK,0.0,0.0,88.34,0.0,Pause reorders; review price or promote
+305,SKU-00305,Yoga Mat Max G544,Fitness,B,157,38.0,119.0,124.7,8,OVERSTOCK,0.0,0.0,90.75493900772966,0.0,Pause reorders; review price or promote
+308,SKU-00308,Foam Roller Max B655,Fitness,C,43,9.0,34.0,146.3,12,OVERSTOCK,0.0,0.0,24.890103294746215,0.0,Pause reorders; review price or promote
+310,SKU-00310,Resistance Bands Mini P729,Fitness,B,171,29.0,142.0,179.7,14,OVERSTOCK,0.0,0.0,44.39490148658827,0.0,Pause reorders; review price or promote
+327,SKU-00327,Action Camera Lite E396,Cameras,B,157,10.0,147.0,489.4,11,OVERSTOCK,0.0,0.0,137.49116922017652,0.0,Pause reorders; review price or promote
+330,SKU-00330,Ring Light Lite Z507,Cameras,C,38,5.0,33.0,227.0,8,OVERSTOCK,0.0,0.0,79.30421052631579,0.0,Pause reorders; review price or promote
+333,SKU-00333,Camera Tripod Max U618,Cameras,B,25,2.0,23.0,448.1,10,OVERSTOCK,0.0,0.0,265.8722222222222,0.0,Pause reorders; review price or promote
+337,SKU-00337,Smartwatch Pro V211,Wearables,A,71,13.0,58.0,162.3,10,OVERSTOCK,0.0,0.0,263.97858974358974,0.0,Pause reorders; review price or promote
+346,SKU-00346,Smartwatch Mini G544,Wearables,B,53,6.0,47.0,258.1,11,OVERSTOCK,0.0,0.0,175.13676470588234,0.0,Pause reorders; review price or promote
+352,SKU-00352,Smartwatch 2 W766,Wearables,B,50,5.0,45.0,280.0,6,OVERSTOCK,0.0,0.0,213.07888888888888,0.0,Pause reorders; review price or promote
+367,SKU-00367,Photo Book Max N581,Books & Prints,C,111,12.0,99.0,284.6,14,OVERSTOCK,0.0,0.0,11.303225806451612,0.0,Pause reorders; review price or promote
+371,SKU-00371,Photo Book Mini P729,Books & Prints,C,32,5.0,27.0,205.1,13,OVERSTOCK,0.0,0.0,18.63705882352941,0.0,Pause reorders; review price or promote
+71,SKU-00071,Wireless Mouse Mini T125,Computer Accessories,A,342,630.0,-288.0,16.3,9,OK,624.0,0.0,121.06025377584245,34858.0,No action
+18,SKU-00018,Earbuds Max P729,Audio,A,141,210.0,-69.0,20.2,9,OK,181.0,0.0,102.17411067066296,7033.0,No action
+130,SKU-00130,Phone Case X S532,Phone Accessories,A,257,349.0,-92.0,22.1,11,OK,302.0,0.0,51.60037481151362,4763.0,No action
+321,SKU-00321,Camera Tripod O174,Cameras,A,47,64.0,-17.0,22.0,6,OK,45.0,0.0,208.19304154997872,3544.0,No action
+331,SKU-00331,Action Camera Max G544,Cameras,A,11,16.0,-5.0,20.2,9,OK,15.0,0.0,535.6387165216803,2870.0,No action
+202,SKU-00202,Tea Kettle C248,Home & Kitchen,A,315,392.0,-77.0,24.1,13,OK,338.0,0.0,36.905479663041135,2827.0,No action
+52,SKU-00052,Mechanical Keyboard Pro Q322,Computer Accessories,A,465,556.0,-91.0,25.1,10,OK,407.0,0.0,30.91505345771366,2823.0,No action
+26,SKU-00026,Wireless Headphones Plus T125,Audio,A,46,69.0,-23.0,20.1,9,OK,60.0,0.0,105.19976877300465,2383.0,No action
+261,SKU-00261,Cable Organizer Plus H199,Office,A,67,96.0,-29.0,21.0,7,OK,74.0,0.0,72.23558427095034,2076.0,No action
+153,SKU-00153,Video Doorbell Lite N581,Smart Home,A,47,78.0,-31.0,18.1,7,OK,68.0,0.0,63.45401012554194,1974.0,No action
+6,SKU-00006,Wireless Headphones Pro J285,Audio,A,49,65.0,-16.0,22.6,13,OK,60.0,0.0,121.59249694457574,1965.0,No action
+152,SKU-00152,Security Camera Lite G544,Smart Home,A,585,626.0,-41.0,28.0,12,OK,438.0,0.0,45.49310910553952,1860.0,No action
+10,SKU-00010,Studio Headphones Pro L433,Audio,A,47,62.0,-15.0,22.9,13,OK,56.0,0.0,119.16641593834015,1748.0,No action
+9,SKU-00009,Soundbar Pro E396,Audio,A,21,39.0,-18.0,16.1,9,OK,40.0,0.0,91.35464788732395,1660.0,No action
+37,SKU-00037,Bluetooth Speaker X S532,Audio,A,55,95.0,-40.0,17.3,7,OK,85.0,0.0,37.21842130604472,1504.0,No action
+181,SKU-00181,Capture Card Lite Z507,Gaming,A,56,70.0,-14.0,23.9,9,OK,52.0,0.0,104.4711291748542,1488.0,No action
+86,SKU-00086,Webcam 2 U680,Computer Accessories,A,184,226.0,-42.0,24.4,10,OK,171.0,0.0,34.78708466822661,1471.0,No action
+230,SKU-00230,Coffee Grinder 2 Q384,Home & Kitchen,B,32,53.0,-21.0,18.2,9,OK,50.0,0.0,49.437440998403915,1031.0,No action
+182,SKU-00182,Gaming Headset Max G544,Gaming,B,21,29.0,-8.0,21.7,14,OK,29.0,0.0,108.22214285714286,863.0,No action
+196,SKU-00196,Gaming Mouse Pad 2 A162,Gaming,B,8,14.0,-6.0,17.7,6,OK,12.0,0.0,143.91857142857143,801.0,No action
+74,SKU-00074,Webcam Mini O236,Computer Accessories,B,53,82.0,-29.0,19.4,7,OK,68.0,0.0,22.996154905222184,667.0,No action
+173,SKU-00173,Capture Card V211,Gaming,B,88,110.0,-22.0,24.0,7,OK,74.0,0.0,28.846309613952105,634.0,No action
+362,SKU-00362,Art Print Lite E396,Books & Prints,A,508,562.0,-54.0,27.1,7,OK,317.0,0.0,11.607149918857047,627.0,No action
+99,SKU-00099,Phone Charger Pro J285,Phone Accessories,B,58,106.0,-48.0,16.4,6,OK,95.0,0.0,11.96169065325288,579.0,No action
+280,SKU-00280,Travel Organizer Max U618,Bags & Travel,B,33,45.0,-12.0,21.8,14,OK,45.0,0.0,41.38787002272496,513.0,No action
+188,SKU-00188,Gaming Mouse Pad Mini W766,Gaming,B,9,12.0,-3.0,22.3,13,OK,12.0,0.0,161.86352941176472,503.0,No action
+279,SKU-00279,Laptop Sleeve Max N581,Bags & Travel,B,23,32.0,-9.0,21.3,12,OK,30.0,0.0,52.35270952359996,493.0,No action
+66,SKU-00066,USB-C Hub Max K840,Computer Accessories,B,22,40.0,-18.0,16.6,8,OK,38.0,0.0,26.55784514881865,471.0,No action
+110,SKU-00110,Phone Case Max I692,Phone Accessories,B,36,61.0,-25.0,17.8,7,OK,54.0,0.0,17.90396368187829,444.0,No action
+116,SKU-00116,Power Bank Mini Y914,Phone Accessories,B,19,25.0,-6.0,22.9,8,OK,19.0,0.0,72.29424988445517,429.0,No action
+282,SKU-00282,Canvas Backpack Mini I692,Bags & Travel,B,44,50.0,-6.0,26.3,6,OK,29.0,0.0,65.4728701221434,409.0,No action
+323,SKU-00323,Action Camera Pro C248,Cameras,B,5,8.0,-3.0,18.8,11,OK,8.0,0.0,132.254795079765,391.0,No action
+51,SKU-00051,Monitor Arm J285,Computer Accessories,A,95,103.0,-8.0,27.6,12,OK,74.0,0.0,46.11493623586703,384.0,No action
+199,SKU-00199,Water Bottle H137,Home & Kitchen,B,18,28.0,-10.0,19.1,11,OK,28.0,0.0,36.96607594936709,382.0,No action
+28,SKU-00028,Earbuds Plus H199,Audio,B,48,59.0,-11.0,24.6,9,OK,42.0,0.0,35.54970839591449,376.0,No action
+215,SKU-00215,Coffee Grinder Max P729,Home & Kitchen,B,49,70.0,-21.0,21.1,8,OK,56.0,0.0,17.82527912560127,370.0,No action
+111,SKU-00111,Power Bank Max P729,Phone Accessories,B,35,48.0,-13.0,21.8,12,OK,44.0,0.0,27.383918601808787,360.0,No action
+72,SKU-00072,USB-C Hub Mini A162,Computer Accessories,B,29,36.0,-7.0,24.2,13,OK,31.0,0.0,50.292276422764225,351.0,No action
+82,SKU-00082,Mechanical Keyboard 2 S532,Computer Accessories,B,38,54.0,-16.0,21.1,11,OK,49.0,0.0,20.644221513627333,332.0,No action
+348,SKU-00348,Fitness Band Mini U618,Wearables,A,26,28.0,-2.0,28.0,11,OK,19.0,0.0,173.49661948182953,322.0,No action
+127,SKU-00127,Car Mount 2 X421,Phone Accessories,B,47,71.0,-24.0,19.8,6,OK,56.0,0.0,12.185737327536362,297.0,No action
+135,SKU-00135,Phone Case Air B717,Phone Accessories,C,17,29.0,-12.0,17.8,10,OK,28.0,0.0,24.355154639175257,285.0,No action
+54,SKU-00054,USB-C Hub Pro E396,Computer Accessories,B,38,50.0,-12.0,22.7,6,OK,34.0,0.0,22.511015398780778,275.0,No action
+231,SKU-00231,Kitchen Scale 2 X421,Home & Kitchen,B,19,24.0,-5.0,24.1,8,OK,17.0,0.0,52.69158536585366,247.0,No action
+255,SKU-00255,Desk Lamp Mini R877,Office,C,31,48.0,-17.0,19.5,10,OK,44.0,0.0,14.073536850278696,235.0,No action
+122,SKU-00122,Car Mount Plus O236,Phone Accessories,C,25,43.0,-18.0,17.4,10,OK,43.0,0.0,12.255402015870485,221.0,No action
+214,SKU-00214,Water Bottle Max I692,Home & Kitchen,B,15,19.0,-4.0,24.2,6,OK,12.0,0.0,59.47582278481013,215.0,No action
+101,SKU-00101,Power Bank Pro X359,Phone Accessories,C,10,20.0,-10.0,15.2,8,OK,20.0,0.0,20.473675342021078,200.0,No action
+303,SKU-00303,Fitness Tracker Lite S470,Fitness,C,8,13.0,-5.0,18.1,6,OK,11.0,0.0,37.520867866433086,197.0,No action
+190,SKU-00190,Gaming Headset Plus K840,Gaming,B,9,11.0,-2.0,25.1,10,OK,8.0,0.0,105.66303356704942,188.0,No action
+148,SKU-00148,Video Doorbell Pro E396,Smart Home,B,38,41.0,-3.0,27.8,8,OK,24.0,0.0,62.58387165690774,185.0,No action
+245,SKU-00245,Desk Lamp Lite Z507,Office,C,18,23.0,-5.0,23.5,8,OK,17.0,0.0,33.49567415730337,168.0,No action
+239,SKU-00239,Notebook Set Pro J285,Office,C,135,155.0,-20.0,26.2,11,OK,113.0,0.0,8.440719428460861,166.0,No action
+278,SKU-00278,Canvas Backpack Max G544,Bags & Travel,C,27,35.0,-8.0,23.2,9,OK,27.0,0.0,21.15494688274999,166.0,No action
+60,SKU-00060,USB-C Hub Lite U618,Computer Accessories,C,22,26.0,-4.0,25.4,7,OK,17.0,0.0,41.517087378640774,163.0,No action
+242,SKU-00242,Desk Mat Pro E396,Office,C,12,19.0,-7.0,18.9,6,OK,16.0,0.0,22.01037377311979,156.0,No action
+157,SKU-00157,Security Camera Max P729,Smart Home,B,13,16.0,-3.0,24.3,10,OK,13.0,0.0,46.925052078731696,143.0,No action
+338,SKU-00338,Watch Strap Pro C248,Wearables,B,8,9.0,-1.0,27.2,7,OK,5.0,0.0,152.29755102040815,128.0,No action
+208,SKU-00208,Ceramic Coffee Mug Lite S470,Home & Kitchen,C,22,27.0,-5.0,24.4,14,OK,25.0,0.0,25.057393351133545,127.0,No action
+23,SKU-00023,Earbuds Mini Y914,Audio,B,47,49.0,-2.0,28.8,10,OK,30.0,0.0,51.160530375475865,101.0,No action
+205,SKU-00205,Coffee Grinder Pro X359,Home & Kitchen,C,11,16.0,-5.0,20.5,9,OK,14.0,0.0,18.918247657634844,96.0,No action
+32,SKU-00032,Bluetooth Speaker 2 J347,Audio,B,34,37.0,-3.0,27.7,12,OK,27.0,0.0,30.455616018757315,87.0,No action
+42,SKU-00042,Bluetooth Speaker Air B717,Audio,B,26,27.0,-1.0,29.1,14,OK,20.0,0.0,100.31009646343924,76.0,No action
+150,SKU-00150,Smart Plug Lite S470,Smart Home,C,11,13.0,-2.0,26.1,9,OK,9.0,0.0,45.13285714285714,75.0,No action
+94,SKU-00094,Phone Charger A100,Phone Accessories,B,5,8.0,-3.0,19.4,8,OK,7.0,0.0,24.258095238095237,66.0,No action
+276,SKU-00276,Travel Organizer Lite S470,Bags & Travel,C,11,13.0,-2.0,25.4,13,OK,11.0,0.0,32.75125,64.0,No action
+360,SKU-00360,Limited Edition Print Pro Q322,Books & Prints,C,60,65.0,-5.0,27.9,12,OK,46.0,0.0,12.077836538461538,55.0,No action
+250,SKU-00250,Desk Lamp Max I692,Office,C,11,16.0,-5.0,20.9,13,OK,16.0,0.0,11.117454545454546,53.0,No action
+65,SKU-00065,Wireless Mouse Max D803,Computer Accessories,B,25,26.0,-1.0,29.3,10,OK,16.0,0.0,87.11233746442085,52.0,No action
+249,SKU-00249,Notebook Set Max B655,Office,C,7,10.0,-3.0,21.4,10,OK,9.0,0.0,18.18375,51.0,No action
+57,SKU-00057,Monitor Arm Pro Z507,Computer Accessories,B,27,28.0,-1.0,28.9,11,OK,18.0,0.0,49.18455814970849,50.0,No action
+206,SKU-00206,Kitchen Scale Pro E396,Home & Kitchen,B,3,5.0,-2.0,19.3,8,OK,4.0,0.0,30.497477297931074,50.0,No action
+369,SKU-00369,Poster Set Max B655,Books & Prints,C,7,13.0,-6.0,16.6,9,OK,13.0,0.0,8.634102564102564,49.0,No action
+128,SKU-00128,Screen Protector 2 E458,Phone Accessories,A,16,16.0,-0.0,29.2,11,OK,11.0,0.0,91.19,42.0,No action
+165,SKU-00165,Smart Plug Plus T125,Smart Home,C,1,1.0,-0.0,20.3,9,OK,2.0,0.0,87.99,42.0,No action
+29,SKU-00029,Soundbar Plus O236,Audio,B,19,20.0,-1.0,29.0,11,OK,13.0,0.0,59.01647058823529,40.0,No action
+70,SKU-00070,Mechanical Keyboard Mini M988,Computer Accessories,B,28,29.0,-1.0,29.1,10,OK,18.0,0.0,45.45433962264151,39.0,No action
+316,SKU-00316,Foam Roller Plus F951,Fitness,C,43,45.0,-2.0,28.5,11,OK,30.0,0.0,14.557706794024085,34.0,No action
+251,SKU-00251,Cable Organizer Max P729,Office,C,11,14.0,-3.0,23.3,13,OK,13.0,0.0,10.077750018129342,32.0,No action
+95,SKU-00095,Phone Case H137,Phone Accessories,C,10,11.0,-1.0,27.0,8,OK,7.0,0.0,24.28054054054054,27.0,No action
+358,SKU-00358,Art Print Pro C248,Books & Prints,C,6,8.0,-2.0,22.6,9,OK,7.0,0.0,13.523333333333333,26.0,No action
+299,SKU-00299,Fitness Tracker Pro Q322,Fitness,C,7,10.0,-3.0,20.8,9,OK,9.0,0.0,7.97749671114976,25.0,No action
+81,SKU-00081,Monitor Arm Plus L495,Computer Accessories,C,12,13.0,-1.0,28.6,7,OK,7.0,0.0,28.642307692307693,17.0,No action
+219,SKU-00219,Water Bottle Mini R877,Home & Kitchen,C,16,17.0,-1.0,28.6,7,OK,9.0,0.0,16.207307215979267,13.0,No action
+158,SKU-00158,Video Doorbell Max W766,Smart Home,B,20,20.0,-0.0,29.6,13,OK,14.0,0.0,42.16915300224136,11.0,No action
+238,SKU-00238,Pen Set C248,Office,C,89,90.0,-1.0,29.8,12,OK,58.0,0.0,6.404741767709377,4.0,No action
+136,SKU-00136,Power Bank Air I754,Phone Accessories,C,21,21.0,-0.0,29.8,7,OK,10.0,0.0,26.628630136986303,3.0,No action
+46,SKU-00046,Mechanical Keyboard A100,Computer Accessories,B,23,23.0,-0.0,30.0,10,OK,14.0,0.0,50.636312795913895,0.0,No action
+1,SKU-00001,Wireless Headphones A100,Audio,A,337,195.0,142.0,51.7,14,OK,0.0,0.0,88.32901842553319,0.0,No action
+2,SKU-00002,Bluetooth Speaker H137,Audio,B,27,26.0,1.0,31.2,6,OK,11.0,0.0,114.48433883781131,0.0,No action
+7,SKU-00007,Bluetooth Speaker Pro Q322,Audio,B,47,25.0,22.0,55.9,10,OK,0.0,0.0,76.250375,0.0,No action
+13,SKU-00013,Earbuds Lite G544,Audio,B,69,45.0,24.0,46.0,6,OK,0.0,0.0,57.201360062994226,0.0,No action
+14,SKU-00014,Soundbar Lite N581,Audio,B,4,3.0,1.0,44.2,12,OK,1.0,0.0,103.87,0.0,No action
+15,SKU-00015,Studio Headphones Lite U618,Audio,A,69,41.0,28.0,50.3,8,OK,0.0,0.0,96.80474759867644,0.0,No action
+16,SKU-00016,Wireless Headphones Max B655,Audio,A,14,7.0,7.0,60.2,8,OK,0.0,0.0,257.2475,0.0,No action
+20,SKU-00020,Studio Headphones Max D803,Audio,A,94,60.0,34.0,46.9,6,OK,0.0,0.0,47.16536194177864,0.0,No action
+21,SKU-00021,Wireless Headphones Mini K840,Audio,B,31,29.0,2.0,32.4,8,OK,13.0,0.0,110.78903195315553,0.0,No action
+22,SKU-00022,Bluetooth Speaker Mini R877,Audio,C,12,10.0,2.0,34.4,14,OK,6.0,0.0,36.352190178060305,0.0,No action
+24,SKU-00024,Soundbar Mini F951,Audio,C,14,7.0,7.0,60.4,14,OK,0.0,0.0,83.21916666666667,0.0,No action
+27,SKU-00027,Bluetooth Speaker Plus A162,Audio,B,37,14.0,23.0,77.3,7,OK,0.0,0.0,90.64363636363636,0.0,No action
+30,SKU-00030,Studio Headphones Plus V273,Audio,B,14,10.0,4.0,43.3,13,OK,3.0,0.0,69.64116279069768,0.0,No action
+31,SKU-00031,Wireless Headphones 2 C310,Audio,B,59,41.0,18.0,43.1,9,OK,5.0,0.0,48.41748387096774,0.0,No action
+33,SKU-00033,Earbuds 2 Q384,Audio,A,165,144.0,21.0,34.5,11,OK,65.0,0.0,82.33606272263404,0.0,No action
+34,SKU-00034,Soundbar 2 X421,Audio,A,126,112.0,14.0,33.7,8,OK,43.0,0.0,109.97603319881331,0.0,No action
+35,SKU-00035,Studio Headphones 2 E458,Audio,A,102,101.0,1.0,30.4,14,OK,69.0,0.0,63.88776091891295,0.0,No action
+36,SKU-00036,Wireless Headphones X L495,Audio,A,16,16.0,0.0,30.8,9,OK,8.0,0.0,114.15816006503682,0.0,No action
+39,SKU-00039,Soundbar X G606,Audio,B,30,29.0,1.0,30.8,14,OK,20.0,0.0,80.43443578021463,0.0,No action
+40,SKU-00040,Studio Headphones X N643,Audio,B,27,21.0,6.0,38.0,6,OK,4.0,0.0,58.20242042116715,0.0,No action
+43,SKU-00043,Earbuds Air I754,Audio,A,234,108.0,126.0,65.1,13,OK,0.0,0.0,58.88750224648242,0.0,No action
+44,SKU-00044,Soundbar Air P791,Audio,C,10,3.0,7.0,110.5,8,OK,0.0,0.0,37.47571428571428,0.0,No action
+47,SKU-00047,Wireless Mouse H137,Computer Accessories,B,23,23.0,0.0,30.0,11,OK,14.0,0.0,53.454109589041096,0.0,No action
+48,SKU-00048,USB-C Hub O174,Computer Accessories,A,478,313.0,165.0,45.9,11,OK,23.0,0.0,30.134386266765535,0.0,No action
+49,SKU-00049,Laptop Stand V211,Computer Accessories,C,30,24.0,6.0,37.1,11,OK,9.0,0.0,14.248888888888889,0.0,No action
+50,SKU-00050,Webcam C248,Computer Accessories,C,37,33.0,4.0,34.0,10,OK,15.0,0.0,17.432992063492062,0.0,No action
+56,SKU-00056,Webcam Pro S470,Computer Accessories,A,205,146.0,59.0,42.2,14,OK,43.0,0.0,62.592136491127434,0.0,No action
+58,SKU-00058,Mechanical Keyboard Lite G544,Computer Accessories,C,7,6.0,1.0,38.1,7,OK,2.0,0.0,27.4725,0.0,No action
+61,SKU-00061,Laptop Stand Lite B655,Computer Accessories,A,531,314.0,217.0,50.8,9,OK,0.0,0.0,97.975417593478,0.0,No action
+63,SKU-00063,Monitor Arm Lite P729,Computer Accessories,A,82,72.0,10.0,34.4,6,OK,21.0,0.0,43.446699162140725,0.0,No action
+68,SKU-00068,Webcam Max Y914,Computer Accessories,A,866,772.0,94.0,33.6,6,OK,241.0,0.0,56.077698485767776,0.0,No action
+69,SKU-00069,Monitor Arm Max F951,Computer Accessories,C,22,19.0,3.0,34.3,9,OK,8.0,0.0,17.20418181818182,0.0,No action
+73,SKU-00073,Laptop Stand Mini H199,Computer Accessories,B,81,75.0,6.0,32.3,8,OK,32.0,0.0,10.862513141117612,0.0,No action
+76,SKU-00076,Mechanical Keyboard Plus C310,Computer Accessories,C,5,3.0,2.0,59.8,13,OK,0.0,0.0,69.55,0.0,No action
+77,SKU-00077,Wireless Mouse Plus J347,Computer Accessories,C,20,12.0,8.0,49.5,9,OK,0.0,0.0,34.59756320493629,0.0,No action
+78,SKU-00078,USB-C Hub Plus Q384,Computer Accessories,C,28,17.0,11.0,50.2,6,OK,0.0,0.0,14.971379310344828,0.0,No action
+79,SKU-00079,Laptop Stand Plus X421,Computer Accessories,B,32,32.0,0.0,30.1,14,OK,23.0,0.0,34.31445652173913,0.0,No action
+80,SKU-00080,Webcam Plus E458,Computer Accessories,A,148,120.0,28.0,37.1,9,OK,36.0,0.0,42.08034869012725,0.0,No action
+83,SKU-00083,Wireless Mouse 2 Z569,Computer Accessories,C,1,1.0,0.0,35.9,8,OK,1.0,0.0,72.795,0.0,No action
+85,SKU-00085,Laptop Stand 2 N643,Computer Accessories,A,460,384.0,76.0,36.0,8,OK,116.0,0.0,66.51329146118263,0.0,No action
+87,SKU-00087,Monitor Arm 2 B717,Computer Accessories,B,62,49.0,13.0,38.3,10,OK,15.0,0.0,24.830379212950383,0.0,No action
+88,SKU-00088,Mechanical Keyboard X I754,Computer Accessories,B,67,39.0,28.0,51.1,8,OK,0.0,0.0,28.80092823242319,0.0,No action
+91,SKU-00091,Laptop Stand X D865,Computer Accessories,B,35,28.0,7.0,36.9,11,OK,11.0,0.0,33.56815406594694,0.0,No action
+97,SKU-00097,Car Mount V211,Phone Accessories,C,9,7.0,2.0,40.0,12,OK,3.0,0.0,45.14317479543141,0.0,No action
+98,SKU-00098,Screen Protector C248,Phone Accessories,C,42,32.0,10.0,39.8,14,OK,12.0,0.0,18.45871287128713,0.0,No action
+100,SKU-00100,Phone Case Pro Q322,Phone Accessories,C,19,13.0,6.0,44.9,8,OK,1.0,0.0,30.555882352941175,0.0,No action
+102,SKU-00102,Car Mount Pro E396,Phone Accessories,C,14,6.0,8.0,66.3,8,OK,0.0,0.0,27.176363636363636,0.0,No action
+103,SKU-00103,Screen Protector Pro L433,Phone Accessories,B,173,102.0,71.0,51.0,10,OK,0.0,0.0,22.29033863434996,0.0,No action
+104,SKU-00104,Phone Charger Lite S470,Phone Accessories,C,55,49.0,6.0,33.4,13,OK,28.0,0.0,7.180642930586593,0.0,No action
+105,SKU-00105,Phone Case Lite Z507,Phone Accessories,C,30,27.0,3.0,33.3,6,OK,9.0,0.0,13.760977802713693,0.0,No action
+106,SKU-00106,Power Bank Lite G544,Phone Accessories,A,1435,1165.0,270.0,36.9,13,OK,508.0,0.0,14.505362869191195,0.0,No action
+108,SKU-00108,Screen Protector Lite U618,Phone Accessories,C,29,21.0,8.0,41.2,11,OK,5.0,0.0,22.183125,0.0,No action
+109,SKU-00109,Phone Charger Max B655,Phone Accessories,C,18,16.0,2.0,33.2,12,OK,9.0,0.0,24.97860465116279,0.0,No action
+112,SKU-00112,Car Mount Max W766,Phone Accessories,B,81,57.0,24.0,42.6,8,OK,5.0,0.0,19.37692084574056,0.0,No action
+113,SKU-00113,Screen Protector Max D803,Phone Accessories,C,42,33.0,9.0,38.3,10,OK,10.0,0.0,19.16851165750344,0.0,No action
+115,SKU-00115,Phone Case Mini R877,Phone Accessories,C,66,21.0,45.0,95.7,11,OK,0.0,0.0,22.039166158639844,0.0,No action
+117,SKU-00117,Car Mount Mini F951,Phone Accessories,C,63,53.0,10.0,35.8,9,OK,18.0,0.0,13.488229189625532,0.0,No action
+118,SKU-00118,Screen Protector Mini M988,Phone Accessories,C,25,24.0,1.0,30.6,10,OK,14.0,0.0,10.646913580246913,0.0,No action
+120,SKU-00120,Phone Case Plus A162,Phone Accessories,A,118,84.0,34.0,41.9,12,OK,20.0,0.0,14.419073431830025,0.0,No action
+121,SKU-00121,Power Bank Plus H199,Phone Accessories,C,49,14.0,35.0,105.5,6,OK,0.0,0.0,7.398253968253968,0.0,No action
+124,SKU-00124,Phone Charger 2 C310,Phone Accessories,B,93,69.0,24.0,40.3,6,OK,7.0,0.0,14.551382622809895,0.0,No action
+126,SKU-00126,Power Bank 2 Q384,Phone Accessories,A,159,125.0,34.0,38.3,9,OK,32.0,0.0,59.7897102479379,0.0,No action
+129,SKU-00129,Phone Charger X L495,Phone Accessories,C,67,47.0,20.0,42.9,11,OK,8.0,0.0,18.255527950310558,0.0,No action
+131,SKU-00131,Power Bank X Z569,Phone Accessories,C,29,24.0,5.0,35.5,12,OK,11.0,0.0,18.49048876638334,0.0,No action
+132,SKU-00132,Car Mount X G606,Phone Accessories,B,54,52.0,2.0,31.2,10,OK,28.0,0.0,27.070444898306786,0.0,No action
+133,SKU-00133,Screen Protector X N643,Phone Accessories,C,121,99.0,22.0,36.7,13,OK,44.0,0.0,19.777832422437996,0.0,No action
+138,SKU-00138,Screen Protector Air W828,Phone Accessories,C,32,26.0,6.0,37.3,8,OK,7.0,0.0,22.408192771084337,0.0,No action
+140,SKU-00140,Smart Plug A100,Smart Home,B,44,37.0,7.0,35.7,13,OK,18.0,0.0,47.04357654864866,0.0,No action
+141,SKU-00141,Smart Bulb H137,Smart Home,B,30,21.0,9.0,43.6,13,OK,5.0,0.0,128.7795711025022,0.0,No action
+142,SKU-00142,Security Camera O174,Smart Home,B,167,154.0,13.0,32.6,14,OK,95.0,0.0,33.55526744624305,0.0,No action
+143,SKU-00143,Video Doorbell V211,Smart Home,B,70,20.0,50.0,105.8,7,OK,0.0,0.0,60.641971830985916,0.0,No action
+145,SKU-00145,Smart Plug Pro J285,Smart Home,B,35,31.0,4.0,33.6,14,OK,19.0,0.0,66.9041373075632,0.0,No action
+151,SKU-00151,Smart Bulb Lite Z507,Smart Home,B,45,23.0,22.0,59.2,6,OK,0.0,0.0,131.8110843373494,0.0,No action
+154,SKU-00154,Motion Sensor Lite U618,Smart Home,B,86,70.0,16.0,36.8,9,OK,22.0,0.0,18.32503921212614,0.0,No action
+155,SKU-00155,Smart Plug Max B655,Smart Home,B,20,9.0,11.0,67.7,6,OK,0.0,0.0,150.38375,0.0,No action
+159,SKU-00159,Motion Sensor Max D803,Smart Home,B,35,18.0,17.0,59.2,9,OK,0.0,0.0,73.62230769230769,0.0,No action
+160,SKU-00160,Smart Plug Mini K840,Smart Home,C,24,16.0,8.0,45.3,7,OK,0.0,0.0,108.67403225806451,0.0,No action
+162,SKU-00162,Security Camera Mini Y914,Smart Home,B,7,3.0,4.0,71.1,7,OK,0.0,0.0,89.58266666666667,0.0,No action
+163,SKU-00163,Video Doorbell Mini F951,Smart Home,B,93,81.0,12.0,34.6,10,OK,34.0,0.0,54.61138997492105,0.0,No action
+167,SKU-00167,Security Camera Plus H199,Smart Home,B,18,14.0,4.0,37.6,12,OK,6.0,0.0,80.57964912280701,0.0,No action
+169,SKU-00169,Motion Sensor Plus V273,Smart Home,C,4,3.0,1.0,43.6,14,OK,1.0,0.0,52.74857142857143,0.0,No action
+171,SKU-00171,Game Controller H137,Gaming,A,52,42.0,10.0,36.9,11,OK,16.0,0.0,87.82940627152277,0.0,No action
+172,SKU-00172,Gaming Mouse Pad O174,Gaming,C,31,9.0,22.0,105.9,13,OK,0.0,0.0,32.916315789473686,0.0,No action
+174,SKU-00174,Gaming Headset Pro C248,Gaming,C,15,13.0,2.0,35.8,13,OK,6.0,0.0,72.96131578947369,0.0,No action
+175,SKU-00175,Game Controller Pro J285,Gaming,C,5,4.0,1.0,37.6,8,OK,1.0,0.0,93.07705882352941,0.0,No action
+178,SKU-00178,Gaming Headset Lite E396,Gaming,B,106,101.0,5.0,31.5,10,OK,53.0,0.0,15.809454265634882,0.0,No action
+179,SKU-00179,Game Controller Lite L433,Gaming,B,16,5.0,11.0,100.2,6,OK,0.0,0.0,92.03465147446592,0.0,No action
+185,SKU-00185,Capture Card Max B655,Gaming,C,6,3.0,3.0,64.4,14,OK,0.0,0.0,55.215555555555554,0.0,No action
+186,SKU-00186,Gaming Headset Mini I692,Gaming,C,4,2.0,2.0,75.2,9,OK,0.0,0.0,82.99,0.0,No action
+187,SKU-00187,Game Controller Mini P729,Gaming,B,87,58.0,29.0,44.8,9,OK,3.0,0.0,31.532025996636843,0.0,No action
+189,SKU-00189,Capture Card Mini D803,Gaming,A,119,94.0,25.0,38.1,12,OK,35.0,0.0,35.981381699113385,0.0,No action
+194,SKU-00194,Gaming Headset 2 M988,Gaming,C,25,10.0,15.0,72.3,10,OK,0.0,0.0,17.774634146341462,0.0,No action
+195,SKU-00195,Game Controller 2 T125,Gaming,B,31,22.0,9.0,41.6,6,OK,2.0,0.0,45.99519480519481,0.0,No action
+200,SKU-00200,Coffee Grinder O174,Home & Kitchen,C,20,12.0,8.0,48.9,13,OK,1.0,0.0,11.859545454545454,0.0,No action
+201,SKU-00201,Kitchen Scale V211,Home & Kitchen,C,32,21.0,11.0,45.4,8,OK,0.0,0.0,28.96454446225071,0.0,No action
+204,SKU-00204,Water Bottle Pro Q322,Home & Kitchen,B,46,43.0,3.0,32.1,6,OK,16.0,0.0,31.8536,0.0,No action
+207,SKU-00207,Tea Kettle Pro L433,Home & Kitchen,C,16,8.0,8.0,59.7,13,OK,0.0,0.0,22.870333333333335,0.0,No action
+209,SKU-00209,Water Bottle Lite Z507,Home & Kitchen,C,37,24.0,13.0,46.9,13,OK,3.0,0.0,44.41855640255797,0.0,No action
+211,SKU-00211,Kitchen Scale Lite N581,Home & Kitchen,C,101,88.0,13.0,34.4,10,OK,37.0,0.0,7.547641367823304,0.0,No action
+213,SKU-00213,Ceramic Coffee Mug Max B655,Home & Kitchen,C,22,11.0,11.0,60.4,12,OK,0.0,0.0,31.19090909090909,0.0,No action
+217,SKU-00217,Tea Kettle Max D803,Home & Kitchen,B,98,66.0,32.0,44.9,10,OK,5.0,0.0,29.23177763799536,0.0,No action
+218,SKU-00218,Ceramic Coffee Mug Mini K840,Home & Kitchen,C,51,36.0,15.0,42.6,8,OK,3.0,0.0,19.861967213114752,0.0,No action
+221,SKU-00221,Kitchen Scale Mini F951,Home & Kitchen,C,23,12.0,11.0,58.3,13,OK,0.0,0.0,13.19891304347826,0.0,No action
+222,SKU-00222,Tea Kettle Mini M988,Home & Kitchen,A,776,746.0,30.0,31.2,11,OK,418.0,0.0,16.48533265052453,0.0,No action
+223,SKU-00223,Ceramic Coffee Mug Plus T125,Home & Kitchen,C,21,15.0,6.0,43.0,13,OK,4.0,0.0,26.181454545454546,0.0,No action
+225,SKU-00225,Coffee Grinder Plus H199,Home & Kitchen,C,63,50.0,13.0,37.6,14,OK,23.0,0.0,21.67767646876186,0.0,No action
+226,SKU-00226,Kitchen Scale Plus O236,Home & Kitchen,A,302,259.0,43.0,35.0,9,OK,95.0,0.0,20.95223884877132,0.0,No action
+227,SKU-00227,Tea Kettle Plus V273,Home & Kitchen,C,12,10.0,2.0,37.0,13,OK,5.0,0.0,26.421,0.0,No action
+228,SKU-00228,Ceramic Coffee Mug 2 C310,Home & Kitchen,C,71,45.0,26.0,47.5,14,OK,6.0,0.0,34.31948051948052,0.0,No action
+229,SKU-00229,Water Bottle 2 J347,Home & Kitchen,A,221,183.0,38.0,36.1,14,OK,91.0,0.0,23.111834315437193,0.0,No action
+232,SKU-00232,Tea Kettle 2 E458,Home & Kitchen,C,21,16.0,5.0,39.2,11,OK,5.0,0.0,24.680276331184537,0.0,No action
+234,SKU-00234,Notebook Set A100,Office,C,18,16.0,2.0,34.6,14,OK,9.0,0.0,18.9925,0.0,No action
+235,SKU-00235,Desk Lamp H137,Office,B,34,29.0,5.0,34.6,11,OK,14.0,0.0,33.596796116504855,0.0,No action
+237,SKU-00237,Desk Mat V211,Office,C,6,2.0,4.0,72.9,9,OK,0.0,0.0,22.052857142857142,0.0,No action
+243,SKU-00243,Pen Set Pro L433,Office,C,2,1.0,1.0,49.5,8,OK,0.0,0.0,14.656666666666666,0.0,No action
+244,SKU-00244,Notebook Set Lite S470,Office,C,73,23.0,50.0,93.5,12,OK,0.0,0.0,25.38447149174861,0.0,No action
+246,SKU-00246,Cable Organizer Lite G544,Office,C,53,47.0,6.0,33.9,14,OK,27.0,0.0,18.418409996750302,0.0,No action
+248,SKU-00248,Pen Set Lite U618,Office,C,16,7.0,9.0,66.0,11,OK,0.0,0.0,18.22558823529412,0.0,No action
+256,SKU-00256,Cable Organizer Mini Y914,Office,C,32,27.0,5.0,36.0,7,OK,8.0,0.0,5.9149473684210525,0.0,No action
+257,SKU-00257,Desk Mat Mini F951,Office,C,51,31.0,20.0,49.8,9,OK,0.0,0.0,4.986022985729151,0.0,No action
+258,SKU-00258,Pen Set Mini M988,Office,C,13,8.0,5.0,50.8,8,OK,0.0,0.0,37.2048164146574,0.0,No action
+259,SKU-00259,Notebook Set Plus T125,Office,A,362,356.0,6.0,30.5,10,OK,196.0,0.0,11.075954046648581,0.0,No action
+265,SKU-00265,Desk Lamp 2 J347,Office,C,27,19.0,8.0,42.3,7,OK,2.0,0.0,29.13703125,0.0,No action
+268,SKU-00268,Travel Organizer O174,Bags & Travel,A,189,162.0,27.0,35.0,13,OK,82.0,0.0,29.613489570297727,0.0,No action
+269,SKU-00269,Duffel Bag V211,Bags & Travel,C,31,10.0,21.0,95.6,12,OK,0.0,0.0,91.87780487804878,0.0,No action
+272,SKU-00272,Travel Organizer Pro Q322,Bags & Travel,C,3,1.0,2.0,97.2,8,OK,0.0,0.0,54.346666666666664,0.0,No action
+273,SKU-00273,Duffel Bag Pro X359,Bags & Travel,C,13,7.0,6.0,53.5,13,OK,0.0,0.0,40.293846153846154,0.0,No action
+274,SKU-00274,Canvas Backpack Lite E396,Bags & Travel,C,12,5.0,7.0,67.1,8,OK,0.0,0.0,40.9052380952381,0.0,No action
+275,SKU-00275,Laptop Sleeve Lite L433,Bags & Travel,B,40,28.0,12.0,42.9,8,OK,2.0,0.0,24.803810239971973,0.0,No action
+277,SKU-00277,Duffel Bag Lite Z507,Bags & Travel,C,28,27.0,1.0,30.9,13,OK,18.0,0.0,16.04582742831756,0.0,No action
+283,SKU-00283,Laptop Sleeve Mini P729,Bags & Travel,A,113,101.0,12.0,33.5,11,OK,49.0,0.0,56.397689207097876,0.0,No action
+284,SKU-00284,Travel Organizer Mini W766,Bags & Travel,C,5,4.0,1.0,36.4,7,OK,2.0,0.0,53.89,0.0,No action
+285,SKU-00285,Duffel Bag Mini D803,Bags & Travel,B,24,21.0,3.0,33.5,13,OK,12.0,0.0,46.630428571428574,0.0,No action
+287,SKU-00287,Laptop Sleeve Plus R877,Bags & Travel,C,6,3.0,3.0,62.3,14,OK,0.0,0.0,27.29,0.0,No action
+288,SKU-00288,Travel Organizer Plus Y914,Bags & Travel,B,58,58.0,0.0,30.0,7,OK,27.0,0.0,38.71066371681416,0.0,No action
+289,SKU-00289,Duffel Bag Plus F951,Bags & Travel,A,279,186.0,93.0,44.9,9,OK,7.0,0.0,44.877783259267765,0.0,No action
+291,SKU-00291,Laptop Sleeve 2 T125,Bags & Travel,A,3917,2859.0,1058.0,41.1,13,OK,849.0,0.0,71.58242092863416,0.0,No action
+293,SKU-00293,Yoga Mat A100,Fitness,B,26,26.0,0.0,30.5,12,OK,16.0,0.0,45.395675675675676,0.0,No action
+295,SKU-00295,Fitness Tracker O174,Fitness,C,20,17.0,3.0,34.7,10,OK,8.0,0.0,38.35892857142857,0.0,No action
+296,SKU-00296,Foam Roller V211,Fitness,C,32,24.0,8.0,40.8,14,OK,8.0,0.0,37.76208793641121,0.0,No action
+298,SKU-00298,Resistance Bands Pro J285,Fitness,C,25,16.0,9.0,48.3,7,OK,0.0,0.0,29.452750183011144,0.0,No action
+300,SKU-00300,Foam Roller Pro X359,Fitness,B,99,70.0,29.0,42.4,9,OK,9.0,0.0,27.859468673035224,0.0,No action
+301,SKU-00301,Yoga Mat Lite E396,Fitness,C,13,10.0,3.0,37.2,11,OK,4.0,0.0,50.093589743589746,0.0,No action
+302,SKU-00302,Resistance Bands Lite L433,Fitness,C,39,33.0,6.0,35.7,10,OK,13.0,0.0,16.302922869309405,0.0,No action
+309,SKU-00309,Yoga Mat Mini I692,Fitness,C,36,18.0,18.0,61.6,9,OK,0.0,0.0,39.64015625,0.0,No action
+312,SKU-00312,Foam Roller Mini D803,Fitness,C,13,8.0,5.0,46.5,11,OK,1.0,0.0,23.22896551724138,0.0,No action
+313,SKU-00313,Yoga Mat Plus K840,Fitness,C,10,5.0,5.0,59.6,8,OK,0.0,0.0,51.06125,0.0,No action
+315,SKU-00315,Fitness Tracker Plus Y914,Fitness,C,11,10.0,1.0,31.4,10,OK,6.0,0.0,18.12894223767286,0.0,No action
+317,SKU-00317,Yoga Mat 2 M988,Fitness,B,77,45.0,32.0,51.0,13,OK,0.0,0.0,20.506451612903227,0.0,No action
+320,SKU-00320,Vintage Camera H137,Cameras,C,11,4.0,7.0,87.6,11,OK,0.0,0.0,148.23533333333333,0.0,No action
+322,SKU-00322,Ring Light V211,Cameras,C,9,4.0,5.0,71.7,12,OK,0.0,0.0,231.7976923076923,0.0,No action
+324,SKU-00324,Vintage Camera Pro J285,Cameras,C,7,4.0,3.0,52.8,9,OK,0.0,0.0,106.99,0.0,No action
+325,SKU-00325,Camera Tripod Pro Q322,Cameras,B,2,1.0,1.0,46.1,10,OK,1.0,0.0,477.35,0.0,No action
+326,SKU-00326,Ring Light Pro X359,Cameras,C,10,4.0,6.0,79.7,8,OK,0.0,0.0,134.3905263157895,0.0,No action
+328,SKU-00328,Vintage Camera Lite L433,Cameras,B,14,14.0,0.0,30.4,11,OK,9.0,0.0,170.485,0.0,No action
+329,SKU-00329,Camera Tripod Lite S470,Cameras,B,19,10.0,9.0,59.1,10,OK,0.0,0.0,232.77148579009022,0.0,No action
+332,SKU-00332,Vintage Camera Max N581,Cameras,C,7,3.0,4.0,62.7,10,OK,0.0,0.0,158.94823529411764,0.0,No action
+334,SKU-00334,Smartwatch A100,Wearables,A,281,132.0,149.0,64.1,8,OK,0.0,0.0,60.087403046330714,0.0,No action
+335,SKU-00335,Watch Strap H137,Wearables,B,15,4.0,11.0,105.0,11,OK,0.0,0.0,121.51399308451435,0.0,No action
+339,SKU-00339,Fitness Band Pro J285,Wearables,B,15,8.0,7.0,54.2,10,OK,0.0,0.0,69.25970501054198,0.0,No action
+340,SKU-00340,Smartwatch Lite Q322,Wearables,B,2,1.0,1.0,90.0,13,OK,0.0,0.0,218.99,0.0,No action
+342,SKU-00342,Fitness Band Lite E396,Wearables,C,2,1.0,1.0,74.7,12,OK,0.0,0.0,72.19,0.0,No action
+343,SKU-00343,Smartwatch Max L433,Wearables,B,21,17.0,4.0,36.8,12,OK,7.0,0.0,112.0668817204301,0.0,No action
+344,SKU-00344,Watch Strap Max S470,Wearables,C,7,2.0,5.0,91.0,6,OK,0.0,0.0,47.11818181818182,0.0,No action
+345,SKU-00345,Fitness Band Max Z507,Wearables,A,250,141.0,109.0,53.1,9,OK,0.0,0.0,89.35659582308693,0.0,No action
+347,SKU-00347,Watch Strap Mini N581,Wearables,C,3,3.0,0.0,34.7,13,OK,2.0,0.0,85.7609090909091,0.0,No action
+350,SKU-00350,Watch Strap Plus I692,Wearables,A,71,19.0,52.0,112.0,8,OK,0.0,0.0,142.4677358490566,0.0,No action
+351,SKU-00351,Fitness Band Plus P729,Wearables,A,35,27.0,8.0,39.2,7,OK,5.0,0.0,173.07241666666667,0.0,No action
+353,SKU-00353,Watch Strap 2 D803,Wearables,B,19,12.0,7.0,48.4,11,OK,0.0,0.0,88.443125,0.0,No action
+355,SKU-00355,Photo Book H137,Books & Prints,C,14,6.0,8.0,65.3,8,OK,0.0,0.0,16.19,0.0,No action
+356,SKU-00356,Limited Edition Print O174,Books & Prints,C,9,4.0,5.0,64.1,13,OK,0.0,0.0,23.794347826086955,0.0,No action
+364,SKU-00364,Limited Edition Print Lite S470,Books & Prints,C,21,15.0,6.0,40.8,10,OK,4.0,0.0,12.161764705882353,0.0,No action
+365,SKU-00365,Poster Set Lite Z507,Books & Prints,C,1,1.0,0.0,32.1,10,OK,1.0,0.0,19.09,0.0,No action
+366,SKU-00366,Art Print Max G544,Books & Prints,C,11,6.0,5.0,54.2,7,OK,0.0,0.0,20.168260869565216,0.0,No action
+368,SKU-00368,Limited Edition Print Max U618,Books & Prints,A,561,398.0,163.0,42.3,9,OK,50.0,0.0,17.361363189280173,0.0,No action
+370,SKU-00370,Art Print Mini I692,Books & Prints,C,14,12.0,2.0,35.9,6,OK,3.0,0.0,18.121111111111112,0.0,No action

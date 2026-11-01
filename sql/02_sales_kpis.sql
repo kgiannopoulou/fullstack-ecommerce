@@ -17,8 +17,8 @@ SELECT COALESCE(extract(year FROM order_date)::text, 'Total')                  A
        round(100.0 * count(*) FILTER (WHERE status = 'refunded')
                    / count(*) FILTER (WHERE is_fulfilled), 2)                  AS refund_rate_pct,
        round(100.0 * count(*) FILTER (WHERE status = 'cancelled') / count(*), 2) AS cancellation_rate_pct,
-       round(100.0 * (sum(net_revenue) - sum(cogs) FILTER (WHERE is_fulfilled))
-                   / sum(net_revenue), 1)                                      AS gross_margin_pct,
+       round(sum(gross_profit), 0)                                             AS gross_profit,
+       round(100.0 * sum(gross_profit) / sum(net_revenue), 1)                 AS gross_margin_pct,
        count(DISTINCT customer_id) FILTER (WHERE is_fulfilled)                 AS active_customers
 FROM clean.order_summary
 GROUP BY ROLLUP (extract(year FROM order_date))

@@ -1,0 +1,501 @@
+order_id,customer_id,order_date,status,payment_method,channel_id,country,courier,customer_type,discount_pct,units,gross_amount,discount_amount,refund_amount,net_revenue,cogs,shipping_cost,gross_profit,days_to_ship,days_to_deliver,is_late,is_fulfilled,has_bulk
+500021,100021.0,2024-01-01,completed,Bank Transfer,5,Greece,ELTA Courier,New,0.00,1,68.99,0.00,0.00,68.99,34.19,3.80,31.00,1.0,3.0,False,True,False
+502508,100310.0,2024-01-25,completed,Card,5,Cyprus,DHL,Returning,0.00,1,47.99,0.00,0.00,47.99,31.60,10.86,5.53,3.0,8.0,True,True,False
+504226,100396.0,2024-02-09,completed,Card,2,Greece,ELTA Courier,Returning,0.00,6,264.94,0.00,0.00,264.94,133.00,6.26,125.68,2.0,4.0,False,True,False
+508704,100723.0,2024-03-16,completed,Cash on Delivery,4,Greece,ELTA Courier,Returning,0.00,4,293.96,0.00,0.00,293.96,156.66,7.80,129.50,2.0,8.0,True,True,False
+501159,101135.0,2024-01-12,completed,Card,6,Greece,ELTA Courier,New,0.00,5,1059.95,0.00,0.00,1059.95,711.82,6.57,341.56,3.0,4.0,False,True,False
+501331,101300.0,2024-01-13,cancelled,PayPal,2,Greece,,New,0.00,1,47.99,0.00,0.00,0,28.14,0.00,0,,,,False,False
+523010,101423.0,2024-06-17,completed,Bank Transfer,1,Greece,ELTA Courier,Returning,0.00,1,73.99,0.00,0.00,73.99,34.76,5.11,34.12,3.0,10.0,True,True,False
+513474,101453.0,2024-04-18,completed,PayPal,4,Germany,DHL,Returning,0.00,4,433.96,0.00,0.00,433.96,213.30,10.74,209.92,2.0,7.0,False,True,False
+501500,101461.0,2024-01-15,completed,Cash on Delivery,5,Greece,ELTA Courier,New,0.10,3,71.97,7.20,0.00,64.77,42.90,3.94,17.93,1.0,4.0,False,True,False
+501738,101687.0,2024-01-17,cancelled,Card,3,Greece,,New,0.00,2,80.98,0.00,0.00,0,40.75,0.00,0,,,,False,False
+501797,101740.0,2024-01-18,completed,Card,1,Greece,ELTA Courier,New,0.00,3,107.97,0.00,0.00,107.97,49.40,9.36,49.21,2.0,5.0,True,True,False
+503083,102884.0,2024-01-30,completed,Cash on Delivery,1,Greece,ELTA Courier,New,0.00,3,92.97,0.00,0.00,92.97,57.41,6.69,28.87,1.0,4.0,False,True,False
+503448,103197.0,2024-02-02,completed,Card,6,Greece,ELTA Courier,New,0.00,4,137.96,0.00,0.00,137.96,68.90,6.98,62.08,1.0,5.0,True,True,False
+503519,103268.0,2024-02-02,completed,Bank Transfer,4,Netherlands,DHL,New,0.00,2,33.98,0.00,0.00,33.98,17.84,8.00,8.14,0.0,4.0,False,True,False
+503659,103380.0,2024-02-04,completed,Card,5,France,DHL,New,0.00,9,400.91,0.00,0.00,400.91,219.22,13.59,168.10,3.0,8.0,True,True,False
+504614,104188.0,2024-02-12,completed,Card,6,Greece,ELTA Courier,New,0.00,2,93.98,0.00,0.00,93.98,47.94,5.51,40.53,2.0,4.0,False,True,False
+504999,104513.0,2024-02-15,completed,PayPal,4,Greece,ELTA Courier,New,0.00,7,435.93,0.00,0.00,435.93,218.89,8.00,209.04,2.0,7.0,True,True,False
+505033,104531.0,2024-02-16,completed,Card,6,Greece,ELTA Courier,New,0.00,3,133.97,0.00,0.00,133.97,71.62,6.69,55.66,1.0,3.0,False,True,False
+505312,104770.0,2024-02-18,completed,Card,2,Germany,DHL,New,0.00,3,203.97,0.00,0.00,203.97,97.23,9.87,96.87,3.0,4.0,False,True,False
+505435,104876.0,2024-02-19,completed,PayPal,1,Greece,ELTA Courier,New,0.10,3,345.97,34.60,0.00,311.37,216.77,6.55,88.05,2.0,6.0,True,True,False
+505594,104993.0,2024-02-21,completed,PayPal,6,Greece,ELTA Courier,New,0.00,5,265.95,0.00,0.00,265.95,131.19,10.19,124.57,3.0,7.0,True,True,False
+505881,105233.0,2024-02-23,completed,Card,6,Cyprus,DHL,New,0.00,8,149.92,0.00,0.00,149.92,91.87,15.35,42.70,1.0,4.0,False,True,False
+506617,105812.0,2024-02-29,completed,Card,4,Greece,ELTA Courier,New,0.00,1,179.99,0.00,0.00,179.99,97.88,3.32,78.79,2.0,8.0,True,True,False
+516197,105914.0,2024-05-06,completed,Bank Transfer,4,Germany,DHL,Returning,0.00,3,384.97,0.00,0.00,384.97,189.83,8.76,186.38,2.0,5.0,False,True,False
+512885,106143.0,2024-04-14,completed,PayPal,5,Greece,ELTA Courier,Returning,0.00,3,88.97,0.00,0.00,88.97,53.21,5.29,30.47,4.0,5.0,True,True,False
+507481,106448.0,2024-03-07,completed,Card,1,Bulgaria,DHL,New,0.00,2,68.98,0.00,0.00,68.98,35.10,9.11,24.77,2.0,5.0,False,True,False
+507954,106821.0,2024-03-10,completed,Card,4,Cyprus,DHL,New,0.00,2,47.98,0.00,0.00,47.98,26.64,11.11,10.23,4.0,11.0,True,True,False
+508319,107087.0,2024-03-13,completed,Card,1,Spain,DHL,New,0.00,4,429.96,0.00,0.00,429.96,198.88,10.79,220.29,1.0,7.0,False,True,False
+515137,107323.0,2024-04-29,completed,Cash on Delivery,6,Italy,DHL,Returning,0.00,3,141.97,0.00,0.00,141.97,73.77,10.86,57.34,2.0,10.0,True,True,False
+527905,107874.0,2024-07-17,completed,Card,4,Cyprus,DHL,Returning,0.00,3,218.97,0.00,0.00,218.97,144.09,10.83,64.05,2.0,3.0,False,True,False
+525838,107912.0,2024-07-04,cancelled,Card,4,Netherlands,,Returning,0.00,4,221.96,0.00,0.00,0,118.07,0.00,0,,,,False,False
+532625,107982.0,2024-08-16,completed,PayPal,5,Greece,ELTA Courier,Returning,0.00,1,27.99,0.00,0.00,27.99,11.91,4.10,11.98,3.0,6.0,True,True,False
+522564,108152.0,2024-06-14,completed,Card,5,Italy,DHL,Returning,0.00,4,116.96,0.00,0.00,116.96,57.61,9.59,49.76,0.0,12.0,True,True,False
+513351,108203.0,2024-04-17,completed,PayPal,4,Greece,ELTA Courier,Returning,0.00,4,194.96,0.00,0.00,194.96,93.06,9.01,92.89,0.0,7.0,True,True,False
+514744,108452.0,2024-04-26,completed,Cash on Delivery,4,Greece,ELTA Courier,Returning,0.00,1,18.99,0.00,0.00,18.99,10.39,3.53,5.07,2.0,6.0,True,True,False
+510215,108531.0,2024-03-26,completed,Card,4,Germany,DHL,New,0.10,3,122.97,12.30,0.00,110.67,75.51,9.35,25.81,1.0,4.0,False,True,False
+510440,108696.0,2024-03-28,completed,Card,6,Greece,ELTA Courier,New,0.00,1,20.99,0.00,0.00,20.99,13.09,5.05,2.85,2.0,6.0,True,True,False
+510981,109091.0,2024-04-01,completed,Cash on Delivery,5,Greece,ELTA Courier,New,0.00,1,128.99,0.00,0.00,128.99,85.26,3.89,39.84,1.0,3.0,False,True,False
+511085,109156.0,2024-04-02,refunded,Bank Transfer,4,Greece,ELTA Courier,New,0.00,11,493.89,0.00,246.95,246.94,282.67,10.96,-46.69,3.0,5.0,True,True,False
+534015,109276.0,2024-08-25,completed,Card,6,Greece,ELTA Courier,Returning,0.00,2,205.98,0.00,0.00,205.98,98.68,4.77,102.53,1.0,6.0,True,True,False
+515790,110093.0,2024-05-03,refunded,Card,4,Germany,DHL,Returning,0.00,5,158.95,0.00,47.69,111.26,89.71,8.26,13.29,2.0,13.0,True,True,False
+520199,110186.0,2024-05-30,completed,Card,4,Greece,ELTA Courier,Returning,0.00,2,62.98,0.00,0.00,62.98,37.57,4.47,20.94,2.0,7.0,True,True,False
+519211,110452.0,2024-05-24,completed,Cash on Delivery,5,Greece,ELTA Courier,Returning,0.00,1,14.99,0.00,0.00,14.99,9.43,3.70,1.86,1.0,4.0,False,True,False
+512924,110535.0,2024-04-14,completed,Card,4,Netherlands,DHL,New,0.00,3,127.97,0.00,0.00,127.97,67.87,9.88,50.22,4.0,9.0,True,True,False
+512931,110542.0,2024-04-14,completed,Card,5,Greece,ELTA Courier,New,0.00,2,46.98,0.00,0.00,46.98,30.93,4.36,11.69,2.0,9.0,True,True,False
+513362,110567.0,2024-04-17,completed,Card,1,Germany,DHL,New,0.00,6,383.94,0.00,0.00,383.94,176.28,12.24,195.42,0.0,5.0,False,True,False
+513917,110985.0,2024-04-21,completed,Card,5,Germany,DHL,Returning,0.00,1,35.99,0.00,0.00,35.99,17.51,7.16,11.32,2.0,10.0,True,True,False
+536081,111000.0,2024-09-07,completed,PayPal,4,Cyprus,DHL,Returning,0.10,1,31.99,3.20,0.00,28.79,21.50,10.25,-2.96,3.0,10.0,True,True,False
+538103,111840.0,2024-09-19,completed,Card,6,Bulgaria,DHL,Returning,0.00,3,259.97,0.00,0.00,259.97,131.96,8.07,119.94,1.0,6.0,False,True,False
+524052,111889.0,2024-06-23,completed,Cash on Delivery,5,Spain,DHL,Returning,0.00,2,85.98,0.00,0.00,85.98,40.17,10.32,35.49,2.0,6.0,False,True,False
+526030,112074.0,2024-07-05,completed,PayPal,6,Greece,ELTA Courier,Returning,0.00,3,346.97,0.00,0.00,346.97,218.78,5.39,122.80,0.0,4.0,False,True,False
+515252,112260.0,2024-04-29,completed,Card,6,Netherlands,DHL,New,0.00,4,270.96,0.00,0.00,270.96,127.83,12.56,130.57,1.0,7.0,False,True,False
+515409,112367.0,2024-04-30,completed,PayPal,3,France,DHL,New,0.00,3,355.97,0.00,0.00,355.97,225.83,11.44,118.70,2.0,12.0,True,True,False
+515737,112606.0,2024-05-02,completed,Card,1,Germany,DHL,New,0.10,1,50.99,5.10,0.00,45.89,29.00,7.40,9.49,1.0,9.0,True,True,False
+515762,112631.0,2024-05-02,completed,Card,4,Greece,ELTA Courier,New,0.00,10,484.90,0.00,0.00,484.90,261.20,11.77,211.93,1.0,4.0,False,True,False
+520377,112679.0,2024-05-31,completed,PayPal,3,Germany,DHL,Returning,0.00,3,174.97,0.00,0.00,174.97,87.64,10.20,77.13,3.0,10.0,True,True,False
+532486,112805.0,2024-08-15,completed,Card,1,Greece,ELTA Courier,Returning,0.00,1,57.99,0.00,0.00,57.99,24.70,3.74,29.55,1.0,4.0,False,True,False
+569637,113008.0,2025-02-20,cancelled,PayPal,4,Italy,,Returning,0.00,2,62.26,0.00,0.00,0,32.41,0.00,0,,,,False,False
+542408,113412.0,2024-10-14,completed,Cash on Delivery,6,Netherlands,DHL,Returning,0.10,3,205.97,20.60,0.00,185.37,94.22,11.68,79.47,2.0,5.0,False,True,False
+517405,113788.0,2024-05-13,completed,Cash on Delivery,5,France,DHL,New,0.00,3,260.97,0.00,0.00,260.97,137.48,12.06,111.43,0.0,7.0,False,True,False
+517874,114110.0,2024-05-16,completed,Card,5,Greece,ELTA Courier,New,0.00,2,63.98,0.00,0.00,63.98,43.00,4.56,16.42,2.0,6.0,True,True,False
+523399,114162.0,2024-06-19,completed,Card,6,Greece,ELTA Courier,Returning,0.00,7,416.93,0.00,0.00,416.93,196.53,13.46,206.94,2.0,5.0,True,True,False
+529833,114227.0,2024-07-29,completed,PayPal,6,Germany,DHL,Returning,0.00,2,221.98,0.00,0.00,221.98,104.16,8.68,109.14,2.0,5.0,False,True,False
+524360,114321.0,2024-06-25,completed,Card,5,Germany,DHL,Returning,0.20,2,47.98,9.60,0.00,38.38,31.53,7.41,-0.56,3.0,11.0,True,True,False
+518639,114664.0,2024-05-20,cancelled,Cash on Delivery,6,Greece,,New,0.00,3,151.97,0.00,0.00,0,78.04,0.00,0,,,,False,False
+519028,114955.0,2024-05-22,completed,Cash on Delivery,1,Cyprus,DHL,New,0.00,4,175.96,0.00,0.00,175.96,94.77,14.93,66.26,2.0,5.0,False,True,False
+519242,115068.0,2024-05-24,completed,PayPal,5,Greece,ELTA Courier,New,0.00,5,156.95,0.00,0.00,156.95,96.56,7.79,52.60,3.0,7.0,True,True,False
+519336,115162.0,2024-05-24,completed,Card,6,Germany,DHL,New,0.00,5,89.95,0.00,0.00,89.95,47.29,9.29,33.37,0.0,5.0,False,True,False
+519345,115171.0,2024-05-24,completed,Card,6,Italy,DHL,New,0.00,2,167.98,0.00,0.00,167.98,105.82,8.94,53.22,2.0,9.0,True,True,False
+519453,115218.0,2024-05-25,completed,Card,5,Greece,ELTA Courier,New,0.00,2,91.98,0.00,0.00,91.98,46.86,4.44,40.68,2.0,3.0,False,True,False
+519935,115563.0,2024-05-28,completed,Card,2,Italy,DHL,New,0.00,1,11.99,0.00,0.00,11.99,5.41,7.31,-0.73,1.0,6.0,False,True,False
+519961,115589.0,2024-05-28,completed,Apple Pay,4,Cyprus,DHL,New,0.00,6,764.94,0.00,0.00,764.94,388.55,13.55,362.84,0.0,6.0,False,True,False
+521029,116319.0,2024-06-04,completed,Card,4,Netherlands,DHL,New,0.00,3,128.97,0.00,0.00,128.97,73.72,8.45,46.80,2.0,4.0,False,True,False
+526188,116532.0,2024-07-06,completed,PayPal,5,Greece,ELTA Courier,Returning,0.00,2,46.98,0.00,0.00,46.98,30.93,4.36,11.69,1.0,6.0,True,True,False
+533264,116636.0,2024-08-20,completed,Cash on Delivery,1,Greece,ELTA Courier,Returning,0.00,3,216.97,0.00,0.00,216.97,108.34,6.39,102.24,1.0,4.0,False,True,False
+521516,116647.0,2024-06-07,completed,PayPal,3,France,DHL,New,0.00,4,247.96,0.00,0.00,247.96,124.37,11.74,111.85,1.0,6.0,False,True,False
+521595,116726.0,2024-06-07,completed,PayPal,1,Greece,ELTA Courier,New,0.00,2,57.98,0.00,0.00,57.98,37.42,7.71,12.85,2.0,3.0,False,True,False
+521670,116748.0,2024-06-08,completed,Card,5,Germany,DHL,New,0.00,2,410.98,0.00,0.00,410.98,188.56,7.40,215.02,3.0,6.0,False,True,False
+521735,116813.0,2024-06-08,refunded,PayPal,6,Germany,DHL,New,0.00,3,166.97,0.00,166.97,0.00,87.31,8.80,-96.11,2.0,7.0,False,True,False
+528262,117219.0,2024-07-19,completed,Apple Pay,2,Italy,DHL,Returning,0.00,2,147.98,0.00,0.00,147.98,69.52,10.93,67.53,2.0,9.0,True,True,False
+525724,117442.0,2024-07-03,completed,Cash on Delivery,6,Greece,ELTA Courier,Returning,0.00,3,174.97,0.00,0.00,174.97,91.53,5.23,78.21,1.0,6.0,True,True,False
+523120,117724.0,2024-06-17,completed,Card,5,Greece,ELTA Courier,New,0.00,2,243.98,0.00,0.00,243.98,123.94,4.90,115.14,1.0,4.0,False,True,False
+533879,117942.0,2024-08-24,completed,Card,4,Bulgaria,DHL,New,0.00,3,141.97,0.00,0.00,141.97,91.37,10.73,39.87,2.0,8.0,True,True,False
+539784,118080.0,2024-09-29,completed,Card,1,Greece,ELTA Courier,Returning,0.00,3,140.97,0.00,0.00,140.97,86.23,5.06,49.68,4.0,10.0,True,True,False
+523645,118098.0,2024-06-20,cancelled,Cash on Delivery,5,Greece,,New,0.00,4,173.96,0.00,0.00,0,86.20,0.00,0,,,,False,False
+539140,118144.0,2024-09-25,refunded,Card,4,Germany,DHL,Returning,0.00,5,147.95,0.00,147.95,0.00,78.65,11.13,-89.78,2.0,6.0,False,True,False
+524250,118494.0,2024-06-24,completed,Card,2,Germany,DHL,New,0.00,1,14.99,0.00,0.00,14.99,9.43,7.19,-1.63,0.0,8.0,True,True,False
+525116,119097.0,2024-06-29,completed,Card,4,Germany,DHL,New,0.00,1,78.99,0.00,0.00,78.99,42.43,7.32,29.24,2.0,6.0,False,True,False
+525562,119363.0,2024-07-02,completed,Cash on Delivery,1,Greece,ELTA Courier,New,0.00,2,43.98,0.00,0.00,43.98,27.73,4.43,11.82,0.0,2.0,False,True,False
+525637,119438.0,2024-07-02,cancelled,Cash on Delivery,3,Italy,,New,0.00,2,57.98,0.00,0.00,0,30.58,0.00,0,,,,False,False
+526444,119976.0,2024-07-07,completed,Card,4,Cyprus,DHL,New,0.00,2,125.98,0.00,0.00,125.98,61.51,9.60,54.87,4.0,13.0,True,True,False
+527025,120345.0,2024-07-11,completed,PayPal,1,Germany,DHL,New,0.15,3,169.97,25.50,0.00,144.47,91.04,10.75,42.68,2.0,7.0,False,True,False
+527108,120428.0,2024-07-11,completed,Card,4,France,DHL,New,0.00,2,64.93,0.00,0.00,64.93,28.68,8.22,28.03,1.0,4.0,False,True,False
+527874,120944.0,2024-07-16,completed,Card,6,Greece,ELTA Courier,New,0.00,8,134.67,0.00,0.00,134.67,71.80,9.93,52.94,1.0,11.0,True,True,False
+536102,121394.0,2024-09-07,completed,Cash on Delivery,5,Greece,ELTA Courier,Returning,0.00,5,205.95,0.00,0.00,205.95,127.81,5.57,72.57,3.0,6.0,True,True,False
+528818,121563.0,2024-07-22,completed,PayPal,1,France,DHL,New,0.00,5,223.95,0.00,0.00,223.95,118.75,13.61,91.59,0.0,7.0,False,True,False
+530218,121637.0,2024-07-31,completed,Card,1,Greece,ELTA Courier,Returning,0.00,7,587.93,0.00,0.00,587.93,306.61,7.93,273.39,2.0,7.0,True,True,False
+529148,121786.0,2024-07-24,completed,PayPal,4,Greece,ELTA Courier,New,0.00,4,385.96,0.00,0.00,385.96,182.77,5.56,197.63,1.0,4.0,False,True,False
+529261,121833.0,2024-07-25,completed,Card,4,Greece,ELTA Courier,New,0.00,5,300.95,0.00,0.00,300.95,163.38,5.43,132.14,0.0,2.0,False,True,False
+529904,122243.0,2024-07-29,completed,Apple Pay,4,Germany,DHL,New,0.00,11,446.89,0.00,0.00,446.89,288.72,15.08,143.09,3.0,9.0,True,True,False
+534326,122246.0,2024-08-27,completed,Card,3,Italy,DHL,Returning,0.00,6,156.94,0.00,0.00,156.94,73.47,18.20,65.27,0.0,6.0,False,True,False
+530039,122331.0,2024-07-30,completed,Card,6,Spain,DHL,New,0.00,4,339.96,0.00,0.00,339.96,162.23,13.82,163.91,1.0,6.0,False,True,False
+530111,122403.0,2024-07-30,completed,Card,3,Greece,ELTA Courier,New,0.00,3,261.97,0.00,0.00,261.97,130.64,7.13,124.20,2.0,10.0,True,True,False
+530480,122652.0,2024-08-01,completed,Card,1,Greece,ELTA Courier,New,0.00,2,77.98,0.00,0.00,77.98,37.88,4.01,36.09,1.0,4.0,False,True,False
+530561,122682.0,2024-08-02,cancelled,Cash on Delivery,5,Greece,,New,0.00,5,81.03,0.00,0.00,0,38.42,0.00,0,,,,False,False
+532659,122850.0,2024-08-16,completed,Apple Pay,4,France,DHL,Returning,0.00,4,185.96,0.00,0.00,185.96,109.36,12.50,64.10,1.0,9.0,True,True,False
+530922,122922.0,2024-08-04,completed,Card,1,Greece,ELTA Courier,New,0.00,5,237.95,0.00,0.00,237.95,109.83,9.64,118.48,2.0,7.0,True,True,False
+564197,123062.0,2025-01-21,completed,PayPal,2,Greece,ELTA Courier,Returning,0.00,5,283.59,0.00,0.00,283.59,154.30,6.96,122.33,2.0,5.0,True,True,False
+531248,123135.0,2024-08-06,refunded,Card,5,Greece,ELTA Courier,New,0.00,4,118.96,0.00,118.96,0.00,65.07,6.27,-71.34,1.0,5.0,True,True,False
+542801,123216.0,2024-10-16,completed,Cash on Delivery,5,Cyprus,DHL,Returning,0.00,6,196.94,0.00,0.00,196.94,118.28,12.17,66.49,0.0,6.0,False,True,False
+531698,123423.0,2024-08-09,completed,Apple Pay,6,Italy,DHL,New,0.10,3,250.97,25.10,0.00,225.87,146.74,9.04,70.09,2.0,14.0,True,True,False
+560010,123426.0,2024-12-30,completed,PayPal,4,Greece,ELTA Courier,New,0.00,3,189.97,0.00,0.00,189.97,84.16,7.18,98.63,0.0,4.0,False,True,False
+531859,123527.0,2024-08-10,completed,Card,6,Italy,DHL,New,0.00,1,128.99,0.00,0.00,128.99,75.36,8.13,45.50,4.0,12.0,True,True,False
+532263,123777.0,2024-08-13,completed,Card,1,Greece,ELTA Courier,New,0.00,2,147.98,0.00,0.00,147.98,69.52,7.98,70.48,2.0,6.0,True,True,False
+532545,123946.0,2024-08-15,completed,Card,6,Italy,DHL,New,0.00,2,63.98,0.00,0.00,63.98,33.26,10.23,20.49,0.0,3.0,False,True,False
+532620,124021.0,2024-08-15,cancelled,PayPal,4,Germany,,New,0.00,3,210.97,0.00,0.00,0,111.39,0.00,0,,,,False,False
+546967,124023.0,2024-11-07,completed,Card,5,Greece,ELTA Courier,Returning,0.00,2,101.98,0.00,0.00,101.98,51.47,5.97,44.54,1.0,4.0,False,True,False
+532741,124103.0,2024-08-16,completed,Card,4,Cyprus,DHL,New,0.00,6,427.94,0.00,0.00,427.94,229.39,12.91,185.64,1.0,6.0,False,True,False
+542098,124162.0,2024-10-12,completed,Card,6,Greece,ELTA Courier,New,0.00,3,78.97,0.00,0.00,78.97,52.43,5.17,21.37,3.0,11.0,True,True,False
+543490,124256.0,2024-10-20,cancelled,Cash on Delivery,4,Greece,,Returning,0.00,1,24.99,0.00,0.00,0,12.39,0.00,0,,,,False,False
+540318,124869.0,2024-10-02,completed,PayPal,6,Greece,ELTA Courier,Returning,0.00,1,73.99,0.00,0.00,73.99,34.76,5.10,34.13,3.0,4.0,False,True,False
+564786,125017.0,2025-01-24,completed,Card,3,Netherlands,DHL,Returning,0.20,5,266.05,53.21,0.00,212.84,119.41,13.51,79.92,0.0,6.0,False,True,False
+534664,125089.0,2024-08-29,completed,Cash on Delivery,3,Bulgaria,DHL,Returning,0.15,3,105.97,15.90,0.00,90.07,48.85,8.93,32.29,2.0,11.0,True,True,False
+534425,125201.0,2024-08-27,completed,Cash on Delivery,2,Cyprus,DHL,New,0.00,2,244.98,0.00,0.00,244.98,127.56,10.11,107.31,2.0,5.0,False,True,False
+534526,125242.0,2024-08-28,completed,PayPal,3,Greece,ELTA Courier,New,0.00,1,129.99,0.00,0.00,129.99,71.18,3.88,54.93,2.0,4.0,False,True,False
+534677,125336.0,2024-08-29,completed,Card,1,Greece,ELTA Courier,New,0.00,3,160.97,0.00,0.00,160.97,77.73,7.42,75.82,2.0,4.0,False,True,False
+558123,125649.0,2024-12-22,completed,Card,1,Greece,ELTA Courier,Returning,0.15,3,160.97,24.15,0.00,136.82,87.61,7.11,42.10,1.0,4.0,False,True,False
+535780,126093.0,2024-09-05,completed,Bank Transfer,2,Greece,ELTA Courier,New,0.00,4,171.96,0.00,0.00,171.96,92.53,6.65,72.78,1.0,3.0,False,True,False
+548588,126172.0,2024-11-15,completed,Card,1,Spain,DHL,Returning,0.00,4,157.96,0.00,0.00,157.96,86.33,11.04,60.59,3.0,4.0,False,True,False
+535863,126176.0,2024-09-05,completed,Card,5,Greece,ELTA Courier,New,0.00,5,137.95,0.00,0.00,137.95,72.29,5.06,60.60,1.0,9.0,True,True,False
+535977,126231.0,2024-09-06,completed,Cash on Delivery,6,Greece,ELTA Courier,New,0.15,4,210.96,31.65,0.00,179.31,110.13,5.67,63.51,0.0,2.0,False,True,False
+546368,126362.0,2024-11-04,completed,Card,5,Greece,ELTA Courier,New,0.00,3,79.97,0.00,0.00,79.97,39.58,4.70,35.69,2.0,5.0,True,True,False
+536183,126385.0,2024-09-07,completed,Card,1,Spain,DHL,New,0.00,8,337.92,0.00,0.00,337.92,221.81,21.28,94.83,3.0,13.0,True,True,False
+536394,126544.0,2024-09-08,completed,Cash on Delivery,5,Greece,ELTA Courier,New,0.00,7,306.93,0.00,0.00,306.93,175.05,11.30,120.58,2.0,6.0,True,True,False
+536457,126554.0,2024-09-09,completed,Cash on Delivery,5,Greece,ELTA Courier,New,0.15,2,96.98,14.55,0.00,82.43,46.04,6.40,29.99,1.0,5.0,True,True,False
+536481,126578.0,2024-09-09,completed,Card,1,Greece,ELTA Courier,New,0.00,4,266.96,0.00,0.00,266.96,153.12,7.79,106.05,3.0,5.0,True,True,False
+536727,126761.0,2024-09-10,completed,PayPal,5,Germany,DHL,New,0.00,8,635.92,0.00,0.00,635.92,308.53,15.31,312.08,2.0,9.0,True,True,False
+536887,126861.0,2024-09-11,completed,Card,3,Greece,ELTA Courier,New,0.00,5,167.95,0.00,0.00,167.95,85.10,5.15,77.70,2.0,3.0,False,True,False
+536927,126901.0,2024-09-11,completed,Card,5,Greece,ELTA Courier,New,0.00,5,522.95,0.00,0.00,522.95,263.16,8.17,251.62,2.0,7.0,True,True,False
+550336,126923.0,2024-11-24,completed,Card,1,Greece,ELTA Courier,Returning,0.00,1,45.99,0.00,0.00,45.99,30.41,5.05,10.53,2.0,4.0,False,True,False
+537218,127084.0,2024-09-13,completed,Cash on Delivery,4,Germany,DHL,New,0.00,3,113.97,0.00,0.00,113.97,59.57,8.33,46.07,2.0,8.0,True,True,False
+548198,127132.0,2024-11-13,completed,Apple Pay,5,Greece,ELTA Courier,Returning,0.20,7,330.93,66.18,0.00,264.75,150.22,7.99,106.54,1.0,7.0,True,True,False
+537669,127377.0,2024-09-16,completed,PayPal,4,Italy,DHL,New,0.00,5,86.95,0.00,0.00,86.95,39.67,17.07,30.21,0.0,6.0,False,True,False
+537683,127391.0,2024-09-16,completed,PayPal,4,Greece,ELTA Courier,New,0.00,2,32.98,0.00,0.00,32.98,17.35,5.57,10.06,1.0,5.0,True,True,False
+537729,127437.0,2024-09-16,completed,Card,6,Greece,ELTA Courier,New,0.00,1,57.99,0.00,0.00,57.99,24.70,3.74,29.55,2.0,6.0,True,True,False
+537737,127445.0,2024-09-16,cancelled,PayPal,5,Greece,,New,0.00,1,101.99,0.00,0.00,0,60.07,0.00,0,,,,False,False
+538230,127801.0,2024-09-19,completed,Card,4,Greece,ELTA Courier,New,0.00,1,110.99,0.00,0.00,110.99,52.08,3.99,54.92,2.0,4.0,False,True,False
+557426,128214.0,2024-12-19,completed,Cash on Delivery,1,France,DHL,Returning,0.00,4,123.18,0.00,0.00,123.18,69.35,9.34,44.49,1.0,9.0,True,True,False
+539399,128583.0,2024-09-26,completed,Card,5,Italy,DHL,New,0.00,1,105.99,0.00,0.00,105.99,45.72,8.48,51.79,2.0,12.0,True,True,False
+539998,128977.0,2024-09-30,refunded,Cash on Delivery,1,Greece,ELTA Courier,New,0.00,2,77.02,0.00,77.02,0.00,37.68,6.41,-44.09,2.0,5.0,True,True,False
+540146,129072.0,2024-10-01,completed,Card,6,Greece,ELTA Courier,New,0.00,6,313.94,0.00,0.00,313.94,175.46,9.35,129.13,1.0,5.0,True,True,False
+540624,129436.0,2024-10-03,completed,PayPal,4,France,DHL,New,0.00,1,12.99,0.00,0.00,12.99,8.21,7.83,-3.05,1.0,5.0,False,True,False
+560496,129503.0,2025-01-01,completed,Card,1,Greece,ELTA Courier,Returning,0.00,2,158.94,0.00,0.00,158.94,86.73,6.29,65.92,2.0,7.0,True,True,False
+540975,129697.0,2024-10-05,completed,Cash on Delivery,1,Germany,DHL,New,0.00,4,271.96,0.00,0.00,271.96,142.25,12.57,117.14,4.0,6.0,False,True,False
+542398,130693.0,2024-10-13,completed,Cash on Delivery,4,Greece,ELTA Courier,New,0.00,2,121.98,0.00,0.00,121.98,55.75,4.20,62.03,2.0,5.0,True,True,False
+542532,130777.0,2024-10-14,completed,PayPal,1,Greece,ELTA Courier,New,0.00,2,85.98,0.00,0.00,85.98,40.17,5.69,40.12,1.0,4.0,False,True,False
+542870,131008.0,2024-10-16,completed,PayPal,1,Bulgaria,DHL,New,0.00,2,63.98,0.00,0.00,63.98,31.14,9.06,23.78,2.0,7.0,False,True,False
+563686,131133.0,2025-01-18,completed,Card,4,Greece,ELTA Courier,Returning,0.00,2,81.26,0.00,0.00,81.26,53.10,6.22,21.94,3.0,5.0,True,True,False
+543452,131413.0,2024-10-19,completed,Card,4,Cyprus,DHL,New,0.00,3,61.97,0.00,0.00,61.97,34.87,12.34,14.76,3.0,9.0,True,True,False
+543575,131475.0,2024-10-20,completed,Card,1,Spain,DHL,New,0.00,4,165.96,0.00,0.00,165.96,96.62,12.36,56.98,2.0,7.0,False,True,False
+543914,131709.0,2024-10-22,completed,Card,4,France,DHL,New,0.00,5,209.95,0.00,0.00,209.95,110.22,11.45,88.28,1.0,8.0,True,True,False
+544369,132064.0,2024-10-24,refunded,Card,4,Cyprus,DHL,New,0.00,4,159.96,0.00,159.96,0.00,71.92,12.51,-84.43,1.0,10.0,True,True,False
+544380,132075.0,2024-10-24,completed,Card,3,Italy,DHL,New,0.00,2,153.98,0.00,0.00,153.98,71.34,8.49,74.15,2.0,5.0,False,True,False
+544856,132375.0,2024-10-27,completed,PayPal,4,Greece,ELTA Courier,New,0.10,2,94.98,9.50,0.00,85.48,51.14,4.56,29.78,2.0,7.0,True,True,False
+546298,133389.0,2024-11-03,completed,Card,4,Bulgaria,DHL,New,0.00,1,39.99,0.00,0.00,39.99,19.23,7.44,13.32,1.0,8.0,True,True,False
+546334,133425.0,2024-11-03,completed,Cash on Delivery,5,Italy,DHL,New,0.00,1,62.99,0.00,0.00,62.99,29.64,8.43,24.92,3.0,6.0,False,True,False
+546399,133448.0,2024-11-04,completed,Card,4,Spain,DHL,New,0.00,6,307.94,0.00,0.00,307.94,135.54,13.28,159.12,2.0,15.0,True,True,False
+546844,133786.0,2024-11-06,completed,Cash on Delivery,4,Greece,ELTA Courier,New,0.00,7,180.93,0.00,0.00,180.93,87.05,15.58,78.30,2.0,5.0,True,True,False
+546846,133788.0,2024-11-06,completed,Cash on Delivery,4,Greece,ELTA Courier,New,0.00,6,348.94,0.00,0.00,348.94,160.76,7.42,180.76,3.0,8.0,True,True,False
+547016,133899.0,2024-11-07,cancelled,Cash on Delivery,5,Greece,,New,0.00,2,147.98,0.00,0.00,0,69.52,0.00,0,,,,False,False
+547059,133942.0,2024-11-07,cancelled,Cash on Delivery,6,France,,New,0.00,2,62.98,0.00,0.00,0,39.59,0.00,0,,,,False,False
+550811,134859.0,2024-11-26,completed,Cash on Delivery,4,Greece,ELTA Courier,Returning,0.00,2,49.98,0.00,0.00,49.98,22.88,7.89,19.21,1.0,5.0,True,True,False
+549344,134879.0,2024-11-19,completed,Cash on Delivery,1,Greece,ELTA Courier,Returning,0.00,7,593.93,0.00,0.00,593.93,313.63,9.17,271.13,2.0,5.0,True,True,False
+556950,134912.0,2024-12-17,completed,Card,5,Greece,ELTA Courier,Returning,0.00,2,96.98,0.00,0.00,96.98,52.22,4.64,40.12,2.0,5.0,True,True,False
+548502,134968.0,2024-11-14,completed,Cash on Delivery,1,Bulgaria,DHL,New,0.00,2,131.98,0.00,0.00,131.98,59.46,9.64,62.88,2.0,7.0,False,True,False
+548550,135016.0,2024-11-14,completed,PayPal,3,Greece,ELTA Courier,New,0.20,3,408.97,81.80,0.00,327.17,243.69,6.76,76.72,1.0,6.0,True,True,False
+549011,135305.0,2024-11-17,refunded,Cash on Delivery,5,Greece,ELTA Courier,New,0.00,7,316.93,0.00,158.45,158.48,168.02,11.37,-20.91,3.0,8.0,True,True,False
+549635,135767.0,2024-11-20,completed,Cash on Delivery,4,Cyprus,DHL,New,0.00,4,114.96,0.00,0.00,114.96,74.89,12.02,28.05,2.0,6.0,False,True,False
+550183,136124.0,2024-11-23,completed,Card,4,Greece,ELTA Courier,New,0.00,2,63.98,0.00,0.00,63.98,43.00,4.39,16.59,2.0,6.0,True,True,False
+556963,136444.0,2024-12-17,completed,Card,5,Netherlands,DHL,Returning,0.20,6,177.94,35.59,0.00,142.35,82.85,15.37,44.13,1.0,9.0,True,True,False
+556675,136509.0,2024-12-16,completed,Cash on Delivery,5,Greece,ELTA Courier,Returning,0.15,2,123.98,18.60,0.00,105.38,59.76,4.23,41.39,1.0,5.0,True,True,False
+603342,136583.0,2025-07-31,completed,Card,4,Italy,DHL,Returning,0.00,6,360.82,0.00,0.00,360.82,184.09,16.17,160.56,0.0,1.0,False,True,False
+589248,136658.0,2025-05-29,completed,Card,1,Greece,SwiftCourier,Returning,0.00,1,25.99,0.00,0.00,25.99,11.65,4.79,9.55,1.0,5.0,True,True,False
+576990,136700.0,2025-04-01,completed,Card,4,Greece,ELTA Courier,Returning,0.00,1,33.27,0.00,0.00,33.27,21.50,3.91,7.86,1.0,4.0,False,True,False
+551094,136771.0,2024-11-27,completed,Cash on Delivery,4,Greece,ELTA Courier,New,0.00,5,674.95,0.00,0.00,674.95,318.78,5.15,351.02,1.0,6.0,True,True,False
+586984,136915.0,2025-05-19,completed,PayPal,1,Greece,SwiftCourier,Returning,0.00,3,191.89,0.00,0.00,191.89,93.18,9.78,88.93,1.0,3.0,False,True,False
+559120,136937.0,2024-12-26,completed,Bank Transfer,6,Greece,ELTA Courier,Returning,0.00,9,203.91,0.00,0.00,203.91,123.79,7.81,72.31,0.0,4.0,False,True,False
+551348,136970.0,2024-11-28,completed,Card,4,Cyprus,DHL,New,0.10,7,356.93,35.70,0.00,321.23,191.81,16.23,113.19,3.0,7.0,False,True,False
+551528,137150.0,2024-11-28,completed,Card,5,Greece,ELTA Courier,New,0.00,5,603.95,0.00,0.00,603.95,346.12,9.40,248.43,1.0,4.0,False,True,False
+551818,137375.0,2024-11-29,completed,PayPal,6,Spain,DHL,New,0.00,4,593.96,0.00,0.00,593.96,311.60,10.07,272.29,1.0,7.0,False,True,False
+551976,137533.0,2024-11-29,completed,Cash on Delivery,5,Greece,ELTA Courier,New,0.00,2,83.98,0.00,0.00,83.98,43.62,4.45,35.91,0.0,2.0,False,True,False
+552037,137594.0,2024-11-29,completed,Card,4,Bulgaria,DHL,New,0.10,1,6.94,0.69,0.00,6.25,3.98,6.47,-4.20,3.0,11.0,True,True,False
+552826,138257.0,2024-12-01,completed,Card,6,Greece,ELTA Courier,New,0.00,7,101.97,0.00,0.00,101.97,54.91,14.42,32.64,3.0,5.0,True,True,False
+606546,138259.0,2025-08-15,completed,Card,2,Greece,SwiftCourier,Returning,0.00,6,145.28,0.00,0.00,145.28,78.81,8.64,57.83,0.0,2.0,False,True,False
+553315,138680.0,2024-12-02,refunded,PayPal,6,Greece,ELTA Courier,New,0.00,4,89.96,0.00,89.96,0.00,40.85,4.06,-44.91,0.0,6.0,True,True,False
+561443,138998.0,2025-01-06,completed,Apple Pay,4,Germany,DHL,Returning,0.00,6,575.50,0.00,0.00,575.50,322.26,11.90,241.34,1.0,2.0,False,True,False
+553761,139071.0,2024-12-03,completed,Card,2,Cyprus,DHL,New,0.00,4,123.96,0.00,0.00,123.96,64.51,14.41,45.04,1.0,7.0,False,True,False
+554017,139248.0,2024-12-04,completed,Card,4,Cyprus,DHL,New,0.00,1,63.99,0.00,0.00,63.99,36.78,9.27,17.94,2.0,5.0,False,True,False
+577973,139587.0,2025-04-06,completed,Cash on Delivery,1,Greece,ELTA Courier,Returning,0.00,3,145.97,0.00,0.00,145.97,78.62,8.06,59.29,1.0,3.0,False,True,False
+555074,139943.0,2024-12-09,completed,Cash on Delivery,5,Greece,ELTA Courier,New,0.00,10,473.93,0.00,0.00,473.93,252.90,9.03,212.00,1.0,4.0,False,True,False
+555226,140095.0,2024-12-09,completed,Card,5,Greece,ELTA Courier,New,0.00,3,137.97,0.00,0.00,137.97,81.75,4.98,51.24,0.0,1.0,False,True,False
+555343,140146.0,2024-12-10,completed,Card,4,France,DHL,New,0.00,1,27.99,0.00,0.00,27.99,11.91,7.78,8.30,3.0,8.0,True,True,False
+555815,140464.0,2024-12-12,completed,Apple Pay,5,Germany,DHL,New,0.10,4,139.96,14.00,0.00,125.96,85.20,8.23,32.53,1.0,8.0,True,True,False
+555887,140536.0,2024-12-12,completed,Card,3,Cyprus,DHL,New,0.00,3,104.97,0.00,0.00,104.97,55.63,10.41,38.93,2.0,7.0,False,True,False
+555902,140551.0,2024-12-12,completed,Card,4,Bulgaria,DHL,New,0.00,2,331.98,0.00,0.00,331.98,157.98,7.33,166.67,3.0,9.0,True,True,False
+556146,140727.0,2024-12-13,completed,Card,1,France,DHL,New,0.00,5,241.95,0.00,0.00,241.95,115.82,11.61,114.52,2.0,5.0,False,True,False
+575093,140743.0,2025-03-22,completed,Card,2,Netherlands,DHL,Returning,0.00,3,104.97,0.00,0.00,104.97,55.86,7.25,41.86,2.0,12.0,True,True,False
+582151,140951.0,2025-04-27,completed,Bank Transfer,1,Italy,DHL,Returning,0.00,1,39.51,0.00,0.00,39.51,17.01,9.26,13.24,1.0,5.0,False,True,False
+561656,140979.0,2025-01-07,completed,Bank Transfer,2,Italy,DHL,Returning,0.00,3,128.93,0.00,0.00,128.93,58.06,9.73,61.14,3.0,11.0,True,True,False
+571779,141079.0,2025-03-04,refunded,Card,6,Greece,ELTA Courier,Returning,0.00,2,139.74,0.00,139.74,0.00,83.09,4.44,-87.53,1.0,11.0,True,True,False
+569324,141087.0,2025-02-18,completed,PayPal,4,Greece,ELTA Courier,Returning,0.00,4,82.24,0.00,0.00,82.24,50.75,4.81,26.68,3.0,8.0,True,True,False
+556859,141220.0,2024-12-16,completed,Cash on Delivery,4,Greece,ELTA Courier,New,0.00,3,69.97,0.00,0.00,69.97,42.28,4.60,23.09,1.0,4.0,False,True,False
+562389,141320.0,2025-01-11,completed,Card,1,Greece,ELTA Courier,Returning,0.00,4,167.40,0.00,0.00,167.40,84.96,4.59,77.85,2.0,4.0,False,True,False
+565037,141364.0,2025-01-25,completed,PayPal,5,Greece,ELTA Courier,Returning,0.15,1,25.99,3.90,0.00,22.09,12.39,5.55,4.15,2.0,6.0,True,True,False
+557548,141690.0,2024-12-19,completed,Card,5,Greece,ELTA Courier,New,0.10,4,279.96,28.00,0.00,251.96,162.57,7.48,81.91,3.0,5.0,True,True,False
+567546,142366.0,2025-02-08,cancelled,Cash on Delivery,4,Greece,,Returning,0.00,2,150.50,0.00,0.00,0,69.09,0.00,0,,,,False,False
+582153,142542.0,2025-04-27,completed,Card,6,France,DHL,Returning,0.00,1,73.99,0.00,0.00,73.99,32.98,8.14,32.87,2.0,6.0,False,True,False
+559216,142822.0,2024-12-26,completed,Card,5,Italy,DHL,New,0.00,1,299.99,0.00,0.00,299.99,136.48,7.38,156.13,2.0,7.0,False,True,False
+559402,142921.0,2024-12-27,completed,Cash on Delivery,4,Cyprus,DHL,New,0.00,5,239.95,0.00,0.00,239.95,147.17,18.05,74.73,1.0,5.0,False,True,False
+559442,142961.0,2024-12-27,completed,Card,4,Greece,ELTA Courier,New,0.00,1,91.99,0.00,0.00,91.99,56.39,3.39,32.21,0.0,2.0,False,True,False
+559482,143001.0,2024-12-27,refunded,Card,4,Germany,DHL,New,0.00,3,101.97,0.00,101.97,0.00,57.68,9.14,-66.82,1.0,9.0,True,True,False
+559512,143031.0,2024-12-27,completed,Card,6,Germany,DHL,New,0.00,1,151.99,0.00,0.00,151.99,92.20,7.64,52.15,1.0,6.0,False,True,False
+559907,143281.0,2024-12-29,completed,PayPal,6,Greece,ELTA Courier,New,0.00,5,428.95,0.00,0.00,428.95,210.90,11.91,206.14,3.0,11.0,True,True,False
+559973,143347.0,2024-12-29,completed,Card,5,Cyprus,DHL,New,0.00,4,118.96,0.00,0.00,118.96,58.65,15.93,44.38,2.0,6.0,False,True,False
+576243,143455.0,2025-03-28,completed,Cash on Delivery,5,Cyprus,DHL,Returning,0.00,1,33.27,0.00,0.00,33.27,21.50,11.49,0.28,2.0,8.0,True,True,False
+560360,143586.0,2024-12-31,completed,Card,4,Greece,ELTA Courier,New,0.00,4,228.96,0.00,0.00,228.96,113.75,7.43,107.78,1.0,5.0,True,True,False
+562404,143649.0,2025-01-11,completed,Cash on Delivery,4,Bulgaria,DHL,Returning,0.00,3,128.93,0.00,0.00,128.93,58.06,9.00,61.87,1.0,6.0,False,True,False
+560587,143718.0,2025-01-01,refunded,PayPal,2,Greece,ELTA Courier,New,0.00,4,73.80,0.00,73.80,0.00,43.39,5.68,-49.07,3.0,5.0,True,True,False
+567705,143801.0,2025-02-09,completed,Cash on Delivery,3,Netherlands,DHL,Returning,0.10,3,209.29,20.93,0.00,188.36,113.24,8.47,66.65,2.0,5.0,False,True,False
+560674,143805.0,2025-01-01,refunded,Card,6,Cyprus,DHL,New,0.00,1,76.95,0.00,76.95,0.00,34.76,10.84,-45.60,3.0,10.0,True,True,False
+560761,143823.0,2025-01-02,completed,Card,4,Greece,ELTA Courier,New,0.00,2,55.10,0.00,0.00,55.10,34.59,6.02,14.49,2.0,8.0,True,True,False
+561187,144100.0,2025-01-04,completed,PayPal,5,Spain,DHL,New,0.10,4,134.12,13.42,0.00,120.70,65.27,10.76,44.67,4.0,14.0,True,True,False
+561360,144189.0,2025-01-05,completed,Card,5,Greece,ELTA Courier,New,0.00,2,92.54,0.00,0.00,92.54,44.19,5.61,42.74,3.0,8.0,True,True,False
+562219,144427.0,2025-01-10,completed,Card,4,Netherlands,DHL,Returning,0.00,2,119.30,0.00,0.00,119.30,55.32,7.63,56.35,1.0,8.0,True,True,False
+588602,144466.0,2025-05-26,completed,Bank Transfer,1,Greece,SwiftCourier,Returning,0.00,3,143.97,0.00,0.00,143.97,84.42,6.23,53.32,1.0,3.0,False,True,False
+561896,144500.0,2025-01-08,completed,Card,3,Greece,ELTA Courier,New,0.00,2,66.54,0.00,0.00,66.54,43.00,4.90,18.64,0.0,3.0,False,True,False
+561918,144522.0,2025-01-08,completed,Card,4,Greece,ELTA Courier,New,0.00,7,350.17,0.00,0.00,350.17,196.96,9.33,143.88,3.0,4.0,False,True,False
+562439,144822.0,2025-01-11,completed,Card,1,Greece,ELTA Courier,New,0.00,1,12.99,0.00,0.00,12.99,7.20,3.71,2.08,1.0,5.0,True,True,False
+571412,145258.0,2025-03-02,completed,Card,2,Greece,ELTA Courier,Returning,0.00,6,173.94,0.00,0.00,173.94,84.70,5.68,83.56,2.0,5.0,True,True,False
+563214,145287.0,2025-01-15,completed,Card,5,Greece,ELTA Courier,New,0.10,1,110.99,11.10,0.00,99.89,52.08,4.10,43.71,0.0,6.0,True,True,False
+566482,145691.0,2025-02-02,completed,Card,1,Spain,DHL,Returning,0.00,1,54.07,0.00,0.00,54.07,32.00,7.57,14.50,3.0,7.0,False,True,False
+568087,146029.0,2025-02-11,cancelled,Card,4,Greece,,Returning,0.25,4,179.88,44.98,0.00,0,100.39,0.00,0,,,,False,False
+564910,146287.0,2025-01-24,completed,Card,5,Cyprus,DHL,New,0.00,2,31.18,0.00,0.00,31.18,18.86,9.24,3.08,2.0,4.0,False,True,False
+565231,146463.0,2025-01-26,completed,Cash on Delivery,4,France,DHL,New,0.00,1,47.99,0.00,0.00,47.99,28.14,7.88,11.97,4.0,9.0,True,True,False
+573106,147056.0,2025-03-11,completed,Card,1,Bulgaria,DHL,Returning,0.00,4,166.36,0.00,0.00,166.36,77.74,9.43,79.19,0.0,5.0,False,True,False
+566346,147147.0,2025-02-01,completed,Card,1,Greece,ELTA Courier,New,0.00,5,247.07,0.00,0.00,247.07,144.93,7.08,95.06,3.0,4.0,False,True,False
+575116,148057.0,2025-03-22,completed,Card,4,France,DHL,Returning,0.00,1,33.27,0.00,0.00,33.27,21.50,8.29,3.48,4.0,14.0,True,True,False
+568713,148608.0,2025-02-14,completed,Bank Transfer,4,Greece,ELTA Courier,New,0.00,3,172.61,0.00,0.00,172.61,103.07,5.13,64.41,1.0,4.0,False,True,False
+591893,148782.0,2025-06-10,completed,Card,1,Germany,DHL,Returning,0.00,6,274.36,0.00,0.00,274.36,160.42,13.54,100.40,0.0,3.0,False,True,False
+569189,148870.0,2025-02-17,completed,Card,1,Cyprus,DHL,New,0.00,1,76.95,0.00,0.00,76.95,34.76,11.25,30.94,1.0,6.0,False,True,False
+569537,149075.0,2025-02-19,completed,Card,6,Greece,ELTA Courier,New,0.00,4,219.40,0.00,0.00,219.40,107.96,7.87,103.57,3.0,7.0,True,True,False
+569555,149093.0,2025-02-19,completed,Card,4,Greece,ELTA Courier,New,0.00,1,33.27,0.00,0.00,33.27,21.50,3.97,7.80,2.0,5.0,True,True,False
+569811,149277.0,2025-02-20,completed,Card,3,Italy,DHL,New,0.10,6,207.66,20.77,0.00,186.89,103.50,10.89,72.50,2.0,3.0,False,True,False
+583058,149434.0,2025-05-01,completed,Cash on Delivery,6,Germany,DHL,Returning,0.00,5,227.99,0.00,0.00,227.99,103.47,13.05,111.47,0.0,4.0,False,True,False
+570402,149632.0,2025-02-24,completed,Cash on Delivery,6,Greece,ELTA Courier,New,0.10,5,218.31,21.84,0.00,196.47,108.85,6.05,81.57,0.0,4.0,False,True,False
+601764,149843.0,2025-07-24,completed,Cash on Delivery,1,Greece,SwiftCourier,Returning,0.00,3,183.01,0.00,0.00,183.01,81.43,10.06,91.52,1.0,4.0,False,True,False
+627763,149870.0,2025-11-10,completed,Card,1,Germany,DHL,Returning,0.10,9,275.51,27.56,0.00,247.95,156.95,13.12,77.88,2.0,12.0,True,True,False
+589037,150137.0,2025-05-28,completed,Cash on Delivery,4,Netherlands,DHL,Returning,0.00,2,55.10,0.00,0.00,55.10,26.32,11.11,17.67,2.0,6.0,False,True,False
+571278,150144.0,2025-03-01,completed,Card,4,Greece,ELTA Courier,New,0.00,9,519.39,0.00,0.00,519.39,304.53,7.20,207.66,3.0,9.0,True,True,False
+583926,150188.0,2025-05-05,completed,Card,5,Spain,DHL,New,0.10,1,20.79,2.08,0.00,18.71,11.28,7.99,-0.56,1.0,3.0,False,True,False
+571345,150211.0,2025-03-01,completed,Cash on Delivery,6,Cyprus,DHL,New,0.00,3,89.41,0.00,0.00,89.41,57.84,11.82,19.75,3.0,6.0,False,True,False
+571910,150585.0,2025-03-04,completed,Cash on Delivery,3,Greece,ELTA Courier,New,0.00,1,83.99,0.00,0.00,83.99,46.02,4.10,33.87,2.0,4.0,False,True,False
+572199,150757.0,2025-03-06,completed,Cash on Delivery,6,Greece,ELTA Courier,New,0.00,3,314.97,0.00,0.00,314.97,177.52,8.28,129.17,3.0,6.0,True,True,False
+572290,150848.0,2025-03-06,refunded,Apple Pay,1,Cyprus,DHL,New,0.00,1,33.27,0.00,33.27,0.00,21.50,10.19,-31.69,3.0,14.0,True,True,False
+572426,150915.0,2025-03-07,completed,PayPal,6,Cyprus,DHL,New,0.00,7,263.05,0.00,0.00,263.05,118.35,20.82,123.88,1.0,5.0,False,True,False
+605457,151092.0,2025-08-10,completed,Bank Transfer,5,Greece,SwiftCourier,Returning,0.00,1,33.27,0.00,0.00,33.27,21.50,5.36,6.41,4.0,5.0,True,True,False
+578015,151273.0,2025-04-06,completed,Card,5,Greece,ELTA Courier,Returning,0.00,5,100.35,0.00,0.00,100.35,61.38,5.18,33.79,3.0,7.0,True,True,False
+573025,151301.0,2025-03-10,completed,Card,4,Greece,ELTA Courier,New,0.00,3,123.73,0.00,0.00,123.73,54.08,6.93,62.72,1.0,6.0,True,True,False
+573208,151435.0,2025-03-11,completed,Card,4,Greece,ELTA Courier,New,0.10,2,248.98,24.90,0.00,224.08,145.16,5.58,73.34,1.0,6.0,True,True,False
+573211,151438.0,2025-03-11,completed,Cash on Delivery,6,Greece,ELTA Courier,New,0.00,1,259.99,0.00,0.00,259.99,132.31,3.74,123.94,1.0,6.0,True,True,False
+610948,151452.0,2025-09-04,completed,Card,1,Bulgaria,DHL,Returning,0.00,2,187.94,0.00,0.00,187.94,86.84,9.50,91.60,3.0,8.0,True,True,False
+580590,151668.0,2025-04-19,completed,Card,2,Greece,ELTA Courier,Returning,0.10,5,297.39,29.73,0.00,267.66,147.28,11.68,108.70,2.0,4.0,False,True,False
+573611,151696.0,2025-03-13,completed,Card,6,Germany,DHL,New,0.00,3,82.13,0.00,0.00,82.13,52.43,8.68,21.02,3.0,5.0,False,True,False
+574411,152193.0,2025-03-18,completed,Cash on Delivery,5,Spain,DHL,New,0.00,4,109.96,0.00,0.00,109.96,55.36,11.26,43.34,2.0,7.0,False,True,False
+574490,152272.0,2025-03-18,completed,Cash on Delivery,5,Greece,ELTA Courier,New,0.15,3,166.37,24.95,0.00,141.42,75.75,8.26,57.41,2.0,5.0,True,True,False
+574499,152281.0,2025-03-18,completed,Card,5,Bulgaria,DHL,New,0.00,2,109.34,0.00,0.00,109.34,60.32,9.01,40.01,1.0,4.0,False,True,False
+582400,152534.0,2025-04-28,completed,Bank Transfer,2,Greece,ELTA Courier,Returning,0.00,3,232.93,0.00,0.00,232.93,118.71,5.52,108.70,3.0,12.0,True,True,False
+576105,152784.0,2025-03-27,completed,Card,2,Cyprus,DHL,Returning,0.00,4,263.48,0.00,0.00,263.48,146.71,10.79,105.98,2.0,4.0,False,True,False
+575540,152865.0,2025-03-24,completed,PayPal,1,France,DHL,New,0.20,1,18.99,3.80,0.00,15.19,8.59,9.16,-2.56,3.0,7.0,False,True,False
+585491,152950.0,2025-05-12,completed,Card,2,France,DHL,Returning,0.00,2,114.94,0.00,0.00,114.94,57.90,10.41,46.63,1.0,7.0,False,True,False
+575917,153089.0,2025-03-26,completed,Card,4,Italy,DHL,New,0.00,4,133.08,0.00,0.00,133.08,86.00,9.57,37.51,3.0,5.0,False,True,False
+582643,153114.0,2025-04-29,completed,Card,4,Germany,DHL,Returning,0.00,2,121.66,0.00,0.00,121.66,54.02,10.28,57.36,1.0,5.0,False,True,False
+588841,153191.0,2025-05-27,completed,Apple Pay,1,Greece,SwiftCourier,Returning,0.00,2,97.74,0.00,0.00,97.74,43.44,7.27,47.03,2.0,4.0,False,True,False
+585497,153308.0,2025-05-12,completed,Card,2,Germany,DHL,New,0.00,2,378.26,0.00,0.00,378.26,224.66,8.49,145.11,1.0,7.0,False,True,False
+612365,153308.0,2025-09-10,completed,PayPal,2,Germany,DHL,Returning,0.00,6,210.18,0.00,0.00,210.18,117.12,17.33,75.73,0.0,4.0,False,True,False
+576492,153430.0,2025-03-29,completed,Cash on Delivery,4,Cyprus,DHL,New,0.00,2,89.58,0.00,0.00,89.58,52.71,9.76,27.11,2.0,8.0,True,True,False
+594595,153527.0,2025-06-22,completed,PayPal,1,France,DHL,Returning,0.00,2,132.98,0.00,0.00,132.98,63.69,8.76,60.53,1.0,8.0,True,True,False
+577362,153976.0,2025-04-02,completed,Card,4,Spain,DHL,New,0.25,2,77.46,19.37,0.00,58.09,35.05,8.62,14.42,1.0,10.0,True,True,False
+600477,154160.0,2025-07-18,refunded,Card,5,Spain,DHL,Returning,0.00,1,15.59,0.00,4.68,10.91,7.23,9.96,-6.28,1.0,5.0,False,True,False
+577744,154226.0,2025-04-04,completed,PayPal,5,Italy,DHL,New,0.00,2,187.94,0.00,0.00,187.94,103.72,9.51,74.71,2.0,4.0,False,True,False
+578040,154370.0,2025-04-06,completed,Card,2,Greece,ELTA Courier,New,0.00,1,71.75,0.00,0.00,71.75,34.19,4.01,33.55,3.0,4.0,False,True,False
+578705,154818.0,2025-04-09,completed,Card,6,Bulgaria,DHL,New,0.00,1,47.83,0.00,0.00,47.83,30.41,7.99,9.43,1.0,3.0,False,True,False
+579666,155408.0,2025-04-14,completed,PayPal,5,Greece,ELTA Courier,New,0.00,1,34.31,0.00,0.00,34.31,17.14,4.17,13.00,1.0,2.0,False,True,False
+589065,155609.0,2025-05-28,completed,Card,5,Cyprus,DHL,Returning,0.00,5,244.07,0.00,0.00,244.07,111.94,14.67,117.46,0.0,8.0,True,True,False
+599566,155967.0,2025-07-14,completed,Card,1,Greece,SwiftCourier,Returning,0.00,2,39.98,0.00,0.00,39.98,21.20,5.09,13.69,1.0,5.0,True,True,False
+591710,156102.0,2025-06-09,completed,Card,6,Cyprus,DHL,Returning,0.00,2,125.98,0.00,0.00,125.98,59.65,12.32,54.01,2.0,9.0,True,True,False
+594156,156198.0,2025-06-20,completed,Card,6,Bulgaria,DHL,Returning,0.00,2,172.38,0.00,0.00,172.38,99.09,7.93,65.36,3.0,10.0,True,True,False
+581479,156506.0,2025-04-23,completed,Card,4,Greece,ELTA Courier,New,0.00,2,110.22,0.00,0.00,110.22,56.26,6.13,47.83,2.0,7.0,True,True,False
+582143,156942.0,2025-04-26,completed,Card,5,Germany,DHL,New,0.00,2,376.46,0.00,0.00,376.46,166.66,7.28,202.52,1.0,10.0,True,True,False
+588402,157229.0,2025-05-25,completed,PayPal,1,Italy,DHL,Returning,0.00,2,102.94,0.00,0.00,102.94,46.41,9.33,47.20,4.0,10.0,True,True,False
+582690,157230.0,2025-04-29,refunded,Card,6,Greece,ELTA Courier,New,0.00,9,206.63,0.00,206.63,0.00,103.86,15.05,-118.91,2.0,8.0,True,True,False
+602014,157278.0,2025-07-25,completed,Cash on Delivery,2,Greece,SwiftCourier,Returning,0.00,1,15.59,0.00,0.00,15.59,9.43,4.57,1.59,2.0,5.0,True,True,False
+582768,157308.0,2025-04-29,completed,Card,3,Bulgaria,DHL,New,0.00,1,63.99,0.00,0.00,63.99,30.81,6.95,26.23,2.0,7.0,False,True,False
+601793,157670.0,2025-07-24,completed,Card,1,Greece,SwiftCourier,Returning,0.00,3,171.93,0.00,0.00,171.93,92.33,9.61,69.99,1.0,3.0,False,True,False
+583460,157747.0,2025-05-02,cancelled,Bank Transfer,4,Greece,,New,0.00,2,37.46,0.00,0.00,0,20.48,0.00,0,,,,False,False
+583668,157870.0,2025-05-03,completed,Cash on Delivery,2,Bulgaria,DHL,New,0.00,8,400.44,0.00,0.00,400.44,194.93,10.69,194.82,3.0,8.0,True,True,False
+584418,158273.0,2025-05-07,completed,Card,4,France,DHL,New,0.00,4,314.84,0.00,0.00,314.84,150.30,14.62,149.92,2.0,9.0,True,True,False
+614854,158449.0,2025-09-20,completed,PayPal,4,Germany,DHL,Returning,0.00,1,73.99,0.00,0.00,73.99,32.98,7.84,33.17,3.0,15.0,True,True,False
+584738,158501.0,2025-05-08,completed,Bank Transfer,2,Germany,DHL,New,0.00,4,237.79,0.00,0.00,237.79,108.26,13.80,115.73,2.0,4.0,False,True,False
+604612,158671.0,2025-08-06,completed,Card,5,Greece,SwiftCourier,Returning,0.00,1,76.95,0.00,0.00,76.95,34.76,7.03,35.16,0.0,6.0,True,True,False
+585680,159059.0,2025-05-12,completed,Cash on Delivery,1,Spain,DHL,New,0.00,6,197.34,0.00,0.00,197.34,104.10,9.75,83.49,2.0,7.0,False,True,False
+586019,159217.0,2025-05-14,completed,Card,4,Bulgaria,DHL,New,0.10,3,154.93,15.50,0.00,139.43,66.78,10.69,61.96,2.0,3.0,False,True,False
+586315,159405.0,2025-05-15,completed,Card,5,Spain,DHL,New,0.00,2,161.18,0.00,0.00,161.18,84.52,9.00,67.66,1.0,4.0,False,True,False
+586460,159454.0,2025-05-16,completed,Cash on Delivery,5,Greece,SwiftCourier,New,0.10,2,150.50,15.05,0.00,135.45,85.97,6.98,42.50,3.0,4.0,False,True,False
+586586,159580.0,2025-05-16,completed,Cash on Delivery,5,Greece,SwiftCourier,New,0.00,1,39.51,0.00,0.00,39.51,17.01,7.00,15.50,0.0,1.0,False,True,False
+613647,159939.0,2025-09-15,completed,Card,4,Italy,DHL,New,0.00,2,36.78,0.00,0.00,36.78,19.17,9.26,8.35,2.0,6.0,False,True,False
+642970,160299.0,2025-12-25,completed,Cash on Delivery,5,Germany,DHL,Returning,0.00,2,107.38,0.00,0.00,107.38,63.46,7.53,36.39,2.0,6.0,False,True,False
+588242,160494.0,2025-05-24,completed,Card,3,Greece,SwiftCourier,New,0.00,4,515.96,0.00,0.00,515.96,341.04,7.44,167.48,2.0,3.0,False,True,False
+612152,160634.0,2025-09-09,completed,Card,5,Bulgaria,DHL,Returning,0.00,2,90.98,0.00,0.00,90.98,47.26,6.97,36.75,1.0,3.0,False,True,False
+589408,161197.0,2025-05-29,completed,Card,4,Cyprus,DHL,New,0.10,1,50.99,5.10,0.00,45.89,23.77,10.55,11.57,3.0,8.0,True,True,False
+630891,161409.0,2025-11-21,completed,Cash on Delivery,2,Greece,SwiftCourier,Returning,0.00,1,24.99,0.00,0.00,24.99,14.25,6.65,4.09,1.0,5.0,True,True,False
+606816,161437.0,2025-08-16,completed,Card,4,Germany,DHL,Returning,0.00,4,181.76,0.00,0.00,181.76,89.15,9.28,83.33,3.0,5.0,False,True,False
+589992,161502.0,2025-06-01,cancelled,PayPal,3,Greece,,New,0.20,4,199.64,39.92,0.00,0,97.77,0.00,0,,,,False,False
+590180,161605.0,2025-06-02,completed,Card,5,Germany,DHL,New,0.10,4,168.56,16.86,0.00,151.70,98.13,10.70,42.87,1.0,4.0,False,True,False
+622405,161872.0,2025-10-21,completed,Card,2,Greece,SwiftCourier,Returning,0.00,2,221.98,0.00,0.00,221.98,104.16,5.61,112.21,1.0,2.0,False,True,False
+590699,161929.0,2025-06-04,completed,PayPal,3,Greece,SwiftCourier,New,0.00,7,570.76,0.00,0.00,570.76,264.50,12.46,293.80,3.0,6.0,True,True,False
+591159,162179.0,2025-06-06,cancelled,Card,4,Spain,,New,0.00,2,240.98,0.00,0.00,0,123.26,0.00,0,,,,False,False
+591607,162421.0,2025-06-08,cancelled,Card,5,Greece,,New,0.00,4,63.64,0.00,0.00,0,36.23,0.00,0,,,,False,False
+591623,162437.0,2025-06-08,completed,Apple Pay,4,Netherlands,DHL,New,0.00,6,292.86,0.00,0.00,292.86,132.75,16.84,143.27,2.0,11.0,True,True,False
+591980,162596.0,2025-06-10,completed,PayPal,4,Greece,SwiftCourier,New,0.00,4,341.12,0.00,0.00,341.12,183.52,10.36,147.24,3.0,5.0,True,True,False
+596220,162784.0,2025-06-29,completed,PayPal,4,Germany,DHL,Returning,0.00,10,571.14,0.00,0.00,571.14,251.85,18.72,300.57,3.0,6.0,False,True,False
+607671,162885.0,2025-08-20,completed,PayPal,6,Germany,DHL,Returning,0.00,2,31.98,0.00,0.00,31.98,20.06,7.74,4.18,2.0,5.0,False,True,False
+598470,162893.0,2025-07-09,completed,Card,6,Germany,DHL,Returning,0.00,4,133.36,0.00,0.00,133.36,70.07,8.67,54.62,1.0,10.0,True,True,False
+592494,162906.0,2025-06-12,completed,Card,1,Greece,SwiftCourier,New,0.00,3,108.41,0.00,0.00,108.41,49.58,8.59,50.24,1.0,3.0,False,True,False
+592538,162950.0,2025-06-12,completed,PayPal,4,Netherlands,DHL,New,0.10,3,181.45,18.15,0.00,163.30,94.56,9.22,59.52,2.0,8.0,True,True,False
+607027,163340.0,2025-08-17,completed,Card,3,Greece,SwiftCourier,Returning,0.15,1,106.07,15.91,0.00,90.16,60.07,5.38,24.71,2.0,4.0,False,True,False
+595582,163351.0,2025-06-26,completed,Card,4,Germany,DHL,Returning,0.25,1,17.67,4.42,0.00,13.25,7.32,8.64,-2.71,1.0,7.0,False,True,False
+630896,163531.0,2025-11-21,cancelled,Card,5,Spain,,Returning,0.00,2,153.90,0.00,0.00,0,69.52,0.00,0,,,,False,False
+593635,163555.0,2025-06-17,completed,Card,4,Netherlands,DHL,New,0.00,2,56.26,0.00,0.00,56.26,36.20,9.47,10.59,0.0,6.0,False,True,False
+643966,163575.0,2025-12-28,completed,Apple Pay,4,Netherlands,DHL,Returning,0.00,1,71.75,0.00,0.00,71.75,34.19,7.38,30.18,3.0,9.0,True,True,False
+608105,164299.0,2025-08-22,completed,Card,4,Netherlands,DHL,Returning,0.00,3,39.57,0.00,0.00,39.57,20.25,6.89,12.43,1.0,4.0,False,True,False
+595643,164593.0,2025-06-26,completed,Card,1,Bulgaria,DHL,New,0.10,3,135.33,13.54,0.00,121.79,81.70,8.27,31.82,3.0,12.0,True,True,False
+595933,164789.0,2025-06-27,completed,Card,4,Netherlands,DHL,New,0.20,3,196.01,39.20,0.00,156.81,101.33,9.49,45.99,1.0,6.0,False,True,False
+596087,164854.0,2025-06-28,completed,Card,5,Italy,DHL,New,0.00,2,39.98,0.00,0.00,39.98,18.99,8.74,12.25,3.0,12.0,True,True,False
+596901,164928.0,2025-07-02,refunded,Card,5,Italy,DHL,Returning,0.10,3,202.77,20.28,182.49,0.00,102.11,9.17,-111.28,2.0,6.0,False,True,False
+618679,165206.0,2025-10-06,completed,Card,4,Bulgaria,DHL,Returning,0.00,2,91.26,0.00,0.00,91.26,50.20,8.08,32.98,1.0,6.0,False,True,False
+596762,165227.0,2025-07-01,completed,Cash on Delivery,1,Greece,SwiftCourier,New,0.00,1,12.47,0.00,0.00,12.47,6.23,4.70,1.54,3.0,6.0,True,True,False
+625570,165625.0,2025-11-02,completed,Cash on Delivery,2,Greece,SwiftCourier,Returning,0.00,6,340.82,0.00,0.00,340.82,170.24,15.64,154.94,3.0,5.0,True,True,False
+606388,165760.0,2025-08-14,completed,Card,2,Greece,SwiftCourier,Returning,0.00,5,452.91,0.00,0.00,452.91,247.83,6.89,198.19,2.0,4.0,False,True,False
+597870,165777.0,2025-07-06,completed,Apple Pay,4,Germany,DHL,New,0.00,6,303.02,0.00,0.00,303.02,139.82,13.18,150.02,2.0,7.0,False,True,False
+597880,165787.0,2025-07-06,completed,Cash on Delivery,4,Greece,SwiftCourier,New,0.10,3,196.53,19.65,0.00,176.88,112.52,7.32,57.04,1.0,2.0,False,True,False
+598164,165967.0,2025-07-07,completed,Card,4,Italy,DHL,New,0.00,7,241.72,0.00,0.00,241.72,131.38,10.71,99.63,2.0,10.0,True,True,False
+623451,165968.0,2025-10-25,completed,PayPal,1,Greece,SwiftCourier,Returning,0.00,3,326.53,0.00,0.00,326.53,177.71,8.34,140.48,1.0,3.0,False,True,False
+598732,166241.0,2025-07-10,completed,Card,5,Germany,DHL,New,0.00,1,15.59,0.00,0.00,15.59,9.43,6.71,-0.55,0.0,6.0,False,True,False
+598738,166247.0,2025-07-10,completed,Cash on Delivery,3,France,DHL,New,0.00,4,311.96,0.00,0.00,311.96,172.83,10.90,128.23,2.0,7.0,False,True,False
+605111,166278.0,2025-08-08,completed,PayPal,6,Bulgaria,DHL,Returning,0.00,4,199.64,0.00,0.00,199.64,98.98,10.93,89.73,3.0,11.0,True,True,False
+611682,166413.0,2025-09-07,completed,PayPal,4,Greece,SwiftCourier,Returning,0.00,3,230.85,0.00,0.00,230.85,104.28,11.20,115.37,3.0,6.0,True,True,False
+599212,166516.0,2025-07-12,completed,Card,3,Greece,SwiftCourier,New,0.00,7,254.73,0.00,0.00,254.73,123.81,10.29,120.63,3.0,5.0,True,True,False
+599465,166659.0,2025-07-13,cancelled,Card,5,Italy,,New,0.00,4,213.16,0.00,0.00,0,93.00,0.00,0,,,,False,False
+599649,166721.0,2025-07-14,completed,Card,1,Spain,DHL,New,0.00,4,257.88,0.00,0.00,257.88,108.86,12.45,136.57,2.0,10.0,True,True,False
+599720,166792.0,2025-07-14,completed,PayPal,1,Bulgaria,DHL,New,0.00,1,15.59,0.00,0.00,15.59,9.43,6.88,-0.72,0.0,3.0,False,True,False
+599915,166861.0,2025-07-15,completed,PayPal,6,Greece,SwiftCourier,New,0.25,1,78.99,19.75,0.00,59.24,43.05,5.43,10.76,2.0,3.0,False,True,False
+617452,166990.0,2025-10-01,completed,Card,1,Greece,SwiftCourier,Returning,0.00,2,163.30,0.00,0.00,163.30,86.11,7.03,70.16,0.0,2.0,False,True,False
+600832,167365.0,2025-07-19,completed,Card,3,Bulgaria,DHL,New,0.00,2,138.46,0.00,0.00,138.46,80.66,9.45,48.35,3.0,6.0,False,True,False
+601065,167494.0,2025-07-20,completed,Card,1,Cyprus,DHL,New,0.00,3,81.89,0.00,0.00,81.89,46.37,10.34,25.18,4.0,15.0,True,True,False
+611935,167547.0,2025-09-08,cancelled,Card,5,Greece,,Returning,0.00,7,403.33,0.00,0.00,0,212.67,0.00,0,,,,False,False
+609632,167571.0,2025-08-29,completed,Bank Transfer,4,Greece,SwiftCourier,Returning,0.00,4,189.56,0.00,0.00,189.56,88.58,6.90,94.08,2.0,3.0,False,True,False
+601478,167703.0,2025-07-22,completed,PayPal,3,Greece,SwiftCourier,New,0.00,2,66.54,0.00,0.00,66.54,43.00,5.88,17.66,3.0,5.0,True,True,False
+619953,167781.0,2025-10-11,completed,Card,5,Greece,SwiftCourier,Returning,0.00,2,59.50,0.00,0.00,59.50,27.57,7.03,24.90,1.0,4.0,False,True,False
+604722,169360.0,2025-08-06,completed,Card,1,Greece,SwiftCourier,New,0.00,6,362.50,0.00,0.00,362.50,184.22,10.06,168.22,2.0,3.0,False,True,False
+604984,169500.0,2025-08-07,refunded,Card,4,Greece,SwiftCourier,New,0.00,3,101.89,0.00,30.56,71.33,53.40,7.46,10.47,1.0,5.0,True,True,False
+604999,169515.0,2025-08-07,completed,Card,1,Germany,DHL,New,0.00,4,134.68,0.00,0.00,134.68,69.77,8.49,56.42,3.0,6.0,False,True,False
+606227,170061.0,2025-08-13,completed,Cash on Delivery,4,Greece,SwiftCourier,New,0.00,5,242.99,0.00,0.00,242.99,148.03,7.33,87.63,0.0,2.0,False,True,False
+606922,170415.0,2025-08-16,completed,Card,4,Greece,SwiftCourier,New,0.00,3,72.85,0.00,0.00,72.85,45.23,5.45,22.17,4.0,6.0,True,True,False
+607298,170578.0,2025-08-18,completed,PayPal,2,Italy,DHL,New,0.15,3,151.97,22.79,0.00,129.18,75.37,10.58,43.23,2.0,3.0,False,True,False
+616755,170949.0,2025-09-28,completed,PayPal,5,Germany,DHL,Returning,0.00,4,310.92,0.00,0.00,310.92,145.28,9.21,156.43,2.0,7.0,False,True,False
+609215,171506.0,2025-08-27,completed,Card,4,Greece,SwiftCourier,New,0.00,4,122.40,0.00,0.00,122.40,60.76,5.61,56.03,2.0,5.0,True,True,False
+630025,171565.0,2025-11-18,completed,Card,4,Greece,SwiftCourier,Returning,0.15,1,11.99,1.80,0.00,10.19,5.41,4.80,-0.02,1.0,2.0,False,True,False
+631775,171802.0,2025-11-24,completed,Bank Transfer,2,France,DHL,Returning,0.00,4,189.24,0.00,0.00,189.24,84.16,16.67,88.41,2.0,5.0,False,True,False
+609963,171930.0,2025-08-30,completed,Card,6,Greece,SwiftCourier,New,0.00,3,50.93,0.00,0.00,50.93,23.20,8.72,19.01,2.0,3.0,False,True,False
+628666,172103.0,2025-11-13,completed,Card,1,Greece,SwiftCourier,Returning,0.20,3,119.97,23.99,0.00,95.98,57.69,6.44,31.85,1.0,6.0,True,True,False
+622236,172288.0,2025-10-20,completed,Card,5,Greece,SwiftCourier,Returning,0.00,6,207.22,0.00,0.00,207.22,119.65,10.84,76.73,3.0,4.0,False,True,False
+610686,172337.0,2025-09-02,completed,Card,4,Cyprus,DHL,New,0.00,2,84.98,0.00,0.00,84.98,41.19,10.79,33.00,1.0,2.0,False,True,False
+611128,172564.0,2025-09-04,completed,Apple Pay,3,Greece,SwiftCourier,New,0.00,2,81.66,0.00,0.00,81.66,44.10,6.68,30.88,1.0,4.0,False,True,False
+611501,172732.0,2025-09-06,completed,Card,6,Greece,SwiftCourier,New,0.00,2,113.30,0.00,0.00,113.30,55.90,7.77,49.63,4.0,6.0,True,True,False
+611778,172919.0,2025-09-07,completed,Card,1,Cyprus,DHL,New,0.00,2,182.38,0.00,0.00,182.38,103.27,9.80,69.31,2.0,6.0,False,True,False
+611813,172954.0,2025-09-07,cancelled,Card,1,Italy,,New,0.00,2,24.94,0.00,0.00,0,12.46,0.00,0,,,,False,False
+613252,173003.0,2025-09-13,cancelled,Cash on Delivery,4,Greece,,Returning,0.00,2,47.82,0.00,0.00,0,26.93,0.00,0,,,,False,False
+612515,173311.0,2025-09-10,completed,Cash on Delivery,5,Greece,SwiftCourier,New,0.10,3,82.13,8.21,0.00,73.92,44.39,6.65,22.88,2.0,3.0,False,True,False
+629751,173423.0,2025-11-17,completed,Card,1,Italy,DHL,Returning,0.20,4,189.64,37.93,0.00,151.71,101.15,11.81,38.75,2.0,11.0,True,True,False
+612779,173457.0,2025-09-11,cancelled,Card,3,Italy,,New,0.00,1,76.95,0.00,0.00,0,34.76,0.00,0,,,,False,False
+613036,173579.0,2025-09-12,completed,Card,2,Cyprus,DHL,New,0.00,2,91.62,0.00,0.00,91.62,50.10,10.33,31.19,0.0,8.0,True,True,False
+613108,173651.0,2025-09-12,completed,Card,6,Greece,SwiftCourier,New,0.00,4,203.28,0.00,0.00,203.28,98.74,5.86,98.68,2.0,6.0,True,True,False
+613310,173748.0,2025-09-13,completed,Card,1,Cyprus,DHL,New,0.00,5,81.23,0.00,0.00,81.23,35.83,11.76,33.64,2.0,4.0,False,True,False
+613534,173862.0,2025-09-14,completed,Card,4,Greece,SwiftCourier,New,0.15,3,55.64,8.34,0.00,47.30,31.72,5.82,9.76,3.0,5.0,True,True,False
+637086,173921.0,2025-12-07,completed,Card,6,Greece,SwiftCourier,Returning,0.10,4,221.48,22.15,0.00,199.33,114.74,6.46,78.13,3.0,5.0,True,True,False
+613747,173976.0,2025-09-15,completed,Card,2,Spain,DHL,New,0.00,1,47.99,0.00,0.00,47.99,28.14,8.29,11.56,1.0,6.0,False,True,False
+613792,174021.0,2025-09-15,completed,Card,5,Greece,SwiftCourier,New,0.00,2,58.22,0.00,0.00,58.22,23.82,5.60,28.80,0.0,1.0,False,True,False
+636157,174032.0,2025-12-04,completed,Card,6,Greece,SwiftCourier,Returning,0.00,2,58.22,0.00,0.00,58.22,23.82,5.62,28.78,1.0,2.0,False,True,False
+614268,174260.0,2025-09-17,completed,Cash on Delivery,5,Bulgaria,DHL,New,0.10,4,208.20,20.82,0.00,187.38,119.79,8.21,59.38,3.0,6.0,False,True,False
+614340,174332.0,2025-09-17,cancelled,Card,3,Greece,,New,0.00,3,193.97,0.00,0.00,0,106.22,0.00,0,,,,False,False
+614499,174397.0,2025-09-18,completed,Bank Transfer,2,Greece,SwiftCourier,New,0.00,4,261.00,0.00,0.00,261.00,131.30,12.69,117.01,3.0,6.0,True,True,False
+624571,174521.0,2025-10-29,completed,Card,4,Greece,SwiftCourier,Returning,0.10,4,194.44,19.44,0.00,175.00,92.65,7.03,75.32,3.0,5.0,True,True,False
+634848,175138.0,2025-12-01,completed,Card,6,Greece,SwiftCourier,Returning,0.00,4,220.88,0.00,0.00,220.88,103.32,11.26,106.30,1.0,3.0,False,True,False
+628973,175414.0,2025-11-14,completed,PayPal,4,Spain,DHL,Returning,0.00,4,224.56,0.00,0.00,224.56,100.92,9.80,113.84,0.0,5.0,False,True,False
+616584,175519.0,2025-09-27,completed,PayPal,6,Greece,SwiftCourier,New,0.00,3,254.93,0.00,0.00,254.93,127.13,8.12,119.68,2.0,4.0,False,True,False
+616853,175682.0,2025-09-28,refunded,Card,4,Netherlands,DHL,New,0.00,3,50.12,0.00,15.04,35.08,30.09,7.58,-2.59,4.0,11.0,True,True,False
+617556,176041.0,2025-10-01,completed,Card,2,Greece,SwiftCourier,New,0.00,1,60.31,0.00,0.00,60.31,24.70,4.95,30.66,2.0,3.0,False,True,False
+617593,176078.0,2025-10-01,completed,Card,6,France,DHL,New,0.15,2,74.34,11.15,0.00,63.19,38.68,10.31,14.20,2.0,6.0,False,True,False
+625892,176187.0,2025-11-03,refunded,PayPal,5,Germany,DHL,Returning,0.15,3,201.41,30.21,85.60,85.60,89.47,12.03,-15.90,2.0,8.0,True,True,False
+618057,176293.0,2025-10-03,completed,Card,3,Greece,SwiftCourier,New,0.00,3,236.05,0.00,0.00,236.05,130.54,6.12,99.39,0.0,1.0,False,True,False
+618319,176431.0,2025-10-04,completed,Card,4,Netherlands,DHL,New,0.00,2,66.54,0.00,0.00,66.54,43.00,7.62,15.92,3.0,5.0,False,True,False
+618335,176447.0,2025-10-04,refunded,PayPal,4,France,DHL,New,0.00,4,263.08,0.00,263.08,0.00,141.99,9.92,-151.91,2.0,10.0,True,True,False
+618538,176549.0,2025-10-05,completed,Card,4,Greece,SwiftCourier,New,0.00,2,153.90,0.00,0.00,153.90,69.52,9.29,75.09,2.0,9.0,True,True,False
+618617,176628.0,2025-10-05,completed,Cash on Delivery,6,Greece,SwiftCourier,New,0.00,4,143.48,0.00,0.00,143.48,73.57,6.24,63.67,3.0,6.0,True,True,False
+619807,177258.0,2025-10-10,completed,Cash on Delivery,5,Greece,SwiftCourier,New,0.00,2,26.88,0.00,0.00,26.88,11.27,6.96,8.65,2.0,7.0,True,True,False
+619862,177313.0,2025-10-10,completed,Card,4,Greece,SwiftCourier,New,0.00,1,76.95,0.00,0.00,76.95,34.76,6.53,35.66,1.0,5.0,True,True,False
+620337,177549.0,2025-10-12,completed,Card,5,Cyprus,DHL,New,0.00,1,34.31,0.00,0.00,34.31,14.10,11.72,8.49,1.0,4.0,False,True,False
+627070,177687.0,2025-11-07,completed,Cash on Delivery,1,Greece,SwiftCourier,Returning,0.20,2,31.20,6.24,0.00,24.96,16.36,5.42,3.18,1.0,2.0,False,True,False
+620790,177778.0,2025-10-14,completed,PayPal,4,Greece,SwiftCourier,New,0.00,1,63.99,0.00,0.00,63.99,36.78,4.70,22.51,2.0,4.0,False,True,False
+621267,178020.0,2025-10-16,completed,Card,1,Cyprus,DHL,New,0.00,3,177.89,0.00,0.00,177.89,83.82,13.91,80.16,2.0,10.0,True,True,False
+621365,178118.0,2025-10-16,completed,Cash on Delivery,6,Greece,SwiftCourier,New,0.00,7,317.77,0.00,0.00,317.77,180.62,12.80,124.35,3.0,6.0,True,True,False
+636186,178272.0,2025-12-04,completed,Card,2,France,DHL,Returning,0.00,4,165.32,0.00,0.00,165.32,73.09,11.48,80.75,2.0,10.0,True,True,False
+622138,178523.0,2025-10-19,completed,PayPal,1,Bulgaria,DHL,New,0.10,5,229.79,22.98,0.00,206.81,105.03,9.37,92.41,3.0,12.0,True,True,False
+622319,178600.0,2025-10-20,completed,Card,5,Netherlands,DHL,New,0.00,3,147.65,0.00,0.00,147.65,70.72,9.31,67.62,1.0,6.0,False,True,False
+623141,179055.0,2025-10-23,cancelled,Cash on Delivery,1,Germany,,New,0.00,1,20.79,0.00,0.00,0,9.14,0.00,0,,,,False,False
+623280,179087.0,2025-10-24,completed,PayPal,2,Greece,SwiftCourier,New,0.00,2,159.14,0.00,0.00,159.14,94.07,7.49,57.58,2.0,4.0,False,True,False
+643017,179159.0,2025-12-25,completed,PayPal,4,Italy,DHL,Returning,0.00,2,155.98,0.00,0.00,155.98,81.09,8.74,66.15,3.0,10.0,True,True,False
+623549,179225.0,2025-10-25,completed,Card,3,Greece,SwiftCourier,New,0.10,4,305.88,30.59,0.00,275.29,152.31,10.76,112.22,2.0,6.0,True,True,False
+639095,179382.0,2025-12-13,completed,PayPal,5,Spain,DHL,Returning,0.00,3,51.97,0.00,0.00,51.97,25.34,10.66,15.97,2.0,9.0,True,True,False
+630975,179675.0,2025-11-21,completed,Cash on Delivery,5,Greece,SwiftCourier,Returning,0.00,7,225.61,0.00,0.00,225.61,112.41,10.39,102.81,1.0,2.0,False,True,False
+636510,180102.0,2025-12-05,completed,PayPal,4,Bulgaria,DHL,Returning,0.00,1,25.99,0.00,0.00,25.99,10.84,6.89,8.26,0.0,5.0,False,True,False
+625238,180149.0,2025-10-31,cancelled,Card,5,Italy,,New,0.00,1,51.99,0.00,0.00,0,27.12,0.00,0,,,,False,False
+625458,180252.0,2025-11-01,completed,Card,1,Cyprus,DHL,New,0.00,3,101.89,0.00,0.00,101.89,50.15,9.77,41.97,1.0,5.0,False,True,False
+625466,180260.0,2025-11-01,completed,Card,6,Greece,SwiftCourier,New,0.00,4,250.60,0.00,0.00,250.60,112.98,11.48,126.14,3.0,5.0,True,True,False
+630412,180474.0,2025-11-19,completed,Card,2,Germany,DHL,Returning,0.00,3,145.53,0.00,0.00,145.53,75.39,10.86,59.28,0.0,2.0,False,True,False
+626073,180633.0,2025-11-03,completed,Card,6,Greece,SwiftCourier,New,0.00,1,19.75,0.00,0.00,19.75,11.31,6.46,1.98,0.0,1.0,False,True,False
+630415,180731.0,2025-11-19,completed,Card,5,Netherlands,DHL,Returning,0.00,2,49.90,0.00,0.00,49.90,23.53,9.04,17.33,0.0,5.0,False,True,False
+629558,180965.0,2025-11-16,completed,Cash on Delivery,3,Germany,DHL,Returning,0.00,5,362.91,0.00,0.00,362.91,165.57,15.96,181.38,4.0,8.0,True,True,False
+639765,181040.0,2025-12-15,completed,Card,5,Greece,SwiftCourier,Returning,0.00,2,88.94,0.00,0.00,88.94,40.17,6.74,42.03,2.0,4.0,False,True,False
+627355,181307.0,2025-11-08,completed,Card,2,Greece,SwiftCourier,New,0.10,7,491.85,49.19,0.00,442.66,223.12,12.88,206.66,4.0,6.0,True,True,False
+627367,181319.0,2025-11-08,refunded,PayPal,6,Greece,SwiftCourier,New,0.20,5,315.83,63.16,126.34,126.33,171.41,7.58,-52.66,3.0,5.0,True,True,False
+627697,181534.0,2025-11-09,completed,Card,5,Greece,SwiftCourier,New,0.00,1,21.99,0.00,0.00,21.99,11.61,5.36,5.02,3.0,6.0,True,True,False
+627738,181575.0,2025-11-09,completed,Card,1,Italy,DHL,New,0.00,1,76.95,0.00,0.00,76.95,34.76,9.05,33.14,2.0,8.0,True,True,False
+630708,181644.0,2025-11-20,completed,Card,4,Greece,SwiftCourier,Returning,0.10,2,207.22,20.72,0.00,186.50,93.72,5.34,87.44,2.0,3.0,False,True,False
+628445,181944.0,2025-11-12,completed,Card,4,Greece,SwiftCourier,New,0.10,7,616.65,61.67,0.00,554.98,298.82,13.45,242.71,3.0,5.0,True,True,False
+628821,182186.0,2025-11-13,completed,PayPal,2,Greece,SwiftCourier,New,0.20,1,17.67,3.53,0.00,14.14,7.32,6.76,0.06,3.0,5.0,True,True,False
+634388,182313.0,2025-11-30,completed,Card,4,Greece,SwiftCourier,Returning,0.10,2,68.78,6.88,0.00,61.90,40.28,6.61,15.01,4.0,5.0,True,True,False
+629358,182478.0,2025-11-15,completed,Card,4,Cyprus,DHL,New,0.10,4,361.88,36.19,0.00,325.69,226.94,11.76,86.99,2.0,11.0,True,True,False
+629427,182547.0,2025-11-15,completed,Card,2,Germany,DHL,New,0.00,6,323.98,0.00,0.00,323.98,180.96,11.64,131.38,1.0,8.0,True,True,False
+629688,182688.0,2025-11-16,cancelled,PayPal,4,Cyprus,,New,0.15,1,39.51,5.93,0.00,0,17.01,0.00,0,,,,False,False
+629942,182830.0,2025-11-17,completed,Bank Transfer,1,Greece,SwiftCourier,New,0.00,1,128.99,0.00,0.00,128.99,75.36,5.40,48.23,2.0,4.0,False,True,False
+630282,183015.0,2025-11-18,completed,PayPal,1,Greece,SwiftCourier,New,0.00,1,63.99,0.00,0.00,63.99,36.78,5.03,22.18,3.0,5.0,True,True,False
+630575,183189.0,2025-11-19,completed,Card,2,Cyprus,DHL,New,0.00,4,153.24,0.00,0.00,153.24,99.00,13.59,40.65,1.0,4.0,False,True,False
+631124,183469.0,2025-11-21,completed,Card,6,Greece,SwiftCourier,New,0.20,3,389.97,77.99,0.00,311.98,213.54,7.06,91.38,2.0,4.0,False,True,False
+631144,183489.0,2025-11-21,completed,Apple Pay,6,Italy,DHL,New,0.00,5,246.43,0.00,0.00,246.43,119.20,13.17,114.06,0.0,5.0,False,True,False
+631631,183721.0,2025-11-23,completed,Card,1,Cyprus,DHL,New,0.25,2,49.62,12.41,0.00,37.21,30.37,13.32,-6.48,4.0,8.0,True,True,False
+634906,183811.0,2025-12-01,refunded,PayPal,4,Greece,SwiftCourier,Returning,0.00,6,470.42,0.00,235.22,235.20,269.60,8.32,-42.72,1.0,3.0,False,True,False
+635559,183838.0,2025-12-02,completed,Card,6,Greece,SwiftCourier,Returning,0.15,4,186.28,27.95,0.00,158.33,103.04,8.11,47.18,1.0,3.0,False,True,False
+632216,184071.0,2025-11-25,completed,Card,4,Greece,SwiftCourier,New,0.00,1,18.99,0.00,0.00,18.99,10.39,4.74,3.86,1.0,3.0,False,True,False
+643732,184341.0,2025-12-27,completed,Card,4,Spain,DHL,Returning,0.10,3,98.77,9.88,0.00,88.89,50.12,8.70,30.07,4.0,9.0,True,True,False
+632892,184484.0,2025-11-27,completed,Card,4,Greece,SwiftCourier,New,0.00,2,23.98,0.00,0.00,23.98,10.84,4.97,8.17,3.0,6.0,True,True,False
+632901,184493.0,2025-11-27,completed,Card,2,Netherlands,DHL,New,0.15,4,196.96,29.55,0.00,167.41,89.91,9.52,67.98,3.0,5.0,False,True,False
+640144,185281.0,2025-12-16,refunded,Card,6,Netherlands,DHL,Returning,0.20,3,269.19,53.84,64.61,150.74,146.31,8.75,-4.32,1.0,8.0,True,True,False
+634637,185804.0,2025-11-30,completed,Card,6,Netherlands,DHL,New,0.00,5,227.76,0.00,0.00,227.76,117.88,9.99,99.89,2.0,12.0,True,True,False
+642092,185917.0,2025-12-22,completed,PayPal,4,Greece,SwiftCourier,Returning,0.00,4,240.20,0.00,0.00,240.20,105.87,10.05,124.28,1.0,3.0,False,True,False
+634950,185981.0,2025-12-01,completed,Card,5,Italy,DHL,New,0.00,2,129.98,0.00,0.00,129.98,66.07,9.63,54.28,3.0,5.0,False,True,False
+634958,185989.0,2025-12-01,completed,Card,1,Greece,SwiftCourier,New,0.20,2,259.98,52.00,0.00,207.98,142.36,6.01,59.61,1.0,4.0,False,True,False
+640454,186035.0,2025-12-17,completed,Card,5,Greece,SwiftCourier,Returning,0.00,5,140.39,0.00,0.00,140.39,73.18,9.98,57.23,1.0,4.0,False,True,False
+635046,186077.0,2025-12-01,completed,Card,5,Greece,SwiftCourier,New,0.00,4,106.04,0.00,0.00,106.04,50.22,8.97,46.85,2.0,3.0,False,True,False
+635053,186084.0,2025-12-01,completed,PayPal,4,Germany,DHL,New,0.00,4,75.44,0.00,0.00,75.44,47.81,7.89,19.74,2.0,8.0,True,True,False
+636971,187291.0,2025-12-06,cancelled,Bank Transfer,4,Greece,,New,0.00,2,153.90,0.00,0.00,0,69.52,0.00,0,,,,False,False
+637261,187440.0,2025-12-07,completed,Card,6,Greece,SwiftCourier,New,0.00,5,596.91,0.00,0.00,596.91,319.48,9.62,267.81,2.0,7.0,True,True,False
+638190,187957.0,2025-12-10,completed,Card,1,Germany,DHL,New,0.00,4,239.16,0.00,0.00,239.16,134.15,11.14,93.87,2.0,5.0,False,True,False
+638276,188043.0,2025-12-10,completed,Card,5,Greece,SwiftCourier,New,0.00,11,482.50,0.00,0.00,482.50,277.18,10.79,194.53,2.0,3.0,False,True,False
+638296,188063.0,2025-12-10,completed,Card,6,Greece,SwiftCourier,New,0.00,3,225.65,0.00,0.00,225.65,103.71,9.80,112.14,2.0,4.0,False,True,False
+638668,188296.0,2025-12-11,completed,Card,1,Greece,SwiftCourier,New,0.00,1,15.59,0.00,0.00,15.59,9.43,4.94,1.22,1.0,2.0,False,True,False
+638901,188403.0,2025-12-12,completed,Bank Transfer,4,Greece,SwiftCourier,New,0.10,7,225.73,22.58,0.00,203.15,111.92,8.93,82.30,2.0,4.0,False,True,False
+638919,188421.0,2025-12-12,completed,PayPal,1,Greece,SwiftCourier,New,0.15,2,35.34,5.30,0.00,30.04,14.64,9.23,6.17,2.0,3.0,False,True,False
+639482,188697.0,2025-12-14,completed,Card,6,Germany,DHL,New,0.00,3,100.93,0.00,0.00,100.93,45.58,9.47,45.88,2.0,5.0,False,True,False
+640897,189539.0,2025-12-18,completed,Cash on Delivery,5,Greece,SwiftCourier,New,0.00,1,76.95,0.00,0.00,76.95,34.76,6.32,35.87,0.0,3.0,False,True,False
+640908,189550.0,2025-12-18,completed,PayPal,1,Greece,SwiftCourier,New,0.00,2,153.90,0.00,0.00,153.90,69.52,8.45,75.93,0.0,2.0,False,True,False
+641202,189681.0,2025-12-19,completed,PayPal,6,Greece,SwiftCourier,New,0.25,2,139.34,34.84,0.00,104.50,81.57,5.70,17.23,1.0,2.0,False,True,False
+641899,190090.0,2025-12-21,completed,Card,1,Greece,SwiftCourier,New,0.20,2,127.90,25.58,0.00,102.32,62.85,5.87,33.60,3.0,7.0,True,True,False
+642227,190280.0,2025-12-22,completed,Cash on Delivery,6,Cyprus,DHL,New,0.00,3,198.05,0.00,0.00,198.05,115.41,13.09,69.55,1.0,7.0,False,True,False
+643260,190878.0,2025-12-25,completed,Card,4,Netherlands,DHL,New,0.10,6,109.54,10.96,0.00,98.58,54.52,10.28,33.78,3.0,8.0,True,True,False
+643447,190927.0,2025-12-26,completed,PayPal,6,Greece,SwiftCourier,New,0.00,6,573.10,0.00,0.00,573.10,310.98,9.35,252.77,2.0,4.0,False,True,False
+643591,191071.0,2025-12-26,completed,Card,1,Greece,SwiftCourier,New,0.00,2,124.94,0.00,0.00,124.94,62.90,7.34,54.70,3.0,5.0,True,True,False
+643807,191105.0,2025-12-27,completed,Card,5,Greece,SwiftCourier,New,0.00,2,49.98,0.00,0.00,49.98,33.16,4.90,11.92,3.0,4.0,False,True,False
+644271,191409.0,2025-12-28,completed,Card,6,Greece,SwiftCourier,New,0.00,1,96.99,0.00,0.00,96.99,60.79,7.03,29.17,4.0,5.0,True,True,False
+527467,,2024-07-14,completed,Cash on Delivery,6,Bulgaria,DHL,Guest,0.00,3,127.97,0.00,0.00,127.97,70.42,10.43,47.12,3.0,6.0,False,True,False
+528604,,2024-07-21,completed,Card,4,Spain,DHL,Guest,0.00,3,163.97,0.00,0.00,163.97,82.04,13.48,68.45,3.0,13.0,True,True,False
+546355,,2024-11-04,completed,Card,3,Cyprus,DHL,Guest,0.00,6,234.94,0.00,0.00,234.94,125.64,19.16,90.14,3.0,8.0,True,True,False
+571876,,2025-03-04,completed,Card,4,Greece,ELTA Courier,Guest,0.00,1,33.27,0.00,0.00,33.27,21.50,3.82,7.95,2.0,5.0,True,True,False
+586174,,2025-05-15,completed,PayPal,5,Greece,SwiftCourier,Guest,0.00,4,162.20,0.00,0.00,162.20,79.56,7.94,74.70,2.0,4.0,False,True,False
+593893,,2025-06-19,completed,Card,4,Cyprus,DHL,Guest,0.00,3,49.65,0.00,0.00,49.65,21.12,11.81,16.72,2.0,5.0,False,True,False
+599745,,2025-07-14,completed,Bank Transfer,2,Greece,SwiftCourier,Guest,0.00,6,395.01,0.00,0.00,395.01,192.99,7.86,194.16,2.0,4.0,False,True,False
+628447,,2025-11-12,completed,PayPal,6,Greece,SwiftCourier,Guest,0.10,1,8.33,0.83,0.00,7.50,5.37,6.32,-4.19,1.0,3.0,False,True,False
+635243,,2025-12-01,completed,Card,5,Greece,SwiftCourier,Guest,0.00,1,15.59,0.00,0.00,15.59,9.43,4.88,1.28,2.0,5.0,True,True,False
+642281,,2025-12-22,completed,Cash on Delivery,3,Greece,SwiftCourier,Guest,0.00,2,70.66,0.00,0.00,70.66,38.52,8.91,23.23,2.0,4.0,False,True,False

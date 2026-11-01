@@ -1,0 +1,125 @@
+table FactInventoryDaily
+	lineageTag: a62e77dc-6165-529d-8903-83e17eece483
+
+	/// Share of product-days with no stock
+	measure 'Stockout Rate %' = DIVIDE ( CALCULATE ( COUNTROWS ( FactInventoryDaily ), FactInventoryDaily[is_stockout] = TRUE () ), COUNTROWS ( FactInventoryDaily ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Inventory
+		lineageTag: 9ab51f58-e0d9-5149-a04d-da550400116e
+
+	/// Stockout days x demand on in-stock days x net price (upper bound)
+	measure 'Estimated Lost Sales' = SUM ( FactInventoryDaily[est_lost_revenue] )
+		formatString: \€#,0
+		displayFolder: Inventory
+		lineageTag: c7df701f-3e51-56bf-b642-538e1a737d11
+
+	/// Average daily stock value at cost
+	measure 'Avg Inventory Value' = AVERAGEX ( VALUES ( DimDate[date] ), CALCULATE ( SUM ( FactInventoryDaily[stock_value_at_cost] ) ) )
+		formatString: \€#,0
+		displayFolder: Inventory
+		lineageTag: c7b39bbb-326d-577a-b479-4611484c43c5
+
+	/// COGS in the period / average stock value
+	measure 'Inventory Turnover' = DIVIDE ( [Cost of Goods], [Avg Inventory Value] )
+		formatString: 0.0x
+		displayFolder: Inventory
+		lineageTag: 9fbf9236-aa07-5c44-9e4e-5c0518d36cda
+
+	column snapshot_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 94e2d96d-bb27-505f-866a-c37534493d35
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 15fb5566-f270-549c-a543-5cef63a7dc36
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_on_hand
+		dataType: int64
+		formatString: #,0
+		isHidden
+		lineageTag: ecd23443-94df-5948-b4ce-261244c0b6ec
+		summarizeBy: sum
+		sourceColumn: stock_on_hand
+
+		annotation SummarizationSetBy = Automatic
+
+	column units_received
+		dataType: int64
+		formatString: #,0
+		isHidden
+		lineageTag: cfad6064-324a-538b-8bbe-3cc2de5365b2
+		summarizeBy: sum
+		sourceColumn: units_received
+
+		annotation SummarizationSetBy = Automatic
+
+	column units_sold
+		dataType: int64
+		formatString: #,0
+		isHidden
+		lineageTag: 97bd6ec0-896a-5108-a0f3-428086d295f6
+		summarizeBy: sum
+		sourceColumn: units_sold
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_value_at_cost
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: f872fbd7-1978-5828-83e6-3a4d1870d9f5
+		summarizeBy: sum
+		sourceColumn: stock_value_at_cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_stockout
+		dataType: boolean
+		lineageTag: b4ce5a38-21a5-5415-9b5f-2df8d23092b9
+		summarizeBy: none
+		sourceColumn: is_stockout
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_lost_units
+		dataType: double
+		formatString: #,0
+		isHidden
+		lineageTag: 43a1046b-8d66-5ce3-91f6-0a350a4544a0
+		summarizeBy: sum
+		sourceColumn: est_lost_units
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_lost_revenue
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: c5f34ab6-a1eb-5d9d-a5ac-228cbc6f16f6
+		summarizeBy: sum
+		sourceColumn: est_lost_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactInventoryDaily = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "FactInventoryDaily.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"snapshot_date", type date}, {"product_id", Int64.Type}, {"stock_on_hand", Int64.Type}, {"units_received", Int64.Type}, {"units_sold", Int64.Type}, {"stock_value_at_cost", type number}, {"is_stockout", type logical}, {"est_lost_units", type number}, {"est_lost_revenue", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

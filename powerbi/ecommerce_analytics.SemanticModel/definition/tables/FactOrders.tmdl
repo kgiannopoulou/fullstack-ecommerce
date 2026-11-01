@@ -1,0 +1,311 @@
+table FactOrders
+	lineageTag: 12b33675-358b-511a-a72a-bbbfc4aaa5c0
+
+	/// Fulfilled orders
+	measure Orders = CALCULATE ( COUNTROWS ( FactOrders ), FactOrders[is_fulfilled] = TRUE () )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: 6067fede-602e-5b3d-8d50-101ae820e3f9
+
+	/// Including cancelled
+	measure 'Orders Placed' = COUNTROWS ( FactOrders )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: e7f56fd0-adf7-532c-8438-be80e5da2910
+
+	measure 'Orders PY' = CALCULATE ( [Orders], SAMEPERIODLASTYEAR ( DimDate[date] ) )
+		formatString: #,0
+		displayFolder: Time intelligence
+		lineageTag: e40e2b2f-18e4-5cf0-94be-719f994e06f8
+
+	measure 'Orders YoY %' = DIVIDE ( [Orders] - [Orders PY], [Orders PY] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time intelligence
+		lineageTag: b7fbea1b-a09b-51a4-84b4-4dfef96eb620
+
+	/// Average order value: net revenue / fulfilled orders
+	measure AOV = DIVIDE ( SUM ( FactOrders[net_revenue] ), [Orders] )
+		formatString: \€#,0.00
+		displayFolder: Revenue
+		lineageTag: 90642082-402a-5fa5-88fc-375b48dedff8
+
+	measure 'AOV PY' = CALCULATE ( [AOV], SAMEPERIODLASTYEAR ( DimDate[date] ) )
+		formatString: \€#,0.00
+		displayFolder: Time intelligence
+		lineageTag: b5902c4a-20e6-5dda-93e7-ee9dac7fd763
+
+	measure 'AOV YoY %' = DIVIDE ( [AOV] - [AOV PY], [AOV PY] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time intelligence
+		lineageTag: 6cf5f7d7-b82f-5254-8ddf-6bb6a21c833a
+
+	/// Active customers (guests excluded)
+	measure Customers = CALCULATE ( DISTINCTCOUNT ( FactOrders[customer_id] ), FactOrders[is_fulfilled] = TRUE (), NOT ISBLANK ( FactOrders[customer_id] ) )
+		formatString: #,0
+		displayFolder: Customers
+		lineageTag: 5223f77e-b67f-576a-896b-34f75e1b1914
+
+	/// Customers whose first fulfilled order is in the period
+	measure 'New Customers' = CALCULATE ( [Customers], FactOrders[customer_type] = "New" )
+		formatString: #,0
+		displayFolder: Customers
+		lineageTag: 4c540484-c86a-5326-8b2a-aa833c7cd3ab
+
+	measure 'Returning Customers' = CALCULATE ( [Customers], FactOrders[customer_type] = "Returning" )
+		formatString: #,0
+		displayFolder: Customers
+		lineageTag: 5c778565-da99-5244-a510-b3fab5d65075
+
+	/// Share of active customers who had bought before
+	measure 'Repeat Rate %' = DIVIDE ( [Returning Customers], [Customers] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Customers
+		lineageTag: ac3fdbbd-a01b-5386-a14e-37e3c86f5b5b
+
+	measure 'Revenue per Customer' = DIVIDE ( CALCULATE ( SUM ( FactOrders[net_revenue] ), NOT ISBLANK ( FactOrders[customer_id] ) ), [Customers] )
+		formatString: \€#,0.00
+		displayFolder: Customers
+		lineageTag: bccff6e8-cced-5b0a-a504-1d09e8a7efab
+
+	/// Refunded / fulfilled orders
+	measure 'Refund Rate %' = DIVIDE ( CALCULATE ( COUNTROWS ( FactOrders ), FactOrders[status] = "refunded" ), [Orders] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Operations
+		lineageTag: 99c25dc2-8b7e-5a2c-a38d-4d32b0dc431d
+
+	measure 'Refund Rate PY' = CALCULATE ( [Refund Rate %], SAMEPERIODLASTYEAR ( DimDate[date] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time intelligence
+		lineageTag: 7c613baf-30bf-55bf-8b50-dca9b34aac8d
+
+	measure 'Cancellation Rate %' = DIVIDE ( CALCULATE ( COUNTROWS ( FactOrders ), FactOrders[status] = "cancelled" ), [Orders Placed] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Operations
+		lineageTag: 5ea4bddd-315a-52f1-af0e-40c62430bb23
+
+	measure 'On-time Delivery %' = DIVIDE ( CALCULATE ( COUNTROWS ( FactOrders ), FactOrders[is_fulfilled] = TRUE (), FactOrders[is_late] = FALSE () ), [Orders] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Operations
+		lineageTag: 2ce1115b-c1cf-5473-b7a4-e275ae7d8426
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 6b4cf17d-a56d-5d6c-93c7-84644b4d64a9
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: ddf823e9-5108-52f9-907a-5c1fae0cb980
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 79d2e5d5-cc74-55f0-9346-d2dc48aec4df
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 58f73d1d-3c42-535a-8849-d7002a2945fa
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		lineageTag: 7e4e9fbb-8285-5b41-abcc-657424577d2f
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 3d1286cd-527e-56f8-b475-ce575c0f5958
+		summarizeBy: none
+		sourceColumn: channel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: f84e1e5e-1512-5f7e-b680-2d98984ce3a1
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column courier
+		dataType: string
+		lineageTag: f94a1b79-c442-57d9-b007-6b8e060a3442
+		summarizeBy: none
+		sourceColumn: courier
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_type
+		dataType: string
+		lineageTag: 18edccc5-7be3-5501-9f7d-57594efda81f
+		summarizeBy: none
+		sourceColumn: customer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_pct
+		dataType: double
+		formatString: 0%
+		lineageTag: 9fff37b8-48bc-59e3-b497-0afd4def326d
+		summarizeBy: none
+		sourceColumn: discount_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column units
+		dataType: int64
+		formatString: #,0
+		isHidden
+		lineageTag: b920203e-5570-56b1-b162-a27f3e74af88
+		summarizeBy: sum
+		sourceColumn: units
+
+		annotation SummarizationSetBy = Automatic
+
+	column gross_amount
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: c183b4d5-e10b-518d-b9b3-4344314539ef
+		summarizeBy: sum
+		sourceColumn: gross_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_amount
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: ccd3ac17-e7ef-5272-808d-4b43761e4268
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column refund_amount
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: abeb9638-5e84-5db9-8759-4d12c17919e0
+		summarizeBy: sum
+		sourceColumn: refund_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_revenue
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: 8b2c42cf-cb08-5ef1-a100-804cdeb7a5a9
+		summarizeBy: sum
+		sourceColumn: net_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column cogs
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: ba49d6ee-7b6a-5633-80ed-325e6639451a
+		summarizeBy: sum
+		sourceColumn: cogs
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_cost
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: 7b571264-1663-59ac-914d-465c71dea0f5
+		summarizeBy: sum
+		sourceColumn: shipping_cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column gross_profit
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: 42190800-1219-5ee2-86e8-a6dffbdcb3d4
+		summarizeBy: sum
+		sourceColumn: gross_profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_to_ship
+		dataType: int64
+		formatString: 0
+		lineageTag: 45fa38d1-7520-53ed-bc37-8611fdd90a66
+		summarizeBy: none
+		sourceColumn: days_to_ship
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_to_deliver
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d315c13-65b7-564f-840d-1d71cacafff7
+		summarizeBy: none
+		sourceColumn: days_to_deliver
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_late
+		dataType: boolean
+		lineageTag: 4d6b3539-410f-5f00-b8dd-4521830d9c30
+		summarizeBy: none
+		sourceColumn: is_late
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_fulfilled
+		dataType: boolean
+		lineageTag: 3f594822-b1fb-59b4-b4a5-3cdafde24e33
+		summarizeBy: none
+		sourceColumn: is_fulfilled
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_bulk
+		dataType: boolean
+		lineageTag: b1bb3079-74ca-592e-84b7-878f5bc35fc1
+		summarizeBy: none
+		sourceColumn: has_bulk
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactOrders = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "FactOrders.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"order_id", Int64.Type}, {"customer_id", Int64.Type}, {"order_date", type date}, {"status", type text}, {"payment_method", type text}, {"channel_id", Int64.Type}, {"country", type text}, {"courier", type text}, {"customer_type", type text}, {"discount_pct", type number}, {"units", Int64.Type}, {"gross_amount", type number}, {"discount_amount", type number}, {"refund_amount", type number}, {"net_revenue", type number}, {"cogs", type number}, {"shipping_cost", type number}, {"gross_profit", type number}, {"days_to_ship", Int64.Type}, {"days_to_deliver", Int64.Type}, {"is_late", type logical}, {"is_fulfilled", type logical}, {"has_bulk", type logical}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -132,11 +132,14 @@ SELECT check_name, records, action FROM (
          count(*) FILTER (WHERE lower(order_status) = 'refunded'), 'Kept; refund deducted in Net Revenue' FROM valid
   UNION ALL SELECT 12, 'Quantity outliers (>= 40 units)',
          count(*) FILTER (WHERE quantity::int >= 40), 'Retained (verified bulk orders), flagged is_bulk' FROM valid
-  UNION ALL SELECT 13, 'Duplicate inventory snapshots',
+  UNION ALL SELECT 13, 'Missing shipping cost (no matched courier invoice)',
+         count(*) FILTER (WHERE shipping_cost IS NULL AND lower(order_status) NOT LIKE 'cancel%'),
+         'Imputed: median cost for the same courier and country' FROM valid
+  UNION ALL SELECT 14, 'Duplicate inventory snapshots',
          (SELECT count(*) - count(DISTINCT (product_id, snapshot_date)) FROM raw.inventory), 'Removed'
-  UNION ALL SELECT 14, 'Negative stock on hand',
+  UNION ALL SELECT 15, 'Negative stock on hand',
          (SELECT count(*) FROM (SELECT DISTINCT * FROM raw.inventory) i WHERE stock_on_hand::int < 0), 'Set to 0, flagged stock_corrected'
-  UNION ALL SELECT 15, 'Non-standard country name (customer master)',
+  UNION ALL SELECT 16, 'Non-standard country name (customer master)',
          (SELECT count(*) FROM raw.customers
           WHERE country NOT IN ('Greece','Cyprus','Germany','Italy','France','Netherlands','Spain','Bulgaria')),
          'Standardised to English country name'
@@ -157,7 +160,8 @@ SELECT count(*)                                                                 
          OR customer_id IS NULL OR category IS NULL OR payment_method IS NULL
          OR customer_country NOT IN ('Greece','Cyprus','Germany','Italy','France','Netherlands','Spain','Bulgaria')
          OR order_date !~ '^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$'
-         OR order_status NOT IN ('completed','cancelled','refunded'))           AS records_with_a_defect,
+         OR order_status NOT IN ('completed','cancelled','refunded')
+         OR (shipping_cost IS NULL AND lower(order_status) NOT LIKE 'cancel%'))           AS records_with_a_defect,
        count(*) FILTER (WHERE copy_no > 1 OR quantity::int < 0
          OR unit_price::numeric <= 0 OR unit_price::numeric > 5 * list_price)    AS records_removed,
        round(100.0 * count(*) FILTER (WHERE
@@ -167,6 +171,7 @@ SELECT count(*)                                                                 
          OR customer_id IS NULL OR category IS NULL OR payment_method IS NULL
          OR customer_country NOT IN ('Greece','Cyprus','Germany','Italy','France','Netherlands','Spain','Bulgaria')
          OR order_date !~ '^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$'
-         OR order_status NOT IN ('completed','cancelled','refunded'))
+         OR order_status NOT IN ('completed','cancelled','refunded')
+         OR (shipping_cost IS NULL AND lower(order_status) NOT LIKE 'cancel%'))
          / count(*), 1)                                                          AS pct_with_a_defect
 FROM t;

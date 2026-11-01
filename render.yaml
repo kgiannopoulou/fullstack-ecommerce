@@ -11,7 +11,7 @@ services:
   - type: web
     name: shop-api
     runtime: docker
-    rootDir: backend
+    rootDir: app/backend
     dockerfilePath: ./Dockerfile
     plan: free
     healthCheckPath: /api/health
@@ -45,13 +45,13 @@ services:
   - type: web
     name: shop-web
     runtime: node
-    rootDir: frontend
+    rootDir: app/frontend
     plan: free
     buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
       # Empty: the browser calls /api on the storefront's own origin, which
-      # proxies to the API (see frontend/next.config.ts).
+      # proxies to the API (see app/frontend/next.config.ts).
       - key: NEXT_PUBLIC_API_URL
         value: ""
       - key: API_PROXY_TARGET # https://shop-api-XXXX.onrender.com (needed at build time)

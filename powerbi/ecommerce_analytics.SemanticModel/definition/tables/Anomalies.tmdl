@@ -1,0 +1,115 @@
+table Anomalies
+	lineageTag: fdcc895c-a364-51a3-8fe7-8daafc49e0b0
+
+	column date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 0b2c714e-c07a-5394-a8ba-fb1fe331b81b
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric
+		dataType: string
+		lineageTag: 269da0ee-866b-5305-b7de-140e297674c7
+		summarizeBy: none
+		sourceColumn: metric
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimension
+		dataType: string
+		lineageTag: 27c803b0-c66e-5439-8e4f-d8e9bebd205e
+		summarizeBy: none
+		sourceColumn: dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment
+		dataType: string
+		lineageTag: 2fcadb13-a6d7-5563-b027-e8d193ab5d56
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 6df4776d-5435-5c06-a7db-72df4a77a870
+		summarizeBy: none
+		sourceColumn: actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 37bfa636-508b-53be-bd36-414953784e9b
+		summarizeBy: none
+		sourceColumn: expected
+
+		annotation SummarizationSetBy = Automatic
+
+	column deviation_pct
+		dataType: double
+		formatString: +0.0;-0.0
+		lineageTag: 168cec5f-0f0c-5b80-a740-5663981b9aee
+		summarizeBy: none
+		sourceColumn: deviation_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column z_score
+		dataType: double
+		formatString: +0.0;-0.0
+		lineageTag: 7d5191e8-7f52-549c-a541-60fbdb460129
+		summarizeBy: none
+		sourceColumn: z_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column event
+		dataType: string
+		lineageTag: 88abedbb-0ccf-55ee-be62-01ecf7e8ff0b
+		summarizeBy: none
+		sourceColumn: event
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction
+		dataType: string
+		lineageTag: f481b77f-abc2-578d-ba3a-7f2d385ac851
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: 19075de2-b1f7-5214-b635-1ee35457a07b
+		summarizeBy: none
+		sourceColumn: severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: fa26e6cc-f5b6-536f-a025-cb63372e18b9
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Anomalies = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Anomalies.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"date", type date}, {"metric", type text}, {"dimension", type text}, {"segment", type text}, {"actual", type number}, {"expected", type number}, {"deviation_pct", type number}, {"z_score", type number}, {"event", type text}, {"direction", type text}, {"severity", type text}, {"description", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

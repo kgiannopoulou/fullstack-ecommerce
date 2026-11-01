@@ -1,0 +1,306 @@
+table FactSales
+	lineageTag: b38b5abf-60ab-5044-ab70-c4f7ec783e25
+
+	/// List-price value of fulfilled lines, before discounts
+	measure 'Gross Sales' = SUM ( FactSales[gross_amount] )
+		formatString: \€#,0
+		displayFolder: Revenue
+		lineageTag: f9e569d5-7157-597b-a7ab-d59a7bbd5e86
+
+	/// Discount given on fulfilled lines
+	measure Discounts = SUM ( FactSales[discount_amount] )
+		formatString: \€#,0
+		displayFolder: Revenue
+		lineageTag: 0a3ac149-952a-578e-ad69-91d7c9ef077f
+
+	/// Refunded amount, allocated to lines by value
+	measure Refunds = SUM ( FactSales[refund_amount] )
+		formatString: \€#,0
+		displayFolder: Revenue
+		lineageTag: 9a244df0-053b-5492-a3d7-32b88a01c29d
+
+	/// Gross sales - discounts - refunds; cancelled orders excluded
+	measure 'Net Revenue' = SUM ( FactSales[net_revenue] )
+		formatString: \€#,0
+		displayFolder: Revenue
+		lineageTag: 4d2ffb5a-c9f4-590f-a914-49424985cce1
+
+	/// Units x unit cost
+	measure 'Cost of Goods' = SUM ( FactSales[cogs] )
+		formatString: \€#,0
+		displayFolder: Profit
+		lineageTag: 0a4c3f2d-48a0-58ea-8bcf-453cf21b6535
+
+	/// Carrier cost paid by the shop, allocated to lines by parcel weight
+	measure 'Shipping Cost' = SUM ( FactSales[shipping_cost] )
+		formatString: \€#,0
+		displayFolder: Profit
+		lineageTag: e14a53f2-b6b1-52e0-82c0-382cd9bec1c0
+
+	/// Net revenue - COGS - shipping
+	measure 'Gross Profit' = [Net Revenue] - [Cost of Goods] - [Shipping Cost]
+		formatString: \€#,0
+		displayFolder: Profit
+		lineageTag: f9e42043-5e10-5ec8-b1d8-6b38c815e34a
+
+	/// Gross profit / net revenue
+	measure 'Gross Margin %' = DIVIDE ( [Gross Profit], [Net Revenue] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Profit
+		lineageTag: fb42dcb6-d885-5e2d-981d-e27398d1d4e0
+
+	measure 'Discount Rate %' = DIVIDE ( [Discounts], [Gross Sales] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Revenue
+		lineageTag: 83dd08a1-7659-5fc6-afd3-1847b029e45d
+
+	measure 'Units Sold' = SUM ( FactSales[quantity] )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: 206ac4ee-45d6-5f2a-8093-515640daf5f0
+
+	/// Previous month
+	measure 'Net Revenue PM' = CALCULATE ( [Net Revenue], DATEADD ( DimDate[date], -1, MONTH ) )
+		formatString: \€#,0
+		displayFolder: Time intelligence
+		lineageTag: 59541b6b-a570-51c0-acc0-1cdde34e56c7
+
+	measure 'MoM Growth %' = DIVIDE ( [Net Revenue] - [Net Revenue PM], [Net Revenue PM] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time intelligence
+		lineageTag: 272d4277-9659-55f1-a7fc-c512cee81206
+
+	/// Same period last year
+	measure 'Net Revenue PY' = CALCULATE ( [Net Revenue], SAMEPERIODLASTYEAR ( DimDate[date] ) )
+		formatString: \€#,0
+		displayFolder: Time intelligence
+		lineageTag: c6d5ee18-bca3-5f1a-b890-b881494aa062
+
+	measure 'YoY Growth %' = DIVIDE ( [Net Revenue] - [Net Revenue PY], [Net Revenue PY] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time intelligence
+		lineageTag: af7b62ea-c397-55bc-a907-f65d903416d0
+
+	measure 'Gross Profit PY' = CALCULATE ( [Gross Profit], SAMEPERIODLASTYEAR ( DimDate[date] ) )
+		formatString: \€#,0
+		displayFolder: Time intelligence
+		lineageTag: 4866cb47-5b5e-55e1-9718-2dfb8d6196d3
+
+	measure 'Gross Profit YoY %' = DIVIDE ( [Gross Profit] - [Gross Profit PY], [Gross Profit PY] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time intelligence
+		lineageTag: cede78c8-fffa-54ab-b201-5ee27bfb1fe3
+
+	measure 'Gross Margin PY' = CALCULATE ( [Gross Margin %], SAMEPERIODLASTYEAR ( DimDate[date] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time intelligence
+		lineageTag: b3d2c17e-5b71-5716-8804-41b44d2ab84f
+
+	/// Percentage points vs same period last year
+	measure 'Gross Margin Change pp' = IF ( NOT ISBLANK ( [Gross Margin PY] ), ( [Gross Margin %] - [Gross Margin PY] ) * 100 )
+		formatString: +0.0" pp";-0.0" pp"
+		displayFolder: Time intelligence
+		lineageTag: 92a89439-6eea-5a55-8ec1-a4f27c0b66ef
+
+	measure 'Returning Customer Revenue' = CALCULATE ( [Net Revenue], FactSales[customer_type] = "Returning" )
+		formatString: \€#,0
+		displayFolder: Customers
+		lineageTag: a3539ac2-60ab-59f8-82a1-59f38c215163
+
+	/// Share of net revenue from customers who had bought before
+	measure 'Returning Customer Revenue %' = DIVIDE ( [Returning Customer Revenue], [Net Revenue] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Customers
+		lineageTag: 8c392e22-50d7-5f40-a32e-45c9140762a7
+
+	measure 'Product Revenue Rank' = IF ( HASONEVALUE ( DimProduct[product_name] ), RANKX ( ALL ( DimProduct[product_name] ), [Net Revenue] ) )
+		formatString: 0
+		displayFolder: Profit
+		lineageTag: d7f9baf1-0d4e-57c1-8456-95b570a8576a
+
+	measure 'Product Profit Rank' = IF ( HASONEVALUE ( DimProduct[product_name] ), RANKX ( ALL ( DimProduct[product_name] ), [Gross Profit] ) )
+		formatString: 0
+		displayFolder: Profit
+		lineageTag: 05923c4e-9b64-501a-8874-15ccff85eb7c
+
+	column transaction_id
+		dataType: string
+		isHidden
+		lineageTag: b116db75-0edc-5255-a59c-089455211956
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 5ca8ef0c-42d0-5f73-a895-229792f57095
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: ce5cd7e6-17c4-5fea-b07b-e301993d2de0
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 09b8f94d-c834-5fab-8802-d1de478e77d2
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 47abc425-374b-5f99-bc40-59f070079530
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 1eaa9d85-6d48-551e-bcb0-f262ee7a0131
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: c3e88d95-29db-513f-bad7-72e5c8e1d12d
+		summarizeBy: none
+		sourceColumn: channel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_type
+		dataType: string
+		lineageTag: c1d39e4a-5a6d-5b43-ad88-1c9fe6383b29
+		summarizeBy: none
+		sourceColumn: customer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_discounted
+		dataType: boolean
+		lineageTag: f5fc338e-6707-56cd-9a38-d7723ffeb5b8
+		summarizeBy: none
+		sourceColumn: is_discounted
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: #,0
+		isHidden
+		lineageTag: d809d741-265b-545e-9d2f-5ec17f518b42
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column gross_amount
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: 6ddf3e6e-b9d1-5435-9764-2da906625270
+		summarizeBy: sum
+		sourceColumn: gross_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_amount
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: 6140737a-e72f-5b69-b6f0-fc8a5ea97010
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column refund_amount
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: baf7b231-6889-5b74-8786-7ba65fe98e55
+		summarizeBy: sum
+		sourceColumn: refund_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_revenue
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: 84853bf2-b515-59db-a9b4-a936fd618c6e
+		summarizeBy: sum
+		sourceColumn: net_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column cogs
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: d6d1467b-ba76-5fd7-8e02-200869003dd3
+		summarizeBy: sum
+		sourceColumn: cogs
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_cost
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: 7d67ee38-58ba-5121-b2ff-8fcd0c559a91
+		summarizeBy: sum
+		sourceColumn: shipping_cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column gross_profit
+		dataType: double
+		formatString: \€#,0
+		isHidden
+		lineageTag: 43d76c0d-d52c-5fa5-8196-f11a352d4188
+		summarizeBy: sum
+		sourceColumn: gross_profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_bulk
+		dataType: boolean
+		lineageTag: d8766280-92b5-5fd7-ab01-ba5cc295306e
+		summarizeBy: none
+		sourceColumn: is_bulk
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactSales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "FactSales.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"transaction_id", type text}, {"order_id", Int64.Type}, {"customer_id", Int64.Type}, {"order_date", type date}, {"product_id", Int64.Type}, {"country", type text}, {"channel_id", Int64.Type}, {"customer_type", type text}, {"is_discounted", type logical}, {"quantity", Int64.Type}, {"gross_amount", type number}, {"discount_amount", type number}, {"refund_amount", type number}, {"net_revenue", type number}, {"cogs", type number}, {"shipping_cost", type number}, {"gross_profit", type number}, {"is_bulk", type logical}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

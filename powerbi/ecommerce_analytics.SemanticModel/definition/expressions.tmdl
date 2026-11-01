@@ -1,0 +1,5 @@
+/// Folder with the CSV files written by the pipeline (data/cleaned). Change it after cloning the repo.
+expression DataFolder = "C:\Users\konst\fullstack-ecommerce\data\cleaned\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: 83dc5928-6885-5ee1-9b95-64721c08e4a7
+
+	annotation PBI_ResultType = Text

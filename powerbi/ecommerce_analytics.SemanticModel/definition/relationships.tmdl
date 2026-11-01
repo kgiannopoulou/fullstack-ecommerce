@@ -1,0 +1,47 @@
+relationship baeed5a4-eba3-5413-96a3-e45cb4a77a46
+	fromColumn: FactSales.order_date
+	toColumn: DimDate.date
+
+relationship fa77ea27-9fbb-564a-bed8-5c648edfeec5
+	fromColumn: FactOrders.order_date
+	toColumn: DimDate.date
+
+relationship fd9ec5a9-30ba-5b77-a0b3-d6c6891eecc3
+	fromColumn: FactInventoryDaily.snapshot_date
+	toColumn: DimDate.date
+
+relationship da03422b-9c26-5aa5-861e-c7dab68e5404
+	fromColumn: FactSales.product_id
+	toColumn: DimProduct.product_id
+
+relationship cf1a39e8-f903-572a-9fd5-99d41c0bc276
+	fromColumn: FactInventoryDaily.product_id
+	toColumn: DimProduct.product_id
+
+relationship 5e56f7f5-2090-5970-b0e0-6087b7396539
+	fromColumn: InventoryForecast.product_id
+	toColumn: DimProduct.product_id
+
+relationship ba895a06-651c-5c5f-bea0-7fc3be4dcfed
+	fromColumn: FactSales.customer_id
+	toColumn: DimCustomer.customer_id
+
+relationship 50d9a4a0-175b-589d-8a26-7d2170c3f69f
+	fromColumn: FactOrders.customer_id
+	toColumn: DimCustomer.customer_id
+
+relationship 3194d938-a35a-5f76-8be2-3a4105d9bbaa
+	fromColumn: FactSales.channel_id
+	toColumn: DimChannel.channel_id
+
+relationship 3adbfdb4-578b-5791-b9ae-4f11ec07e092
+	fromColumn: FactOrders.channel_id
+	toColumn: DimChannel.channel_id
+
+relationship 5d83de22-43c4-5b8d-9b3c-6caa0df6dda7
+	fromColumn: FactSales.country
+	toColumn: DimGeography.country
+
+relationship 27e87a5b-0a96-518f-bb8b-bb1d79785b5b
+	fromColumn: FactOrders.country
+	toColumn: DimGeography.country

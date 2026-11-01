@@ -1,0 +1,17 @@
+revenue_rank,profit_rank,rank_drop,product_name,category,net_revenue,gross_profit,gross_margin_pct,cogs_pct,shipping_pct,discount_pct,main_driver
+50,96,46,Travel Organizer O174,Bags & Travel,45840,7503,16.4,67.9,15.7,3.7,Low markup (high unit cost)
+20,44,24,Duffel Bag Plus F951,Bags & Travel,94879,19682,20.7,69.6,9.7,2.7,Low markup (high unit cost)
+24,40,16,Wireless Headphones Pro J285,Audio,82490,23138,28.0,70.0,2.0,3.1,Low markup (high unit cost)
+48,64,16,Monitor Arm J285,Computer Accessories,45931,13938,30.3,64.5,5.2,3.4,Low markup (high unit cost)
+45,58,13,Game Controller H137,Gaming,48449,14993,30.9,66.5,2.6,3.3,Low markup (high unit cost)
+14,25,11,Tea Kettle Mini M988,Home & Kitchen,128953,35621,27.6,44.1,28.3,3.0,Bulky: shipping eats the margin
+22,30,8,Studio Headphones Pro L433,Audio,84505,29500,34.9,63.1,2.0,3.9,Low markup (high unit cost)
+40,48,8,Soundbar V211,Audio,55111,17940,32.6,64.4,3.0,3.0,Low markup (high unit cost)
+28,36,8,Webcam Lite I692,Computer Accessories,78661,25545,32.5,55.9,11.6,3.0,Low markup (high unit cost)
+26,33,7,USB-C Hub O174,Computer Accessories,80320,26172,32.6,59.3,8.1,3.1,Low markup (high unit cost)
+31,37,6,Capture Card Lite Z507,Gaming,74446,24013,32.3,65.4,2.3,3.3,Low markup (high unit cost)
+21,27,6,Capture Card Pro X359,Gaming,86397,33003,38.2,58.6,3.2,3.1,Low markup (high unit cost)
+11,17,6,Power Bank Lite G544,Phone Accessories,174553,45924,26.3,64.2,9.5,3.1,Low markup (high unit cost)
+46,52,6,Watch Strap Plus I692,Wearables,48351,17017,35.2,63.8,1.0,2.5,Low markup (high unit cost)
+44,49,5,Studio Headphones Lite U618,Audio,48964,17647,36.0,61.4,2.6,3.4,Low markup (high unit cost)
+33,38,5,Limited Edition Print Max U618,Books & Prints,69908,23817,34.1,58.6,7.3,2.9,Low markup (high unit cost)
